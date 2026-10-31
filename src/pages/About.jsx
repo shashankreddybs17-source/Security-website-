@@ -1,0 +1,27 @@
+import AboutHeroSection from '../components/AboutHeroSection';
+import AboutAboutSection from '../components/AboutAboutSection';
+import AboutApproachSection from '../components/AboutApproachSection';
+import AboutStorySection from '../components/AboutStorySection';
+import AboutTeamSection from '../components/AboutTeamSection';
+import AboutGallerySection from '../components/AboutGallerySection';
+import AboutCommonFaqsSection from '../components/AboutCommonFaqsSection';
+import HomeCtaSection from '../components/HomeCtaSection';
+import AboutFooterSection from '../components/AboutFooterSection';
+
+export default function About() {
+  return (
+    <div className="page-wrapper">
+      <main className="main-wrapper">
+        <AboutHeroSection />
+        <AboutAboutSection />
+        <AboutApproachSection />
+        <AboutStorySection />
+        <AboutTeamSection />
+        <AboutGallerySection />
+        <AboutCommonFaqsSection />
+        <HomeCtaSection />
+      </main>
+      <AboutFooterSection />
+    </div>
+  );
+}

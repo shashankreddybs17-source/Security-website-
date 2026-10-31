@@ -1,0 +1,12 @@
+{
+  "home": {
+    "pageId": "679f5ed995191a2bd9d5042d",
+    "siteId": "679f5ed995191a2bd9d5042c",
+    "scripts": ["/assets/home-interactions.js"]
+  },
+  "about": {
+    "pageId": "67a47c082e4b26ec230ec4e7",
+    "siteId": "679f5ed995191a2bd9d5042c",
+    "scripts": ["/assets/about-interactions.js"]
+  }
+}

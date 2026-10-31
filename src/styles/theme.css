@@ -1,0 +1,30 @@
+﻿:root {
+  /* Derived from the existing cream page background, navy Contact panel and yellow CTA. */
+  --site-cream: var(--background, #fdf9f1);
+  --site-navy: var(--_secondary-color---500, #070616);
+  --site-yellow: var(--_primary-color---300, #f3df04);
+  --site-muted: var(--_neutral-color---300, #5d5c5c);
+  --site-border: var(--_neutral-color---80, #dfdfdf);
+  --site-surface: #111020;
+  --site-on-dark: var(--background, #fdf9f1);
+  /* This semantic token supplies dark text, dark controls, story and footer bands. */
+  --_neutral-color---500: var(--site-navy);
+}
+
+/* Keep footer structure and content; cap oversized wide-screen padding. */
+.footer-section .footer-brand-block,
+.footer-section .footer-contact-block,
+.footer-section .footer-cta-block {
+  padding-top: clamp(40px, 5vw, 72px);
+  padding-bottom: clamp(40px, 5vw, 72px);
+}
+
+/* Account for the sticky shared header when existing in-page targets are used. */
+.main-wrapper > section[id] {
+  scroll-margin-top: 124px;
+}
+@media (max-width: 991px) {
+  .main-wrapper > section[id] {
+    scroll-margin-top: 110px;
+  }
+}

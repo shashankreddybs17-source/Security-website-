@@ -1,0 +1,96 @@
+@layer theme, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+@source '../**/*.{js,jsx}';
+/* Preserve the reference reset and typography: Tailwind preflight is omitted. */
+html {
+  overflow-x: clip;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #e8dc00;
+  outline-offset: 4px;
+}
+.w-webflow-badge {
+  display: none !important;
+}
+.animation-fallback [style*='transform'],
+.animation-fallback [style*='opacity'] {
+  transform: none !important;
+  opacity: 1 !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  [data-w-id][style*='transform'],
+  [data-w-id][style*='opacity'] {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Direct site navigation replaces the template Pages dropdown. */
+@media (min-width: 992px) {
+  .site-header-links {
+    gap: clamp(10px, 1vw, 15px);
+  }
+  .site-header-links > .header-nav-link {
+    font-size: clamp(12px, 1.05vw, 16px);
+    white-space: nowrap;
+  }
+}
+#services,
+#blog,
+#faqs,
+#contact {
+  scroll-margin-top: 110px;
+}
+
+/* Keep the Bank Security replacement fully visible in its existing frame. */
+.home-services-section .bank-service-photo {
+  object-fit: contain;
+  object-position: center;
+  transform: none !important;
+}
+
+/* Page the home team carousel in complete cards instead of clipped previews. */
+.team-section .team-mask {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  overflow: hidden;
+}
+.team-section .team-slide {
+  width: 50%;
+  padding-left: 0;
+  padding-right: 24px;
+}
+.team-section .team-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.team-section .team-text-block {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .team-section .team-slide {
+    width: 33.333333%;
+    padding-right: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .team-section .team-slide {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

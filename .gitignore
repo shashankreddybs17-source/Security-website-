@@ -1,0 +1,10 @@
+node_modules/
+dist/
+tmp/
+.vercel/
+.env*
+!.env.example
+.openai/*
+!.openai/hosting.json
+*.zip
+*.tar.gz

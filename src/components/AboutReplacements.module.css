@@ -1,0 +1,349 @@
+.team,
+.approach {
+  color: var(--_neutral-color---500, #050900);
+}
+.team {
+  padding: var(--layout-section-space, 96px) 0 var(--layout-section-half, 48px);
+  background: var(--background, #fdf9f1);
+}
+.teamHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 36px;
+  margin-bottom: 60px;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px;
+  color: var(--_neutral-color---400, #404040);
+  font: 600 11px/1.6 var(--_font-family---body, 'DM Sans', sans-serif);
+  letter-spacing: 2px;
+}
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 3px;
+  background: var(--_primary-color---300, #f3df04);
+  flex: none;
+}
+.heading {
+  margin: 0;
+  font-family: var(--_font-family---heading, 'Archivo', sans-serif);
+  font-size: clamp(28px, 3.2vw, 46px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -1.5px;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex: none;
+  margin-top: 8px;
+  padding: 16px 22px;
+  border-radius: 40px;
+  color: var(--_neutral-color---500, #050900);
+  background: var(--_primary-color---300, #f3df04);
+  text-decoration: none;
+  font-family: var(--_font-family---heading);
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.cta:hover {
+  background: var(--_primary-color---200, #f6f63b);
+}
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.person {
+  position: relative;
+  aspect-ratio: 0.93;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #e6e2d9;
+}
+.person:nth-child(3) {
+  grid-column: 2;
+}
+.person:nth-child(4) {
+  grid-column: 3;
+}
+.person > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.person:hover > img {
+  transform: scale(1.035);
+}
+.personCaption {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  padding: 18px;
+  border: 1px solid #ffffff80;
+  border-radius: 12px;
+  background: #fdf9f1ed;
+  backdrop-filter: blur(12px);
+}
+.personCaption h3 {
+  margin: 0 0 5px;
+  font-family: var(--_font-family---heading);
+  font-size: clamp(14px, 1.3vw, 18px);
+  line-height: 1.4;
+  font-weight: 600;
+}
+.personCaption p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--_neutral-color---400, #404040);
+}
+.personCaption > svg {
+  flex: none;
+}
+.approach {
+  padding: var(--layout-section-half, 48px) 0;
+  background: var(--background, #fdf9f1);
+}
+.approachHeader {
+  text-align: center;
+  margin: 0 auto 60px;
+}
+.approachHeader .eyebrow {
+  justify-content: center;
+}
+.approachPanel {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 64px;
+  align-items: stretch;
+  padding: 40px;
+  border: 1px solid #05090016;
+}
+.steps {
+  min-width: 0;
+}
+.step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  width: 100%;
+  min-height: 160px;
+  padding: 26px 24px;
+  border: 0;
+  border-bottom: 1px solid #05090019;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  transition:
+    background 0.35s,
+    box-shadow 0.35s;
+}
+.step:last-child {
+  border-bottom-color: transparent;
+}
+.activeStep {
+  background: var(--background, #fdf9f1);
+  border-radius: 12px;
+  box-shadow: inset 3px 0 var(--_primary-color---300, #f3df04);
+}
+.stepNumber {
+  padding-top: 4px;
+  font-family: var(--_font-family---heading);
+  font-size: 11px;
+  color: var(--_neutral-color---300, #5d5c5c);
+}
+.stepTitle {
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--_font-family---heading);
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+.stepText {
+  display: block;
+  font-family: var(--_font-family---body);
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--_neutral-color---400, #404040);
+}
+.visualColumn {
+  min-width: 0;
+}
+.visual {
+  position: sticky;
+  top: 120px;
+  width: 100%;
+  height: 480px;
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--background, #fdf9f1);
+}
+.visual > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    opacity 0.5s ease,
+    transform 0.7s ease;
+}
+.visibleImage {
+  opacity: 1;
+  transform: scale(1);
+}
+.hiddenImage {
+  opacity: 0;
+  transform: scale(1.035);
+  pointer-events: none;
+}
+.visual figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 32px 24px 22px;
+  background: linear-gradient(transparent, #070616dd);
+  color: white;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.visualCount {
+  font-family: var(--_font-family---heading);
+  color: var(--_primary-color---300, #f3df04);
+  white-space: nowrap;
+}
+.cta:focus-visible,
+.step:focus-visible {
+  outline: 3px solid var(--_primary-color---400, #abab0d);
+  outline-offset: 4px;
+}
+@media (max-width: 991px) {
+  .team {
+    padding: var(--layout-section-space, 64px) 0 var(--layout-section-half, 32px);
+  }
+  .approach {
+    padding: var(--layout-section-half, 32px) 0;
+  }
+  .teamHeader {
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .teamGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .person:nth-child(3),
+  .person:nth-child(4) {
+    grid-column: auto;
+  }
+  .approachPanel {
+    gap: 28px;
+    padding: 24px;
+  }
+  .step {
+    padding: 22px 16px;
+    min-height: 180px;
+    gap: 12px;
+  }
+  .stepTitle {
+    font-size: 21px;
+  }
+  .visual {
+    height: 420px;
+  }
+  .personCaption h3 {
+    font-size: 17px;
+  }
+}
+@media (max-width: 600px) {
+  .team {
+    padding: var(--layout-section-space, 48px) 0 var(--layout-section-half, 24px);
+  }
+  .approach {
+    padding: var(--layout-section-half, 24px) 0;
+  }
+  .teamHeader {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .person {
+    aspect-ratio: 1;
+  }
+  .heading {
+    font-size: 28px;
+    letter-spacing: -1px;
+  }
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.3px;
+  }
+  .approachHeader {
+    margin-bottom: 32px;
+  }
+  .approachPanel {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 14px;
+  }
+  .visualColumn {
+    grid-row: 1;
+    position: sticky;
+    top: 86px;
+    z-index: 2;
+  }
+  .visual {
+    position: relative;
+    top: auto;
+    height: 250px;
+  }
+  .step {
+    min-height: 156px;
+  }
+  .personCaption {
+    padding: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .person > img,
+  .step,
+  .visual > img,
+  .cta {
+    transition: none;
+  }
+  .person:hover > img {
+    transform: none;
+  }
+  .hiddenImage,
+  .visibleImage {
+    transform: none;
+  }
+}

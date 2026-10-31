@@ -1,0 +1,243 @@
+/* Shared content-spacing tokens. Header, footer and scroll timelines keep their own layout. */
+.main-wrapper {
+  --layout-section-space: 64px;
+  --layout-section-half: 32px;
+  --layout-control-space: 80px;
+}
+
+/* Adjacent light sections share a single section interval instead of stacking 150–200px wrappers. */
+.main-wrapper > .home-about-section > .section-gap,
+.main-wrapper > .team-section > .section-gap,
+.main-wrapper > .home-blog-section > .section-gap,
+.main-wrapper > .common-faqs-section > .section-gap {
+  padding-top: var(--layout-section-half);
+  padding-bottom: var(--layout-section-half);
+}
+.main-wrapper > .home-services-section > .section-gap {
+  padding-top: 0;
+  padding-bottom: var(--layout-section-half);
+}
+.main-wrapper > .about-section {
+  padding-top: 0;
+}
+.main-wrapper > .about-section > .section-gap {
+  padding-top: var(--layout-section-space);
+  padding-bottom: var(--layout-section-half);
+}
+.main-wrapper > .story-section > .section-gap,
+.main-wrapper > .cta-section > .section-gap {
+  padding-top: var(--layout-section-space);
+  padding-bottom: var(--layout-section-space);
+}
+
+/* Hidden slides no longer determine the carousel's full normal-flow height. */
+.team-section .team-mask {
+  height: var(--team-visible-height, auto);
+}
+@media (min-width: 992px) {
+  .team-section .team-slider-block {
+    padding-bottom: 0;
+  }
+  .team-section .team-slider {
+    padding-bottom: var(--layout-control-space);
+  }
+  .team-section .team-arrow {
+    top: auto;
+    bottom: 0;
+    margin: 0;
+  }
+  .team-section .team-arrow.left-arrow {
+    left: auto;
+    right: 116px;
+  }
+  .team-section .team-arrow.right-arrow {
+    left: auto;
+    right: 30px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .main-wrapper {
+    --layout-section-space: 56px;
+    --layout-section-half: 28px;
+  }
+}
+@media (max-width: 991px) {
+  .main-wrapper {
+    --layout-section-space: 48px;
+    --layout-section-half: 24px;
+  }
+}
+@media (max-width: 479px) {
+  .main-wrapper {
+    --layout-section-space: 40px;
+    --layout-section-half: 20px;
+  }
+}
+/* Give the homepage introduction photographs more room without changing their sources or proportions. */
+@media (min-width: 992px) {
+  .home-about-section .home-about-block {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    column-gap: clamp(24px, 2.4vw, 36px);
+  }
+  .home-about-section .home-about-image-block,
+  .home-about-section .home-about-content-block {
+    width: 100%;
+    min-width: 0;
+  }
+}
+@media (max-width: 599px) {
+  .home-about-section .home-about-image-block {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .home-about-section .home-about-image-wrap-1,
+  .home-about-section .home-about-image-wrap-2 {
+    width: 98%;
+  }
+  .home-about-section .home-about-image-wrap-2 {
+    justify-self: end;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .home-about-section > .section-gap > .container-default {
+    max-width: min(1560px, calc(100% - 96px));
+  }
+}
+
+/* Balance the larger introduction photographs against the adjacent copy. */
+.home-about-section .section-title {
+  font-size: clamp(32px, 3.5vw, 56px);
+  line-height: 1.16;
+}
+
+/* The team introduction now participates in layout instead of floating over an empty column. */
+.team-section .team-block {
+  display: grid;
+  grid-template-columns: minmax(270px, 0.65fr) minmax(0, 2fr);
+  gap: clamp(32px, 3.4vw, 60px);
+  align-items: start;
+  width: calc(100% - 96px);
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.team-section .team-content-block {
+  position: static;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+}
+.team-section .team-content-block .container-default {
+  width: 100%;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+.team-section .team-conternt-wrap {
+  max-width: none;
+}
+.team-section .team-slider-block {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.team-section .team-slider {
+  max-width: 100%;
+}
+.team-section .team-introduction {
+  margin-top: 24px;
+}
+.team-section .team-introduction > p {
+  margin: 0;
+  color: var(--site-muted, #5d5c5c);
+  font-family: var(--_font-family---body);
+  font-size: 14px;
+  line-height: 1.85;
+}
+.team-section .team-proof {
+  display: grid;
+  gap: 13px;
+  margin: 24px 0;
+  padding: 22px 0;
+  border-top: 1px solid var(--site-border, #dfdfdf);
+  border-bottom: 1px solid var(--site-border, #dfdfdf);
+  list-style: none;
+  text-align: left;
+}
+.team-section .team-proof li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.team-section .team-proof svg {
+  flex: none;
+  margin-top: 2px;
+}
+.team-section .team-intro-note {
+  margin-top: 20px;
+  padding-left: 14px;
+  border-left: 3px solid var(--site-yellow, #f3df04);
+}
+.team-section .team-intro-note strong {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--_font-family---heading);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.team-section .team-intro-note p {
+  margin: 0;
+  color: var(--site-muted, #5d5c5c);
+  font-size: 12px;
+  line-height: 1.85;
+}
+.team-section .team-intro-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  color: var(--site-navy, #070616);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.team-section .team-intro-link svg {
+  padding: 7px;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  background: var(--site-yellow, #f3df04);
+}
+@media (max-width: 991px) {
+  .team-section .team-block {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    width: calc(100% - 48px);
+  }
+  .team-section .team-introduction {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .team-section .team-intro-note {
+    text-align: left;
+  }
+}
+@media (max-width: 479px) {
+  .team-section .team-block {
+    width: calc(100% - 36px);
+  }
+  .team-section .team-introduction > p {
+    font-size: 13px;
+  }
+}

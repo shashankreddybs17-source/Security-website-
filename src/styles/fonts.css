@@ -1,0 +1,39 @@
+﻿@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: normal;
+  font-display: swap;
+  src: url('/assets/fonts/archivo-variable.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url('/assets/fonts/dm-sans-variable.ttf') format('truetype');
+}
+
+/* Retained legacy template font for its unused utility artwork/styles. */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/font-cbbc895840ee.woff2') format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/font-1e12ecfd9ee7.woff2') format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/font-b9ef5a15c8c9.woff2') format('truetype');
+}

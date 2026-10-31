@@ -1,0 +1,11 @@
+.git/
+.vercel/
+.vscode/
+.openai/
+node_modules/
+dist/
+tmp/
+.env*
+!.env.example
+*.zip
+*.tar.gz
