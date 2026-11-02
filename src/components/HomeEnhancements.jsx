@@ -1,14 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import {
-  ArrowUpRight,
-  ArrowRight,
-  Plus,
-  X,
-  ShieldCheck,
-  UserCheck,
-  ClipboardCheck,
-  Handshake,
-} from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import { ArrowUpRight, ShieldCheck, UserCheck, ClipboardCheck, Handshake } from 'lucide-react';
 import styles from './HomeEnhancements.module.css';
 
 const services = [
@@ -57,10 +48,10 @@ const principles = [
     text: 'Five principles guide every assignment.',
     points: [
       'Discipline — following procedures and maintaining professional conduct.',
-      'Vigilance — staying alert to potential security risks.',
       'Responsibility — taking ownership of assigned duties and entrusted premises.',
-      'Integrity — maintaining honesty, confidentiality and trust.',
       'Professionalism — representing clients with courtesy, discipline and respect.',
+      'Vigilance — staying alert to potential security risks.',
+      'Integrity — maintaining honesty, confidentiality and trust.',
     ],
   },
 ];
@@ -84,44 +75,6 @@ const strengths = [
     icon: Handshake,
     title: 'Professional at every step',
     text: 'Courtesy, honesty, confidentiality and respect are part of the responsibility we bring to each assignment.',
-  },
-];
-const gallery = [
-  {
-    photo: '14',
-    title: 'Discipline in formation',
-    detail: 'Team briefing and preparation',
-    position: '50% 45%',
-  },
-  {
-    photo: '15',
-    title: 'Prepared on site',
-    detail: 'Practical safety instruction',
-    position: '50% 45%',
-  },
-  {
-    photo: '10',
-    title: 'Learning through practice',
-    detail: 'Fire safety training',
-    position: '45% 55%',
-  },
-  {
-    photo: '28',
-    title: 'Clear communication',
-    detail: 'An outdoor team briefing',
-    position: '50% 50%',
-  },
-  {
-    photo: '24',
-    title: 'A professional presence',
-    detail: 'Hi-Tech security personnel',
-    position: '50% 35%',
-  },
-  {
-    photo: '31',
-    title: 'Working together',
-    detail: 'Team instruction and readiness',
-    position: '50% 50%',
   },
 ];
 const photoUrl = (number) => `/assets/hitech/team-${number}.jpeg`;
@@ -234,81 +187,76 @@ export function HomeServicesShowcase() {
 }
 
 export function HomeWhoWeAre() {
-  const [open, setOpen] = useState(0);
   return (
     <Section className={styles.who} id="who-we-are" labelledBy="who-we-are-title">
       <div className="container-default w-container">
         <div className={styles.whoGrid}>
-          <div className={styles.editorial} data-reveal>
-            <Label>WHO WE ARE</Label>
-            <h2 id="who-we-are-title">
-              BUILT ON TRUST.
-              <br />
-              DRIVEN BY PROTECTION.
-            </h2>
-            <p>
-              Hi-Tech Protection Security is a Bengaluru-based security management company providing
-              reliable protection for businesses, institutions, residential communities and
-              individuals.
-            </p>
-            <p>
-              We are an associated entity of Hi-Tech Security Force, established in 2008 with
-              operations in Karnataka, Tamil Nadu and Kerala. Our organisation is managed by
-              experienced and trained Ex-Army personnel, bringing military discipline, alertness,
-              responsibility and leadership to security operations.
-            </p>
-            <p>
-              Our personnel are selected and trained to understand their duties, maintain a safe
-              environment and conduct themselves with professionalism and courtesy. We focus on
-              security practices suited to the needs of each location.
-            </p>
-            <LinkButton href="/about-us">Get to know Hi-Tech</LinkButton>
+          <div className={styles.whoEditorial}>
+            <header className={styles.whoHeading} data-reveal>
+              <Label>01 / WHO WE ARE</Label>
+              <h2 id="who-we-are-title">
+                BUILT ON DISCIPLINE.
+                <br />
+                <span className={styles.whoHighlight}>DRIVEN BY DUTY.</span>
+              </h2>
+            </header>
+            <div className={styles.whoIntroduction}>
+              <p>
+                Hi-Tech Protection Security is a Bengaluru-based security management company
+                providing reliable protection for businesses, institutions, residential communities
+                and individuals.
+              </p>
+              <p>
+                We are an associated entity of Hi-Tech Security Force, established in 2008 with
+                operations in Karnataka, Tamil Nadu and Kerala. Our organisation is managed by
+                experienced and trained Ex-Army personnel, bringing military discipline, alertness,
+                responsibility and leadership to security operations.
+              </p>
+              <p>
+                Our personnel are selected and trained to understand their duties, maintain a safe
+                environment and conduct themselves with professionalism and courtesy. We focus on
+                security practices suited to the needs of each location.
+              </p>
+            </div>
+            <div className={styles.whoAction}>
+              <LinkButton href="/about-us">Get to know Hi-Tech</LinkButton>
+            </div>
           </div>
-          <div className={styles.accordions} data-reveal>
-            {principles.map((principle, index) => (
-              <div
-                className={`${styles.accordion} ${open === index ? styles.openAccordion : ''}`}
-                key={principle.title}
-              >
-                <h3>
-                  <button
-                    type="button"
-                    id={`hi-tech-principle-${index}`}
-                    aria-expanded={open === index}
-                    aria-controls={`hi-tech-principle-panel-${index}`}
-                    onClick={() => setOpen(open === index ? null : index)}
-                  >
-                    <span>
-                      <span className={styles.principleIndex}>0{index + 1}</span>
-                      {principle.title}
-                    </span>
-                    <Plus size={20} aria-hidden="true" />
-                  </button>
-                </h3>
-                <div
-                  id={`hi-tech-principle-panel-${index}`}
-                  role="region"
-                  aria-labelledby={`hi-tech-principle-${index}`}
-                  aria-hidden={open !== index}
-                  className={styles.accordionPanel}
-                >
-                  <div>
-                    <p>{principle.text}</p>
-                    {principle.points && (
-                      <ul className={styles.valueList}>
-                        {principle.points.map((point) => (
-                          <li key={point}>{point}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-            <p className={styles.accordionNote}>
+          <figure className={styles.whoMedia}>
+            <div className={styles.whoPhoto}>
+              <img
+                src={photoUrl('15')}
+                alt="HI-TECH personnel in dark uniforms receiving a security and fire safety briefing"
+                width="1448"
+                height="1086"
+                loading="lazy"
+              />
+            </div>
+            <figcaption className={styles.whoPhotoNote}>
               <ShieldCheck size={18} aria-hidden="true" />
               People. Principles. Protection.
-            </p>
+            </figcaption>
+          </figure>
+          <div className={styles.whoPrinciples}>
+            {principles.map((principle, index) => (
+              <article className={styles.whoPrinciple} key={principle.title}>
+                <h3>
+                  <span className={styles.whoPrincipleNumber}>0{index + 1}</span>
+                  {principle.title}
+                </h3>
+                <p>{principle.text}</p>
+                {principle.points && (
+                  <ul className={styles.whoValues}>
+                    {principle.points.map((point) => (
+                      <li key={point}>
+                        <strong>{point.split(' — ')[0]}</strong>
+                        {point.slice(point.indexOf(' — '))}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </article>
+            ))}
           </div>
         </div>
       </div>
@@ -356,100 +304,4 @@ export function HomeWhyChooseUs() {
   );
 }
 
-export function HomeWorkGallery() {
-  const [selected, setSelected] = useState(null);
-  const dialog = useRef(null);
-  const trigger = useRef(null);
-  useEffect(() => {
-    if (selected === null) return;
-    const element = dialog.current;
-    if (!element.open) element.showModal();
-    const previous = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = previous;
-    };
-  }, [selected]);
-  const close = () => dialog.current?.close();
-  const openPhoto = (index, event) => {
-    trigger.current = event.currentTarget;
-    setSelected(index);
-  };
-  return (
-    <Section className={styles.work} id="our-work" labelledBy="our-work-title">
-      <div className="container-default w-container">
-        <div className={styles.galleryHeading} data-reveal>
-          <Label>OUR WORK</Label>
-          <h2 id="our-work-title">PROTECTION IN ACTION.</h2>
-          <p>
-            A closer look at our people, their preparation and the everyday discipline behind our
-            approach to security.
-          </p>
-        </div>
-        <div className={styles.gallery}>
-          {gallery.map((item, index) => (
-            <button
-              className={styles.galleryPhoto}
-              type="button"
-              key={item.photo}
-              onClick={(event) => openPhoto(index, event)}
-              aria-label={`View full photograph: ${item.detail}`}
-            >
-              <img
-                src={photoUrl(item.photo)}
-                alt={item.detail}
-                loading="lazy"
-                style={{ objectPosition: item.position }}
-              />
-              <span className={styles.galleryNumber}>
-                0{index + 1}
-                <ArrowUpRight size={17} aria-hidden="true" />
-              </span>
-              <span className={styles.galleryCaption}>{item.title}</span>
-            </button>
-          ))}
-        </div>
-        <div className={styles.galleryFooter}>
-          <p>
-            <span className={styles.liveDot} />
-            Original Hi-Tech team photography
-          </p>
-          <span>
-            SELECT A PHOTO TO VIEW IT IN FULL <ArrowRight size={15} aria-hidden="true" />
-          </span>
-        </div>
-      </div>
-      <dialog
-        ref={dialog}
-        className={styles.lightbox}
-        aria-labelledby="home-work-photo-title"
-        onClose={() => {
-          setSelected(null);
-          trigger.current?.focus();
-        }}
-        onClick={(event) => {
-          if (event.target === event.currentTarget) close();
-        }}
-      >
-        {selected !== null && (
-          <div className={styles.lightboxBody}>
-            <button
-              className={styles.close}
-              onClick={close}
-              type="button"
-              aria-label="Close photograph"
-              autoFocus
-            >
-              <X size={23} />
-            </button>
-            <img src={photoUrl(gallery[selected].photo)} alt={gallery[selected].detail} />
-            <p id="home-work-photo-title">
-              {gallery[selected].title}
-              <span>{gallery[selected].detail}</span>
-            </p>
-          </div>
-        )}
-      </dialog>
-    </Section>
-  );
-}
+export { default as HomeWorkGallery } from './HomeWorkGallery';

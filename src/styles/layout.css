@@ -118,8 +118,8 @@
 /* The team introduction now participates in layout instead of floating over an empty column. */
 .team-section .team-block {
   display: grid;
-  grid-template-columns: minmax(270px, 0.65fr) minmax(0, 2fr);
-  gap: clamp(32px, 3.4vw, 60px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 36px;
   align-items: start;
   width: calc(100% - 96px);
   max-width: 1600px;
@@ -140,6 +140,7 @@
 }
 .team-section .team-conternt-wrap {
   max-width: none;
+  text-align: left;
 }
 .team-section .team-slider-block {
   width: 100%;
@@ -226,8 +227,8 @@
   }
   .team-section .team-introduction {
     max-width: 620px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
   .team-section .team-intro-note {
     text-align: left;

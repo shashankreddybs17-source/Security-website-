@@ -7,7 +7,7 @@ import {
 import HomeHeaderHeroSection from '../components/HomeHeaderHeroSection';
 import HomeMarqueeSection from '../components/HomeMarqueeSection';
 import HomeHomeAboutSection from '../components/HomeHomeAboutSection';
-import HomeHomeServicesSection from '../components/HomeHomeServicesSection';
+import HomeSecuritySolutions from '../components/HomeSecuritySolutions';
 import HomePartnersSection from '../components/HomePartnersSection';
 import HomeTeamSection from '../components/HomeTeamSection';
 
@@ -23,10 +23,10 @@ export default function Home() {
       <main className="main-wrapper">
         <HomeMarqueeSection />
         <HomeHomeAboutSection />
-        <HomeHomeServicesSection />
         <HomeServicesShowcase />
         <HomeWhoWeAre />
         <HomeWhyChooseUs />
+        <HomeSecuritySolutions />
         <HomeWorkGallery />
         <HomePartnersSection />
         <HomeTeamSection />

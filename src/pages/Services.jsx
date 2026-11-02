@@ -1,5 +1,5 @@
 import AboutFooterSection from '../components/AboutFooterSection';
-import HomeHomeServicesSection from '../components/HomeHomeServicesSection';
+import HomeSecuritySolutions from '../components/HomeSecuritySolutions';
 import HomeCtaSection from '../components/HomeCtaSection';
 import styles from './Blog.module.css';
 
@@ -19,7 +19,7 @@ export default function Services() {
             </p>
           </div>
         </section>
-        <HomeHomeServicesSection />
+        <HomeSecuritySolutions />
         <HomeCtaSection />
       </main>
       <AboutFooterSection />

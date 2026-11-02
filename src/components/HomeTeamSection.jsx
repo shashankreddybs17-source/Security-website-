@@ -1,18 +1,160 @@
-import { useVisibleSliderHeight } from '../lib/useVisibleSliderHeight';
-import { Check, ArrowUpRight } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { Check, ArrowUpRight, ArrowLeft, ArrowRight } from 'lucide-react';
+import styles from './HomeTeamSection.module.css';
+
+const experts = [
+  {
+    src: '/assets/hitech/team-23.jpeg',
+    alt: 'Hi-Tech Protection Security personnel and training',
+    category: 'Leadership Team',
+    name: 'Arjun Kumar (Demo)',
+    designation: 'Operations Manager',
+    position: '50% 50%',
+  },
+  {
+    src: '/assets/hitech/team-03.jpeg',
+    alt: 'HI-TECH security personnel standing together in black uniforms',
+    category: 'Leadership Team',
+    name: 'Priya Rao (Demo)',
+    designation: 'Training Coordinator',
+    position: '50% 50%',
+  },
+  {
+    src: '/assets/hitech/team-24.jpeg',
+    alt: 'Hi-Tech Protection Security personnel and training',
+    category: 'Leadership Team',
+    name: 'Vikram Singh (Demo)',
+    designation: 'Security Supervisor',
+    position: '50% 50%',
+  },
+  {
+    src: '/assets/hitech/team-14.jpeg',
+    alt: 'Hi-Tech Protection Security personnel and training',
+    category: 'Field Experts',
+    name: 'Kiran Sharma (Demo)',
+    designation: 'Site Supervisor',
+    position: '35% 50%',
+  },
+  {
+    src: '/assets/hitech/team-26.jpeg',
+    alt: 'Hi-Tech Protection Security personnel and training',
+    category: 'Field Experts',
+    name: 'Ravi Kumar (Demo)',
+    designation: 'Field Supervisor',
+    position: '50% 50%',
+  },
+  {
+    src: '/assets/hitech/team-28.jpeg',
+    alt: 'Hi-Tech Protection Security personnel and training',
+    category: 'Field Experts',
+    name: 'Anita Rao (Demo)',
+    designation: 'Client Coordinator',
+    position: '40% 50%',
+  },
+];
 
 export default function HomeTeamSection() {
-  const section = useVisibleSliderHeight();
+  const section = useRef(null);
+  const information = useRef(null);
+  const swipe = useRef(null);
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(2);
+  const last = experts.length - visible;
+  useEffect(() => {
+    const root = section.current;
+    const info = information.current;
+    const header = root.ownerDocument.querySelector('header');
+    const mobile = window.matchMedia('(max-width: 767px)');
+    let frame = 0;
+    let disposed = false;
+    const measure = () => {
+      frame = 0;
+      if (disposed) return;
+      const clearance = Math.ceil(header?.getBoundingClientRect().height || 108) + 24;
+      root.style.setProperty('--team-clearance', `${clearance}px`);
+      root.dataset.stickyInfo = String(
+        window.innerWidth >= 992 && info.offsetHeight + clearance + 24 <= window.innerHeight,
+      );
+    };
+    const schedule = () => {
+      if (!frame && !disposed) frame = window.requestAnimationFrame(measure);
+    };
+    const resize = () => {
+      const count = mobile.matches ? 1 : 2;
+      setVisible(count);
+      setIndex((current) => Math.min(current, experts.length - count));
+      schedule();
+    };
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(schedule);
+    if (header) observer?.observe(header);
+    observer?.observe(info);
+    window.addEventListener('resize', resize);
+    mobile.addEventListener('change', resize);
+    resize();
+    return () => {
+      disposed = true;
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener('resize', resize);
+      mobile.removeEventListener('change', resize);
+      observer?.disconnect();
+      root.style.removeProperty('--team-clearance');
+      delete root.dataset.stickyInfo;
+    };
+  }, []);
+  const move = (direction) => {
+    setIndex((current) => Math.max(0, Math.min(last, current + direction)));
+  };
+  const navigate = (event) => {
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      move(1);
+    } else if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      move(-1);
+    } else if (event.key === 'Home') {
+      event.preventDefault();
+      setIndex(0);
+    } else if (event.key === 'End') {
+      event.preventDefault();
+      setIndex(last);
+    }
+  };
+  const startSwipe = (event) => {
+    if (!event.isPrimary || event.pointerType === 'mouse') return;
+    swipe.current = { x: event.clientX, y: event.clientY };
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
+  const endSwipe = (event) => {
+    const start = swipe.current;
+    swipe.current = null;
+    if (!start) return;
+    const x = event.clientX - start.x;
+    const y = event.clientY - start.y;
+    if (Math.abs(x) >= 50 && Math.abs(x) > Math.abs(y) * 1.2) move(x < 0 ? 1 : -1);
+  };
   return (
-    <section ref={section} id="team" className="team-section">
+    <section
+      ref={section}
+      id="team"
+      className={`team-section ${styles.section}`}
+      aria-labelledby="team-heading"
+    >
       <div className="section-gap">
-        <div className="team-block">
-          <div className="team-content-block">
+        <div className={`team-block ${styles.layout}`}>
+          <div ref={information} className={`team-content-block ${styles.information}`}>
             <div className="w-layout-blockcontainer container-default w-container">
               <div className="team-conternt-wrap">
                 <div className="section-title-block space-none">
-                  <h2 data-w-id="d06941f4-93e7-ee70-1485-469e46f0f45e" className="section-title">
-                    {'Meet Our Security Experts'}
+                  <h2
+                    data-w-id="d06941f4-93e7-ee70-1485-469e46f0f45e"
+                    id="team-heading"
+                    className={`section-title ${styles.heading}`}
+                  >
+                    MEET OUR
+                    <br />
+                    <span className={styles.highlight}>DEDICATED</span>
+                    <br />
+                    SECURITY EXPERTS
                   </h2>
                 </div>
                 <div className="team-introduction">
@@ -42,7 +184,7 @@ export default function HomeTeamSection() {
                       of each assignment.
                     </p>
                   </div>
-                  <a className="team-intro-link" href="/about-us">
+                  <a className={`team-intro-link ${styles.teamLink}`} href="/about-us">
                     Get to know our team <ArrowUpRight size={18} aria-hidden="true" />
                   </a>
                 </div>
@@ -51,185 +193,80 @@ export default function HomeTeamSection() {
           </div>
           <div className="team-slider-block">
             <div
-              data-delay="3000"
-              data-animation="slide"
-              className="team-slider w-slider"
-              data-autoplay="true"
-              data-easing="ease"
-              data-hide-arrows="false"
-              data-disable-swipe="false"
-              data-w-id="d06941f4-93e7-ee70-1485-469e46f0f461"
-              data-autoplay-limit="0"
-              data-nav-spacing="3"
-              data-duration="500"
-              data-infinite="true"
+              className={`team-slider ${styles.carousel}`}
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="Our security experts"
+              tabIndex={0}
+              onKeyDown={navigate}
             >
-              <div className="team-mask w-slider-mask">
-                <div
-                  data-w-id="d06941f4-93e7-ee70-1485-469e46f0f463"
-                  className="team-slide w-slide"
-                >
-                  <div className="team-card">
-                    <div className="team-image-block">
-                      <img
-                        src="/assets/hitech/team-23.jpeg"
-                        loading="eager"
-                        alt="Hi-Tech Protection Security personnel and training"
-                        className="team-image"
-                      />
-                      <div className="team-tag">{'Leadership Team'}</div>
+              <div
+                className={`team-mask ${styles.mask}`}
+                id="team-carousel-viewport"
+                onPointerDown={startSwipe}
+                onPointerUp={endSwipe}
+                onPointerCancel={() => {
+                  swipe.current = null;
+                }}
+              >
+                <div className={styles.track} style={{ '--team-index': index }}>
+                  {experts.map((expert, item) => (
+                    <div
+                      className={`team-slide ${styles.slide}`}
+                      key={expert.src}
+                      role="group"
+                      aria-roledescription="slide"
+                      aria-label={`${item + 1} of ${experts.length}`}
+                      aria-hidden={item < index || item >= index + visible}
+                      inert={item < index || item >= index + visible}
+                    >
+                      <div className={`team-card ${styles.card}`}>
+                        <div className={`team-image-block ${styles.photo}`}>
+                          <img
+                            src={expert.src}
+                            loading="eager"
+                            alt={expert.alt}
+                            className={`team-image ${styles.image}`}
+                            style={{ objectPosition: expert.position }}
+                            onDragStart={(event) => event.preventDefault()}
+                          />
+                        </div>
+                        <div className={`team-text-block ${styles.caption}`}>
+                          <div className={`team-tag ${styles.tag}`}>{expert.category}</div>
+                          <h5 className="team-name">{expert.name}</h5>
+                          <div className="team-designation">{expert.designation}</div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="team-text-block">
-                      <h5 className="team-name">{'Arjun Kumar (Demo)'}</h5>
-                      <div className="team-designation">{'Operations Manager'}</div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-w-id="d06941f4-93e7-ee70-1485-469e46f0f46e"
-                  className="team-slide w-slide"
-                >
-                  <div className="team-card">
-                    <div className="team-image-block">
-                      <img
-                        src="/assets/hitech/team-29.jpeg"
-                        loading="eager"
-                        alt="Hi-Tech Protection Security personnel and training"
-                        className="team-image"
-                      />
-                      <div className="team-tag">{'Leadership Team'}</div>
-                    </div>
-                    <div className="team-text-block">
-                      <h5 className="team-name">{'Priya Rao (Demo)'}</h5>
-                      <div className="team-designation">{'Training Coordinator'}</div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-w-id="d06941f4-93e7-ee70-1485-469e46f0f479"
-                  className="team-slide w-slide"
-                >
-                  <div className="team-card">
-                    <div className="team-image-block">
-                      <img
-                        src="/assets/hitech/team-24.jpeg"
-                        loading="eager"
-                        alt="Hi-Tech Protection Security personnel and training"
-                        className="team-image"
-                      />
-                      <div className="team-tag">{'Leadership Team'}</div>
-                    </div>
-                    <div className="team-text-block">
-                      <h5 className="team-name">{'Vikram Singh (Demo)'}</h5>
-                      <div className="team-designation">{'Security Supervisor'}</div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-w-id="d06941f4-93e7-ee70-1485-469e46f0f484"
-                  className="team-slide w-slide"
-                >
-                  <div className="team-card">
-                    <div className="team-image-block">
-                      <img
-                        src="/assets/hitech/team-14.jpeg"
-                        loading="eager"
-                        alt="Hi-Tech Protection Security personnel and training"
-                        className="team-image"
-                      />
-                      <div className="team-tag">{'Field Experts'}</div>
-                    </div>
-                    <div className="team-text-block">
-                      <h5 className="team-name">{'Kiran Sharma (Demo)'}</h5>
-                      <div className="team-designation">{'Site Supervisor'}</div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-w-id="d06941f4-93e7-ee70-1485-469e46f0f48f"
-                  className="team-slide w-slide"
-                >
-                  <div className="team-card">
-                    <div className="team-image-block">
-                      <img
-                        src="/assets/hitech/team-26.jpeg"
-                        loading="eager"
-                        alt="Hi-Tech Protection Security personnel and training"
-                        className="team-image"
-                      />
-                      <div className="team-tag">{'Field Experts'}</div>
-                    </div>
-                    <div className="team-text-block">
-                      <h5 className="team-name">{'Ravi Kumar (Demo)'}</h5>
-                      <div className="team-designation">{'Field Supervisor'}</div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-w-id="d06941f4-93e7-ee70-1485-469e46f0f49a"
-                  className="team-slide w-slide"
-                >
-                  <div className="team-card">
-                    <div className="team-image-block">
-                      <img
-                        src="/assets/hitech/team-28.jpeg"
-                        loading="eager"
-                        alt="Hi-Tech Protection Security personnel and training"
-                        className="team-image"
-                      />
-                      <div className="team-tag">{'Field Experts'}</div>
-                    </div>
-                    <div className="team-text-block">
-                      <h5 className="team-name">{'Anita Rao (Demo)'}</h5>
-                      <div className="team-designation">{'Client Coordinator'}</div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
-              <div className="team-arrow left-arrow w-slider-arrow-left">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="100%"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="team-arrow-icon"
+              <div className={styles.controls}>
+                <button
+                  type="button"
+                  className={`team-arrow ${styles.arrow}`}
+                  disabled={index === 0}
+                  onClick={() => move(-1)}
+                  aria-label="Previous security expert"
+                  aria-controls="team-carousel-viewport"
                 >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M20.25 12.2739C20.25 12.8262 19.8023 13.2739 19.25 13.2739L4.25 13.2739C3.69772 13.2739 3.25 12.8262 3.25 12.2739C3.25 11.7216 3.69772 11.2739 4.25 11.2739L19.25 11.2739C19.8023 11.2739 20.25 11.7216 20.25 12.2739Z"
-                    fill="currentColor"
-                  ></path>
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M11.0084 5.54387C11.3981 5.9352 11.3968 6.56837 11.0054 6.95808L5.66701 12.2745L11.0054 17.5899C11.3968 17.9796 11.3981 18.6127 11.0084 19.0041C10.6188 19.3955 9.98559 19.3968 9.59422 19.0071L3.54422 12.9831C3.35576 12.7955 3.24981 12.5405 3.2498 12.2746C3.24979 12.0086 3.35572 11.7536 3.54416 11.5659L9.59416 5.54094C9.9855 5.15123 10.6187 5.15254 11.0084 5.54387Z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </div>
-              <div className="team-arrow right-arrow w-slider-arrow-right">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="100%"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="team-arrow-icon"
+                  <ArrowLeft size={24} aria-hidden="true" />
+                </button>
+                <button
+                  type="button"
+                  className={`team-arrow ${styles.arrow}`}
+                  disabled={index === last}
+                  onClick={() => move(1)}
+                  aria-label="Next security expert"
+                  aria-controls="team-carousel-viewport"
                 >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M3.75 11.7261C3.75 11.1738 4.19772 10.7261 4.75 10.7261H19.75C20.3023 10.7261 20.75 11.1738 20.75 11.7261C20.75 12.2784 20.3023 12.7261 19.75 12.7261L4.75 12.7261C4.19772 12.7261 3.75 12.2784 3.75 11.7261Z"
-                    fill="currentColor"
-                  ></path>
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M12.9916 18.4561C12.6019 18.0648 12.6032 17.4316 12.9946 17.0419L18.333 11.7255L12.9946 6.41012C12.6032 6.02043 12.6019 5.38727 12.9916 4.99591C13.3812 4.60454 14.0144 4.60318 14.4058 4.99286L20.4558 11.0169C20.6442 11.2045 20.7502 11.4595 20.7502 11.7254C20.7502 11.9914 20.6443 12.2464 20.4558 12.4341L14.4058 18.4591C14.0145 18.8488 13.3813 18.8475 12.9916 18.4561Z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
+                  <ArrowRight size={24} aria-hidden="true" />
+                </button>
               </div>
+              <p className={styles.status} role="status" aria-live="polite" aria-atomic="true">
+                Showing experts {index + 1}
+                {visible > 1 ? ` to ${index + visible}` : ''} of {experts.length}
+              </p>
             </div>
           </div>
         </div>

@@ -1,0 +1,188 @@
+.section:global(#team) {
+  scroll-margin-top: var(--team-clearance, 132px);
+}
+.section:global(#team) .layout {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.75fr);
+  gap: 28px;
+  max-width: 1320px;
+}
+.section:global(#team) .heading {
+  color: #070616;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.highlight {
+  display: inline-block;
+  padding: 0 0.06em;
+  background: #f3df04;
+}
+.section:global(#team) :global(.team-introduction) {
+  margin-top: 20px;
+}
+.section:global(#team) :global(.team-proof) {
+  margin: 20px 0;
+  padding: 18px 0;
+}
+.section:global(#team) .teamLink {
+  margin-top: 20px;
+  padding: 10px 12px 10px 18px;
+  border: 1px solid var(--site-navy, #070616);
+  border-radius: 40px;
+  color: var(--site-cream, #fdf9f1);
+  background: var(--site-navy, #070616);
+}
+.section:global(#team) .teamLink > svg {
+  color: var(--site-navy, #070616);
+}
+.section:global(#team) .teamLink:hover {
+  color: var(--site-navy, #070616);
+  background: var(--site-yellow, #f3df04);
+  border-color: var(--site-yellow, #f3df04);
+}
+.section:global(#team) .teamLink:hover > svg {
+  color: var(--site-yellow, #f3df04);
+  background: var(--site-navy, #070616);
+}
+.section:global(#team)[data-sticky-info='true'] .information {
+  position: sticky;
+  top: var(--team-clearance, 132px);
+}
+.section:global(#team) .carousel {
+  --team-visible: 2;
+  --team-gap: 24px;
+  display: block;
+  padding-bottom: 0;
+}
+.section .carousel .mask {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+.section .carousel .track {
+  display: flex;
+  align-items: stretch;
+  gap: var(--team-gap);
+  width: 100%;
+  transform: translateX(
+    calc(var(--team-index) * -1 * (100% + var(--team-gap)) / var(--team-visible))
+  );
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.section .carousel .slide {
+  display: flex;
+  flex: 0 0 calc((100% - (var(--team-visible) - 1) * var(--team-gap)) / var(--team-visible));
+  width: calc((100% - (var(--team-visible) - 1) * var(--team-gap)) / var(--team-visible));
+  min-width: 0;
+  padding: 0;
+}
+.section .carousel .card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--site-border, #dfdfdf);
+  border-radius: 12px;
+  background: var(--site-cream, #fdf9f1);
+  overflow: hidden;
+}
+.section .carousel .photo {
+  position: relative;
+  flex: none;
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+.section .carousel .image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.section .carousel .caption {
+  gap: 8px;
+  min-width: 0;
+  padding: 14px;
+}
+.section .carousel .tag {
+  position: static;
+  align-self: flex-start;
+  border-radius: 6px;
+  color: var(--site-navy, #070616);
+  background: var(--site-yellow, #f3df04);
+}
+.section .carousel .controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-top: 32px;
+}
+.section .carousel .arrow {
+  position: static;
+  inset: auto;
+  flex: none;
+  margin: 0;
+  padding: 0;
+  border-color: var(--site-navy, #070616);
+  color: var(--site-cream, #fdf9f1);
+  background: var(--site-navy, #070616);
+  cursor: pointer;
+}
+.section .carousel .arrow:hover:not(:disabled) {
+  border-color: var(--site-yellow, #f3df04);
+  color: var(--site-navy, #070616);
+  background: var(--site-yellow, #f3df04);
+}
+.section .carousel .arrow:disabled {
+  opacity: 1;
+  cursor: default;
+}
+.section .carousel:focus-visible,
+.section .carousel .arrow:focus-visible {
+  outline: 3px solid var(--site-yellow, #f3df04);
+  outline-offset: 4px;
+}
+.status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (max-width: 991px) {
+  .section:global(#team) .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  .section:global(#team) .heading {
+    font-size: clamp(28px, 4.3vw, 40px);
+  }
+  .section:global(#team) .carousel {
+    --team-gap: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .section:global(#team) .heading {
+    font-size: clamp(24px, 7.2vw, 40px);
+  }
+  .section:global(#team) .carousel {
+    --team-visible: 1;
+    max-width: 480px;
+    margin-left: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section .carousel .track {
+    transition: none;
+  }
+}
