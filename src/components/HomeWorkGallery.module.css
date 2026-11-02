@@ -1,3 +1,13 @@
+.viewAll {
+  composes: site-button from global;
+}
+.close {
+  composes: site-button from global;
+}
+.lightboxFooter {
+  composes: site-button-group from global;
+}
+
 .work {
   position: relative;
   padding: var(--layout-section-space, 64px) 0 var(--layout-section-half, 32px);
@@ -73,15 +83,6 @@
   color: var(--site-cream, #fdf9f1);
   font: 600 12px/1.5 var(--_font-family---body);
   cursor: pointer;
-}
-.viewAll:hover {
-  background: var(--site-yellow, #f3df04);
-  border-color: var(--site-yellow, #f3df04);
-  color: var(--site-navy, #070616);
-}
-.viewAll:hover > svg {
-  color: var(--site-yellow, #f3df04);
-  background: var(--site-navy, #070616);
 }
 .viewAll > svg {
   color: var(--site-navy, #070616);

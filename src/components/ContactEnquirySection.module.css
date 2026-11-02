@@ -1,3 +1,10 @@
+.submit {
+  composes: site-button from global;
+}
+.download {
+  composes: site-button from global;
+}
+
 .section {
   padding: var(--layout-section-space, 96px) 0;
   background: var(--_secondary-color---500, #070616);
@@ -132,9 +139,6 @@
   cursor: pointer;
   transition: background 0.2s;
 }
-.submit:hover {
-  background: var(--_primary-color---200, #f6f63b);
-}
 .note {
   margin: 0;
   color: #aaa7b6;
@@ -167,9 +171,6 @@
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-}
-.download:hover {
-  background: var(--_primary-color---200, #f6f63b);
 }
 .submit:focus-visible,
 .download:focus-visible,

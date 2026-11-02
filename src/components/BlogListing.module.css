@@ -1,3 +1,10 @@
+.readButton {
+  composes: site-button from global;
+}
+.cardArrow {
+  composes: site-button from global;
+}
+
 .page {
   color: var(--site-navy, #070616);
   background: var(--site-cream, #fdf9f1);
@@ -228,12 +235,6 @@
   line-height: 1.5;
   text-decoration: none;
   white-space: nowrap;
-}
-.readButton:hover,
-.cardArrow:hover {
-  color: var(--site-navy, #070616);
-  border-color: var(--site-yellow, #f3df04);
-  background: var(--site-yellow, #f3df04);
 }
 .filters {
   display: flex;

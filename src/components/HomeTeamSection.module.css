@@ -1,3 +1,10 @@
+.teamLink {
+  composes: site-button from global;
+}
+.arrow {
+  composes: site-button from global;
+}
+
 .section:global(#team) {
   scroll-margin-top: var(--team-clearance, 132px);
 }
@@ -16,7 +23,7 @@
 .highlight {
   display: inline-block;
   padding: 0 0.06em;
-  background: #f3df04;
+  color: #070616;
 }
 .section:global(#team) :global(.team-introduction) {
   margin-top: 20px;
@@ -35,15 +42,6 @@
 }
 .section:global(#team) .teamLink > svg {
   color: var(--site-navy, #070616);
-}
-.section:global(#team) .teamLink:hover {
-  color: var(--site-navy, #070616);
-  background: var(--site-yellow, #f3df04);
-  border-color: var(--site-yellow, #f3df04);
-}
-.section:global(#team) .teamLink:hover > svg {
-  color: var(--site-yellow, #f3df04);
-  background: var(--site-navy, #070616);
 }
 .section:global(#team)[data-sticky-info='true'] .information {
   position: sticky;
@@ -134,11 +132,6 @@
   color: var(--site-cream, #fdf9f1);
   background: var(--site-navy, #070616);
   cursor: pointer;
-}
-.section .carousel .arrow:hover:not(:disabled) {
-  border-color: var(--site-yellow, #f3df04);
-  color: var(--site-navy, #070616);
-  background: var(--site-yellow, #f3df04);
 }
 .section .carousel .arrow:disabled {
   opacity: 1;

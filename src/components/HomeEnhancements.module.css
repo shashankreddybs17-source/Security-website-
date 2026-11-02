@@ -1,3 +1,7 @@
+.button {
+  composes: site-button from global;
+}
+
 .section {
   --enhance-yellow: var(--_primary-color---300, #f3df04);
   --enhance-ink: var(--_secondary-color---500, #070616);
@@ -70,10 +74,6 @@
   transition:
     background 0.25s,
     transform 0.25s;
-}
-.button:hover {
-  background: var(--_primary-color---200, #f6f63b);
-  transform: translateY(-2px);
 }
 .outlineButton {
   background: transparent;
@@ -231,7 +231,7 @@
   overflow-wrap: break-word;
 }
 .whoHighlight {
-  background: linear-gradient(transparent 52%, var(--enhance-yellow) 52% 94%, transparent 94%);
+  color: #070616;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }

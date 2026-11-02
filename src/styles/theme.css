@@ -21,10 +21,6 @@ a:is(.primary-button, .secondary-button, .tertiary-button) {
   background-color: var(--solid-cta-bg) !important;
   border-color: var(--solid-cta-bg) !important;
   color: var(--solid-cta-ink) !important;
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease;
 }
 a:is(.secondary-button, .tertiary-button) {
   --solid-cta-bg: var(--site-navy);
@@ -32,21 +28,112 @@ a:is(.secondary-button, .tertiary-button) {
   --solid-cta-icon-bg: var(--site-yellow);
   --solid-cta-icon-ink: var(--site-navy);
 }
-a:is(.secondary-button, .tertiary-button):hover {
-  --solid-cta-bg: var(--site-yellow);
-  --solid-cta-ink: var(--site-navy);
-  --solid-cta-icon-bg: var(--site-navy);
-  --solid-cta-icon-ink: var(--site-yellow);
-}
-a.primary-button:hover {
-  --solid-cta-bg: var(--_primary-color---200, #f6f63b);
-}
 a:is(.primary-button, .secondary-button, .tertiary-button) .button-text-block {
   color: var(--solid-cta-ink) !important;
 }
 a:is(.primary-button, .secondary-button, .tertiary-button) .button-icon-block {
   background-color: var(--solid-cta-icon-bg) !important;
   color: var(--solid-cta-icon-ink) !important;
+}
+
+/* CSS Modules compose this shared class onto CTA and viewer controls.
+   Keep each component's default fill, dimensions and existing arrow geometry. */
+:is(
+  .site-button,
+  .site-button-group button,
+  a.primary-button,
+  a.secondary-button,
+  a.tertiary-button
+) {
+  transition:
+    background-color 250ms ease-in-out,
+    color 250ms ease-in-out,
+    border-color 250ms ease-in-out,
+    box-shadow 250ms ease-in-out,
+    transform 250ms ease-in-out !important;
+}
+:is(.site-button, .site-button-group button) > :is(svg, span:has(svg)),
+a:is(.primary-button, .secondary-button, .tertiary-button)
+  :is(.button-text-block, .button-icon-block) {
+  transition:
+    background-color 250ms ease-in-out,
+    color 250ms ease-in-out !important;
+}
+
+/* Keyboard focus gets the same solid colors, plus a separate visible focus ring. */
+:is(
+    .site-button,
+    .site-button-group button,
+    a.primary-button,
+    a.secondary-button,
+    a.tertiary-button
+  ):not(:disabled):focus-visible {
+  --solid-cta-bg: #070616;
+  --solid-cta-ink: #f3df04;
+  --solid-cta-icon-bg: #070616;
+  --solid-cta-icon-ink: #f3df04;
+  background-color: #070616 !important;
+  color: #f3df04 !important;
+  border-color: #f3df04 !important;
+  /* An inset edge also works for borderless CTAs without changing their size. */
+  box-shadow:
+    inset 0 0 0 1px #f3df04,
+    0 0 0 4px #070616;
+  outline: 3px solid #f3df04;
+  outline-offset: 4px;
+}
+:is(.site-button, .site-button-group button):not(:disabled):focus-visible
+  > :is(svg, span:has(svg)) {
+  background-color: #070616 !important;
+  color: #f3df04 !important;
+}
+
+/* Real hover only: touch taps retain the default appearance after activation. */
+@media (hover: hover) {
+  :is(
+      .site-button,
+      .site-button-group button,
+      a.primary-button,
+      a.secondary-button,
+      a.tertiary-button
+    ):not(:disabled):hover {
+    --solid-cta-bg: #070616;
+    --solid-cta-ink: #f3df04;
+    --solid-cta-icon-bg: #070616;
+    --solid-cta-icon-ink: #f3df04;
+    background-color: #070616 !important;
+    color: #f3df04 !important;
+    border-color: #f3df04 !important;
+    box-shadow: inset 0 0 0 1px #f3df04;
+    transform: translateY(-2px);
+  }
+  :is(.site-button, .site-button-group button):not(:disabled):hover > :is(svg, span:has(svg)) {
+    background-color: #070616 !important;
+    color: #f3df04 !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(
+    .site-button,
+    .site-button-group button,
+    a.primary-button,
+    a.secondary-button,
+    a.tertiary-button
+  ),
+  :is(.site-button, .site-button-group button) > :is(svg, span:has(svg)),
+  a:is(.primary-button, .secondary-button, .tertiary-button)
+    :is(.button-text-block, .button-icon-block) {
+    transition: none !important;
+  }
+  :is(
+    .site-button,
+    .site-button-group button,
+    a.primary-button,
+    a.secondary-button,
+    a.tertiary-button
+  ):hover {
+    transform: none !important;
+  }
 }
 
 /* Keep footer structure and content; cap oversized wide-screen padding. */

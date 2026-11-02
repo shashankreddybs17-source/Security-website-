@@ -1,3 +1,7 @@
+.mapButton {
+  composes: site-button from global;
+}
+
 .section {
   padding: var(--layout-section-space, 96px) 0;
   background: var(--background, #fdf9f1);
@@ -205,11 +209,6 @@
   font-weight: 500;
   text-decoration: none;
   transition: background 0.2s;
-}
-.mapButton:hover {
-  color: var(--site-navy, #070616);
-  border-color: var(--site-yellow, #f3df04);
-  background: var(--_primary-color---300, #f3df04);
 }
 .mapFrame {
   height: 440px;

@@ -1,3 +1,7 @@
+.cta {
+  composes: site-button from global;
+}
+
 .team,
 .approach {
   color: var(--_neutral-color---500, #050900);
@@ -53,9 +57,6 @@
   font-size: 13px;
   font-weight: 600;
   transition: background 0.2s;
-}
-.cta:hover {
-  background: var(--_primary-color---200, #f6f63b);
 }
 .teamGrid {
   display: grid;

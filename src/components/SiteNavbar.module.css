@@ -1,3 +1,10 @@
+.quote {
+  composes: site-button from global;
+}
+.toggle {
+  composes: site-button from global;
+}
+
 .header {
   --navbar-height: 108px;
   position: sticky;
@@ -117,9 +124,6 @@
   border-radius: 50%;
   color: var(--site-yellow, #f3df04);
   background: var(--site-navy, #070616);
-}
-.quote:hover {
-  background: var(--_primary-color---200, #f6f63b);
 }
 .toggle {
   display: none;
