@@ -67,12 +67,21 @@
   gap: 12px;
   flex: none;
   padding: 12px 15px;
-  border: 1px solid var(--site-border, #dfdfdf);
+  border: 1px solid var(--site-navy, #070616);
   border-radius: 30px;
-  background: transparent;
-  color: inherit;
+  background: var(--site-navy, #070616);
+  color: var(--site-cream, #fdf9f1);
   font: 600 12px/1.5 var(--_font-family---body);
   cursor: pointer;
+}
+.viewAll:hover {
+  background: var(--site-yellow, #f3df04);
+  border-color: var(--site-yellow, #f3df04);
+  color: var(--site-navy, #070616);
+}
+.viewAll:hover > svg {
+  color: var(--site-yellow, #f3df04);
+  background: var(--site-navy, #070616);
 }
 .viewAll > svg {
   color: var(--site-navy, #070616);

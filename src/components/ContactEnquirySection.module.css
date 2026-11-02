@@ -158,14 +158,18 @@
   display: inline-flex;
   gap: 8px;
   align-items: center;
-  padding: 0;
-  border: 0;
-  color: var(--_primary-color---300, #f3df04);
-  background: transparent;
+  padding: 10px 14px;
+  border: 1px solid var(--site-yellow, #f3df04);
+  border-radius: 32px;
+  color: var(--site-navy, #070616);
+  background: var(--site-yellow, #f3df04);
   font: inherit;
+  font-weight: 600;
   cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
+}
+.download:hover {
+  background: var(--_primary-color---200, #f6f63b);
 }
 .submit:focus-visible,
 .download:focus-visible,

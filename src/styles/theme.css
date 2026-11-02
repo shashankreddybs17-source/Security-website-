@@ -11,6 +11,44 @@
   --_neutral-color---500: var(--site-navy);
 }
 
+/* Keep legacy CTAs opaque even while Webflow writes inline hover colors.
+   Only colors are enforced; its existing arrow motion remains intact. */
+a:is(.primary-button, .secondary-button, .tertiary-button) {
+  --solid-cta-bg: var(--site-yellow);
+  --solid-cta-ink: var(--site-navy);
+  --solid-cta-icon-bg: var(--site-navy);
+  --solid-cta-icon-ink: var(--site-yellow);
+  background-color: var(--solid-cta-bg) !important;
+  border-color: var(--solid-cta-bg) !important;
+  color: var(--solid-cta-ink) !important;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+a:is(.secondary-button, .tertiary-button) {
+  --solid-cta-bg: var(--site-navy);
+  --solid-cta-ink: var(--site-cream);
+  --solid-cta-icon-bg: var(--site-yellow);
+  --solid-cta-icon-ink: var(--site-navy);
+}
+a:is(.secondary-button, .tertiary-button):hover {
+  --solid-cta-bg: var(--site-yellow);
+  --solid-cta-ink: var(--site-navy);
+  --solid-cta-icon-bg: var(--site-navy);
+  --solid-cta-icon-ink: var(--site-yellow);
+}
+a.primary-button:hover {
+  --solid-cta-bg: var(--_primary-color---200, #f6f63b);
+}
+a:is(.primary-button, .secondary-button, .tertiary-button) .button-text-block {
+  color: var(--solid-cta-ink) !important;
+}
+a:is(.primary-button, .secondary-button, .tertiary-button) .button-icon-block {
+  background-color: var(--solid-cta-icon-bg) !important;
+  color: var(--solid-cta-icon-ink) !important;
+}
+
 /* Keep footer structure and content; cap oversized wide-screen padding. */
 .footer-section .footer-brand-block,
 .footer-section .footer-contact-block,

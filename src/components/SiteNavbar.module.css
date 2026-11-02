@@ -181,10 +181,10 @@
     width: 44px;
     height: 44px;
     padding: 0;
-    border: 1px solid #fdf9f140;
+    border: 1px solid var(--site-yellow, #f3df04);
     border-radius: 9px;
-    color: var(--site-yellow, #f3df04);
-    background: transparent;
+    color: var(--site-navy, #070616);
+    background: var(--site-yellow, #f3df04);
     cursor: pointer;
   }
   .mobileMenu {
