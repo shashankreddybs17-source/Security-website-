@@ -50,11 +50,11 @@ export default function ContactEnquirySection() {
         <div className={styles.panel}>
           <figure className={styles.photo}>
             <img
-              src="/assets/hitech/team-23.jpeg"
-              alt="Hi-Tech Protection Security officer in uniform"
+              src="/assets/hitech/uniform-portrait.png"
+              alt="Indian security guard in a dark grey uniform holding a radio"
               loading="eager"
-              width="1200"
-              height="1600"
+              width="1015"
+              height="1267"
             />
           </figure>
           <div className={styles.formPanel}>
