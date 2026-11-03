@@ -29,14 +29,6 @@
   max-width: calc(100% - var(--headline-inset) * 2);
   isolation: isolate;
 }
-.headlineBlock::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: -24px -40px -40px -32px;
-  background: radial-gradient(ellipse at bottom left, #070616c7, #07061673 48%, #07061600 78%);
-  pointer-events: none;
-}
 .headline {
   margin: 0;
   color: #ffffff;

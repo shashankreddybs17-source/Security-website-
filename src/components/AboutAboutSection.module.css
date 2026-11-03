@@ -1,0 +1,57 @@
+.section :global(.about-block) {
+  column-gap: clamp(32px, 5vw, 72px);
+  row-gap: 32px;
+}
+
+.section :global(.about-content-block) {
+  flex: 1;
+  min-width: 0;
+}
+
+.section :global(.about-title-block) {
+  margin-bottom: 24px;
+}
+
+.section :global(.about-except-block) {
+  margin-bottom: 28px;
+}
+
+.section :global(.about-card-wrap) {
+  gap: 24px;
+}
+
+.section :global(.about-card) {
+  gap: 10px;
+}
+
+.section :global(.about-image-block) {
+  max-width: 340px;
+}
+
+.section :global(.about-designation-block) {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .section :global(.about-image-block) {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section :global(.about-title-block) {
+    margin-bottom: 16px;
+  }
+
+  .section :global(.about-except-block) {
+    margin-bottom: 20px;
+  }
+
+  .section :global(.about-card-wrap) {
+    gap: 20px;
+  }
+
+  .section :global(.about-image-block) {
+    max-width: 320px;
+  }
+}

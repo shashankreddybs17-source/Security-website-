@@ -17,6 +17,7 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
     time,
     direction,
     total: 0,
+    capturing: false,
     handled: false,
     pass: false,
     handledAt: time,
@@ -64,8 +65,13 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
     frame = 0;
     if (!enabled || motion) return;
     // Some browsers make momentum events non-cancelable. Do not let their
-    // native movement skip the service already selected by this gesture.
-    if (burst.handled && !burst.pass && win.performance.now() - burst.time < 180) {
+    // native movement reset the service while a gesture is accumulating or
+    // skip the service already selected by this gesture.
+    if (
+      (burst.capturing || burst.handled) &&
+      !burst.pass &&
+      win.performance.now() - burst.time < 180
+    ) {
       if (holdY !== null && Math.abs(win.scrollY - holdY) > 1)
         win.scrollTo({ top: holdY, behavior: 'instant' });
       return;
@@ -178,7 +184,7 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
     burst.peak = Math.max(burst.peak, magnitude);
     burst.time = now;
     if (burst.pass) return;
-    const y = win.scrollY,
+    const y = burst.capturing && holdY !== null ? holdY : win.scrollY,
       first = start(),
       last = end();
     const enteringDown = direction > 0 && y < first && y + delta >= first;
@@ -211,6 +217,10 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
       holdY = null;
       stopMotion();
       return;
+    }
+    if (!burst.capturing) {
+      holdY = motion?.target ?? (pinned ? first + current * step : y);
+      burst.capturing = true;
     }
     prevent();
     burst.total += Math.abs(delta);

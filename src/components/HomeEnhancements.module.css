@@ -139,9 +139,6 @@
   object-position: 50% 42%;
   transition: transform 0.5s ease;
 }
-.portraitPhoto img {
-  object-fit: contain;
-}
 .serviceCard:hover .servicePhoto img {
   transform: scale(1.025);
 }
@@ -257,6 +254,18 @@
   border-top: 2px solid var(--enhance-yellow);
   border-left: 2px solid var(--enhance-yellow);
   border-top-left-radius: 16px;
+  pointer-events: none;
+}
+.whoPhoto::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  bottom: -8px;
+  width: 32px;
+  height: 32px;
+  border-right: 2px solid var(--enhance-yellow);
+  border-bottom: 2px solid var(--enhance-yellow);
+  border-bottom-right-radius: 16px;
   pointer-events: none;
 }
 .whoPhoto img {

@@ -1,8 +1,9 @@
 import { Check } from 'lucide-react';
+import styles from './AboutAboutSection.module.css';
 
 export default function AboutAboutSection() {
   return (
-    <section className="about-section">
+    <section className={`about-section ${styles.section}`}>
       <div className="section-gap bottom-gap">
         <div className="w-layout-blockcontainer container-default w-container">
           <div className="about-block">
@@ -29,7 +30,7 @@ export default function AboutAboutSection() {
                   className="about-except"
                 >
                   {
-                    'Hi-Tech Protection Security is a Bengaluru-based security management company and an associated entity of Hi-Tech Security Force, established in 2008 with operations in Karnataka, Tamil Nadu and Kerala. Managed by experienced and trained Ex-Army personnel, we bring military discipline, alertness, responsibility and leadership to our security operations. Our personnel are selected and trained to serve businesses, institutions and residential communities with professionalism and courtesy.'
+                    'Hi-Tech Protection Security is a Bengaluru-based security management company associated with Hi-Tech Security Force, established in 2008 with operations in Karnataka, Tamil Nadu and Kerala. Led by experienced and trained Ex-Army personnel, we bring discipline, vigilance and responsibility to every assignment. Our trained teams support businesses, institutions and residential communities with clear site duties and professional, courteous conduct.'
                   }
                 </p>
               </div>
@@ -49,7 +50,7 @@ export default function AboutAboutSection() {
                   >
                     <div className="about-text">
                       {
-                        'To provide reliable and comprehensive protection for businesses, institutions, residential communities and individuals.'
+                        'To provide reliable protection through trained personnel and security practices suited to each location. Clear responsibilities, preparation and communication help us maintain a safe, welcoming environment for employees, visitors and residents.'
                       }
                     </div>
                   </div>
@@ -69,7 +70,7 @@ export default function AboutAboutSection() {
                   >
                     <div className="about-text">
                       {
-                        'Discipline, vigilance, responsibility, integrity and professionalism guide our conduct in every security assignment.'
+                        'Discipline, vigilance, responsibility, integrity and professionalism guide every assignment. We follow procedures, stay alert to risks and take ownership of entrusted duties, treating people with courtesy and protecting our clients’ confidentiality.'
                       }
                     </div>
                   </div>

@@ -26,6 +26,7 @@ const services = [
   {
     title: 'Commercial buildings',
     photo: '23',
+    image: '/assets/hitech/commercial-building-landscape.png',
     text: 'Professional guards to help protect employees, visitors, property and business assets.',
   },
   {
@@ -156,11 +157,9 @@ export function HomeServicesShowcase() {
               data-reveal
               aria-label={`Explore ${service.title.toLowerCase()} security coverage`}
             >
-              <div
-                className={`${styles.servicePhoto} ${service.photo === '23' ? styles.portraitPhoto : ''}`}
-              >
+              <div className={styles.servicePhoto}>
                 <img
-                  src={photoUrl(service.photo)}
+                  src={service.image || photoUrl(service.photo)}
                   alt="Hi-Tech Protection Security personnel"
                   loading="lazy"
                   width="1280"
