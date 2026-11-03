@@ -1,43 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { connectServiceScroll } from '../lib/serviceScroll';
+import { existingServices } from '../data/services';
 import styles from './HomeSecuritySolutions.module.css';
 
-const services = [
-  {
-    title: 'Hotel Security',
-    photo: '14',
-    text: 'Professional security for hotel entrances, guest areas and parking zones, helping maintain a safe and welcoming environment.',
-  },
-  {
-    title: 'Bank Security',
-    photo: '24',
-    text: 'Vigilance at entrances, premises and sensitive areas, with access control and visitor management for financial institutions.',
-  },
-  {
-    title: 'Corporate Office Security',
-    photo: '15',
-    text: 'Access monitoring, visitor management and premises surveillance for corporate offices, business parks and commercial workplaces.',
-  },
-  {
-    title: 'Industrial Security',
-    photo: '13',
-    text: 'Gate control, employee and visitor verification, material movement checks and protection of industrial assets.',
-  },
-  {
-    title: 'Commercial Security',
-    photo: '26',
-    text: 'Professional guards to help protect employees, visitors, property and business assets in commercial buildings.',
-  },
-  {
-    title: 'Residential Security',
-    photo: '29',
-    text: 'Entrance monitoring, visitor and vehicle management, and common-area vigilance for residential apartment communities.',
-  },
-];
-
 // Shared by the homepage and Services page, with one controller per section.
-export default function HomeSecuritySolutions() {
+export default function HomeSecuritySolutions({
+  services = existingServices,
+  allowServiceLinks = false,
+}) {
   const [active, setActive] = useState(0);
   const runway = useRef(null);
   const stage = useRef(null);
@@ -50,11 +21,29 @@ export default function HomeSecuritySolutions() {
       services.length,
       setActive,
     );
+    const requested = allowServiceLinks
+      ? services.findIndex(
+          (service) => service.id === new URLSearchParams(window.location.search).get('service'),
+        )
+      : -1;
+    let selectionFrame;
+    if (requested >= 0) {
+      selectionFrame = requestAnimationFrame(() => {
+        const headerHeight =
+          document.querySelector('header')?.getBoundingClientRect().height || 104;
+        window.scrollTo({
+          top: runway.current.getBoundingClientRect().top + window.scrollY - headerHeight - 12,
+          behavior: 'instant',
+        });
+        controller.current?.select(requested);
+      });
+    }
     return () => {
+      cancelAnimationFrame(selectionFrame);
       controller.current?.destroy();
       controller.current = null;
     };
-  }, []);
+  }, [services, allowServiceLinks]);
   const select = (index) => {
     if (controller.current) controller.current.select(index);
     else setActive(index);
@@ -124,24 +113,34 @@ export default function HomeSecuritySolutions() {
                     aria-hidden={active !== index}
                     inert={active !== index}
                   >
-                    <div className={styles.imageFrame}>
+                    <div
+                      className={`${styles.imageFrame} ${service.fillImage ? styles.filledImageFrame : ''}`}
+                    >
                       <a
                         href="/contact-us"
                         aria-label={`Enquire about ${service.title.toLowerCase()}`}
                       >
-                        <img
-                          src={`/assets/hitech/team-${service.photo}.jpeg`}
-                          alt={
-                            service.photo === '24'
-                              ? 'Hi-Tech Protection Security personnel'
-                              : 'Hi-Tech Protection Security personnel and training'
-                          }
-                          className={service.photo === '24' ? styles.bankPhoto : undefined}
-                          loading="eager"
-                          decoding="async"
-                          width="1440"
-                          height="1080"
-                        />
+                        {service.image || service.photo ? (
+                          <img
+                            src={service.image || `/assets/hitech/team-${service.photo}.jpeg`}
+                            alt={
+                              service.imageAlt ||
+                              (service.photo === '24'
+                                ? 'Hi-Tech Protection Security personnel'
+                                : 'Hi-Tech Protection Security personnel and training')
+                            }
+                            className={service.photo === '24' ? styles.bankPhoto : undefined}
+                            loading="eager"
+                            decoding="async"
+                            width="1440"
+                            height="1080"
+                          />
+                        ) : (
+                          <div className={styles.imagePlaceholder}>
+                            <span>{service.title}</span>
+                            <small>Service image coming soon</small>
+                          </div>
+                        )}
                       </a>
                     </div>
                     <div className={styles.details}>

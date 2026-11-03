@@ -4,6 +4,7 @@ import {
   HomeWhyChooseUs,
   HomeWorkGallery,
 } from '../components/HomeEnhancements';
+import HomeCompanyStatistics from '../components/HomeCompanyStatistics';
 import HomeHeaderHeroSection from '../components/HomeHeaderHeroSection';
 import HomeMarqueeSection from '../components/HomeMarqueeSection';
 import HomeHomeAboutSection from '../components/HomeHomeAboutSection';
@@ -25,6 +26,7 @@ export default function Home() {
         <HomeHomeAboutSection />
         <HomeServicesShowcase />
         <HomeWhoWeAre />
+        <HomeCompanyStatistics />
         <HomeWhyChooseUs />
         <HomeSecuritySolutions />
         <HomeWorkGallery />

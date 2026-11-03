@@ -1,7 +1,6 @@
 .section {
   position: relative;
-  height: 460vh;
-  height: 460svh;
+  height: var(--gallery-scroll-height, 360svh);
   background: var(--background, #fdf9f1);
   color: var(--_neutral-color---500, #050900);
 }
@@ -76,7 +75,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: clamp(280px, 28vw, 440px);
+  width: clamp(320px, 34vw, 560px);
   margin: 0;
   padding: 16px;
   border-radius: 16px;
@@ -133,9 +132,6 @@
   border-radius: 50%;
 }
 @media (max-width: 767px) {
-  .section {
-    height: 400svh;
-  }
   .sticky {
     min-height: 560px;
   }
@@ -155,7 +151,7 @@
     top: 230px;
   }
   .card {
-    width: 280px;
+    width: min(86vw, 360px);
     padding: 12px;
   }
   .card > img {

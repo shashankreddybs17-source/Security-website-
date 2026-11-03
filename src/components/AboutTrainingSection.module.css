@@ -1,0 +1,117 @@
+.section {
+  padding: var(--layout-section-half, 32px) 0;
+  background: #fdf9f1;
+  color: #070616;
+  font-family: var(--_font-family---body, 'DM Sans', sans-serif);
+}
+.section *,
+.section *::before {
+  box-sizing: border-box;
+}
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+}
+.content {
+  min-width: 0;
+}
+.label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+.label::before {
+  content: '';
+  width: 28px;
+  height: 3px;
+  flex: none;
+  background: #f3df04;
+}
+.content h2 {
+  margin: 0 0 24px;
+  font-family: var(--_font-family---heading, 'Archivo', sans-serif);
+  font-size: clamp(28px, 3.2vw, 46px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  overflow-wrap: break-word;
+}
+.description {
+  margin: 0;
+  max-width: 52ch;
+  color: var(--site-muted, #5d5c5c);
+  font-size: 16px;
+  line-height: 1.8;
+}
+.supporting {
+  margin: 24px 0 0;
+  padding-left: 14px;
+  border-left: 3px solid #f3df04;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+.media {
+  margin: 0;
+  min-width: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+.section[data-motion='ready'] [data-reveal] {
+  transform: translateY(12px);
+  transition: transform 500ms ease;
+}
+.section[data-visible='true'] [data-reveal] {
+  transform: none;
+}
+@media (max-width: 991px) {
+  .layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+  .content h2 {
+    font-size: 32px;
+  }
+  .description {
+    font-size: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  .content h2 {
+    font-size: clamp(28px, 7vw, 38px);
+  }
+  .label {
+    letter-spacing: 1.5px;
+  }
+  .description {
+    max-width: none;
+  }
+  .media {
+    border-radius: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section[data-motion='ready'] [data-reveal] {
+    transform: none;
+    transition: none;
+  }
+}

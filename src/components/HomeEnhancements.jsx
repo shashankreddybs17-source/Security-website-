@@ -1,40 +1,23 @@
 import { useEffect, useRef } from 'react';
 import { ArrowUpRight, ShieldCheck, UserCheck, ClipboardCheck, Handshake } from 'lucide-react';
+import { allServices } from '../data/services';
 import styles from './HomeEnhancements.module.css';
 
 const services = [
-  {
-    title: 'Hotels',
-    photo: '26',
-    text: 'Security support for entrances, guest areas and parking zones, helping maintain a welcoming environment.',
-  },
-  {
-    title: 'Banks & financial institutions',
-    photo: '24',
-    text: 'Vigilance at entrances and sensitive areas, supported by access control and visitor management.',
-  },
-  {
-    title: 'Corporate offices',
-    photo: '15',
-    text: 'Access monitoring, visitor management and premises surveillance for offices and business parks.',
-  },
-  {
-    title: 'Factories & industrial units',
-    photo: '13',
-    text: 'Gate control, verification and material movement checks, with attention to valuable industrial assets.',
-  },
-  {
-    title: 'Commercial buildings',
-    photo: '23',
-    image: '/assets/hitech/commercial-building-landscape.png',
-    text: 'Professional guards to help protect employees, visitors, property and business assets.',
-  },
-  {
-    title: 'Residential apartments',
-    photo: '28',
-    text: 'Entrance monitoring, visitor and vehicle management, and common-area vigilance for communities.',
-  },
-];
+  'supervisor-services',
+  'housekeeping-services',
+  'gunman-services',
+  'corporate-office-security',
+  'bank-security',
+  'bodyguard-services',
+].map((id) => {
+  const service = allServices.find((entry) => entry.id === id);
+  return {
+    ...service,
+    image: service.image || `/assets/hitech/team-${service.photo}.jpeg`,
+    imageAlt: service.imageAlt || `${service.title} personnel`,
+  };
+});
 const principles = [
   {
     title: 'Our Mission',
@@ -152,15 +135,15 @@ export function HomeServicesShowcase() {
           {services.map((service, index) => (
             <a
               className={styles.serviceCard}
-              href="/services"
+              href={`/services?service=${service.id}`}
               key={service.title}
               data-reveal
               aria-label={`Explore ${service.title.toLowerCase()} security coverage`}
             >
               <div className={styles.servicePhoto}>
                 <img
-                  src={service.image || photoUrl(service.photo)}
-                  alt="Hi-Tech Protection Security personnel"
+                  src={service.image}
+                  alt={service.imageAlt}
                   loading="lazy"
                   width="1280"
                   height="960"
@@ -179,6 +162,9 @@ export function HomeServicesShowcase() {
               </div>
             </a>
           ))}
+        </div>
+        <div className={styles.servicesAction}>
+          <LinkButton href="/services">More Services</LinkButton>
         </div>
       </div>
     </Section>

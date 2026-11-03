@@ -73,8 +73,9 @@ export default function AboutStorySection() {
                     <h2 className="story-counter-title">{'7'}</h2>
                     <h2 className="story-counter-title">{'8'}</h2>
                     <h2 className="story-counter-title">{'9'}</h2>
-                    <h2 className="story-counter-title">{'2'}</h2>
+                    <h2 className="story-counter-title">{'8'}</h2>
                   </div>
+                  <h2 className="story-counter-title">{'+'}</h2>
                 </div>
                 <div className="story-counter-wrapper">
                   <div
@@ -82,7 +83,7 @@ export default function AboutStorySection() {
                     style={{ opacity: '0' }}
                     className="story-counter-text"
                   >
-                    {'Years \u2014 Sample'}
+                    {'Years of Experience'}
                   </div>
                 </div>
               </div>
@@ -98,7 +99,7 @@ export default function AboutStorySection() {
                     }}
                     className="story-number"
                   >
-                    <h2 className="story-counter-title">{'6'}</h2>
+                    <h2 className="story-counter-title">{'9'}</h2>
                     <h2 className="story-counter-title">{'1'}</h2>
                     <h2 className="story-counter-title">{'2'}</h2>
                     <h2 className="story-counter-title">{'3'}</h2>
@@ -127,28 +128,9 @@ export default function AboutStorySection() {
                     <h2 className="story-counter-title">{'7'}</h2>
                     <h2 className="story-counter-title">{'8'}</h2>
                     <h2 className="story-counter-title">{'9'}</h2>
-                    <h2 className="story-counter-title">{'5'}</h2>
-                  </div>
-                  <div
-                    style={{
-                      transform:
-                        'translate3d(0, -1000%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)',
-                    }}
-                    className="story-number"
-                  >
-                    <h2 className="story-counter-title">{'0'}</h2>
-                    <h2 className="story-counter-title">{'1'}</h2>
-                    <h2 className="story-counter-title">{'2'}</h2>
-                    <h2 className="story-counter-title">{'3'}</h2>
-                    <h2 className="story-counter-title">{'4'}</h2>
-                    <h2 className="story-counter-title">{'5'}</h2>
-                    <h2 className="story-counter-title">{'6'}</h2>
-                    <h2 className="story-counter-title">{'7'}</h2>
-                    <h2 className="story-counter-title">{'8'}</h2>
                     <h2 className="story-counter-title">{'9'}</h2>
-                    <h2 className="story-counter-title">{'0'}</h2>
                   </div>
-                  <h2 className="story-counter-title">{'+'}</h2>
+                  <h2 className="story-counter-title">{'%'}</h2>
                 </div>
                 <div className="story-counter-wrapper">
                   <div
@@ -156,7 +138,7 @@ export default function AboutStorySection() {
                     style={{ opacity: '0' }}
                     className="story-counter-text"
                   >
-                    {'Projects \u2014 Sample'}
+                    {'On-Time Reporting'}
                   </div>
                 </div>
               </div>
@@ -211,7 +193,7 @@ export default function AboutStorySection() {
                     style={{ opacity: '0' }}
                     className="story-counter-text"
                   >
-                    {'Response \u2014 Sample'}
+                    {'Response'}
                   </div>
                 </div>
               </div>
@@ -266,7 +248,7 @@ export default function AboutStorySection() {
                     style={{ opacity: '0' }}
                     className="story-counter-text"
                   >
-                    {'Satisfaction \u2014 Sample'}
+                    {'Satisfaction'}
                   </div>
                 </div>
               </div>

@@ -39,7 +39,7 @@ export function BlogFeaturedArticle({
     <article className={styles.featured} aria-labelledby={headingId}>
       <a href={articleUrl(post)} className={styles.featuredPhoto} aria-label={`Read ${post.title}`}>
         <img
-          src={post.image}
+          src={post.featuredImage || post.image}
           alt="HI-TECH personnel taking part in practical workplace safety training"
           width="1280"
           height="960"

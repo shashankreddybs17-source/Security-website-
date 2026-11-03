@@ -30,8 +30,14 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
   let burst = newBurst();
   const clamp = (index) => Math.max(0, Math.min(count - 1, index));
   const start = () => runway.getBoundingClientRect().top + win.scrollY - top;
-  const end = () =>
-    start() + (pinned ? (count - 1) * step : Math.max(0, stageHeight + top + 24 - win.innerHeight));
+  const end = () => {
+    if (pinned) return start() + (count - 1) * step;
+    // A tall stage cannot stick. Keep stepping while a substantial portion is
+    // visible, including when its bottom already fits in the viewport. The old
+    // bottom-at-viewport boundary disabled wheel selection in this position.
+    const visibleHeight = Math.min(stageHeight, Math.max(160, (win.innerHeight - top) / 2));
+    return start() + Math.max(0, stageHeight - visibleHeight);
+  };
   const activate = (index) => {
     const next = clamp(index);
     if (next === current) return;
@@ -43,19 +49,17 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
     motionFrame = 0;
     motion = null;
   };
-  const moveTo = (target) => {
+  const moveTo = (target, direction = 0) => {
     stopMotion();
-    if (Math.abs(target - win.scrollY) < 1) return;
-    motion = { from: win.scrollY, target, started: win.performance.now() };
+    motion = { from: win.scrollY, target, direction, started: win.performance.now() };
     const tick = () => {
       motionFrame = 0;
       if (disposed || !motion) return;
       const progress = Math.min(1, (win.performance.now() - motion.started) / 280);
       const eased = progress * progress * (3 - 2 * progress);
-      win.scrollTo({
-        top: motion.from + (motion.target - motion.from) * eased,
-        behavior: 'instant',
-      });
+      const position = motion.from + (motion.target - motion.from) * eased;
+      if (progress === 1 || Math.abs(position - win.scrollY) > 0.5)
+        win.scrollTo({ top: position, behavior: 'instant' });
       if (progress < 1) motionFrame = win.requestAnimationFrame(tick);
       else motion = null;
     };
@@ -64,21 +68,20 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
   const sync = () => {
     frame = 0;
     if (!enabled || motion) return;
-    // Some browsers make momentum events non-cancelable. Do not let their
-    // native movement reset the service while a gesture is accumulating or
-    // skip the service already selected by this gesture.
+    // A wheel gesture owns its selected index, not the browser's scroll position.
+    // Never pull native scroll, scrollbar dragging or restoration back to holdY.
     if (
       (burst.capturing || burst.handled) &&
       !burst.pass &&
-      win.performance.now() - burst.time < 180
-    ) {
-      if (holdY !== null && Math.abs(win.scrollY - holdY) > 1)
-        win.scrollTo({ top: holdY, behavior: 'instant' });
+      win.performance.now() - burst.time < 180 &&
+      win.scrollY >= start() - 1 &&
+      win.scrollY <= end() + 1
+    )
       return;
-    }
+    // Only a pinned runway encodes service progress in the page position.
+    // In flow mode this interval is just the visible part of a tall section;
+    // crossing it must not force the first/last service or undo a tab click.
     if (pinned) activate(Math.round((win.scrollY - start()) / step));
-    else if (win.scrollY < start() - 1) activate(0);
-    else if (win.scrollY > end() + 1) activate(count - 1);
   };
   const scroll = () => {
     if (!disposed && !frame) frame = win.requestAnimationFrame(sync);
@@ -93,6 +96,9 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
     const header = runway.ownerDocument.querySelector('header');
     const nextTop =
       Math.ceil(header?.getBoundingClientRect().height || (win.innerWidth < 992 ? 90 : 104)) + 12;
+    // The image height depends on this inset. Apply it before reading the stage
+    // so the pinning decision uses the fitted layout, including after a resize.
+    runway.style.setProperty('--services-top', `${nextTop}px`);
     const nextHeight = Math.ceil(stage.getBoundingClientRect().height);
     const nextStep = Math.round(Math.max(320, Math.min(480, win.innerHeight * 0.5)));
     const nextEnabled = media.matches && nextHeight > 0;
@@ -124,8 +130,10 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
     scroll();
   };
   const select = (index) => {
+    const previous = current;
     activate(index);
-    if (pinned) moveTo(start() + current * step);
+    // Flow mode still needs a transition lifecycle even without vertical travel.
+    moveTo(pinned ? start() + current * step : win.scrollY, Math.sign(current - previous));
   };
   const wheel = (event) => {
     if (
@@ -138,6 +146,12 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
       )
     )
       return;
+    // Non-cancelable momentum belongs to native scrolling. Do not fight it
+    // with corrective scrollTo calls or leave an old gesture locked.
+    if (!event.cancelable) {
+      reset();
+      return;
+    }
     const delta =
       event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? win.innerHeight : 1);
     const direction = Math.sign(delta);
@@ -147,10 +161,16 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
     const pixelInput = event.deltaMode === 0;
     const fineInput =
       pixelInput && (magnitude < 50 || event.deltaX !== 0 || !Number.isInteger(delta));
-    const fresh = now - burst.time > 180 || direction !== burst.direction;
+    const discreteInput =
+      event.deltaMode !== 0 || (magnitude >= 50 && Number.isInteger(delta) && !event.deltaX);
+    const fresh =
+      now - burst.time > 180 ||
+      direction !== burst.direction ||
+      (burst.handled && !motion && !burst.trackpad && discreteInput);
     // A new finger stroke can arrive before the previous inertial tail ends.
     const impulse =
       !fresh &&
+      !motion &&
       burst.handled &&
       burst.trackpad &&
       now - burst.handledAt >= 160 &&
@@ -165,6 +185,7 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
     // Stable/renewed movement is continued intent; a decaying tail is not.
     // This permits a long two-finger drag without requiring a deliberate pause.
     if (
+      !motion &&
       burst.handled &&
       burst.trackpad &&
       now - burst.handledAt >= 320 &&
@@ -184,14 +205,26 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
     burst.peak = Math.max(burst.peak, magnitude);
     burst.time = now;
     if (burst.pass) return;
-    const y = burst.capturing && holdY !== null ? holdY : win.scrollY,
+    const y = win.scrollY,
       first = start(),
       last = end();
-    const enteringDown = direction > 0 && y < first && y + delta >= first;
-    const enteringUp = direction < 0 && y > last && y + delta <= last;
+    const enteringDown = direction > 0 && y < first - 1 && y + delta >= first;
+    const enteringUp = direction < 0 && y > last + 1 && y + delta <= last;
     const prevent = () => {
       if (event.cancelable) event.preventDefault();
     };
+    // Complete the current step before accepting more input in that direction.
+    // Reversals may cancel it and return to the adjacent service immediately.
+    if (motion && motion.direction === direction) {
+      prevent();
+      return;
+    }
+    if (y < first - 1 || y > last + 1) {
+      if (!enteringDown && !enteringUp) {
+        reset();
+        return;
+      }
+    }
     if (burst.handled && holdY !== null) {
       prevent();
       scroll();
@@ -199,9 +232,9 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
     }
     if (enteringDown || enteringUp) {
       prevent();
-      activate(enteringDown ? 0 : count - 1);
+      if (pinned) activate(enteringDown ? 0 : count - 1);
       holdY = enteringDown ? first : last;
-      moveTo(holdY);
+      moveTo(holdY, direction);
       burst.handled = true;
       burst.handledAt = now;
       return;

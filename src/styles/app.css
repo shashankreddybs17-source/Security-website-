@@ -1,6 +1,7 @@
 @layer theme, utilities;
 @import 'tailwindcss/theme.css' layer(theme);
-@import 'tailwindcss/utilities.css' layer(utilities);
+@import 'tailwindcss/utilities.css' layer(utilities) source(none);
+/* Keep production utilities independent of checkout files and build directories. */
 @source '../**/*.{js,jsx}';
 /* Preserve the reference reset and typography: Tailwind preflight is omitted. */
 html {

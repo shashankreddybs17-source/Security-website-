@@ -263,3 +263,108 @@
     transition: none !important;
   }
 }
+
+.servicesDropdown {
+  position: relative;
+}
+.servicesRow {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.servicesToggle {
+  display: grid;
+  place-items: center;
+  min-width: 32px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--site-yellow, #f3df04);
+  cursor: pointer;
+}
+.servicesToggle[aria-expanded='true'] svg {
+  transform: rotate(180deg);
+}
+.servicesSubmenu {
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 180ms;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 290px;
+  max-height: calc(100dvh - 140px);
+  overflow-y: auto;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  border: 1px solid #f3df043d;
+  border-radius: 12px;
+  background: var(--site-navy, #070616);
+  box-shadow: 0 12px 24px #07061628;
+}
+.servicesSubmenu a {
+  display: block;
+  padding: 11px 12px;
+  border-radius: 6px;
+  color: var(--site-cream, #fdf9f1);
+  font-size: 15px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+.servicesSubmenu a:hover,
+.servicesSubmenu a:focus-visible {
+  color: var(--site-yellow, #f3df04);
+  background: #fdf9f10d;
+}
+@media (max-width: 991px) {
+  .servicesRow {
+    justify-content: space-between;
+    border-bottom: 1px solid #fdf9f11f;
+  }
+  .servicesRow .mobileLink {
+    flex: 1;
+    border-bottom: 0;
+  }
+  .servicesToggle {
+    min-width: 44px;
+  }
+  .servicesSubmenu {
+    position: static;
+    width: 100%;
+    max-height: none;
+    border: 0;
+    padding: 0 0 8px 8px;
+    box-shadow: none;
+  }
+}
+
+.servicesSubmenu[data-open='true'] {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.servicesSubmenu a[aria-current='true'] {
+  color: #f3df04;
+  background: #f3df0414;
+}
+@media (max-width: 991px) {
+  .servicesSubmenu {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+  .servicesSubmenu[data-open='true'] {
+    max-height: 650px;
+    padding-bottom: 8px;
+  }
+}

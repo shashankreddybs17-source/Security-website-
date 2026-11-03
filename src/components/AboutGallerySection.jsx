@@ -1,4 +1,5 @@
 ﻿import { useEffect, useRef } from 'react';
+import { galleryMetrics } from '../lib/galleryScroll';
 import styles from './AboutGallerySection.module.css';
 
 const photos = [
@@ -46,26 +47,29 @@ export default function AboutGallerySection() {
     const render = () => {
       frame = 0;
       if (disposed || !section.current || !stage.current || reducedMotion.matches) return;
-      const bounds = section.current.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      const progress = Math.max(
-        0,
-        Math.min(1, -bounds.top / Math.max(1, bounds.height - viewportHeight)),
-      );
       const width = stage.current.clientWidth;
       const firstCard = cards.current[0];
       if (!firstCard) return;
-      const cardWidth = firstCard.offsetWidth;
-      const spacing = cardWidth + Math.min(190, width * 0.13);
-      const anchor = width < 600 ? (width - cardWidth) / 2 : width * 0.23;
-      // Allow the final card to leave the stage, revealing the background lettering.
-      const distance = (photos.length - 1) * spacing + anchor + cardWidth + 40;
+      const { spacing, anchor, distance } = galleryMetrics(
+        width,
+        firstCard.offsetWidth,
+        photos.length,
+      );
+      const stickyHeight = stage.current.parentElement.offsetHeight;
+      const scrollHeight = `${stickyHeight + distance}px`;
+      if (section.current.style.getPropertyValue('--gallery-scroll-height') !== scrollHeight)
+        section.current.style.setProperty('--gallery-scroll-height', scrollHeight);
+      const bounds = section.current.getBoundingClientRect();
+      const progress = Math.max(
+        0,
+        Math.min(1, -bounds.top / Math.max(1, bounds.height - stickyHeight)),
+      );
       cards.current.forEach((card, index) => {
         if (!card) return;
         const offset = index * spacing - progress * distance;
         const separation = Math.min(1, Math.abs(offset) / spacing);
-        const scale = 1 - separation * 0.22;
-        const float = index % 2 === 0 ? 0 : -48;
+        const scale = 1 - separation * 0.06;
+        const float = index % 2 === 0 ? 0 : -24;
         const x = anchor + offset;
         card.style.transform = `translate3d(${x}px, ${float}px, 0) scale(${scale})`;
         card.style.filter = 'none';
@@ -89,6 +93,7 @@ export default function AboutGallerySection() {
       window.removeEventListener('resize', schedule);
       reducedMotion.removeEventListener('change', schedule);
       observer?.disconnect();
+      section.current?.style.removeProperty('--gallery-scroll-height');
     };
   }, []);
 

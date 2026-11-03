@@ -3,6 +3,7 @@
     slug: 'preparing-your-workplace-for-security-coverage',
     title: 'Preparing Your Workplace for Security Coverage',
     image: '/assets/hitech/team-10.jpeg',
+    featuredImage: '/assets/hitech/team-06.jpeg',
     paragraphs: [
       'A useful security discussion starts with a clear picture of your premises. Note the entrances, visitor areas, parking zones and daily routines that a security team would need to understand.',
       'Prepare your preferred coverage hours, anticipated start date and the main concerns you want to address. Include any arrangements for deliveries, contractors or visitors.',

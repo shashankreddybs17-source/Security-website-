@@ -237,3 +237,89 @@
     translate: none;
   }
 }
+
+.imagePlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: 24px;
+  text-align: center;
+  background: var(--site-navy, #070616);
+  color: var(--site-yellow, #f3df04);
+  font-size: 24px;
+}
+.imagePlaceholder small {
+  color: var(--site-cream, #fdf9f1);
+  font-size: 14px;
+}
+
+.imageFrame.filledImageFrame {
+  padding: 0;
+  overflow: hidden;
+}
+.filledImageFrame img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Keep the complete desktop service stage below the sticky navbar. */
+@media (min-width: 768px) {
+  .layout {
+    row-gap: 16px;
+  }
+  .introduction h2 {
+    font-size: clamp(28px, 2.5vw, 44px);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .navigation {
+    padding: 12px 20px;
+  }
+  .tab {
+    min-height: 44px;
+    padding: 8px 0;
+  }
+  .imageFrame {
+    padding: 12px;
+  }
+  .imageFrame img {
+    height: clamp(160px, calc(100dvh - var(--services-top, 116px) - 260px), 420px);
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+  .details {
+    padding: 16px 20px;
+  }
+  .titleLink h4 {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .details p {
+    margin-bottom: 16px;
+  }
+}
+@media (min-width: 768px) and (max-height: 680px) {
+  .introduction h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+  .introduction p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .navigation {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .tab {
+    padding: 6px 0;
+    font-size: 16px;
+  }
+}

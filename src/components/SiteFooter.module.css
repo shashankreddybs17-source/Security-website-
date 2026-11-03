@@ -61,16 +61,14 @@
   margin: 0;
   padding: 0;
 }
-.quickLinks a,
-.bottomLinks a {
+.quickLinks a {
   color: #dedde5;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
   text-decoration: none;
 }
-.quickLinks a:hover,
-.bottomLinks a:hover {
+.quickLinks a:hover {
   color: var(--site-yellow, #f3df04);
 }
 .contact {
@@ -133,16 +131,10 @@ a.contactItem:hover strong {
 }
 .bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   gap: 24px;
   padding-block: 12px;
-}
-.bottomLinks {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
-  flex: none;
 }
 .bottom p {
   margin: 0;

@@ -70,11 +70,6 @@ export default function SiteFooter() {
       </div>
       <div className={styles.bottomBar}>
         <div className={`${styles.container} ${styles.bottom}`}>
-          <nav aria-label="Footer additional links" className={styles.bottomLinks}>
-            <a href="/services">Services</a>
-            <a href="/blog">Blog</a>
-            <a href="/faqs">FAQ</a>
-          </nav>
           <p>
             Copyright &copy; {new Date().getFullYear()} Hi-Tech Protection Security. All rights
             reserved.

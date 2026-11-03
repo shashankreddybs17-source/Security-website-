@@ -1,5 +1,6 @@
 import AboutHeroSection from '../components/AboutHeroSection';
 import AboutAboutSection from '../components/AboutAboutSection';
+import AboutTrainingSection from '../components/AboutTrainingSection';
 import AboutApproachSection from '../components/AboutApproachSection';
 import AboutStorySection from '../components/AboutStorySection';
 import AboutTeamSection from '../components/AboutTeamSection';
@@ -14,6 +15,7 @@ export default function About() {
       <main className="main-wrapper">
         <AboutHeroSection />
         <AboutAboutSection />
+        <AboutTrainingSection />
         <AboutApproachSection />
         <AboutStorySection />
         <AboutTeamSection />

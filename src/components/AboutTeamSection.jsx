@@ -63,6 +63,46 @@ export default function AboutTeamSection() {
               </figcaption>
             </figure>
           ))}
+          <article className={`${styles.teamInformation} ${styles.teamInformationTop}`}>
+            <span className={styles.informationIcon} aria-hidden="true">
+              <ShieldCheck size={26} />
+            </span>
+            <p className={styles.informationLabel}>EXPERIENCE THAT GUIDES US</p>
+            <h3>
+              Led by experience.
+              <br />
+              Grounded in discipline.
+            </h3>
+            <p>
+              Managed by experienced and trained Ex-Army personnel, our organisation brings
+              alertness, responsibility and leadership to everyday security operations.
+            </p>
+            <ul>
+              <li>Clear communication</li>
+              <li>Professional conduct</li>
+              <li>Responsible supervision</li>
+            </ul>
+          </article>
+          <article className={`${styles.teamInformation} ${styles.teamInformationBottom}`}>
+            <span className={styles.informationIcon} aria-hidden="true">
+              <ShieldCheck size={26} />
+            </span>
+            <p className={styles.informationLabel}>READINESS IN EVERY ROLE</p>
+            <h3>
+              Prepared for the site.
+              <br />
+              Focused on your people.
+            </h3>
+            <p>
+              Practical training and team briefings help our personnel understand their
+              responsibilities and the requirements of each location.
+            </p>
+            <ul>
+              <li>Site-specific duties</li>
+              <li>Visitor and access awareness</li>
+              <li>Teamwork and reporting</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
