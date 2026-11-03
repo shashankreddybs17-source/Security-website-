@@ -104,14 +104,16 @@
   pointer-events: none;
   translate: 0 6px;
   transition:
-    opacity 0.24s ease,
-    translate 0.24s ease;
+    opacity 0.28s ease-in-out,
+    translate 0.28s ease-in-out,
+    visibility 0s linear 0.28s;
 }
 .panel[aria-hidden='false'] {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   translate: 0 0;
+  transition-delay: 0s;
 }
 .imageFrame {
   padding: 20px;
