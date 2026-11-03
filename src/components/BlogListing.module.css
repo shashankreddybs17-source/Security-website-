@@ -21,7 +21,7 @@
   margin-inline: auto;
 }
 .hero {
-  padding: clamp(60px, 6vw, 88px) 0 clamp(64px, 7vw, 100px);
+  padding: clamp(48px, 4vw, 64px) 0 44px;
   background: #f0eee8;
   text-align: center;
 }
@@ -35,6 +35,9 @@
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 2px;
+}
+.hero .eyebrow {
+  margin-bottom: 18px;
 }
 .eyebrow > span,
 .featuredBadge > span {
@@ -62,8 +65,11 @@
   font-size: 16px;
   line-height: 1.7;
 }
+.hero .intro {
+  margin-top: 20px;
+}
 .journal {
-  padding: var(--layout-section-space, 64px) 0;
+  padding: 32px 0 var(--layout-section-space, 64px);
 }
 .preview {
   padding: var(--layout-section-half, 32px) 0;
@@ -384,7 +390,13 @@
     width: calc(100% - 40px);
   }
   .hero {
-    padding: 48px 0 52px;
+    padding: 48px 0 40px;
+  }
+  .hero .eyebrow {
+    margin-bottom: 16px;
+  }
+  .journal {
+    padding-top: 24px;
   }
   .hero h1 {
     font-size: clamp(34px, 7vw, 48px);

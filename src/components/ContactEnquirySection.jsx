@@ -50,7 +50,7 @@ export default function ContactEnquirySection() {
         <div className={styles.panel}>
           <figure className={styles.photo}>
             <img
-              src="/assets/hitech/uniform-portrait.png"
+              src="/assets/hitech/contact-guard-cream.png"
               alt="Indian security guard in a dark grey uniform holding a radio"
               loading="eager"
               width="1015"

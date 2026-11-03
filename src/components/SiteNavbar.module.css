@@ -6,11 +6,11 @@
 }
 
 .header {
-  --navbar-height: 108px;
+  --navbar-height: 104px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 12px clamp(16px, 3vw, 48px);
+  padding: 12px clamp(16px, 3vw, 48px) 8px;
   background: transparent;
   color: var(--site-on-dark, #fdf9f1);
 }
@@ -158,8 +158,8 @@
 }
 @media (max-width: 991px) {
   .header {
-    --navbar-height: 94px;
-    padding: 10px 16px;
+    --navbar-height: 90px;
+    padding: 10px 16px 6px;
   }
   .inner {
     grid-template-columns: minmax(0, 1fr) auto;

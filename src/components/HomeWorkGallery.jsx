@@ -95,10 +95,12 @@ function useScrollCards(section, stage, cards, heading, viewAll) {
 
     const reset = () => {
       root.removeAttribute('data-animated');
+      root.removeAttribute('data-settled');
       for (const name of [
         '--work-viewport',
         '--work-travel',
         '--work-card-width',
+        '--work-step',
         '--work-sticky-top',
       ])
         root.style.removeProperty(name);
@@ -107,6 +109,8 @@ function useScrollCards(section, stage, cards, heading, viewAll) {
         card.style.removeProperty('transform');
         card.style.removeProperty('opacity');
         card.style.removeProperty('z-index');
+        for (const name of ['--work-x', '--work-y', '--work-angle'])
+          card.style.removeProperty(name);
         card.removeAttribute('data-entered');
         card.inert = false;
       });
@@ -154,6 +158,7 @@ function useScrollCards(section, stage, cards, heading, viewAll) {
       }
       const rotation = window.innerWidth < 1100 ? 2.4 : 3.5;
       const angle = (rotation * Math.PI) / 180;
+      const spread = 0.84;
       // A 4:5 portrait card, with room for the rotated top/bottom corners.
       // Width is fitted once on resize; all cards then keep the same scale.
       const cardWidth = Math.floor(
@@ -164,6 +169,19 @@ function useScrollCards(section, stage, cards, heading, viewAll) {
         ...cards.current.filter(Boolean).map((card) => card.offsetHeight),
       );
       const sideInset = 18 + cardHeight * Math.sin(angle);
+      const step = Math.max(
+        0,
+        Math.min(cardWidth * spread, (width - sideInset * 2 - cardWidth) / (gallery.length - 1)),
+      );
+      // Keep the restored card size. If the fan cannot leave readable caption
+      // space, use the existing normal-flow reveal rather than shrinking it.
+      if (cardWidth < 160 || step < 140) {
+        reset();
+        geometry = { mobile: true, viewport: window.innerHeight };
+        measuredSize = sizeKey();
+        return;
+      }
+      root.style.setProperty('--work-step', `${step}px`);
       geometry = {
         offset,
         viewport,
@@ -174,7 +192,7 @@ function useScrollCards(section, stage, cards, heading, viewAll) {
         rotation,
         anchor: sideInset,
         top: Math.max(0, (height - cardHeight) / 2),
-        step: Math.max(0, Math.min(cardWidth * 0.78, (width - sideInset * 2 - cardWidth) / 5)),
+        step,
       };
       measuredSize = sizeKey();
     };
@@ -195,8 +213,7 @@ function useScrollCards(section, stage, cards, heading, viewAll) {
             0,
             Math.min(180, geometry.viewport * 0.3),
           );
-          card.style.transform = `translate3d(0, ${12 * (1 - reveal)}px, 0)`;
-          card.style.opacity = '1';
+          card.style.setProperty('--work-y', `${12 * (1 - reveal)}px`);
         });
         return;
       }
@@ -204,11 +221,23 @@ function useScrollCards(section, stage, cards, heading, viewAll) {
       const progress = clamp(
         (geometry.offset - bounds.top) / Math.max(1, bounds.height - geometry.viewport),
       );
+      root.dataset.settled = String(
+        progress >=
+          cardTiming.lead + (gallery.length - 2) * cardTiming.interval + cardTiming.duration,
+      );
+      const pixelRatio = window.devicePixelRatio || 1;
+      const snap = (value) => Math.round(value * pixelRatio) / pixelRatio;
       cards.current.forEach((card, index) => {
         if (!card) return;
         const pose = cardPose(progress, index, geometry);
-        card.style.transform = `translate3d(${pose.x}px, ${pose.y}px, 0) rotate(${pose.rotation}deg)`;
-        card.style.opacity = String(pose.opacity);
+        const landed =
+          index === 0 ||
+          progress >= cardTiming.lead + (index - 1) * cardTiming.interval + cardTiming.duration;
+        // CSS composes the pose: the site's legacy inline-style fallback must
+        // not reset this independently managed gallery to one shared position.
+        card.style.setProperty('--work-x', `${landed ? snap(pose.x) : pose.x}px`);
+        card.style.setProperty('--work-y', `${snap(pose.y)}px`);
+        card.style.setProperty('--work-angle', `${pose.rotation}deg`);
         card.style.zIndex = String(pose.zIndex);
         if (!pose.entered && card.contains(document.activeElement))
           viewAll.current?.focus({ preventScroll: true });

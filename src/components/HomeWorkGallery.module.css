@@ -104,6 +104,8 @@
   min-width: 0;
   margin: 0;
   aspect-ratio: 4 / 5;
+  opacity: 1;
+  transform: translateY(var(--work-y, 0px));
 }
 .photoButton {
   display: flex;
@@ -111,13 +113,13 @@
   width: 100%;
   height: 100%;
   padding: 10px;
-  border: 1px solid rgba(7, 6, 22, 0.12);
+  border: 1px solid rgba(7, 6, 22, 0.2);
   border-radius: 12px;
   background: #f0eee8;
   color: inherit;
   text-align: left;
   cursor: pointer;
-  box-shadow: 0 12px 32px rgba(7, 6, 22, 0.12);
+  box-shadow: 0 12px 32px rgba(7, 6, 22, 0.16);
 }
 .photo {
   display: block;
@@ -132,7 +134,8 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: contrast(1.06) brightness(1.02);
+  opacity: 1;
+  filter: none;
 }
 .caption {
   display: flex;
@@ -150,6 +153,7 @@
 .caption > span:nth-child(2) {
   flex: 1;
   min-width: 0;
+  overflow-wrap: anywhere;
 }
 .caption > svg {
   flex: none;
@@ -279,27 +283,10 @@
   font-family: var(--_font-family---body);
   font-size: 12px;
 }
-/* One portrait card is visible on desktop before enhancement. Later cards
-   are outside the clipped artboard until their individual scroll intervals. */
+/* Enhance only a measurable deck. The normal-flow grid remains
+   available on smaller/short viewports and when motion is reduced. */
 @media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
-  .stage {
-    display: block;
-    min-height: calc(clamp(220px, 24vw, 340px) * 1.25 + 64px);
-    overflow: clip;
-  }
-  .card {
-    position: absolute;
-    left: calc(100% + 24px);
-    top: 50%;
-    width: var(--work-card-width, clamp(220px, 24vw, 340px));
-    z-index: calc(var(--card-index) + 1);
-    transform: translateY(-50%);
-    transform-origin: center bottom;
-  }
-  .card:first-child {
-    left: 24px;
-  }
-  .captionRail {
+  .work[data-animated='true'] .captionRail {
     display: flex;
     gap: 12px;
     align-items: stretch;
@@ -349,6 +336,7 @@
     gap: 18px;
   }
   .work[data-animated='true'] .stage {
+    display: block;
     grid-area: photos;
     min-height: 0;
     overflow: clip;
@@ -368,13 +356,18 @@
     top: 0;
     width: var(--work-card-width);
     transform-origin: center bottom;
-    will-change: transform;
+    transform: translate(var(--work-x, 0px), var(--work-y, 0px)) rotate(var(--work-angle, 0deg));
+  }
+  [data-animated='true'] .caption {
+    width: min(100%, calc(var(--work-step) - 20px));
+    /* Keep small type upright instead of rasterizing it at the card's angle. */
+    transform: rotate(calc(0deg - var(--work-angle, 0deg)));
   }
   [data-animated='true'] .card[data-entered='false'] {
     pointer-events: none;
   }
-  [data-animated='true'] .card:hover,
-  [data-animated='true'] .card:focus-within {
+  [data-settled='true'] .card:hover,
+  [data-settled='true'] .card:focus-within {
     z-index: 20 !important;
   }
   [data-animated='true'] .footer > .scrollHint {
