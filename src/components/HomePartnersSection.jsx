@@ -2,16 +2,16 @@ import styles from './HomePartnersSection.module.css';
 
 // Original client logos supplied in the Hi-Tech company brochure.
 const clients = [
-  { name: 'Aditya Birla Group', image: 'client-8.png' },
-  { name: 'BSNL', image: 'client-10.png' },
-  { name: 'Mahindra', image: 'client-15.png' },
-  { name: 'Union Bank of India', image: 'client-7.png' },
-  { name: 'Volkswagen', image: 'client-16.png' },
-  { name: 'INOX', image: 'client-14.png' },
-  { name: 'BIG Cinemas', image: 'client-9.png' },
-  { name: 'Damro', image: 'client-11.png' },
-  { name: 'Fabindia', image: 'client-12.png' },
-  { name: 'Girias', image: 'client-13.png' },
+  { name: 'Aditya Birla Group', image: 'client-8.webp' },
+  { name: 'BSNL', image: 'client-10.webp' },
+  { name: 'Mahindra', image: 'client-15.webp' },
+  { name: 'Union Bank of India', image: 'client-7.webp' },
+  { name: 'Volkswagen', image: 'client-16.webp' },
+  { name: 'INOX', image: 'client-14.webp' },
+  { name: 'BIG Cinemas', image: 'client-9.webp' },
+  { name: 'Damro', image: 'client-11.webp' },
+  { name: 'Fabindia', image: 'client-12.webp' },
+  { name: 'Girias', image: 'client-13.webp' },
 ];
 
 const rows = [clients.slice(0, 5), clients.slice(5)];

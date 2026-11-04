@@ -1,6 +1,10 @@
 import { Check } from 'lucide-react';
 
-export default function AboutHeroSection({ title = 'About Us' }) {
+export default function AboutHeroSection({
+  title = 'About Us',
+  image = '/assets/hitech/new-uniform/gate-security.webp',
+  imageAlt = 'Hi-Tech security personnel in new uniforms at a property entrance',
+}) {
   return (
     <section className="hero-section">
       <div className="hero-wrap">
@@ -39,9 +43,9 @@ export default function AboutHeroSection({ title = 'About Us' }) {
       </div>
       <div className="hero-bg">
         <img
-          src="/assets/hitech/new-uniform/gate-security.webp"
+          src={image}
           loading="eager"
-          alt="Hi-Tech security personnel in new uniforms at a property entrance"
+          alt={imageAlt}
           className="hero-bg-image"
           style={{ objectPosition: 'center 25%' }}
         />

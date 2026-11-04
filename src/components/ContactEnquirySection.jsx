@@ -50,8 +50,8 @@ export default function ContactEnquirySection() {
         <div className={styles.panel}>
           <figure className={styles.photo}>
             <img
-              src="/assets/hitech/new-uniform/supervisors.webp"
-              alt="Hi-Tech supervisors in white shirts and black trousers"
+              src="/assets/hitech/new-uniform/converted-old-05.webp"
+              alt="Hi-Tech security personnel standing in formation at an outdoor briefing"
               loading="eager"
               width="584"
               height="1280"

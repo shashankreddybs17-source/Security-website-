@@ -19,7 +19,11 @@ export default function Contact() {
   return (
     <div className="page-wrapper">
       <main className="main-wrapper">
-        <AboutHeroSection title="Contact Us" />
+        <AboutHeroSection
+          title="Contact Us"
+          image="/assets/hitech/new-uniform/contact-uniform-banner.webp"
+          imageAlt="Hi-Tech security personnel assembled for an outdoor briefing"
+        />
         <ContactEnquirySection />
         <section className={styles.section} aria-labelledby="contact-title">
           <div className="container-default w-container">

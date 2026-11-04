@@ -6,15 +6,14 @@
 }
 
 .section {
-  padding: 16px 0 24px;
+  padding: 24px 0 48px;
   background: var(--_secondary-color---500, #070616);
   color: white;
 }
 .panel {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: min(820px, calc(100svh - 210px));
-  min-height: 600px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: stretch;
   overflow: hidden;
   border: 1px solid #ffffff1a;
   border-radius: 16px;
@@ -33,10 +32,8 @@
   object-position: center;
 }
 .formPanel {
-  align-self: center;
-  max-height: 100%;
-  overflow-y: auto;
-  padding: clamp(28px, 3vw, 50px);
+  min-width: 0;
+  padding: clamp(28px, 3vw, 48px);
 }
 .label {
   display: inline-flex;
@@ -65,7 +62,7 @@
 }
 .intro {
   max-width: 420px;
-  margin: 0 0 28px;
+  margin: 0 0 22px;
   color: #c1bfce;
   font-size: 12px;
   line-height: 1.8;
@@ -73,7 +70,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
 }
 .names {
   display: grid;
@@ -182,20 +179,20 @@
   outline: 3px solid var(--_primary-color---300, #f3df04);
   outline-offset: 5px;
 }
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
   .section {
-    padding: 20px 0 32px;
+    padding: 24px 0 40px;
   }
   .panel {
-    height: auto;
-    min-height: 600px;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    min-height: 0;
   }
   .names {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 14px;
   }
   .formPanel {
-    padding: 28px;
+    padding: clamp(24px, 3vw, 36px);
   }
 }
 @media (max-width: 767px) {
@@ -205,7 +202,6 @@
   .panel {
     grid-template-columns: 1fr;
     min-height: 0;
-    height: auto;
   }
   .photo {
     height: clamp(220px, 42vh, 320px);

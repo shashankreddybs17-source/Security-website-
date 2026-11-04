@@ -4329,8 +4329,8 @@ ul {
 }
 
 .faqs-block.home-faqs-block {
-  grid-column-gap: 100px;
-  grid-row-gap: 100px;
+  grid-column-gap: clamp(48px, 8vw, 140px);
+  grid-row-gap: 48px;
 }
 
 .faqs-content {
@@ -4340,7 +4340,19 @@ ul {
 }
 
 .faqs-content.home-faqs-content {
-  max-width: 300px;
+  max-width: 420px;
+}
+
+.home-faqs-content .section-title {
+  font-size: clamp(40px, 4vw, 64px);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.home-faqs-content .section-except {
+  max-width: 430px;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 .faqs-wrapper {

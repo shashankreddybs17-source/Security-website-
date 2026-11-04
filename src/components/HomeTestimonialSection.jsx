@@ -26,7 +26,7 @@ export default function HomeTestimonialSection() {
                     className="testimonial-slide-block"
                   >
                     <div
-                      data-poster-url="/assets/98e4610959-679f5ed995191a2bd9d5042c-67a325f85209db31fda4e8d3_James-Miller-poster-00001.jpg"
+                      data-poster-url="/assets/98e4610959-679f5ed995191a2bd9d5042c-67a325f85209db31fda4e8d3_James-Miller-poster-00001.webp"
                       data-video-urls="/assets/d2c403ca77-679f5ed995191a2bd9d5042c-67a325f85209db31fda4e8d3_James-Miller-transcode.mp4,/assets/755796acb2-679f5ed995191a2bd9d5042c-67a325f85209db31fda4e8d3_James-Miller-transcode.webm"
                       data-autoplay="true"
                       data-loop="true"
@@ -39,7 +39,7 @@ export default function HomeTestimonialSection() {
                         loop={true}
                         style={{
                           backgroundImage:
-                            'url("/assets/98e4610959-679f5ed995191a2bd9d5042c-67a325f85209db31fda4e8d3_James-Miller-poster-00001.jpg")',
+                            'url("/assets/98e4610959-679f5ed995191a2bd9d5042c-67a325f85209db31fda4e8d3_James-Miller-poster-00001.webp")',
                         }}
                         muted={true}
                         playsInline={true}
@@ -91,7 +91,7 @@ export default function HomeTestimonialSection() {
                 <div className="testimonial-slide w-slide">
                   <div className="testimonial-slide-block">
                     <div
-                      data-poster-url="/assets/f8d79a51b7-679f5ed995191a2bd9d5042c-67a32ed86e0470876ec003e3_Emily-Carter-poster-00001.jpg"
+                      data-poster-url="/assets/f8d79a51b7-679f5ed995191a2bd9d5042c-67a32ed86e0470876ec003e3_Emily-Carter-poster-00001.webp"
                       data-video-urls="/assets/19a23e9b98-679f5ed995191a2bd9d5042c-67a32ed86e0470876ec003e3_Emily-Carter-transcode.mp4,/assets/22f2440844-679f5ed995191a2bd9d5042c-67a32ed86e0470876ec003e3_Emily-Carter-transcode.webm"
                       data-autoplay="true"
                       data-loop="true"
@@ -104,7 +104,7 @@ export default function HomeTestimonialSection() {
                         loop={true}
                         style={{
                           backgroundImage:
-                            'url("/assets/f8d79a51b7-679f5ed995191a2bd9d5042c-67a32ed86e0470876ec003e3_Emily-Carter-poster-00001.jpg")',
+                            'url("/assets/f8d79a51b7-679f5ed995191a2bd9d5042c-67a32ed86e0470876ec003e3_Emily-Carter-poster-00001.webp")',
                         }}
                         muted={true}
                         playsInline={true}
@@ -150,7 +150,7 @@ export default function HomeTestimonialSection() {
                 <div className="testimonial-slide w-slide">
                   <div className="testimonial-slide-block">
                     <div
-                      data-poster-url="/assets/58ade4748c-679f5ed995191a2bd9d5042c-67a32f06d990090b4a4d819d_David-Johnson-poster-00001.jpg"
+                      data-poster-url="/assets/58ade4748c-679f5ed995191a2bd9d5042c-67a32f06d990090b4a4d819d_David-Johnson-poster-00001.webp"
                       data-video-urls="/assets/14da31b3bb-679f5ed995191a2bd9d5042c-67a32f06d990090b4a4d819d_David-Johnson-transcode.mp4,/assets/fc74ff4211-679f5ed995191a2bd9d5042c-67a32f06d990090b4a4d819d_David-Johnson-transcode.webm"
                       data-autoplay="true"
                       data-loop="true"
@@ -163,7 +163,7 @@ export default function HomeTestimonialSection() {
                         loop={true}
                         style={{
                           backgroundImage:
-                            'url("/assets/58ade4748c-679f5ed995191a2bd9d5042c-67a32f06d990090b4a4d819d_David-Johnson-poster-00001.jpg")',
+                            'url("/assets/58ade4748c-679f5ed995191a2bd9d5042c-67a32f06d990090b4a4d819d_David-Johnson-poster-00001.webp")',
                         }}
                         muted={true}
                         playsInline={true}
