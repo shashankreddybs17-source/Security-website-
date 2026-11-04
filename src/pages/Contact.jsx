@@ -6,11 +6,14 @@ import styles from './Contact.module.css';
 
 const officeAddress =
   'No. 28, Shop No. 2, 3rd Cross, Vinayaka Nagar, JP Nagar 5th Phase, Bengaluru - 560 078';
-const officeQuery = encodeURIComponent(officeAddress);
-const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${officeQuery}`;
-const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${officeQuery}`;
-// Search the supplied address rather than inventing a business pin or coordinates.
-const mapEmbedUrl = `https://maps.google.com/maps?q=${officeQuery}&z=16&output=embed`;
+// Verified from the Google Maps embed supplied by the office owner. Use the
+// place ID for both actions so Google does not geocode the written address.
+const officeQuery = encodeURIComponent('12.9136062,77.5911957');
+const officePlaceId = 'ChIJX2VQMaEVrjsRIoH9kk11Nf4';
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${officeQuery}&query_place_id=${officePlaceId}`;
+const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${officeQuery}&destination_place_id=${officePlaceId}`;
+const mapEmbedUrl =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4501.613969393963!2d77.58862077563006!3d12.913611416145393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15a13150655f%3A0xfe35754d92fd8122!2s3rd%20Cross%20Rd%2C%201489%2C%2017th%20A%20Main%20Road%2C%20Marenahalli%2C%202nd%20Phase%2C%20J.%20P.%20Nagar%2C%20Bengaluru%2C%20Karnataka%20560041!5e1!3m2!1sen!2sin!4v1793769946513!5m2!1sen!2sin';
 
 export default function Contact() {
   return (
@@ -132,9 +135,9 @@ export default function Contact() {
               <div className={styles.mapFrame}>
                 <iframe
                   src={mapEmbedUrl}
-                  title="Map of the Hi-Tech Protection Security office address in JP Nagar 5th Phase, Bengaluru"
+                  title="Hi-Tech Protection Security office location supplied by the owner"
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 />
               </div>
