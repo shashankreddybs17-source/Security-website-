@@ -3,6 +3,7 @@ import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { resolve, relative, dirname, join } from 'node:path';
 import { allServices } from '../src/data/services.js';
 import { blogPosts } from '../src/data/blogPosts.js';
+import { assetReferences } from './asset-references.mjs';
 
 const root = resolve('.');
 function walk(dir) {
@@ -31,13 +32,7 @@ for (const file of [...sources, 'reference-metadata.json']) {
     assert.ok(target, `Unresolved import: ${file}: ${match[1]}`);
     exactFile(target);
   }
-  for (const match of source.matchAll(/\/assets\/[^\s'"`<>)};]+/g)) {
-    for (const candidate of match[0].split(',')) {
-      const asset = candidate.split(/[?#]/)[0];
-      if (asset.includes('${') || asset.endsWith('team-$') || asset.endsWith('team-')) continue;
-      assets.add(asset);
-    }
-  }
+  for (const asset of assetReferences(source)) assets.add(asset);
 }
 for (const service of allServices)
   assets.add(service.image || `/assets/hitech/team-${service.photo}.jpeg`);
