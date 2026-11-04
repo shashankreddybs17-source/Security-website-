@@ -90,10 +90,10 @@ export default function AboutHeaderSection({ activePage = 'about' }) {
           <div className="header-brand-block">
             <a href="/" className="header-brand w-nav-brand">
               <img
-                src="/assets/hitech/logo.png"
+                src="/assets/hitech/logo-clean.webp"
                 loading="eager"
                 alt="Hi-Tech Protection Security"
-                className="header-brand-logo"
+                className="header-brand-logo site-brand-logo"
               />
             </a>
           </div>

@@ -3283,7 +3283,7 @@ ul {
 }
 
 .header-hero-section {
-  background-image: url('/assets/hitech/home-hero-enhanced.png');
+  background-image: url('/assets/hitech/new-uniform/team-lineup.webp');
   background-position: 50%;
   background-size: cover;
   position: relative;
@@ -5389,7 +5389,9 @@ ul {
 
 .cta-section {
   border-bottom: 1px solid var(--_neutral-color---400);
-  background-image: linear-gradient(#070616f0, #070616f0), url('/assets/hitech/team-26.jpeg');
+  background-image:
+    linear-gradient(#070616f0, #070616f0),
+    url('/assets/hitech/new-uniform/commercial-screening.webp');
   background-position:
     0 0,
     50%;

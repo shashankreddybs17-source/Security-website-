@@ -1,3 +1,4 @@
+import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, X } from 'lucide-react';
 import styles from './HomeWorkGallery.module.css';
@@ -11,9 +12,9 @@ const gallery = [
     height: 960,
   },
   {
-    photo: '15',
+    photo: '20',
     title: 'Prepared on site',
-    detail: 'Practical safety instruction',
+    detail: 'On-site team briefing',
     width: 1448,
     height: 1086,
   },
@@ -46,7 +47,7 @@ const gallery = [
     height: 960,
   },
 ];
-const photoUrl = (photo) => `/assets/hitech/team-${photo}.jpeg`;
+const photoUrl = (photo) => approvedTeamPhoto(photo);
 const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
 const mix = (start, end, amount) => start + (end - start) * amount;
 const smooth = (value, start, end) => {

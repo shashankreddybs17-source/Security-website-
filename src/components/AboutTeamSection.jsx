@@ -1,3 +1,4 @@
+import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { ArrowUpRight, ShieldCheck } from 'lucide-react';
 import styles from './AboutReplacements.module.css';
 
@@ -49,7 +50,7 @@ export default function AboutTeamSection() {
           {team.map((person) => (
             <figure className={styles.person} key={person.photo}>
               <img
-                src={`/assets/hitech/team-${person.photo}.jpeg`}
+                src={approvedTeamPhoto(person.photo)}
                 alt={person.detail}
                 loading="lazy"
                 style={{ objectPosition: person.position }}

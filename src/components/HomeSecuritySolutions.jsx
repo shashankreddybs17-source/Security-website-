@@ -1,3 +1,4 @@
+import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { connectServiceScroll } from '../lib/serviceScroll';
@@ -117,7 +118,7 @@ export default function HomeSecuritySolutions({
                       >
                         {service.image || service.photo ? (
                           <img
-                            src={service.image || `/assets/hitech/team-${service.photo}.jpeg`}
+                            src={service.image || approvedTeamPhoto(service.photo)}
                             alt={
                               service.imageAlt ||
                               (service.photo === '24'

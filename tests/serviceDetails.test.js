@@ -51,8 +51,8 @@ for (const service of allServices) {
     assert.ok(html.includes(detail.confirmation));
     assert.ok(html.includes(`aria-label="Enquire about ${service.title}"`));
     assert.ok(html.includes('href="/contact-us"'));
-    const image = service.image || `/assets/hitech/team-${service.photo}.jpeg`;
-    assert.ok(html.includes(image));
+    if (service.image) assert.ok(html.includes(service.image));
+    else assert.ok(html.includes('Service image coming soon'));
     const hero = html.split('</section>')[0];
     assert.equal((hero.match(/<li>/g) || []).length, 4);
     assert.ok(hero.includes('Enquire About This Service'));

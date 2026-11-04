@@ -1,3 +1,4 @@
+import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { useEffect, useRef } from 'react';
 import { ArrowUpRight, ShieldCheck, UserCheck, ClipboardCheck, Handshake } from 'lucide-react';
 import { allServices } from '../data/services';
@@ -5,16 +6,16 @@ import styles from './HomeEnhancements.module.css';
 
 const services = [
   'supervisor-services',
-  'housekeeping-services',
-  'gunman-services',
   'corporate-office-security',
   'bank-security',
+  'gunman-services',
+  'housekeeping-services',
   'bodyguard-services',
 ].map((id) => {
   const service = allServices.find((entry) => entry.id === id);
   return {
     ...service,
-    image: service.image || `/assets/hitech/team-${service.photo}.jpeg`,
+    image: service.image || (service.photo ? approvedTeamPhoto(service.photo) : null),
     imageAlt: service.imageAlt || `${service.title} personnel`,
   };
 });
@@ -61,7 +62,7 @@ const strengths = [
     text: 'Courtesy, honesty, confidentiality and respect are part of the responsibility we bring to each assignment.',
   },
 ];
-const photoUrl = (number) => `/assets/hitech/team-${number}.jpeg`;
+const photoUrl = (number) => approvedTeamPhoto(number);
 
 function Section({ children, className, id, labelledBy }) {
   const ref = useRef(null);
@@ -141,13 +142,21 @@ export function HomeServicesShowcase() {
               aria-label={`Explore ${service.title.toLowerCase()} security coverage`}
             >
               <div className={styles.servicePhoto}>
-                <img
-                  src={service.image}
-                  alt={service.imageAlt}
-                  loading="lazy"
-                  width="1280"
-                  height="960"
-                />
+                {service.image ? (
+                  <img
+                    src={service.image}
+                    alt={service.imageAlt}
+                    loading="lazy"
+                    width="1280"
+                    height="960"
+                  />
+                ) : (
+                  <div className={styles.servicePlaceholder}>
+                    <ShieldCheck size={32} aria-hidden="true" />
+                    <span>{service.title}</span>
+                    <small>Approved photo coming soon</small>
+                  </div>
+                )}
               </div>
               <div className={styles.serviceBody}>
                 <span className={styles.number}>0{index + 1} / SECURITY COVERAGE</span>
@@ -210,7 +219,7 @@ export function HomeWhoWeAre() {
           <figure className={styles.whoMedia}>
             <div className={styles.whoPhoto}>
               <img
-                src={photoUrl('15')}
+                src={photoUrl('31')}
                 alt="HI-TECH personnel in dark uniforms receiving a security and fire safety briefing"
                 width="1448"
                 height="1086"

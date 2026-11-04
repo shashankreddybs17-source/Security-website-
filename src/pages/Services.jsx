@@ -1,3 +1,4 @@
+import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Check } from 'lucide-react';
 import AboutFooterSection from '../components/AboutFooterSection';
@@ -95,8 +96,7 @@ export default function Services() {
       window.removeEventListener(serviceSelectionEvent, select);
     };
   }, []);
-  const image =
-    service?.image || (service?.photo ? `/assets/hitech/team-${service.photo}.jpeg` : null);
+  const image = service?.image || (service?.photo ? approvedTeamPhoto(service.photo) : null);
   return (
     <div className="page-wrapper">
       <main className="main-wrapper">

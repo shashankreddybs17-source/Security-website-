@@ -9,7 +9,7 @@ export default function AboutAboutChooseSection() {
             <div className="about-choose-image-block">
               <div className="about-choose-image-wrap-1">
                 <img
-                  src="/assets/hitech/team-13.jpeg"
+                  src="/assets/hitech/new-uniform/converted-old-06.webp"
                   loading="eager"
                   style={{ opacity: '0' }}
                   data-w-id="5e3e2fd4-32e4-29e4-2d1c-12203bebf175"
@@ -19,7 +19,7 @@ export default function AboutAboutChooseSection() {
               </div>
               <div className="about-choose-image-wrap-2">
                 <img
-                  src="/assets/hitech/team-15.jpeg"
+                  src="/assets/hitech/new-uniform/safety-briefing.webp"
                   loading="eager"
                   style={{ opacity: '0' }}
                   data-w-id="5e3e2fd4-32e4-29e4-2d1c-12203bebf176"

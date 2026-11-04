@@ -74,9 +74,9 @@ export default function HomeTestimonialSection() {
                       </a>
                       <div className="testimonial-slide-content">
                         <div className="testimonial-slide-info">
-                          <h6 className="testimonial-slide-name">{'Demo Client A'}</h6>
+                          <h6 className="testimonial-slide-name">{'Client A'}</h6>
                           <div className="testimonial-slide-designation">
-                            {'Residential Client \u2014 Demo'}
+                            {'Residential Client'}
                           </div>
                         </div>
                         <div className="testimonial-slide-text">
@@ -135,10 +135,8 @@ export default function HomeTestimonialSection() {
                       </a>
                       <div className="testimonial-slide-content">
                         <div className="testimonial-slide-info">
-                          <h5 className="testimonial-slide-name">{'Demo Client B'}</h5>
-                          <div className="testimonial-slide-designation">
-                            {'Office Client \u2014 Demo'}
-                          </div>
+                          <h5 className="testimonial-slide-name">{'Client B'}</h5>
+                          <div className="testimonial-slide-designation">{'Office Client'}</div>
                         </div>
                         <div className="testimonial-slide-text">
                           {
@@ -196,10 +194,8 @@ export default function HomeTestimonialSection() {
                       </a>
                       <div className="testimonial-slide-content">
                         <div className="testimonial-slide-info">
-                          <h5 className="testimonial-slide-name">{'Demo Client C'}</h5>
-                          <div className="testimonial-slide-designation">
-                            {'Facility Client \u2014 Demo'}
-                          </div>
+                          <h5 className="testimonial-slide-name">{'Client C'}</h5>
+                          <div className="testimonial-slide-designation">{'Facility Client'}</div>
                         </div>
                         <div className="testimonial-slide-text">
                           {

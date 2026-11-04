@@ -226,9 +226,10 @@ export default function SiteNavbar() {
             onClick={close}
           >
             <img
-              src="/assets/hitech/logo.png"
-              width="1007"
-              height="391"
+              src="/assets/hitech/logo-clean.webp"
+              className="site-brand-logo"
+              width="430"
+              height="188"
               alt="Hi-Tech Protection Security"
             />
           </a>

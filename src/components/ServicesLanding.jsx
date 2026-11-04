@@ -1,3 +1,4 @@
+import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { ArrowUpRight } from 'lucide-react';
 import { allServices } from '../data/services';
 import { navigateService } from '../lib/serviceNavigation';
@@ -18,7 +19,7 @@ export default function ServicesLanding({ headingRef }) {
         <div className={styles.grid}>
           {allServices.map((service) => {
             const image =
-              service.image || (service.photo ? `/assets/hitech/team-${service.photo}.jpeg` : null);
+              service.image || (service.photo ? approvedTeamPhoto(service.photo) : null);
             return (
               <a
                 key={service.id}

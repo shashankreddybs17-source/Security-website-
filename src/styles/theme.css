@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   /* Derived from the existing cream page background, navy Contact panel and yellow CTA. */
   --site-cream: var(--background, #fdf9f1);
   --site-navy: var(--_secondary-color---500, #070616);
@@ -9,6 +9,14 @@
   --site-on-dark: var(--background, #fdf9f1);
   /* This semantic token supplies dark text, dark controls, story and footer bands. */
   --_neutral-color---500: var(--site-navy);
+}
+
+/* The supplied logo screenshot includes a menu icon on its right. Frame only
+   its left-hand logo area; keep the original artwork and text untouched. */
+img.site-brand-logo {
+  aspect-ratio: 2062 / 763;
+  object-fit: contain !important;
+  object-position: center !important;
 }
 
 /* Keep legacy CTAs opaque even while Webflow writes inline hover colors.
@@ -194,3 +202,4 @@ a:is(.primary-button, .secondary-button, .tertiary-button) .button-hover-icon {
     scroll-margin-top: 110px;
   }
 }
+

@@ -1,4 +1,5 @@
-﻿import { useEffect, useRef } from 'react';
+import { approvedTeamPhoto } from '../data/approvedPhotos';
+import { useEffect, useRef } from 'react';
 import { galleryMetrics } from '../lib/galleryScroll';
 import styles from './AboutGallerySection.module.css';
 
@@ -28,7 +29,7 @@ const photos = [
     position: '50% 45%',
   },
   {
-    file: '27',
+    file: '18',
     title: 'Together in protection',
     detail: 'Our team in the field',
     position: '50% 40%',
@@ -123,7 +124,7 @@ export default function AboutGallerySection() {
               }}
             >
               <img
-                src={`/assets/hitech/team-${photo.file}.jpeg`}
+                src={approvedTeamPhoto(photo.file)}
                 alt={photo.detail}
                 style={{ objectPosition: photo.position }}
                 loading="eager"

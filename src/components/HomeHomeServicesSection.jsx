@@ -123,7 +123,7 @@ export default function HomeHomeServicesSection() {
                               className="home-services-image-link one w-inline-block"
                             >
                               <img
-                                src="/assets/hitech/team-14.jpeg"
+                                src="/assets/hitech/new-uniform/outdoor-briefing.webp"
                                 loading="eager"
                                 style={{
                                   transform:
@@ -146,7 +146,7 @@ export default function HomeHomeServicesSection() {
                               className="home-services-image-link two w-inline-block"
                             >
                               <img
-                                src="/assets/hitech/team-24.jpeg"
+                                src="/assets/hitech/new-uniform/bodyguards.webp"
                                 loading="eager"
                                 style={{
                                   transform:
@@ -169,7 +169,7 @@ export default function HomeHomeServicesSection() {
                               className="home-services-image-link three w-inline-block"
                             >
                               <img
-                                src="/assets/hitech/team-15.jpeg"
+                                src="/assets/hitech/new-uniform/safety-briefing.webp"
                                 loading="eager"
                                 style={{
                                   transform:
@@ -192,7 +192,7 @@ export default function HomeHomeServicesSection() {
                               className="home-services-image-link four w-inline-block"
                             >
                               <img
-                                src="/assets/hitech/team-13.jpeg"
+                                src="/assets/hitech/new-uniform/team-lineup.webp"
                                 loading="eager"
                                 style={{
                                   transform:
@@ -215,7 +215,7 @@ export default function HomeHomeServicesSection() {
                               className="home-services-image-link five w-inline-block"
                             >
                               <img
-                                src="/assets/hitech/team-26.jpeg"
+                                src="/assets/hitech/new-uniform/commercial-screening.webp"
                                 loading="eager"
                                 style={{
                                   transform:
@@ -238,7 +238,7 @@ export default function HomeHomeServicesSection() {
                               className="home-services-image-link six w-inline-block"
                             >
                               <img
-                                src="/assets/hitech/team-29.jpeg"
+                                src="/assets/hitech/new-uniform/gate-security.webp"
                                 loading="eager"
                                 style={{
                                   transform:
@@ -794,7 +794,7 @@ export default function HomeHomeServicesSection() {
                         >
                           <a href="/contact-us" className="services-image-link w-inline-block">
                             <img
-                              src="/assets/hitech/team-14.jpeg"
+                              src="/assets/hitech/new-uniform/outdoor-briefing.webp"
                               loading="eager"
                               style={{
                                 transform:
@@ -934,7 +934,7 @@ export default function HomeHomeServicesSection() {
                         >
                           <a href="/contact-us" className="services-image-link w-inline-block">
                             <img
-                              src="/assets/hitech/team-24.jpeg"
+                              src="/assets/hitech/new-uniform/bodyguards.webp"
                               loading="eager"
                               style={{
                                 transform:
@@ -1074,7 +1074,7 @@ export default function HomeHomeServicesSection() {
                         >
                           <a href="/contact-us" className="services-image-link w-inline-block">
                             <img
-                              src="/assets/hitech/team-15.jpeg"
+                              src="/assets/hitech/new-uniform/safety-briefing.webp"
                               loading="eager"
                               style={{
                                 transform:
@@ -1214,7 +1214,7 @@ export default function HomeHomeServicesSection() {
                         >
                           <a href="/contact-us" className="services-image-link w-inline-block">
                             <img
-                              src="/assets/hitech/team-13.jpeg"
+                              src="/assets/hitech/new-uniform/team-lineup.webp"
                               loading="eager"
                               style={{
                                 transform:
@@ -1354,7 +1354,7 @@ export default function HomeHomeServicesSection() {
                         >
                           <a href="/contact-us" className="services-image-link w-inline-block">
                             <img
-                              src="/assets/hitech/team-26.jpeg"
+                              src="/assets/hitech/new-uniform/commercial-screening.webp"
                               loading="eager"
                               style={{
                                 transform:
@@ -1494,7 +1494,7 @@ export default function HomeHomeServicesSection() {
                         >
                           <a href="/contact-us" className="services-image-link w-inline-block">
                             <img
-                              src="/assets/hitech/team-29.jpeg"
+                              src="/assets/hitech/new-uniform/gate-security.webp"
                               loading="eager"
                               style={{
                                 transform:

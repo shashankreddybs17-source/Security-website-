@@ -80,7 +80,7 @@ export default function AboutAboutSection() {
             <div className="about-image-block">
               <div data-w-id="1a48e2d1-8870-9f35-df3b-7abd70bfe38c" className="about-image-wrap">
                 <img
-                  src="/assets/hitech/team-23.jpeg"
+                  src="/assets/hitech/new-uniform/converted-old-08.webp"
                   loading="eager"
                   style={{
                     transform:
@@ -107,7 +107,7 @@ export default function AboutAboutSection() {
                   }}
                   className="about-name"
                 >
-                  {'Arjun Kumar (Demo)'}
+                  {'Arjun Kumar'}
                 </h4>
               </div>
               <div className="about-designation-block">
@@ -119,12 +119,12 @@ export default function AboutAboutSection() {
                   }}
                   className="about-designation"
                 >
-                  {'Operations Manager \u2014 Demo Profile'}
+                  {'Operations Manager'}
                 </h6>
               </div>
               <div className="about-signature-block">
                 <img
-                  src="/assets/hitech/logo.png"
+                  src="/assets/hitech/logo-clean.webp"
                   loading="eager"
                   style={{
                     transform:
@@ -132,7 +132,7 @@ export default function AboutAboutSection() {
                   }}
                   data-w-id="87137819-6685-4a6d-8f2b-a5ac828986f1"
                   alt=""
-                  className="about-signature"
+                  className="about-signature site-brand-logo"
                 />
               </div>
             </div>

@@ -40,7 +40,7 @@ export default function Contact() {
             <div className={styles.detailsLayout}>
               <figure className={styles.companyPhoto}>
                 <img
-                  src="/assets/hitech/team-14.jpeg"
+                  src="/assets/hitech/new-uniform/converted-old-07.webp"
                   alt="Hi-Tech security personnel attending a team briefing"
                   width="1280"
                   height="960"

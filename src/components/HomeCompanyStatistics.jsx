@@ -4,7 +4,7 @@ import styles from './HomeCompanyStatistics.module.css';
 
 export const companyStatistics = [
   { value: 18, suffix: '+', label: 'Years of Experience' },
-  { value: 1250, suffix: '', label: 'Employees' },
+  { value: 1010, suffix: '', label: 'Employees' },
   { value: 280, suffix: '', label: 'Clients' },
   { value: 99, suffix: '%', label: 'On-Time Reporting' },
 ];

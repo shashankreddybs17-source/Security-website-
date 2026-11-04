@@ -3,7 +3,6 @@ import AboutAboutSection from '../components/AboutAboutSection';
 import AboutTrainingSection from '../components/AboutTrainingSection';
 import AboutApproachSection from '../components/AboutApproachSection';
 import AboutStorySection from '../components/AboutStorySection';
-import AboutTeamSection from '../components/AboutTeamSection';
 import AboutGallerySection from '../components/AboutGallerySection';
 import AboutCommonFaqsSection from '../components/AboutCommonFaqsSection';
 import HomeCtaSection from '../components/HomeCtaSection';
@@ -18,7 +17,6 @@ export default function About() {
         <AboutTrainingSection />
         <AboutApproachSection />
         <AboutStorySection />
-        <AboutTeamSection />
         <AboutGallerySection />
         <AboutCommonFaqsSection />
         <HomeCtaSection />

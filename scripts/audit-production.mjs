@@ -34,8 +34,7 @@ for (const file of [...sources, 'reference-metadata.json']) {
   }
   for (const asset of assetReferences(source)) assets.add(asset);
 }
-for (const service of allServices)
-  assets.add(service.image || `/assets/hitech/team-${service.photo}.jpeg`);
+for (const service of allServices) if (service.image) assets.add(service.image);
 for (const post of blogPosts) {
   assets.add(post.image);
   if (post.featuredImage) assets.add(post.featuredImage);

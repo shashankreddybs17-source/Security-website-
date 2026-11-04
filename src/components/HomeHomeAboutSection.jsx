@@ -9,7 +9,7 @@ export default function HomeHomeAboutSection() {
             <div className="home-about-image-block">
               <div className="home-about-image-wrap-1">
                 <img
-                  src="/assets/hitech/team-28.jpeg"
+                  src="/assets/hitech/new-uniform/converted-old-04.webp"
                   loading="eager"
                   style={{
                     transform:
@@ -21,7 +21,7 @@ export default function HomeHomeAboutSection() {
               </div>
               <div className="home-about-image-wrap-2">
                 <img
-                  src="/assets/hitech/team-15.jpeg"
+                  src="/assets/hitech/new-uniform/converted-old-09.webp"
                   loading="eager"
                   style={{
                     transform:

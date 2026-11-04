@@ -1,3 +1,4 @@
+import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { useEffect, useRef, useState } from 'react';
 import styles from './AboutReplacements.module.css';
 
@@ -117,7 +118,7 @@ export default function AboutApproachSection() {
               {steps.map((step, index) => (
                 <img
                   key={step.photo}
-                  src={`/assets/hitech/team-${step.photo}.jpeg`}
+                  src={approvedTeamPhoto(step.photo)}
                   alt={step.caption}
                   className={active === index ? styles.visibleImage : styles.hiddenImage}
                   aria-hidden={active !== index}

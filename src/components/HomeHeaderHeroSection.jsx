@@ -6,10 +6,10 @@ export default function HomeHeaderHeroSection() {
     <section className={styles.hero}>
       <div className={styles.photo}>
         <img
-          src="/assets/hitech/home-hero-enhanced.png"
-          alt="Hi-Tech Protection Security personnel assembled for an outdoor team briefing"
-          width="1448"
-          height="1086"
+          src="/assets/hitech/new-uniform/corporate-security-briefing.webp"
+          alt="Five Hi-Tech security guards receiving a corporate security and fire safety briefing"
+          width="1430"
+          height="1100"
           fetchPriority="high"
           loading="eager"
         />

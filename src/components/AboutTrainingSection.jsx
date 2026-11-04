@@ -47,7 +47,7 @@ export default function AboutTrainingSection() {
           </div>
           <figure className={styles.media}>
             <img
-              src="/assets/hitech/team-10.jpeg"
+              src="/assets/hitech/new-uniform/fire-demonstration.webp"
               alt="Hi-Tech personnel practising a fire extinguisher demonstration while colleagues observe"
               width="1280"
               height="960"

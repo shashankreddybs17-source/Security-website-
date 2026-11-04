@@ -5,6 +5,7 @@ import {
   HomeWorkGallery,
 } from '../components/HomeEnhancements';
 import HomeCompanyStatistics from '../components/HomeCompanyStatistics';
+import HomeCredentialsSection from '../components/HomeCredentialsSection';
 import HomeHeaderHeroSection from '../components/HomeHeaderHeroSection';
 import HomeMarqueeSection from '../components/HomeMarqueeSection';
 import HomeHomeAboutSection from '../components/HomeHomeAboutSection';
@@ -27,6 +28,7 @@ export default function Home() {
         <HomeServicesShowcase />
         <HomeWhoWeAre />
         <HomeCompanyStatistics />
+        <HomeCredentialsSection />
         <HomeWhyChooseUs />
         <HomeSecuritySolutions />
         <HomeWorkGallery />

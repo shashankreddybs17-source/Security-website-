@@ -39,10 +39,11 @@ export default function AboutHeroSection({ title = 'About Us' }) {
       </div>
       <div className="hero-bg">
         <img
-          src="/assets/hitech/team-27.jpeg"
+          src="/assets/hitech/new-uniform/gate-security.webp"
           loading="eager"
-          alt="Hi-Tech Protection Security personnel and training"
+          alt="Hi-Tech security personnel in new uniforms at a property entrance"
           className="hero-bg-image"
+          style={{ objectPosition: 'center 25%' }}
         />
         <div className="hero-bg-overlay"></div>
       </div>

@@ -14,6 +14,8 @@ const clients = [
   { name: 'Girias', image: 'client-13.png' },
 ];
 
+const rows = [clients.slice(0, 5), clients.slice(5)];
+
 export default function HomePartnersSection() {
   return (
     <section className={styles.section} aria-labelledby="hi-tech-client-heading">
@@ -22,18 +24,24 @@ export default function HomePartnersSection() {
         Security you can trust.
       </h2>
       <div className={styles.strip}>
-        <div className={styles.viewport}>
-          <div className={styles.track}>
-            {[0, 1].map((copy) => (
-              <div className={styles.group} key={copy} aria-hidden={copy === 1 ? true : undefined}>
-                {clients.map((client) => (
-                  <div className={styles.logo} key={client.name}>
+        <div className="container-default w-container">
+          <div className={styles.rows}>
+            {rows.map((row, index) => (
+              <div
+                className={styles.row}
+                key={index}
+                role="list"
+                aria-label={`Client logos, row ${index + 1}`}
+                style={{ '--client-columns': row.length }}
+              >
+                {row.map((client) => (
+                  <div className={styles.logo} key={client.name} role="listitem">
                     <img
                       src={`/assets/hitech/${client.image}`}
-                      alt={copy === 0 ? client.name : ''}
+                      alt={client.name}
                       width="180"
-                      height="48"
-                      loading="eager"
+                      height="72"
+                      loading="lazy"
                       draggable="false"
                     />
                   </div>

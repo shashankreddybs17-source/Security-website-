@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { X } from 'lucide-react';
 import SiteNavbar from './components/SiteNavbar';
+import FloatingContactButtons from './components/FloatingContactButtons';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -75,6 +76,7 @@ function App() {
       ) : (
         <Home />
       )}
+      <FloatingContactButtons />
       {notice && (
         <div
           role="status"

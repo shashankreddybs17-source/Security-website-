@@ -339,6 +339,9 @@
     aspect-ratio: auto;
     object-fit: contain;
   }
+  .imageFrame.filledImageFrame img {
+    object-fit: cover;
+  }
   .details {
     padding: 16px 20px;
   }
