@@ -1,6 +1,6 @@
-// Wheel steps and continuous trackpad input, with native touch/scrollbar navigation.
+// Sequential wheel and touch navigation, with native scrolling at the endpoints.
 export function connectServiceScroll(runway, stage, count, onSelect, win = window) {
-  const media = win.matchMedia('(min-width: 768px) and (prefers-reduced-motion: no-preference)');
+  const media = win.matchMedia('(prefers-reduced-motion: no-preference)');
   let current = 0,
     enabled = false,
     pinned = false,
@@ -28,6 +28,18 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
     continued: 0,
   });
   let burst = newBurst();
+  let touch = null;
+  const excluded = (event) =>
+    event.target?.closest?.(
+      'header, dialog, [role="dialog"], input, textarea, select, [contenteditable="true"]',
+    );
+  const mobilePanelVisible = () => {
+    const panel = stage.querySelector?.('[role="tabpanel"][aria-hidden="false"]');
+    if (!panel) return false;
+    const rect = panel.getBoundingClientRect();
+    // Never capture a swipe while the service description or CTA is below the fold.
+    return rect.top >= top - 1 && rect.bottom <= win.innerHeight - 12;
+  };
   const clamp = (index) => Math.max(0, Math.min(count - 1, index));
   const start = () => runway.getBoundingClientRect().top + win.scrollY - top;
   const end = () => {
@@ -67,7 +79,7 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
   };
   const sync = () => {
     frame = 0;
-    if (!enabled || motion) return;
+    if (!enabled || motion || runway.ownerDocument.body?.style.position === 'fixed') return;
     // A wheel gesture owns its selected index, not the browser's scroll position.
     // Never pull native scroll, scrollbar dragging or restoration back to holdY.
     if (
@@ -88,11 +100,12 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
   };
   const reset = () => {
     stopMotion();
+    touch = null;
     holdY = null;
     burst = newBurst();
   };
   const measure = () => {
-    if (disposed) return;
+    if (disposed || runway.ownerDocument.body?.style.position === 'fixed') return;
     const header = runway.ownerDocument.querySelector('header');
     const nextTop =
       Math.ceil(header?.getBoundingClientRect().height || (win.innerWidth < 992 ? 90 : 104)) + 12;
@@ -125,7 +138,7 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
     runway.style.setProperty('--services-travel', `${(count - 1) * step}px`);
     runway.dataset.pinned = String(pinned);
     runway.dataset.scrollMode = !enabled ? 'native' : pinned ? 'pinned' : 'flow';
-    if (wasInside && enabled)
+    if (wasInside && enabled && win.innerWidth >= 768)
       win.scrollTo({ top: start() + (pinned ? current * step : 0), behavior: 'instant' });
     scroll();
   };
@@ -141,9 +154,8 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
       event.ctrlKey ||
       event.metaKey ||
       Math.abs(event.deltaX) > Math.abs(event.deltaY) * 1.5 ||
-      event.target?.closest?.(
-        'header, dialog, [role="dialog"], input, textarea, select, [contenteditable="true"]',
-      )
+      excluded(event) ||
+      (win.innerWidth < 768 && !mobilePanelVisible())
     )
       return;
     // Non-cancelable momentum belongs to native scrolling. Do not fight it
@@ -270,10 +282,60 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
       scroll();
     }
   };
+  const touchStart = (event) => {
+    reset();
+    if (
+      !enabled ||
+      win.innerWidth >= 768 ||
+      excluded(event) ||
+      event.touches?.length !== 1 ||
+      !mobilePanelVisible()
+    )
+      return;
+    const finger = event.touches[0];
+    touch = { id: finger.identifier, x: finger.clientX, y: finger.clientY, handled: false };
+  };
+  const touchMove = (event) => {
+    if (!touch) return;
+    if (event.touches.length !== 1 || !event.cancelable) {
+      touch = null;
+      return;
+    }
+    const finger = event.touches[0];
+    if (finger.identifier !== touch.id) return;
+    const dx = finger.clientX - touch.x;
+    const dy = touch.y - finger.clientY;
+    if (Math.abs(dx) > Math.abs(dy)) {
+      touch = null;
+      return;
+    }
+    if (Math.abs(dy) < 8) return;
+    const direction = Math.sign(dy);
+    if (
+      !touch.handled &&
+      ((current === 0 && direction < 0) || (current === count - 1 && direction > 0))
+    ) {
+      touch = null;
+      return;
+    }
+    // Capture before native panning starts; consume the remainder of this
+    // finger stroke so a long swipe cannot skip several services.
+    event.preventDefault();
+    if (!touch.handled && Math.abs(dy) >= 48) {
+      select(current + direction);
+      touch.handled = true;
+    }
+  };
+  const touchEnd = () => {
+    touch = null;
+  };
   win.addEventListener('scroll', scroll, { passive: true });
   win.addEventListener('resize', measure);
   win.addEventListener('wheel', wheel, { passive: false });
-  win.addEventListener('touchstart', reset, { passive: true });
+  win.addEventListener('touchstart', touchStart, { passive: true });
+  win.addEventListener('touchmove', touchMove, { passive: false });
+  win.addEventListener('touchend', touchEnd, { passive: true });
+  win.addEventListener('touchcancel', touchEnd, { passive: true });
   win.addEventListener('pointerdown', reset, { passive: true });
   win.addEventListener('keydown', reset);
   media.addEventListener('change', measure);
@@ -295,7 +357,10 @@ export function connectServiceScroll(runway, stage, count, onSelect, win = windo
       win.removeEventListener('scroll', scroll);
       win.removeEventListener('resize', measure);
       win.removeEventListener('wheel', wheel);
-      win.removeEventListener('touchstart', reset);
+      win.removeEventListener('touchstart', touchStart);
+      win.removeEventListener('touchmove', touchMove);
+      win.removeEventListener('touchend', touchEnd);
+      win.removeEventListener('touchcancel', touchEnd);
       win.removeEventListener('pointerdown', reset);
       win.removeEventListener('keydown', reset);
       media.removeEventListener('change', measure);

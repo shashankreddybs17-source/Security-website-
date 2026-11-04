@@ -75,12 +75,7 @@ export default function HomeSecuritySolutions({
                   Precision.
                 </p>
               </div>
-              <div
-                className={styles.navigation}
-                role="tablist"
-                aria-label="Security services"
-                aria-orientation="vertical"
-              >
+              <div className={styles.navigation} role="tablist" aria-label="Security services">
                 {services.map((service, index) => (
                   <button
                     key={service.title}

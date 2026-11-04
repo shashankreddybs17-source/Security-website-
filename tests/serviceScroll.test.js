@@ -2,7 +2,13 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { connectServiceScroll } from '../src/lib/serviceScroll.js';
 
-function fixture({ height = 900, stageHeight = 600, matches = true } = {}) {
+function fixture({
+  height = 900,
+  stageHeight = 600,
+  matches = true,
+  width = 1280,
+  panelVisible = true,
+} = {}) {
   let now = 0,
     id = 0,
     y = 884;
@@ -21,6 +27,7 @@ function fixture({ height = 900, stageHeight = 600, matches = true } = {}) {
     },
   };
   const doc = {
+    body: { style: { position: '' } },
     querySelector: () => ({ getBoundingClientRect: () => ({ height: 104 }) }),
     fonts: { ready: Promise.resolve() },
   };
@@ -38,6 +45,10 @@ function fixture({ height = 900, stageHeight = 600, matches = true } = {}) {
     getBoundingClientRect: () => ({ top: 1000 - y }),
   };
   const stage = {
+    querySelector: () => ({
+      getBoundingClientRect: () =>
+        panelVisible ? { top: 200, bottom: 800 } : { top: 1000, bottom: 1600 },
+    }),
     getBoundingClientRect: () => ({
       height: typeof stageHeight === 'function' ? stageHeight(properties, win) : stageHeight,
     }),
@@ -47,7 +58,7 @@ function fixture({ height = 900, stageHeight = 600, matches = true } = {}) {
   };
   const win = {
     innerHeight: height,
-    innerWidth: 1280,
+    innerWidth: width,
     get scrollY() {
       return y;
     },
@@ -247,7 +258,7 @@ test('flow layout and post-load measurements preserve selected service', () => {
   assert.equal(f.active(), 1);
   f.controller.destroy();
 });
-test('mobile/reduced-motion mode never intercepts native scrolling', () => {
+test('reduced-motion mode never intercepts native scrolling', () => {
   const f = fixture({ matches: false });
   assert.equal(f.runway.dataset.scrollMode, 'native');
   assert.equal(f.wheel(120), false);
@@ -374,6 +385,131 @@ test('viewport-fitted stage measures its navbar inset before enabling sticky ste
     f.wheel(-120);
     f.advance(340);
     assert.equal(f.active(), index);
+  }
+  f.controller.destroy();
+});
+
+test('mobile wheel selection progresses sequentially without pinning the tall layout', () => {
+  const f = fixture({ width: 320, height: 861, stageHeight: 1150 });
+  assert.equal(f.runway.dataset.pinned, 'false');
+  for (let index = 1; index <= 5; index++) {
+    assert.equal(f.wheel(120), true);
+    f.advance(340);
+    assert.equal(f.active(), index);
+  }
+  assert.equal(f.wheel(120), false);
+  f.controller.destroy();
+});
+
+test('mobile swipes change exactly one service per stroke in both directions and release endpoints', () => {
+  const f = fixture({ width: 320, height: 861, stageHeight: 1150 });
+  const swipe = (direction) => {
+    let prevented = false;
+    f.emit('touchstart', { touches: [{ identifier: 1, clientX: 100, clientY: 400 }] });
+    for (const distance of [12, 60, 180, 300]) {
+      f.emit('touchmove', {
+        cancelable: true,
+        touches: [{ identifier: 1, clientX: 100, clientY: 400 - direction * distance }],
+        preventDefault() {
+          prevented = true;
+        },
+      });
+    }
+    f.emit('touchend');
+    return prevented;
+  };
+  const initialY = f.win.scrollY;
+  assert.equal(swipe(-1), false);
+  for (let index = 1; index <= 5; index++) {
+    assert.equal(swipe(1), true);
+    assert.equal(f.active(), index);
+  }
+  assert.equal(swipe(1), false);
+  for (let index = 4; index >= 0; index--) {
+    assert.equal(swipe(-1), true);
+    assert.equal(f.active(), index);
+  }
+  assert.equal(f.win.scrollY, initialY);
+  assert.deepEqual(f.selected, [1, 2, 3, 4, 5, 4, 3, 2, 1, 0]);
+  f.controller.destroy();
+});
+
+test('mobile preserves native scrolling before the image, pinch zoom, horizontal swipes and reduced motion', () => {
+  for (const options of [{ panelVisible: false }, { matches: false }, {}]) {
+    const f = fixture({ width: 320, ...options });
+    const finger = { identifier: 1, clientX: 100, clientY: 400 };
+    f.emit('touchstart', { touches: [finger] });
+    let prevented = false;
+    f.emit('touchmove', {
+      cancelable: true,
+      touches: [{ ...finger, clientX: 250, clientY: 350 }],
+      preventDefault() {
+        prevented = true;
+      },
+    });
+    assert.equal(prevented, false);
+    f.emit('touchstart', { touches: [finger, { ...finger, identifier: 2 }] });
+    f.emit('touchmove', {
+      cancelable: true,
+      touches: [finger],
+      preventDefault() {
+        prevented = true;
+      },
+    });
+    assert.equal(prevented, false);
+    assert.equal(f.active(), 0);
+    f.controller.destroy();
+  }
+});
+
+test('opening a fixed-body mobile menu preserves the pinned service selection', () => {
+  const f = fixture({ width: 768 });
+  f.controller.select(3);
+  f.advance(340);
+  f.runway.ownerDocument.body.style.position = 'fixed';
+  f.win.scrollTo({ top: 0 });
+  f.resize(900, 600);
+  f.advance(340);
+  assert.equal(f.active(), 3);
+  f.runway.ownerDocument.body.style.position = '';
+  f.win.scrollTo({ top: 884 + 3 * 450 });
+  f.advance(32);
+  assert.equal(f.active(), 3);
+  f.controller.destroy();
+});
+
+test('mobile gestures leave an off-screen description and CTA reachable by native scroll', () => {
+  // The image is visible but the bottom of the service card is not.
+  const clipped = fixture({ width: 320, height: 720, stageHeight: 1100 });
+  assert.equal(clipped.wheel(120), false);
+  let prevented = false;
+  clipped.emit('touchstart', { touches: [{ identifier: 1, clientX: 100, clientY: 400 }] });
+  clipped.emit('touchmove', {
+    cancelable: true,
+    touches: [{ identifier: 1, clientX: 100, clientY: 300 }],
+    preventDefault() {
+      prevented = true;
+    },
+  });
+  assert.equal(prevented, false);
+  assert.equal(clipped.active(), 0);
+  clipped.controller.destroy();
+});
+
+test('a fitted mobile stage keeps each swipe and image selection synchronized', () => {
+  const f = fixture({ width: 320, height: 861, stageHeight: 650 });
+  assert.equal(f.runway.dataset.pinned, 'true');
+  for (const direction of [1, 1, 1, -1, -1, -1]) {
+    const previous = f.active();
+    f.emit('touchstart', { touches: [{ identifier: 1, clientX: 100, clientY: 400 }] });
+    f.emit('touchmove', {
+      cancelable: true,
+      touches: [{ identifier: 1, clientX: 100, clientY: 400 - direction * 80 }],
+      preventDefault() {},
+    });
+    f.emit('touchend');
+    f.advance(340);
+    assert.equal(f.active(), previous + direction);
   }
   f.controller.destroy();
 });

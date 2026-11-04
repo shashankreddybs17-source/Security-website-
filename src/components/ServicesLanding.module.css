@@ -89,9 +89,6 @@
   color: #fdf9f1;
   font-size: 14px;
   font-weight: 600;
-  transition:
-    background 200ms ease,
-    color 200ms ease;
 }
 .action svg {
   color: #f3df04;
@@ -167,5 +164,14 @@
   .card:hover img,
   .card:focus-visible img {
     transform: none;
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .action,
+  .action svg {
+    transition:
+      background-color 200ms ease,
+      color 200ms ease;
   }
 }

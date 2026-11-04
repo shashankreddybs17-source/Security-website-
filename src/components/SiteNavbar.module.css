@@ -14,6 +14,9 @@
   background: transparent;
   color: var(--site-on-dark, #fdf9f1);
 }
+.mobileSpacer {
+  display: none;
+}
 .overHero {
   margin-bottom: calc(0px - var(--navbar-height));
 }
@@ -159,7 +162,18 @@
 @media (max-width: 991px) {
   .header {
     --navbar-height: 90px;
+    position: fixed;
+    inset: 0 0 auto;
+    width: 100%;
+    margin-bottom: 0;
     padding: 10px 16px 6px;
+  }
+  .mobileSpacer {
+    display: block;
+    height: 90px;
+  }
+  .heroSpacer {
+    height: 0;
   }
   .inner {
     grid-template-columns: minmax(0, 1fr) auto;
@@ -215,12 +229,14 @@
   }
   .mobileMenuBody {
     min-height: 0;
-    overflow: hidden;
+    max-height: calc(100vh - 100px);
+    max-height: calc(100dvh - 100px);
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
   }
   .mobileMenuBody > nav {
     padding: 10px 20px 0;
-    max-height: calc(100dvh - 220px);
-    overflow-y: auto;
   }
   .mobileLink {
     display: flex;
@@ -364,7 +380,7 @@
     overflow: hidden;
   }
   .servicesSubmenu[data-open='true'] {
-    max-height: 650px;
+    max-height: none;
     padding-bottom: 8px;
   }
 }

@@ -85,9 +85,7 @@ export default function Services() {
       update();
       requestAnimationFrame(() => {
         heading.current?.focus({ preventScroll: true });
-        heading.current
-          ?.closest('section')
-          ?.scrollIntoView({ behavior: 'instant', block: 'start' });
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
       });
     };
     window.addEventListener('popstate', update);

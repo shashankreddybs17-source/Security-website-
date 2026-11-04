@@ -9,6 +9,7 @@ import {
   serviceSelectionEvent,
 } from '../lib/serviceNavigation';
 import styles from './SiteNavbar.module.css';
+import { lockPageScroll } from '../lib/pageNavigation';
 
 export default function SiteNavbar() {
   const [open, setOpen] = useState(false);
@@ -79,13 +80,10 @@ export default function SiteNavbar() {
 
   useEffect(() => {
     if (!open) return;
-    const previousOverflow = document.body.style.overflow;
-    const previousPadding = document.body.style.paddingRight;
-    const scrollbarWidth = Math.max(0, window.innerWidth - document.documentElement.clientWidth);
-    if (scrollbarWidth)
-      document.body.style.paddingRight = `${parseFloat(getComputedStyle(document.body).paddingRight) + scrollbarWidth}px`;
-    document.body.style.overflow = 'hidden';
-    const focusFrame = requestAnimationFrame(() => menu.current?.querySelector('a')?.focus());
+    const unlock = lockPageScroll(window, document);
+    const focusFrame = requestAnimationFrame(() =>
+      menu.current?.querySelector('a')?.focus({ preventScroll: true }),
+    );
     const onKeyDown = (event) => {
       if (event.key === 'Escape') {
         event.preventDefault();
@@ -109,10 +107,9 @@ export default function SiteNavbar() {
     document.addEventListener('keydown', onKeyDown);
     return () => {
       cancelAnimationFrame(focusFrame);
-      document.body.style.overflow = previousOverflow;
-      document.body.style.paddingRight = previousPadding;
+      unlock();
       document.removeEventListener('keydown', onKeyDown);
-      if (toggle.current?.getClientRects().length) toggle.current.focus();
+      if (toggle.current?.getClientRects().length) toggle.current.focus({ preventScroll: true });
     };
   }, [open]);
 
@@ -212,63 +209,73 @@ export default function SiteNavbar() {
       ),
     );
   return (
-    <header
-      ref={header}
-      className={`${styles.header} ${window.location.pathname === '/' ? styles.overHero : ''} ${scrolled ? styles.scrolled : ''}`}
-    >
-      <div className={styles.inner}>
-        <a
-          href="/"
-          className={styles.brand}
-          aria-label="Hi-Tech Protection Security home"
-          onClick={close}
-        >
-          <img
-            src="/assets/hitech/logo.png"
-            width="1007"
-            height="391"
-            alt="Hi-Tech Protection Security"
-          />
-        </a>
-        <nav className={styles.desktopNav} aria-label="Main navigation">
-          {links(false)}
-        </nav>
-        <a href="/contact-us" className={`${styles.quote} ${styles.desktopQuote}`} onClick={close}>
-          GET A QUOTE{' '}
-          <span>
-            <ArrowUpRight size={18} aria-hidden="true" />
-          </span>
-        </a>
-        <button
-          ref={toggle}
-          className={styles.toggle}
-          type="button"
-          aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
-          aria-controls="hi-tech-mobile-navigation"
-          aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <X size={25} /> : <Menu size={25} />}
-        </button>
-      </div>
-      {open && <div className={styles.backdrop} aria-hidden="true" onClick={close} />}
+    <>
       <div
-        ref={menu}
-        id="hi-tech-mobile-navigation"
-        className={`${styles.mobileMenu} ${open ? styles.menuOpen : ''}`}
-        inert={!open}
-        aria-hidden={!open}
+        className={`${styles.mobileSpacer} ${window.location.pathname === '/' ? styles.heroSpacer : ''}`}
+        aria-hidden="true"
+      />
+      <header
+        ref={header}
+        className={`${styles.header} ${window.location.pathname === '/' ? styles.overHero : ''} ${scrolled ? styles.scrolled : ''}`}
       >
-        <div className={styles.mobileMenuBody}>
-          <nav aria-label="Mobile navigation">{links(true)}</nav>
-          <a className={styles.quote} href="/contact-us" onClick={close}>
+        <div className={styles.inner}>
+          <a
+            href="/"
+            className={styles.brand}
+            aria-label="Hi-Tech Protection Security home"
+            onClick={close}
+          >
+            <img
+              src="/assets/hitech/logo.png"
+              width="1007"
+              height="391"
+              alt="Hi-Tech Protection Security"
+            />
+          </a>
+          <nav className={styles.desktopNav} aria-label="Main navigation">
+            {links(false)}
+          </nav>
+          <a
+            href="/contact-us"
+            className={`${styles.quote} ${styles.desktopQuote}`}
+            onClick={close}
+          >
             GET A QUOTE{' '}
             <span>
               <ArrowUpRight size={18} aria-hidden="true" />
             </span>
           </a>
+          <button
+            ref={toggle}
+            className={styles.toggle}
+            type="button"
+            aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-controls="hi-tech-mobile-navigation"
+            aria-expanded={open}
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? <X size={25} /> : <Menu size={25} />}
+          </button>
         </div>
-      </div>
-    </header>
+        {open && <div className={styles.backdrop} aria-hidden="true" onClick={close} />}
+        <div
+          ref={menu}
+          id="hi-tech-mobile-navigation"
+          className={`${styles.mobileMenu} ${open ? styles.menuOpen : ''}`}
+          inert={!open}
+          aria-hidden={!open}
+        >
+          <div className={styles.mobileMenuBody}>
+            <nav aria-label="Mobile navigation">{links(true)}</nav>
+            <a className={styles.quote} href="/contact-us" onClick={close}>
+              GET A QUOTE{' '}
+              <span>
+                <ArrowUpRight size={18} aria-hidden="true" />
+              </span>
+            </a>
+          </div>
+        </div>
+      </header>
+    </>
   );
 }

@@ -7,6 +7,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Faq from './pages/Faq';
 import Services from './pages/Services';
+import { initializePageScroll } from './lib/pageNavigation';
 import { cleanPageUrl } from './lib/cleanPageUrl';
 import Blog from './pages/Blog';
 import { blogPosts } from './data/blogPosts';
@@ -20,6 +21,8 @@ import './styles/theme.css';
 
 const cleanUrl = cleanPageUrl(location.pathname, location.search, location.hash);
 if (cleanUrl) window.history.replaceState(window.history.state, '', cleanUrl);
+
+initializePageScroll(window);
 
 const isServices = /^\/services\/?$/.test(location.pathname);
 const isAbout = /^\/about-us\/?$/.test(location.pathname);

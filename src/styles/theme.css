@@ -12,7 +12,7 @@
 }
 
 /* Keep legacy CTAs opaque even while Webflow writes inline hover colors.
-   Only colors are enforced; its existing arrow motion remains intact. */
+   Static arrow rules below also override the legacy hover timeline. */
 a:is(.primary-button, .secondary-button, .tertiary-button) {
   --solid-cta-bg: var(--site-yellow);
   --solid-cta-ink: var(--site-navy);
@@ -36,28 +36,59 @@ a:is(.primary-button, .secondary-button, .tertiary-button) .button-icon-block {
   color: var(--solid-cta-icon-ink) !important;
 }
 
-/* CSS Modules compose this shared class onto CTA and viewer controls.
-   Keep each component's default fill, dimensions and existing arrow geometry. */
+/* Keep button entrance/loop animations and legacy moving arrows disabled.
+   Hover-capable pointers receive the restrained transitions below. */
+:is(button, [role='button'], .site-button, a.primary-button, a.secondary-button, a.tertiary-button),
+:is(button, [role='button'], .site-button, a.primary-button, a.secondary-button, a.tertiary-button)
+  *,
+:is(
+  button,
+  [role='button'],
+  .site-button,
+  a.primary-button,
+  a.secondary-button,
+  a.tertiary-button
+)::before,
+:is(
+  button,
+  [role='button'],
+  .site-button,
+  a.primary-button,
+  a.secondary-button,
+  a.tertiary-button
+)::after {
+  transition: none !important;
+  animation: none !important;
+}
 :is(
   .site-button,
   .site-button-group button,
   a.primary-button,
   a.secondary-button,
   a.tertiary-button
-) {
-  transition:
-    background-color 250ms ease-in-out,
-    color 250ms ease-in-out,
-    border-color 250ms ease-in-out,
-    box-shadow 250ms ease-in-out,
-    transform 250ms ease-in-out !important;
+),
+:is(
+  .site-button,
+  .site-button-group button,
+  a.primary-button,
+  a.secondary-button,
+  a.tertiary-button
+):hover {
+  transform: none !important;
 }
-:is(.site-button, .site-button-group button) > :is(svg, span:has(svg)),
 a:is(.primary-button, .secondary-button, .tertiary-button)
-  :is(.button-text-block, .button-icon-block) {
-  transition:
-    background-color 250ms ease-in-out,
-    color 250ms ease-in-out !important;
+  :is(
+    .button-block,
+    .button-text-block,
+    .button-icon-block,
+    .button-icon-wrapper,
+    .button-initial-icon
+  ) {
+  transform: none !important;
+  opacity: 1 !important;
+}
+a:is(.primary-button, .secondary-button, .tertiary-button) .button-hover-icon {
+  display: none !important;
 }
 
 /* Keyboard focus gets the same solid colors, plus a separate visible focus ring. */
@@ -105,34 +136,44 @@ a:is(.primary-button, .secondary-button, .tertiary-button)
     color: #f3df04 !important;
     border-color: #f3df04 !important;
     box-shadow: inset 0 0 0 1px #f3df04;
-    transform: translateY(-2px);
   }
   :is(.site-button, .site-button-group button):not(:disabled):hover > :is(svg, span:has(svg)) {
     background-color: #070616 !important;
     color: #f3df04 !important;
   }
 }
-@media (prefers-reduced-motion: reduce) {
+/* Animate only hover feedback, including narrow layouts used with a mouse.
+   Touch-only devices retain normal taps without a persistent hover state. */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
   :is(
     .site-button,
     .site-button-group button,
     a.primary-button,
     a.secondary-button,
     a.tertiary-button
-  ),
+  ) {
+    transition:
+      background-color 200ms ease,
+      color 200ms ease,
+      border-color 200ms ease,
+      box-shadow 200ms ease,
+      transform 200ms ease !important;
+  }
   :is(.site-button, .site-button-group button) > :is(svg, span:has(svg)),
   a:is(.primary-button, .secondary-button, .tertiary-button)
     :is(.button-text-block, .button-icon-block) {
-    transition: none !important;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease !important;
   }
   :is(
-    .site-button,
-    .site-button-group button,
-    a.primary-button,
-    a.secondary-button,
-    a.tertiary-button
-  ):hover {
-    transform: none !important;
+      .site-button,
+      .site-button-group button,
+      a.primary-button,
+      a.secondary-button,
+      a.tertiary-button
+    ):not(:disabled):hover {
+    transform: translateY(-2px) !important;
   }
 }
 
