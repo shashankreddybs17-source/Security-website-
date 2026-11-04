@@ -20,11 +20,12 @@
 }
 .phone,
 .whatsapp {
-  background: #070616;
-  color: #f3df04;
+  background: #f3df04;
+  color: #070616;
 }
 .whatsapp {
-  color: #25d366;
+  background: #25d366;
+  color: #fff;
 }
 .contacts a:focus-visible {
   outline: 3px solid #f3df04;

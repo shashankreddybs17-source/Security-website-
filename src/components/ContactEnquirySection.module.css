@@ -6,13 +6,15 @@
 }
 
 .section {
-  padding: var(--layout-section-space, 96px) 0;
+  padding: 16px 0 24px;
   background: var(--_secondary-color---500, #070616);
   color: white;
 }
 .panel {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: min(820px, calc(100svh - 210px));
+  min-height: 600px;
   overflow: hidden;
   border: 1px solid #ffffff1a;
   border-radius: 16px;
@@ -32,6 +34,8 @@
 }
 .formPanel {
   align-self: center;
+  max-height: 100%;
+  overflow-y: auto;
   padding: clamp(28px, 3vw, 50px);
 }
 .label {
@@ -180,7 +184,11 @@
 }
 @media (max-width: 991px) {
   .section {
-    padding: var(--layout-section-space, 64px) 0;
+    padding: 20px 0 32px;
+  }
+  .panel {
+    height: auto;
+    min-height: 600px;
   }
   .names {
     grid-template-columns: 1fr;
@@ -191,11 +199,16 @@
   }
 }
 @media (max-width: 767px) {
+  .section {
+    padding: 24px 0 40px;
+  }
   .panel {
     grid-template-columns: 1fr;
+    min-height: 0;
+    height: auto;
   }
   .photo {
-    height: 420px;
+    height: clamp(220px, 42vh, 320px);
   }
   .photo img {
     object-position: 50% 12%;
@@ -207,10 +220,10 @@
 }
 @media (max-width: 479px) {
   .section {
-    padding: var(--layout-section-space, 48px) 0;
+    padding: 20px 0 32px;
   }
   .photo {
-    height: 350px;
+    height: clamp(190px, 34vh, 250px);
   }
   .formPanel {
     padding: 26px 20px;
