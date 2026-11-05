@@ -1,3 +1,0 @@
-Built-in image_gen edit. Saved to public/assets/hitech/team-25.jpeg so every existing use receives the cleaned image.
-
-Precise object edit of the supplied original photograph. Remove ONLY the bottom-left camera stamp: the white OnePlus icon, 'Shot on OnePlus', 'amar' and emoji/rose marks. Seamlessly reconstruct the underlying interlocking pavement pattern in that small corner, matching existing texture, lighting and perspective. Preserve all four guards exactly, their faces, clothing, badges, positions, all background gates, plants, buildings and overall colors, exposure and original 4:3 composition. Do not retouch or regenerate people. Do not crop or add any borders. No other changes.
