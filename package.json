@@ -11,8 +11,7 @@
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "check:deploy": "node --test tests/*.test.js && npm run build && node scripts/audit-production.mjs"
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
