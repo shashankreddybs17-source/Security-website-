@@ -16,13 +16,6 @@
 .runway {
   position: relative;
 }
-.runway[data-pinned='true'] {
-  height: calc(var(--services-stage-height) + var(--services-travel));
-}
-.runway[data-pinned='true'] .stage {
-  position: sticky;
-  top: var(--services-top);
-}
 .layout {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

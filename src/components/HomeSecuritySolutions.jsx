@@ -1,53 +1,25 @@
 import { approvedTeamPhoto } from '../data/approvedPhotos';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { connectServiceScroll } from '../lib/serviceScroll';
 import { existingServices } from '../data/services';
 import styles from './HomeSecuritySolutions.module.css';
 
-// Shared by the homepage and Services page, with one controller per section.
+// Services change only through the accessible tabs, without intercepting page scrolling.
 export default function HomeSecuritySolutions({
   services = existingServices,
   allowServiceLinks = false,
 }) {
-  const [active, setActive] = useState(0);
-  const runway = useRef(null);
-  const stage = useRef(null);
-  const controller = useRef(null);
-  const tabs = useRef([]);
-  useEffect(() => {
-    controller.current = connectServiceScroll(
-      runway.current,
-      stage.current,
-      services.length,
-      setActive,
-    );
+  const [active, setActive] = useState(() => {
     const requested = allowServiceLinks
       ? services.findIndex(
           (service) => service.id === new URLSearchParams(window.location.search).get('service'),
         )
       : -1;
-    let selectionFrame;
-    if (requested >= 0) {
-      selectionFrame = requestAnimationFrame(() => {
-        const headerHeight =
-          document.querySelector('header')?.getBoundingClientRect().height || 104;
-        window.scrollTo({
-          top: runway.current.getBoundingClientRect().top + window.scrollY - headerHeight - 12,
-          behavior: 'instant',
-        });
-        controller.current?.select(requested);
-      });
-    }
-    return () => {
-      cancelAnimationFrame(selectionFrame);
-      controller.current?.destroy();
-      controller.current = null;
-    };
-  }, [services, allowServiceLinks]);
+    return requested >= 0 ? requested : 0;
+  });
+  const tabs = useRef([]);
   const select = (index) => {
-    if (controller.current) controller.current.select(index);
-    else setActive(index);
+    setActive(index);
   };
   const navigate = (event, index) => {
     let next;
@@ -63,8 +35,8 @@ export default function HomeSecuritySolutions({
   };
   return (
     <section id="services" className={styles.section} aria-labelledby="security-solutions-title">
-      <div ref={runway} className={styles.runway}>
-        <div ref={stage} className={styles.stage}>
+      <div className={styles.runway}>
+        <div>
           <div className="container-default w-container">
             <div className={styles.layout}>
               <div className={styles.introduction}>
