@@ -21,6 +21,7 @@ export default function Contact() {
     <div className="page-wrapper">
       <main className="main-wrapper">
         <AboutHeroSection
+          showOverlay={false}
           title="Contact Us"
           image="/assets/hitech/new-uniform/contact-uniform-banner.webp"
           imageAlt="Hi-Tech security personnel assembled for an outdoor briefing"

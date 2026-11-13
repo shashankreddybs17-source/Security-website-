@@ -28,6 +28,19 @@
   max-width: 340px;
 }
 
+.section :global(.about-image) {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.section :global(.about-signature) {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .section :global(.about-designation-block) {
   margin-bottom: 20px;
 }

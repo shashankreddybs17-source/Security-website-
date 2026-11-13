@@ -31,13 +31,12 @@ test('dynamic template paths remain excluded', () => {
   assert.deepEqual([...assetReferences('`/assets/hitech/team-${service.photo}.jpeg`')], []);
 });
 
-test('actual testimonial lightbox markup resolves to clean media references', () => {
+test('responsive asset manifest resolves to existing local images', () => {
   const source = readFileSync(
-    new URL('../src/components/HomeTestimonialSection.jsx', import.meta.url),
+    new URL('../src/data/responsiveImages.json', import.meta.url),
     'utf8',
   );
   const assets = [...assetReferences(source)];
-  assert.ok(assets.some((asset) => asset.endsWith('James-Miller-transcode.mp4')));
-  assert.equal(assets.filter((asset) => asset.includes('James-Miller-transcode.mp4')).length, 1);
+  assert.ok(assets.length > 0);
   for (const asset of assets) assert.ok(!asset.includes('\\'), asset);
 });

@@ -11,7 +11,7 @@ export default function AboutAboutSection() {
             <div className="about-content-block">
               <div className="about-title-block">
                 <h2
-                  data-reveal-id="1be2cd6c-d473-3ad6-b823-7f6dcf4bc363"
+                  data-reveal=""
                   style={{
                     transform:
                       'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -23,7 +23,7 @@ export default function AboutAboutSection() {
               </div>
               <div className="about-except-block">
                 <p
-                  data-reveal-id="8b8ffe54-125b-62dd-aa7a-5d211cd3242d"
+                  data-reveal=""
                   style={{
                     transform:
                       'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -37,18 +37,10 @@ export default function AboutAboutSection() {
               </div>
               <div className="site-layout-grid about-card-wrap">
                 <div className="about-card">
-                  <div
-                    data-reveal-id="0777ff1c-ba9f-947c-da08-c8d8bd025215"
-                    style={{ opacity: '0' }}
-                    className="about-subtitle-block"
-                  >
+                  <div data-reveal="" style={{ opacity: '0' }} className="about-subtitle-block">
                     <div className="about-subtitle">{'Our Purpose'}</div>
                   </div>
-                  <div
-                    data-reveal-id="1138acf4-999e-98bd-1b86-ae7260793ba0"
-                    style={{ opacity: '0' }}
-                    className="about-text-block"
-                  >
+                  <div data-reveal="" style={{ opacity: '0' }} className="about-text-block">
                     <div className="about-text">
                       {
                         'To provide reliable protection through trained personnel and security practices suited to each location. Clear responsibilities, preparation and communication help us maintain a safe, welcoming environment for employees, visitors and residents.'
@@ -57,18 +49,10 @@ export default function AboutAboutSection() {
                   </div>
                 </div>
                 <div className="about-card">
-                  <div
-                    data-reveal-id="f9eb42af-6c6d-06b1-61e8-390dfbc28378"
-                    style={{ opacity: '0' }}
-                    className="about-subtitle-block"
-                  >
+                  <div data-reveal="" style={{ opacity: '0' }} className="about-subtitle-block">
                     <div className="about-subtitle">{'Our Values'}</div>
                   </div>
-                  <div
-                    data-reveal-id="f9eb42af-6c6d-06b1-61e8-390dfbc2837b"
-                    style={{ opacity: '0' }}
-                    className="about-text-block"
-                  >
+                  <div data-reveal="" style={{ opacity: '0' }} className="about-text-block">
                     <div className="about-text">
                       {
                         'Discipline, vigilance, responsibility, integrity and professionalism guide every assignment. We follow procedures, stay alert to risks and take ownership of entrusted duties, treating people with courtesy and protecting our clients’ confidentiality.'
@@ -79,10 +63,7 @@ export default function AboutAboutSection() {
               </div>
             </div>
             <div className="about-image-block">
-              <div
-                data-reveal-id="1a48e2d1-8870-9f35-df3b-7abd70bfe38c"
-                className="about-image-wrap"
-              >
+              <div data-reveal="" className="about-image-wrap">
                 <ResponsiveImage
                   src="/assets/hitech/new-uniform/security-guard-building-entrance.webp"
                   loading="lazy"
@@ -104,7 +85,7 @@ export default function AboutAboutSection() {
               </div>
               <div className="about-name-block">
                 <h4
-                  data-reveal-id="b30779de-01c4-f2be-b277-081d220b97bb"
+                  data-reveal=""
                   style={{
                     transform:
                       'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -116,7 +97,7 @@ export default function AboutAboutSection() {
               </div>
               <div className="about-designation-block">
                 <h6
-                  data-reveal-id="d6fdc874-a69d-5dfd-8b9b-9ffc67cc2cd1"
+                  data-reveal=""
                   style={{
                     transform:
                       'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -134,7 +115,7 @@ export default function AboutAboutSection() {
                     transform:
                       'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
                   }}
-                  data-reveal-id="87137819-6685-4a6d-8f2b-a5ac828986f1"
+                  data-reveal=""
                   alt=""
                   className="about-signature site-brand-logo"
                 />

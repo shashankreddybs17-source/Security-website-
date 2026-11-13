@@ -255,7 +255,7 @@ html.site-mod-touch * {
   display: none;
 }
 
-.site-button {
+.ui-button {
   color: #fff;
   line-height: inherit;
   cursor: pointer;
@@ -267,7 +267,7 @@ html.site-mod-touch * {
   display: inline-block;
 }
 
-input.site-button {
+input.ui-button {
   -webkit-appearance: button;
 }
 

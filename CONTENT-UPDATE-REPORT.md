@@ -26,7 +26,7 @@ The original Home and About design is retained. No sections were added or remove
 
 - `src/main.jsx`: company name in page title only.
 - `index.html`: title and description only.
-- `src/styles/reference.css`: two background image URLs only. All styling declarations and values otherwise unchanged.
+- `src/styles/base.css`: two background image URLs only. All styling declarations and values otherwise unchanged.
 - `public/assets/hitech/`: supplied photographs, supplied identity logo and client logos extracted from brochure.
 
 ## Content

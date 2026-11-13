@@ -8,22 +8,19 @@ export default function AboutCommonFaqsSection() {
           <div className="faqs-block home-faqs-block">
             <div className="faqs-content home-faqs-content">
               <div className="section-title-block">
-                <h2 data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f7684" className="section-title">
+                <h2 data-reveal="" className="section-title">
                   {'Common Questions'}
                 </h2>
               </div>
               <div className="section-except-block">
-                <p data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f7687" className="section-except">
+                <p data-reveal="" className="section-except">
                   {"Still curious? We're here to help! Reach out to our team for expert guidance."}
                 </p>
               </div>
               <div className="section-button-block">
-                <div
-                  data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f768a"
-                  className="section-button-wrap"
-                >
+                <div data-reveal="" className="section-button-wrap">
                   <a
-                    data-reveal-id="bd3fa499-147e-79a0-b7ab-9a027d174d20"
+                    data-reveal=""
                     href="/contact-us"
                     className="tertiary-button site-inline-block"
                   >
@@ -84,7 +81,7 @@ export default function AboutCommonFaqsSection() {
               <div
                 data-hover="false"
                 data-delay="0"
-                data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f768e"
+                data-reveal=""
                 className="faqs-dropdown site-dropdown"
               >
                 <div className="faqs-question site-dropdown-toggle">
@@ -125,7 +122,7 @@ export default function AboutCommonFaqsSection() {
               <div
                 data-hover="false"
                 data-delay="0"
-                data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f7699"
+                data-reveal=""
                 className="faqs-dropdown site-dropdown"
               >
                 <div className="faqs-question site-dropdown-toggle">
@@ -166,7 +163,7 @@ export default function AboutCommonFaqsSection() {
               <div
                 data-hover="false"
                 data-delay="0"
-                data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f76a4"
+                data-reveal=""
                 className="faqs-dropdown site-dropdown"
               >
                 <div className="faqs-question site-dropdown-toggle">
@@ -207,7 +204,7 @@ export default function AboutCommonFaqsSection() {
               <div
                 data-hover="false"
                 data-delay="0"
-                data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f76af"
+                data-reveal=""
                 className="faqs-dropdown site-dropdown"
               >
                 <div className="faqs-question site-dropdown-toggle">
@@ -248,7 +245,7 @@ export default function AboutCommonFaqsSection() {
               <div
                 data-hover="false"
                 data-delay="0"
-                data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f76ba"
+                data-reveal=""
                 className="faqs-dropdown site-dropdown"
               >
                 <div className="faqs-question site-dropdown-toggle">

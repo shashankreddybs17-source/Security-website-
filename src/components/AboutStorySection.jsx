@@ -9,7 +9,7 @@ export default function AboutStorySection() {
             <div className="story-content-block">
               <div className="story-title-block">
                 <h3
-                  data-reveal-id="3d96cfa7-dd2c-cc09-f349-2c90782ac568"
+                  data-reveal=""
                   style={{
                     transform:
                       'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -20,11 +20,7 @@ export default function AboutStorySection() {
                 </h3>
               </div>
               <div className="story-except-block">
-                <p
-                  data-reveal-id="d944b9e5-1fe7-15d5-3d97-4230ee2293d3"
-                  style={{ opacity: '0' }}
-                  className="story-except"
-                >
+                <p data-reveal="" style={{ opacity: '0' }} className="story-except">
                   {
                     'Hi-Tech Protection Security is associated with Hi-Tech Security Force, established in 2008 with operations in Karnataka, Tamil Nadu and Kerala. Our Bengaluru-based organisation is managed by experienced and trained Ex-Army personnel, bringing discipline, alertness and responsibility to security operations.'
                   }
@@ -33,10 +29,7 @@ export default function AboutStorySection() {
             </div>
             <div className="story-counter-block">
               <div className="story-number-block">
-                <div
-                  data-reveal-id="20069d39-0754-4f8b-b5f5-a7535bf45098"
-                  className="story-number-wrapper"
-                >
+                <div data-reveal="" className="story-number-wrapper">
                   <div
                     style={{
                       transform:
@@ -78,20 +71,13 @@ export default function AboutStorySection() {
                   <h2 className="story-counter-title">{'+'}</h2>
                 </div>
                 <div className="story-counter-wrapper">
-                  <div
-                    data-reveal-id="20069d39-0754-4f8b-b5f5-a7535bf450e1"
-                    style={{ opacity: '0' }}
-                    className="story-counter-text"
-                  >
+                  <div data-reveal="" style={{ opacity: '0' }} className="story-counter-text">
                     {'Years of Experience'}
                   </div>
                 </div>
               </div>
               <div className="story-number-block">
-                <div
-                  data-reveal-id="eee56adf-2a1d-9be7-952f-fa5f9d2b6093"
-                  className="story-number-wrapper"
-                >
+                <div data-reveal="" className="story-number-wrapper">
                   <div
                     style={{
                       transform:
@@ -133,20 +119,13 @@ export default function AboutStorySection() {
                   <h2 className="story-counter-title">{'%'}</h2>
                 </div>
                 <div className="story-counter-wrapper">
-                  <div
-                    data-reveal-id="eee56adf-2a1d-9be7-952f-fa5f9d2b60c3"
-                    style={{ opacity: '0' }}
-                    className="story-counter-text"
-                  >
+                  <div data-reveal="" style={{ opacity: '0' }} className="story-counter-text">
                     {'On-Time Reporting'}
                   </div>
                 </div>
               </div>
               <div className="story-number-block">
-                <div
-                  data-reveal-id="cbc5eeb9-13da-7cbc-6b69-8688894d77d9"
-                  className="story-number-wrapper"
-                >
+                <div data-reveal="" className="story-number-wrapper">
                   <div
                     style={{
                       transform:
@@ -188,20 +167,13 @@ export default function AboutStorySection() {
                   <h2 className="story-counter-title">{'%'}</h2>
                 </div>
                 <div className="story-counter-wrapper">
-                  <div
-                    data-reveal-id="cbc5eeb9-13da-7cbc-6b69-8688894d7809"
-                    style={{ opacity: '0' }}
-                    className="story-counter-text"
-                  >
+                  <div data-reveal="" style={{ opacity: '0' }} className="story-counter-text">
                     {'Response'}
                   </div>
                 </div>
               </div>
               <div className="story-number-block">
-                <div
-                  data-reveal-id="cd6df80a-eb83-7845-665a-94754803e7d3"
-                  className="story-number-wrapper"
-                >
+                <div data-reveal="" className="story-number-wrapper">
                   <div
                     style={{
                       transform:
@@ -243,11 +215,7 @@ export default function AboutStorySection() {
                   <h2 className="story-counter-title">{'%'}</h2>
                 </div>
                 <div className="story-counter-wrapper">
-                  <div
-                    data-reveal-id="cd6df80a-eb83-7845-665a-94754803e803"
-                    style={{ opacity: '0' }}
-                    className="story-counter-text"
-                  >
+                  <div data-reveal="" style={{ opacity: '0' }} className="story-counter-text">
                     {'Satisfaction'}
                   </div>
                 </div>

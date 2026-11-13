@@ -37,6 +37,7 @@ const gallery = [
     photo: '24',
     title: 'A professional presence',
     detail: 'Hi-Tech security personnel',
+    modalPosition: '50% 0%',
     width: 1320,
     height: 1189,
   },
@@ -423,12 +424,17 @@ export default function HomeWorkGallery() {
             >
               <X size={23} />
             </button>
-            <ResponsiveImage
-              src={photoUrl(gallery[selected].photo)}
-              alt={gallery[selected].detail}
-              width={gallery[selected].width}
-              height={gallery[selected].height}
-            />
+            <div className={styles.lightboxImage}>
+              <ResponsiveImage
+                src={photoUrl(gallery[selected].photo)}
+                alt={gallery[selected].detail}
+                width={gallery[selected].width}
+                height={gallery[selected].height}
+                sizes="(max-width: 944px) 90vw, 850px"
+                loading="eager"
+                style={{ objectPosition: gallery[selected].modalPosition || 'center' }}
+              />
+            </div>
             <div className={styles.lightboxFooter}>
               <button type="button" onClick={() => movePhoto(-1)} aria-label="Previous photograph">
                 <ArrowLeft size={20} />

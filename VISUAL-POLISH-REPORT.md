@@ -10,7 +10,7 @@ One reusable navbar now renders before page wrappers on every route. The old hea
 
 At widths below 992px, the mobile menu provides all six links and the quote CTA. It supports keyboard focus, Escape, selecting a link, background-click dismissal, viewport-resize dismissal, body scroll locking and scrollbar-width compensation. The collapsed menu is inert and hidden from assistive technology. No new libraries were installed.
 
-The footer's excessive 100–120px wide-screen vertical padding is capped at 72px while keeping its layout/content. A leftover Webflow clearfix on the flex-based home hero caption was removed to prevent empty flex items from adding gaps, particularly when stacked on mobile. The prior content-driven carousel sizing and shared content-spacing system are retained unchanged. Intentional Services and About-gallery scroll runways are preserved.
+The footer's excessive 100–120px wide-screen vertical padding is capped at 72px while keeping its layout/content. A leftover original template clearfix on the flex-based home hero caption was removed to prevent empty flex items from adding gaps, particularly when stacked on mobile. The prior content-driven carousel sizing and shared content-spacing system are retained unchanged. Intentional Services and About-gallery scroll runways are preserved.
 
 ## Preserved
 

@@ -5,6 +5,7 @@ export default function AboutHeroSection({
   title = 'About Us',
   image = '/assets/hitech/new-uniform/gate-security.webp',
   imageAlt = 'Hi-Tech security personnel in new uniforms at a property entrance',
+  showOverlay = true,
 }) {
   return (
     <section className="hero-section">
@@ -13,7 +14,7 @@ export default function AboutHeroSection({
           <div className="hero-block">
             <div className="hero-title-block">
               <h3
-                data-reveal-id="306b2491-d070-3e99-8a00-4332eeb059c3"
+                data-reveal=""
                 style={{
                   transform:
                     'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -25,7 +26,7 @@ export default function AboutHeroSection({
             </div>
             <div className="hero-subtitle-block">
               <div
-                data-reveal-id="e44a8c45-f1bc-96fb-2e74-f5545452fda7"
+                data-reveal=""
                 style={{
                   transform:
                     'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -52,7 +53,7 @@ export default function AboutHeroSection({
           className="hero-bg-image"
           style={{ objectPosition: 'center 25%' }}
         />
-        <div className="hero-bg-overlay"></div>
+        {showOverlay && <div className="hero-bg-overlay" />}
       </div>
     </section>
   );

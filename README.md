@@ -11,10 +11,10 @@ A responsive security-company website for HI-TECH Protection Security, Bengaluru
 | CSS Modules + standard CSS     | Section styling, responsive layouts and theme tokens                         |
 | Tailwind CSS 4                 | Selected utility classes; preflight is disabled to preserve existing styling |
 | Lucide React                   | Icons                                                                        |
-| Local Webflow runtime + jQuery | Retained template sliders, lightboxes and some animations                    |
+| Local original template runtime + jQuery | Retained template sliders, lightboxes and some animations                    |
 | Google Maps iframe             | Address-based map on the Contact page                                        |
 
-There is currently no connected backend, database or CMS. Some interactions use React; others rely on the locally bundled Webflow runtime.
+There is currently no connected backend, database or CMS. Some interactions use React; others rely on the locally bundled original template runtime.
 
 ## Fonts
 
@@ -76,7 +76,7 @@ Deploy `dist/` to a static host with an **SPA fallback to `index.html`**, so dir
 
 The project is configured for Vercel in `vercel.json`. It builds as a static Vite website; no server, database, API keys or environment variables are required for the current features.
 
-1. Push this project to your Git provider, including `src/`, `public/`, `index.html`, `vite.config.js`, `reference-metadata.json`, `package.json`, `package-lock.json` and `vercel.json`.
+1. Push this project to your Git provider, including `src/`, `public/`, `index.html`, `vite.config.js`, `native reveal configuration`, `package.json`, `package-lock.json` and `vercel.json`.
 2. In Vercel, import the repository as a new project. Choose the directory containing `package.json` as the **Root Directory** (leave the default if this project is the repository root).
 3. Use these settings, already specified by the project configuration:
 
@@ -107,5 +107,6 @@ Run `npm.cmd run format` to format project source, styles, configuration and doc
 VS Code workspace settings enable format on save with the recommended **Prettier - Code formatter** extension (`esbenp.prettier-vscode`). Install that extension to enable automatic formatting in the editor.
 
 Original template, vendor and third-party asset rights remain with their respective owners.
-#   S e c u r i t y - w e b s i t e -  
+#   S e c u r i t y - w e b s i t e - 
+ 
  

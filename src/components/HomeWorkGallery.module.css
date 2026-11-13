@@ -210,15 +210,22 @@
   outline-offset: 4px;
 }
 .lightbox {
-  --viewer-gutter: 12px;
-  --viewer-edge: 26px;
+  --viewer-footer: 112px;
+  box-sizing: border-box;
+  position: fixed;
+  inset: 0;
+  margin: auto;
   padding: 0;
   border: 1px solid #fdf9f130;
   border-radius: 16px;
-  width: fit-content;
-  max-width: min(1440px, 96vw);
-  max-height: 96dvh;
-  overflow: auto;
+  width: min(90vw, 850px);
+  max-width: 90vw;
+  height: min(
+    calc((min(90vw, 850px) - 2px) * 0.625 + var(--viewer-footer) + 2px),
+    calc(100dvh - 32px)
+  );
+  max-height: calc(100dvh - 32px);
+  overflow: hidden;
   color: var(--site-navy, #070616);
   background: var(--site-cream, #fdf9f1);
 }
@@ -227,7 +234,10 @@
 }
 .lightboxBody {
   position: relative;
-  padding: var(--viewer-gutter);
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) var(--viewer-footer);
+  height: 100%;
+  min-height: 0;
 }
 .close,
 .lightboxFooter button {
@@ -246,30 +256,45 @@
 .close {
   position: absolute;
   z-index: 1;
-  top: calc(var(--viewer-gutter) + 10px);
-  right: calc(var(--viewer-gutter) + 10px);
+  top: 12px;
+  right: 12px;
   margin: 0;
 }
-.lightboxBody > img {
+.lightboxImage {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #070616;
+}
+.lightboxImage > img {
+  position: absolute;
+  inset: 0;
   display: block;
-  width: auto;
-  height: auto;
-  max-width: min(1414px, calc(96vw - var(--viewer-edge)));
-  max-height: calc(96dvh - 124px);
-  margin: 0 auto;
-  border-radius: 12px;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .lightboxFooter {
-  display: flex;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 38px;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-top: 12px;
+  min-height: 0;
+  margin: 0;
+  padding: 12px 16px;
+  background: var(--site-cream, #fdf9f1);
 }
 .lightboxFooter p {
   flex: 1;
   min-width: 0;
+  max-height: 100%;
+  overflow-y: auto;
   margin: 0;
   text-align: center;
   font-family: var(--_font-family---heading, 'Archivo', sans-serif);
@@ -450,10 +475,10 @@
     font-size: 14px;
   }
   .lightbox {
-    --viewer-gutter: 8px;
-    --viewer-edge: 18px;
+    --viewer-footer: 128px;
   }
   .lightboxFooter {
+    padding: 12px;
     gap: 10px;
   }
   .lightboxFooter p {
