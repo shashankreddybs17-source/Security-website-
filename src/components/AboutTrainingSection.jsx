@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { useEffect, useRef } from 'react';
 import styles from './AboutTrainingSection.module.css';
 
@@ -33,7 +34,7 @@ export default function AboutTrainingSection() {
   }, []);
   return (
     <section ref={section} className={styles.section} aria-labelledby="about-training-heading">
-      <div className="container-default w-container">
+      <div className="container-default site-container">
         <div className={styles.layout}>
           <div className={styles.content} data-reveal>
             <p className={styles.label}>TRAINING &amp; PREPAREDNESS</p>
@@ -46,7 +47,7 @@ export default function AboutTrainingSection() {
             <p className={styles.supporting}>PRACTICAL FIRE SAFETY TRAINING</p>
           </div>
           <figure className={styles.media}>
-            <img
+            <ResponsiveImage
               src="/assets/hitech/new-uniform/fire-demonstration.webp"
               alt="Hi-Tech personnel practising a fire extinguisher demonstration while colleagues observe"
               width="1280"

@@ -1,17 +1,18 @@
+import ResponsiveImage from './ResponsiveImage';
 import styles from './HomePartnersSection.module.css';
 
 // Original client logos supplied in the Hi-Tech company brochure.
 const clients = [
-  { name: 'Aditya Birla Group', image: 'client-8.webp' },
-  { name: 'BSNL', image: 'client-10.webp' },
-  { name: 'Mahindra', image: 'client-15.webp' },
-  { name: 'Union Bank of India', image: 'client-7.webp' },
-  { name: 'Volkswagen', image: 'client-16.webp' },
-  { name: 'INOX', image: 'client-14.webp' },
-  { name: 'BIG Cinemas', image: 'client-9.webp' },
-  { name: 'Damro', image: 'client-11.webp' },
-  { name: 'Fabindia', image: 'client-12.webp' },
-  { name: 'Girias', image: 'client-13.webp' },
+  { name: 'Aditya Birla Group', image: 'aditya-birla-group-logo.webp' },
+  { name: 'BSNL', image: 'bsnl-logo.webp' },
+  { name: 'Mahindra', image: 'mahindra-logo.webp' },
+  { name: 'Union Bank of India', image: 'union-bank-logo.webp' },
+  { name: 'Volkswagen', image: 'volkswagen-logo.webp' },
+  { name: 'INOX', image: 'inox-logo.webp' },
+  { name: 'BIG Cinemas', image: 'big-cinemas-logo.webp' },
+  { name: 'Damro', image: 'damro-logo.webp' },
+  { name: 'Fabindia', image: 'fabindia-logo.webp' },
+  { name: 'Girias', image: 'girias-logo.webp' },
 ];
 
 const rows = [clients.slice(0, 5), clients.slice(5)];
@@ -24,7 +25,7 @@ export default function HomePartnersSection() {
         Security you can trust.
       </h2>
       <div className={styles.strip}>
-        <div className="container-default w-container">
+        <div className="container-default site-container">
           <div className={styles.rows}>
             {rows.map((row, index) => (
               <div
@@ -36,7 +37,7 @@ export default function HomePartnersSection() {
               >
                 {row.map((client) => (
                   <div className={styles.logo} key={client.name} role="listitem">
-                    <img
+                    <ResponsiveImage
                       src={`/assets/hitech/${client.image}`}
                       alt={client.name}
                       width="180"

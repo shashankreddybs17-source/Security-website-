@@ -3,13 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preload"
+      href="/assets/fonts/archivo-variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script>
+      if (location.pathname === '/') {
+        const preload = document.createElement('link');
+        preload.rel = 'preload';
+        preload.as = 'image';
+        preload.href = '/assets/hitech/new-uniform/corporate-security-briefing.webp';
+        preload.imageSrcset =
+          '/assets/hitech/new-uniform/responsive/corporate-security-briefing-480.webp 480w, /assets/hitech/new-uniform/responsive/corporate-security-briefing-960.webp 960w, /assets/hitech/new-uniform/corporate-security-briefing.webp 1430w';
+        preload.imageSizes = '100vw';
+        preload.fetchPriority = 'high';
+        document.head.appendChild(preload);
+      }
+    </script>
     <meta
       name="description"
       content="Hi-Tech Protection Security — professional security services in Bengaluru for businesses, institutions and residential communities."
     />
     <title>Hi-Tech Protection Security</title>
   </head>
-  <body>
+  <body class="font-sans">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

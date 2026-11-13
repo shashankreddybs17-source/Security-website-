@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { Check } from 'lucide-react';
 import styles from './AboutAboutSection.module.css';
 
@@ -5,12 +6,12 @@ export default function AboutAboutSection() {
   return (
     <section className={`about-section ${styles.section}`}>
       <div className="section-gap bottom-gap">
-        <div className="w-layout-blockcontainer container-default w-container">
+        <div className="site-layout-blockcontainer container-default site-container">
           <div className="about-block">
             <div className="about-content-block">
               <div className="about-title-block">
                 <h2
-                  data-w-id="1be2cd6c-d473-3ad6-b823-7f6dcf4bc363"
+                  data-reveal-id="1be2cd6c-d473-3ad6-b823-7f6dcf4bc363"
                   style={{
                     transform:
                       'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -22,7 +23,7 @@ export default function AboutAboutSection() {
               </div>
               <div className="about-except-block">
                 <p
-                  data-w-id="8b8ffe54-125b-62dd-aa7a-5d211cd3242d"
+                  data-reveal-id="8b8ffe54-125b-62dd-aa7a-5d211cd3242d"
                   style={{
                     transform:
                       'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -34,17 +35,17 @@ export default function AboutAboutSection() {
                   }
                 </p>
               </div>
-              <div className="w-layout-grid about-card-wrap">
+              <div className="site-layout-grid about-card-wrap">
                 <div className="about-card">
                   <div
-                    data-w-id="0777ff1c-ba9f-947c-da08-c8d8bd025215"
+                    data-reveal-id="0777ff1c-ba9f-947c-da08-c8d8bd025215"
                     style={{ opacity: '0' }}
                     className="about-subtitle-block"
                   >
                     <div className="about-subtitle">{'Our Purpose'}</div>
                   </div>
                   <div
-                    data-w-id="1138acf4-999e-98bd-1b86-ae7260793ba0"
+                    data-reveal-id="1138acf4-999e-98bd-1b86-ae7260793ba0"
                     style={{ opacity: '0' }}
                     className="about-text-block"
                   >
@@ -57,14 +58,14 @@ export default function AboutAboutSection() {
                 </div>
                 <div className="about-card">
                   <div
-                    data-w-id="f9eb42af-6c6d-06b1-61e8-390dfbc28378"
+                    data-reveal-id="f9eb42af-6c6d-06b1-61e8-390dfbc28378"
                     style={{ opacity: '0' }}
                     className="about-subtitle-block"
                   >
                     <div className="about-subtitle">{'Our Values'}</div>
                   </div>
                   <div
-                    data-w-id="f9eb42af-6c6d-06b1-61e8-390dfbc2837b"
+                    data-reveal-id="f9eb42af-6c6d-06b1-61e8-390dfbc2837b"
                     style={{ opacity: '0' }}
                     className="about-text-block"
                   >
@@ -78,10 +79,13 @@ export default function AboutAboutSection() {
               </div>
             </div>
             <div className="about-image-block">
-              <div data-w-id="1a48e2d1-8870-9f35-df3b-7abd70bfe38c" className="about-image-wrap">
-                <img
-                  src="/assets/hitech/new-uniform/converted-old-08.webp"
-                  loading="eager"
+              <div
+                data-reveal-id="1a48e2d1-8870-9f35-df3b-7abd70bfe38c"
+                className="about-image-wrap"
+              >
+                <ResponsiveImage
+                  src="/assets/hitech/new-uniform/security-guard-building-entrance.webp"
+                  loading="lazy"
                   style={{
                     transform:
                       'translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)',
@@ -100,7 +104,7 @@ export default function AboutAboutSection() {
               </div>
               <div className="about-name-block">
                 <h4
-                  data-w-id="b30779de-01c4-f2be-b277-081d220b97bb"
+                  data-reveal-id="b30779de-01c4-f2be-b277-081d220b97bb"
                   style={{
                     transform:
                       'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -112,7 +116,7 @@ export default function AboutAboutSection() {
               </div>
               <div className="about-designation-block">
                 <h6
-                  data-w-id="d6fdc874-a69d-5dfd-8b9b-9ffc67cc2cd1"
+                  data-reveal-id="d6fdc874-a69d-5dfd-8b9b-9ffc67cc2cd1"
                   style={{
                     transform:
                       'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -123,14 +127,14 @@ export default function AboutAboutSection() {
                 </h6>
               </div>
               <div className="about-signature-block">
-                <img
-                  src="/assets/hitech/logo-clean.webp"
-                  loading="eager"
+                <ResponsiveImage
+                  src="/assets/hitech/hi-tech-protection-security-logo.webp"
+                  loading="lazy"
                   style={{
                     transform:
                       'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
                   }}
-                  data-w-id="87137819-6685-4a6d-8f2b-a5ac828986f1"
+                  data-reveal-id="87137819-6685-4a6d-8f2b-a5ac828986f1"
                   alt=""
                   className="about-signature site-brand-logo"
                 />

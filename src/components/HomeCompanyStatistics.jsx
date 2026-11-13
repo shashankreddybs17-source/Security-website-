@@ -91,7 +91,7 @@ export default function HomeCompanyStatistics() {
       className={styles.section}
       aria-label="Company experience and statistics"
     >
-      <div className="container-default w-container">
+      <div className="container-default site-container">
         <div className={styles.layout}>
           <Statistic statistic={companyStatistics[0]} value={values[0]} experience />
           <div className={styles.metrics}>

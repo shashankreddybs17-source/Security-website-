@@ -1,3 +1,4 @@
+import ResponsiveImage from '../components/ResponsiveImage';
 import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Check } from 'lucide-react';
@@ -102,7 +103,7 @@ export default function Services() {
       <main className="main-wrapper">
         {service ? (
           <section className={styles.section} aria-labelledby="service-heading">
-            <div className="container-default w-container">
+            <div className="container-default site-container">
               <p className={styles.breadcrumb}>
                 <a href="/">Home</a>
                 <span aria-hidden="true">/</span>Services
@@ -133,8 +134,10 @@ export default function Services() {
                 </div>
                 <div className={styles.imageFrame}>
                   {image ? (
-                    <img
+                    <ResponsiveImage
                       src={image}
+                      loading="eager"
+                      fetchPriority="high"
                       alt={
                         service.imageAlt ||
                         `${service.title} ? Hi-Tech Protection Security personnel`

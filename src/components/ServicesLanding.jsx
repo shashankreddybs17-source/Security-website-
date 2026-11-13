@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { ArrowUpRight } from 'lucide-react';
 import { allServices } from '../data/services';
@@ -7,7 +8,7 @@ import styles from './ServicesLanding.module.css';
 export default function ServicesLanding({ headingRef }) {
   return (
     <section className={styles.section} aria-labelledby="services-landing-heading">
-      <div className="container-default w-container">
+      <div className="container-default site-container">
         <div className={styles.heading}>
           <h1 id="services-landing-heading" ref={headingRef} tabIndex={-1}>
             OUR SECURITY SOLUTIONS
@@ -30,7 +31,7 @@ export default function ServicesLanding({ headingRef }) {
               >
                 <div className={styles.imageFrame}>
                   {image ? (
-                    <img
+                    <ResponsiveImage
                       src={image}
                       alt={service.imageAlt || `${service.title} personnel`}
                       width="1440"

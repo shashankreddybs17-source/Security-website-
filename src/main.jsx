@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { X } from 'lucide-react';
 import SiteNavbar from './components/SiteNavbar';
 import FloatingContactButtons from './components/FloatingContactButtons';
 import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Faq from './pages/Faq';
-import Services from './pages/Services';
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Faq = lazy(() => import('./pages/Faq'));
+const Services = lazy(() => import('./pages/Services'));
 import { initializePageScroll } from './lib/pageNavigation';
 import { cleanPageUrl } from './lib/cleanPageUrl';
-import Blog from './pages/Blog';
+const Blog = lazy(() => import('./pages/Blog'));
 import { blogPosts } from './data/blogPosts';
-import metadata from '../reference-metadata.json';
-import { loadInteractions } from './lib/interactions';
+import { initializeInteractions } from './lib/interactions';
 import './styles/fonts.css';
-import './styles/reference.css';
+import './styles/base.css';
 import './styles/app.css';
 import './styles/layout.css';
 import './styles/theme.css';
@@ -33,23 +32,13 @@ const isBlog = Boolean(blogMatch);
 const blogSlug = blogMatch?.[1];
 const currentPost = blogPosts.find((post) => post.slug === blogSlug);
 const isFaq = /^\/faqs?\/?$/.test(location.pathname);
-const page = metadata[isAbout || isContact || isFaq ? 'about' : 'home'];
-document.documentElement.setAttribute('data-wf-page', page.pageId);
-document.documentElement.setAttribute('data-wf-site', page.siteId);
-document.documentElement.classList.add('w-mod-js');
-if ('ontouchstart' in window) document.documentElement.classList.add('w-mod-touch');
-
 document.title = `${isServices ? 'Services | ' : isFaq ? 'FAQ | ' : isBlog ? `${currentPost ? currentPost.title : 'Blog'} | ` : isContact ? 'Contact Us | ' : isAbout ? 'About Us | ' : ''}Hi-Tech Protection Security`;
 
 function App() {
   const [notice, setNotice] = useState('');
   useEffect(() => {
-    loadInteractions(page.scripts).catch((error) => {
-      console.error(error);
-      document.documentElement.classList.add('animation-fallback');
-    });
-    // This two-page frontend has no mailing-list backend. Prevent reference
-    // form handlers from sending visitor data to the template owner.
+    const disposeInteractions = initializeInteractions();
+    // Only the dedicated enquiry form is connected to the contact flow.
     const submit = (event) => {
       if (!(event.target instanceof HTMLFormElement)) return;
       if (event.target.dataset.contactEnquiry === 'true') return;
@@ -58,24 +47,31 @@ function App() {
       setNotice('Preview only — newsletter signup is not connected yet.');
     };
     document.addEventListener('submit', submit, true);
-    return () => document.removeEventListener('submit', submit, true);
+    return () => {
+      disposeInteractions();
+      document.removeEventListener('submit', submit, true);
+    };
   }, []);
   return (
     <>
       <SiteNavbar />
-      {isServices ? (
-        <Services />
-      ) : isFaq ? (
-        <Faq />
-      ) : isBlog ? (
-        <Blog slug={blogSlug} />
-      ) : isContact ? (
-        <Contact />
-      ) : isAbout ? (
-        <About />
-      ) : (
-        <Home />
-      )}
+      <Suspense
+        fallback={<div aria-busy="true" aria-label="Loading page" style={{ minHeight: '100vh' }} />}
+      >
+        {isServices ? (
+          <Services />
+        ) : isFaq ? (
+          <Faq />
+        ) : isBlog ? (
+          <Blog slug={blogSlug} />
+        ) : isContact ? (
+          <Contact />
+        ) : isAbout ? (
+          <About />
+        ) : (
+          <Home />
+        )}
+      </Suspense>
       <FloatingContactButtons />
       {notice && (
         <div

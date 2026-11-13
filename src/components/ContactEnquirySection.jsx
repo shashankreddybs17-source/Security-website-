@@ -1,4 +1,5 @@
-﻿import { useState } from 'react';
+import ResponsiveImage from './ResponsiveImage';
+import { useState } from 'react';
 import { Headphones, ArrowUpRight, Download } from 'lucide-react';
 import styles from './ContactEnquirySection.module.css';
 
@@ -46,11 +47,11 @@ export default function ContactEnquirySection() {
   }
   return (
     <section className={styles.section} aria-labelledby="contact-enquiry-title">
-      <div className="container-default w-container">
+      <div className="container-default site-container">
         <div className={styles.panel}>
           <figure className={styles.photo}>
-            <img
-              src="/assets/hitech/new-uniform/converted-old-05.webp"
+            <ResponsiveImage
+              src="/assets/hitech/new-uniform/security-team-field-training.webp"
               alt="Hi-Tech security personnel standing in formation at an outdoor briefing"
               loading="eager"
               width="584"

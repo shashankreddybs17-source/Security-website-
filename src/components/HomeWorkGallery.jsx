@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, X } from 'lucide-react';
@@ -351,12 +352,12 @@ export default function HomeWorkGallery() {
                   aria-label={`View full photograph: ${item.detail}`}
                 >
                   <span className={styles.photo}>
-                    <img
+                    <ResponsiveImage
                       src={photoUrl(item.photo)}
                       alt={item.detail}
                       width={item.width}
                       height={item.height}
-                      loading="eager"
+                      loading="lazy"
                       decoding="async"
                       fetchPriority="low"
                     />
@@ -422,7 +423,7 @@ export default function HomeWorkGallery() {
             >
               <X size={23} />
             </button>
-            <img
+            <ResponsiveImage
               src={photoUrl(gallery[selected].photo)}
               alt={gallery[selected].detail}
               width={gallery[selected].width}

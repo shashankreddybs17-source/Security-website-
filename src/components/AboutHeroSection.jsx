@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { Check } from 'lucide-react';
 
 export default function AboutHeroSection({
@@ -8,11 +9,11 @@ export default function AboutHeroSection({
   return (
     <section className="hero-section">
       <div className="hero-wrap">
-        <div className="w-layout-blockcontainer container-default w-container">
+        <div className="site-layout-blockcontainer container-default site-container">
           <div className="hero-block">
             <div className="hero-title-block">
               <h3
-                data-w-id="306b2491-d070-3e99-8a00-4332eeb059c3"
+                data-reveal-id="306b2491-d070-3e99-8a00-4332eeb059c3"
                 style={{
                   transform:
                     'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -24,7 +25,7 @@ export default function AboutHeroSection({
             </div>
             <div className="hero-subtitle-block">
               <div
-                data-w-id="e44a8c45-f1bc-96fb-2e74-f5545452fda7"
+                data-reveal-id="e44a8c45-f1bc-96fb-2e74-f5545452fda7"
                 style={{
                   transform:
                     'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -42,8 +43,10 @@ export default function AboutHeroSection({
         </div>
       </div>
       <div className="hero-bg">
-        <img
+        <ResponsiveImage
           src={image}
+          sizes="100vw"
+          fetchPriority="high"
           loading="eager"
           alt={imageAlt}
           className="hero-bg-image"

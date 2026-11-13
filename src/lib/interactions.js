@@ -5,6 +5,14 @@
  * deliberately gives each route a fresh interaction lifecycle.
  */
 export async function loadInteractions(scripts) {
+  // Let the hero image and critical styles finish before parsing the legacy runtime.
+  if (document.readyState !== 'complete') {
+    await new Promise((resolve) => window.addEventListener('load', resolve, { once: true }));
+  }
+  await new Promise((resolve) => {
+    if ('requestIdleCallback' in window) window.requestIdleCallback(resolve, { timeout: 1500 });
+    else window.setTimeout(resolve, 0);
+  });
   for (const src of scripts) {
     await new Promise((resolve, reject) => {
       const script = document.createElement('script');

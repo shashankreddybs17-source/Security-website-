@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { useEffect, useRef, useState } from 'react';
 import styles from './AboutReplacements.module.css';
@@ -82,7 +83,7 @@ export default function AboutApproachSection() {
   }, []);
   return (
     <section className={styles.approach} aria-labelledby="about-approach-heading">
-      <div className="container-default w-container">
+      <div className="container-default site-container">
         <div className={styles.approachHeader}>
           <p className={styles.eyebrow}>THE HI-TECH APPROACH</p>
           <h2 id="about-approach-heading" className={styles.heading}>
@@ -116,7 +117,7 @@ export default function AboutApproachSection() {
           <div className={styles.visualColumn}>
             <figure ref={visual} id="hi-tech-approach-visual" className={styles.visual}>
               {steps.map((step, index) => (
-                <img
+                <ResponsiveImage
                   key={step.photo}
                   src={approvedTeamPhoto(step.photo)}
                   alt={step.caption}

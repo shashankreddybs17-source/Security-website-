@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { useState } from 'react';
 import { ArrowUpRight, ShieldCheck } from 'lucide-react';
 import { blogPosts } from '../data/blogPosts';
@@ -38,7 +39,7 @@ export function BlogFeaturedArticle({
   return (
     <article className={styles.featured} aria-labelledby={headingId}>
       <a href={articleUrl(post)} className={styles.featuredPhoto} aria-label={`Read ${post.title}`}>
-        <img
+        <ResponsiveImage
           src={post.featuredImage || post.image}
           alt="HI-TECH personnel taking part in practical workplace safety training"
           width="1280"
@@ -72,7 +73,7 @@ export function BlogArticleCard({ post }) {
   return (
     <article className={styles.card}>
       <a href={articleUrl(post)} className={styles.cardPhoto} aria-label={`Read ${post.title}`}>
-        <img
+        <ResponsiveImage
           src={post.image}
           alt="HI-TECH Protection Security personnel during training and site briefings"
           width="1280"

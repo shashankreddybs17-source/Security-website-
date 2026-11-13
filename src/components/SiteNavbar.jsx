@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
 import { activeNavigationPath, navigationLinks } from '../lib/navigation';
@@ -225,8 +226,10 @@ export default function SiteNavbar() {
             aria-label="Hi-Tech Protection Security home"
             onClick={close}
           >
-            <img
-              src="/assets/hitech/logo-clean.webp"
+            <ResponsiveImage
+              src="/assets/hitech/hi-tech-protection-security-logo.webp"
+              loading="eager"
+              sizes="180px"
               className="site-brand-logo"
               width="430"
               height="188"

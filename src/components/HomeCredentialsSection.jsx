@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { ArrowUpRight, Award, ClipboardCheck, ShieldCheck } from 'lucide-react';
 import styles from './HomeCredentialsSection.module.css';
 
@@ -23,7 +24,7 @@ const photograph = '/assets/hitech/company-credentials.webp';
 export default function HomeCredentialsSection() {
   return (
     <section className={styles.section} aria-labelledby="home-credentials-heading">
-      <div className="container-default w-container">
+      <div className="container-default site-container">
         <div className={styles.layout}>
           <div className={styles.content}>
             <p className={styles.label}>OUR CREDENTIALS</p>
@@ -52,7 +53,7 @@ export default function HomeCredentialsSection() {
             </a>
           </div>
           <figure className={styles.media}>
-            <img
+            <ResponsiveImage
               src={photograph}
               alt="Framed company certificates and registration documents displayed on the Hi-Tech Protection Security office wall"
               width="610"

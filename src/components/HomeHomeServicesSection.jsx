@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { Check } from 'lucide-react';
 
 export default function HomeHomeServicesSection() {
@@ -5,16 +6,16 @@ export default function HomeHomeServicesSection() {
     <section id="services" className="home-services-section">
       <div className="section-gap bottom-gap">
         <div
-          data-w-id="0ff57312-a651-0c93-a8a3-83c6442e2b36"
+          data-reveal-id="0ff57312-a651-0c93-a8a3-83c6442e2b36"
           className="home-services-sticky-container"
         >
           <div className="home-services-sticky">
-            <div className="w-layout-blockcontainer container-default w-container">
+            <div className="site-layout-blockcontainer container-default site-container">
               <div className="home-services-block">
                 <div className="home-services-content">
                   <div className="section-title-block">
                     <h2
-                      data-w-id="e51a2c59-cd15-ddc3-6f7e-2257a8d8dce2"
+                      data-reveal-id="e51a2c59-cd15-ddc3-6f7e-2257a8d8dce2"
                       style={{
                         transform:
                           'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -26,7 +27,7 @@ export default function HomeHomeServicesSection() {
                   </div>
                   <div className="section-except-block">
                     <p
-                      data-w-id="e51a2c59-cd15-ddc3-6f7e-2257a8d8dce5"
+                      data-reveal-id="e51a2c59-cd15-ddc3-6f7e-2257a8d8dce5"
                       style={{
                         transform:
                           'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -42,7 +43,7 @@ export default function HomeHomeServicesSection() {
                 <div className="home-services-card-wrapper">
                   <div className="home-services-card-menu">
                     <div
-                      data-w-id="8fb00eb6-042f-bedd-6d6c-2fca86a12699"
+                      data-reveal-id="8fb00eb6-042f-bedd-6d6c-2fca86a12699"
                       style={{ opacity: '0' }}
                       className="home-services-card-link"
                     >
@@ -52,7 +53,7 @@ export default function HomeHomeServicesSection() {
                       </div>
                     </div>
                     <div
-                      data-w-id="53ef432e-6951-4b16-aa53-c9938b96acd6"
+                      data-reveal-id="53ef432e-6951-4b16-aa53-c9938b96acd6"
                       style={{ opacity: '0' }}
                       className="home-services-card-link"
                     >
@@ -62,7 +63,7 @@ export default function HomeHomeServicesSection() {
                       </div>
                     </div>
                     <div
-                      data-w-id="b3e6e032-9d75-0401-da8a-20c126ca845a"
+                      data-reveal-id="b3e6e032-9d75-0401-da8a-20c126ca845a"
                       style={{ opacity: '0' }}
                       className="home-services-card-link"
                     >
@@ -74,7 +75,7 @@ export default function HomeHomeServicesSection() {
                       </div>
                     </div>
                     <div
-                      data-w-id="7016c1e1-5720-fb8b-fd70-58a7931f2f3b"
+                      data-reveal-id="7016c1e1-5720-fb8b-fd70-58a7931f2f3b"
                       style={{ opacity: '0' }}
                       className="home-services-card-link"
                     >
@@ -84,7 +85,7 @@ export default function HomeHomeServicesSection() {
                       </div>
                     </div>
                     <div
-                      data-w-id="3a89cbec-091e-8c07-0668-c3a9c086b8e8"
+                      data-reveal-id="3a89cbec-091e-8c07-0668-c3a9c086b8e8"
                       style={{ opacity: '0' }}
                       className="home-services-card-link"
                     >
@@ -94,7 +95,7 @@ export default function HomeHomeServicesSection() {
                       </div>
                     </div>
                     <div
-                      data-w-id="74453845-1d05-13f2-da8f-3bd5bfed1b73"
+                      data-reveal-id="74453845-1d05-13f2-da8f-3bd5bfed1b73"
                       style={{ opacity: '0' }}
                       className="home-services-card-link"
                     >
@@ -105,12 +106,12 @@ export default function HomeHomeServicesSection() {
                     </div>
                   </div>
                   <div
-                    data-w-id="8cd4d677-c695-8860-bd77-8a8cfadf6c40"
+                    data-reveal-id="8cd4d677-c695-8860-bd77-8a8cfadf6c40"
                     className="home-services-card-content"
                   >
                     <div className="home-services-card-pane">
                       <div
-                        data-w-id="96a27607-fccc-bc84-2547-df718ac362ae"
+                        data-reveal-id="96a27607-fccc-bc84-2547-df718ac362ae"
                         className="services-card"
                       >
                         <div
@@ -120,9 +121,9 @@ export default function HomeHomeServicesSection() {
                           <div className="home-services-image-wrap">
                             <a
                               href="/contact-us"
-                              className="home-services-image-link one w-inline-block"
+                              className="home-services-image-link one site-inline-block"
                             >
-                              <img
+                              <ResponsiveImage
                                 src="/assets/hitech/new-uniform/outdoor-briefing.webp"
                                 loading="eager"
                                 style={{
@@ -143,9 +144,9 @@ export default function HomeHomeServicesSection() {
                             </a>
                             <a
                               href="/contact-us"
-                              className="home-services-image-link two w-inline-block"
+                              className="home-services-image-link two site-inline-block"
                             >
-                              <img
+                              <ResponsiveImage
                                 src="/assets/hitech/new-uniform/bodyguards.webp"
                                 loading="eager"
                                 style={{
@@ -166,9 +167,9 @@ export default function HomeHomeServicesSection() {
                             </a>
                             <a
                               href="/contact-us"
-                              className="home-services-image-link three w-inline-block"
+                              className="home-services-image-link three site-inline-block"
                             >
-                              <img
+                              <ResponsiveImage
                                 src="/assets/hitech/new-uniform/safety-briefing.webp"
                                 loading="eager"
                                 style={{
@@ -189,9 +190,9 @@ export default function HomeHomeServicesSection() {
                             </a>
                             <a
                               href="/contact-us"
-                              className="home-services-image-link four w-inline-block"
+                              className="home-services-image-link four site-inline-block"
                             >
-                              <img
+                              <ResponsiveImage
                                 src="/assets/hitech/new-uniform/team-lineup.webp"
                                 loading="eager"
                                 style={{
@@ -212,9 +213,9 @@ export default function HomeHomeServicesSection() {
                             </a>
                             <a
                               href="/contact-us"
-                              className="home-services-image-link five w-inline-block"
+                              className="home-services-image-link five site-inline-block"
                             >
-                              <img
+                              <ResponsiveImage
                                 src="/assets/hitech/new-uniform/commercial-screening.webp"
                                 loading="eager"
                                 style={{
@@ -235,9 +236,9 @@ export default function HomeHomeServicesSection() {
                             </a>
                             <a
                               href="/contact-us"
-                              className="home-services-image-link six w-inline-block"
+                              className="home-services-image-link six site-inline-block"
                             >
-                              <img
+                              <ResponsiveImage
                                 src="/assets/hitech/new-uniform/gate-security.webp"
                                 loading="eager"
                                 style={{
@@ -264,11 +265,14 @@ export default function HomeHomeServicesSection() {
                         >
                           <div className="home-services-content-wrap">
                             <div
-                              data-w-id="465ec242-69ba-7e56-04d2-e60c81b67ea7"
+                              data-reveal-id="465ec242-69ba-7e56-04d2-e60c81b67ea7"
                               style={{ opacity: '0' }}
                               className="home-services-content-card one"
                             >
-                              <a href="/contact-us" className="services-title-link w-inline-block">
+                              <a
+                                href="/contact-us"
+                                className="services-title-link site-inline-block"
+                              >
                                 <h4 className="services-title">{'Hotel Security'}</h4>
                               </a>
                               <div className="services-except">
@@ -283,7 +287,7 @@ export default function HomeHomeServicesSection() {
                                     backgroundColor: 'rgba(0,0,0,0)',
                                   }}
                                   href="/contact-us"
-                                  className="secondary-button w-inline-block"
+                                  className="secondary-button site-inline-block"
                                 >
                                   <div className="button-block">
                                     <div className="button-text-block secondary">
@@ -352,7 +356,10 @@ export default function HomeHomeServicesSection() {
                               </div>
                             </div>
                             <div className="home-services-content-card two">
-                              <a href="/contact-us" className="services-title-link w-inline-block">
+                              <a
+                                href="/contact-us"
+                                className="services-title-link site-inline-block"
+                              >
                                 <h4 className="services-title">{'Bank Security'}</h4>
                               </a>
                               <div className="services-except">
@@ -367,7 +374,7 @@ export default function HomeHomeServicesSection() {
                                     backgroundColor: 'rgba(0,0,0,0)',
                                   }}
                                   href="/contact-us"
-                                  className="secondary-button w-inline-block"
+                                  className="secondary-button site-inline-block"
                                 >
                                   <div className="button-block">
                                     <div className="button-text-block secondary">
@@ -436,7 +443,10 @@ export default function HomeHomeServicesSection() {
                               </div>
                             </div>
                             <div className="home-services-content-card three">
-                              <a href="/contact-us" className="services-title-link w-inline-block">
+                              <a
+                                href="/contact-us"
+                                className="services-title-link site-inline-block"
+                              >
                                 <h4 className="services-title">{'Corporate Office Security'}</h4>
                               </a>
                               <div className="services-except">
@@ -451,7 +461,7 @@ export default function HomeHomeServicesSection() {
                                     backgroundColor: 'rgba(0,0,0,0)',
                                   }}
                                   href="/contact-us"
-                                  className="secondary-button w-inline-block"
+                                  className="secondary-button site-inline-block"
                                 >
                                   <div className="button-block">
                                     <div className="button-text-block secondary">
@@ -520,7 +530,10 @@ export default function HomeHomeServicesSection() {
                               </div>
                             </div>
                             <div className="home-services-content-card four">
-                              <a href="/contact-us" className="services-title-link w-inline-block">
+                              <a
+                                href="/contact-us"
+                                className="services-title-link site-inline-block"
+                              >
                                 <h4 className="services-title">{'Industrial Security'}</h4>
                               </a>
                               <div className="services-except">
@@ -535,7 +548,7 @@ export default function HomeHomeServicesSection() {
                                     backgroundColor: 'rgba(0,0,0,0)',
                                   }}
                                   href="/contact-us"
-                                  className="secondary-button w-inline-block"
+                                  className="secondary-button site-inline-block"
                                 >
                                   <div className="button-block">
                                     <div className="button-text-block secondary">
@@ -604,7 +617,10 @@ export default function HomeHomeServicesSection() {
                               </div>
                             </div>
                             <div className="home-services-content-card five">
-                              <a href="/contact-us" className="services-title-link w-inline-block">
+                              <a
+                                href="/contact-us"
+                                className="services-title-link site-inline-block"
+                              >
                                 <h4 className="services-title">{'Commercial Security'}</h4>
                               </a>
                               <div className="services-except">
@@ -619,7 +635,7 @@ export default function HomeHomeServicesSection() {
                                     backgroundColor: 'rgba(0,0,0,0)',
                                   }}
                                   href="/contact-us"
-                                  className="secondary-button w-inline-block"
+                                  className="secondary-button site-inline-block"
                                 >
                                   <div className="button-block">
                                     <div className="button-text-block secondary">
@@ -688,7 +704,10 @@ export default function HomeHomeServicesSection() {
                               </div>
                             </div>
                             <div className="home-services-content-card six">
-                              <a href="/contact-us" className="services-title-link w-inline-block">
+                              <a
+                                href="/contact-us"
+                                className="services-title-link site-inline-block"
+                              >
                                 <h4 className="services-title">{'Residential Security'}</h4>
                               </a>
                               <div className="services-except">
@@ -703,7 +722,7 @@ export default function HomeHomeServicesSection() {
                                     backgroundColor: 'rgba(0,0,0,0)',
                                   }}
                                   href="/contact-us"
-                                  className="secondary-button w-inline-block"
+                                  className="secondary-button site-inline-block"
                                 >
                                   <div className="button-block">
                                     <div className="button-text-block secondary">
@@ -777,23 +796,23 @@ export default function HomeHomeServicesSection() {
                     </div>
                   </div>
                 </div>
-                <div className="services-list-wrapper home-services-list-wrapper w-dyn-list">
-                  <div role="list" className="services-list w-dyn-items">
+                <div className="services-list-wrapper home-services-list-wrapper site-dyn-list">
+                  <div role="list" className="services-list site-dyn-items">
                     <div
-                      data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0e"
+                      data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0e"
                       role="listitem"
-                      className="services-item w-dyn-item"
+                      className="services-item site-dyn-item"
                     >
                       <div
-                        data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0f"
+                        data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0f"
                         className="services-card"
                       >
                         <div
                           style={{ borderColor: 'rgb(223,223,223)' }}
                           className="services-image-block"
                         >
-                          <a href="/contact-us" className="services-image-link w-inline-block">
-                            <img
+                          <a href="/contact-us" className="services-image-link site-inline-block">
+                            <ResponsiveImage
                               src="/assets/hitech/new-uniform/outdoor-briefing.webp"
                               loading="eager"
                               style={{
@@ -819,15 +838,15 @@ export default function HomeHomeServicesSection() {
                         >
                           <div className="services-content-card">
                             <a
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a17"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a17"
                               style={{ opacity: '0' }}
                               href="/contact-us"
-                              className="services-title-link w-inline-block"
+                              className="services-title-link site-inline-block"
                             >
                               <h4 className="services-title">{'Hotel Security'}</h4>
                             </a>
                             <div
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a19"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a19"
                               style={{ opacity: '0' }}
                               className="services-except"
                             >
@@ -836,7 +855,7 @@ export default function HomeHomeServicesSection() {
                               }
                             </div>
                             <div
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a1a"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a1a"
                               style={{ opacity: '0' }}
                               className="services-button"
                             >
@@ -847,7 +866,7 @@ export default function HomeHomeServicesSection() {
                                     backgroundColor: 'rgba(0,0,0,0)',
                                   }}
                                   href="/contact-us"
-                                  className="secondary-button w-inline-block"
+                                  className="secondary-button site-inline-block"
                                 >
                                   <div className="button-block">
                                     <div className="button-text-block secondary">
@@ -920,20 +939,20 @@ export default function HomeHomeServicesSection() {
                       </div>
                     </div>
                     <div
-                      data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0e"
+                      data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0e"
                       role="listitem"
-                      className="services-item w-dyn-item"
+                      className="services-item site-dyn-item"
                     >
                       <div
-                        data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0f"
+                        data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0f"
                         className="services-card"
                       >
                         <div
                           style={{ borderColor: 'rgb(223,223,223)' }}
                           className="services-image-block"
                         >
-                          <a href="/contact-us" className="services-image-link w-inline-block">
-                            <img
+                          <a href="/contact-us" className="services-image-link site-inline-block">
+                            <ResponsiveImage
                               src="/assets/hitech/new-uniform/bodyguards.webp"
                               loading="eager"
                               style={{
@@ -959,15 +978,15 @@ export default function HomeHomeServicesSection() {
                         >
                           <div className="services-content-card">
                             <a
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a17"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a17"
                               style={{ opacity: '0' }}
                               href="/contact-us"
-                              className="services-title-link w-inline-block"
+                              className="services-title-link site-inline-block"
                             >
                               <h4 className="services-title">{'Bank Security'}</h4>
                             </a>
                             <div
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a19"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a19"
                               style={{ opacity: '0' }}
                               className="services-except"
                             >
@@ -976,7 +995,7 @@ export default function HomeHomeServicesSection() {
                               }
                             </div>
                             <div
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a1a"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a1a"
                               style={{ opacity: '0' }}
                               className="services-button"
                             >
@@ -987,7 +1006,7 @@ export default function HomeHomeServicesSection() {
                                     backgroundColor: 'rgba(0,0,0,0)',
                                   }}
                                   href="/contact-us"
-                                  className="secondary-button w-inline-block"
+                                  className="secondary-button site-inline-block"
                                 >
                                   <div className="button-block">
                                     <div className="button-text-block secondary">
@@ -1060,20 +1079,20 @@ export default function HomeHomeServicesSection() {
                       </div>
                     </div>
                     <div
-                      data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0e"
+                      data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0e"
                       role="listitem"
-                      className="services-item w-dyn-item"
+                      className="services-item site-dyn-item"
                     >
                       <div
-                        data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0f"
+                        data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0f"
                         className="services-card"
                       >
                         <div
                           style={{ borderColor: 'rgb(223,223,223)' }}
                           className="services-image-block"
                         >
-                          <a href="/contact-us" className="services-image-link w-inline-block">
-                            <img
+                          <a href="/contact-us" className="services-image-link site-inline-block">
+                            <ResponsiveImage
                               src="/assets/hitech/new-uniform/safety-briefing.webp"
                               loading="eager"
                               style={{
@@ -1099,15 +1118,15 @@ export default function HomeHomeServicesSection() {
                         >
                           <div className="services-content-card">
                             <a
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a17"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a17"
                               style={{ opacity: '0' }}
                               href="/contact-us"
-                              className="services-title-link w-inline-block"
+                              className="services-title-link site-inline-block"
                             >
                               <h4 className="services-title">{'Corporate Office Security'}</h4>
                             </a>
                             <div
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a19"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a19"
                               style={{ opacity: '0' }}
                               className="services-except"
                             >
@@ -1116,7 +1135,7 @@ export default function HomeHomeServicesSection() {
                               }
                             </div>
                             <div
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a1a"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a1a"
                               style={{ opacity: '0' }}
                               className="services-button"
                             >
@@ -1127,7 +1146,7 @@ export default function HomeHomeServicesSection() {
                                     backgroundColor: 'rgba(0,0,0,0)',
                                   }}
                                   href="/contact-us"
-                                  className="secondary-button w-inline-block"
+                                  className="secondary-button site-inline-block"
                                 >
                                   <div className="button-block">
                                     <div className="button-text-block secondary">
@@ -1200,20 +1219,20 @@ export default function HomeHomeServicesSection() {
                       </div>
                     </div>
                     <div
-                      data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0e"
+                      data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0e"
                       role="listitem"
-                      className="services-item w-dyn-item"
+                      className="services-item site-dyn-item"
                     >
                       <div
-                        data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0f"
+                        data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0f"
                         className="services-card"
                       >
                         <div
                           style={{ borderColor: 'rgb(223,223,223)' }}
                           className="services-image-block"
                         >
-                          <a href="/contact-us" className="services-image-link w-inline-block">
-                            <img
+                          <a href="/contact-us" className="services-image-link site-inline-block">
+                            <ResponsiveImage
                               src="/assets/hitech/new-uniform/team-lineup.webp"
                               loading="eager"
                               style={{
@@ -1239,15 +1258,15 @@ export default function HomeHomeServicesSection() {
                         >
                           <div className="services-content-card">
                             <a
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a17"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a17"
                               style={{ opacity: '0' }}
                               href="/contact-us"
-                              className="services-title-link w-inline-block"
+                              className="services-title-link site-inline-block"
                             >
                               <h4 className="services-title">{'Industrial Security'}</h4>
                             </a>
                             <div
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a19"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a19"
                               style={{ opacity: '0' }}
                               className="services-except"
                             >
@@ -1256,7 +1275,7 @@ export default function HomeHomeServicesSection() {
                               }
                             </div>
                             <div
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a1a"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a1a"
                               style={{ opacity: '0' }}
                               className="services-button"
                             >
@@ -1267,7 +1286,7 @@ export default function HomeHomeServicesSection() {
                                     backgroundColor: 'rgba(0,0,0,0)',
                                   }}
                                   href="/contact-us"
-                                  className="secondary-button w-inline-block"
+                                  className="secondary-button site-inline-block"
                                 >
                                   <div className="button-block">
                                     <div className="button-text-block secondary">
@@ -1340,20 +1359,20 @@ export default function HomeHomeServicesSection() {
                       </div>
                     </div>
                     <div
-                      data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0e"
+                      data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0e"
                       role="listitem"
-                      className="services-item w-dyn-item"
+                      className="services-item site-dyn-item"
                     >
                       <div
-                        data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0f"
+                        data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0f"
                         className="services-card"
                       >
                         <div
                           style={{ borderColor: 'rgb(223,223,223)' }}
                           className="services-image-block"
                         >
-                          <a href="/contact-us" className="services-image-link w-inline-block">
-                            <img
+                          <a href="/contact-us" className="services-image-link site-inline-block">
+                            <ResponsiveImage
                               src="/assets/hitech/new-uniform/commercial-screening.webp"
                               loading="eager"
                               style={{
@@ -1379,15 +1398,15 @@ export default function HomeHomeServicesSection() {
                         >
                           <div className="services-content-card">
                             <a
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a17"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a17"
                               style={{ opacity: '0' }}
                               href="/contact-us"
-                              className="services-title-link w-inline-block"
+                              className="services-title-link site-inline-block"
                             >
                               <h4 className="services-title">{'Commercial Security'}</h4>
                             </a>
                             <div
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a19"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a19"
                               style={{ opacity: '0' }}
                               className="services-except"
                             >
@@ -1396,7 +1415,7 @@ export default function HomeHomeServicesSection() {
                               }
                             </div>
                             <div
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a1a"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a1a"
                               style={{ opacity: '0' }}
                               className="services-button"
                             >
@@ -1407,7 +1426,7 @@ export default function HomeHomeServicesSection() {
                                     backgroundColor: 'rgba(0,0,0,0)',
                                   }}
                                   href="/contact-us"
-                                  className="secondary-button w-inline-block"
+                                  className="secondary-button site-inline-block"
                                 >
                                   <div className="button-block">
                                     <div className="button-text-block secondary">
@@ -1480,20 +1499,20 @@ export default function HomeHomeServicesSection() {
                       </div>
                     </div>
                     <div
-                      data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0e"
+                      data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0e"
                       role="listitem"
-                      className="services-item w-dyn-item"
+                      className="services-item site-dyn-item"
                     >
                       <div
-                        data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0f"
+                        data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a0f"
                         className="services-card"
                       >
                         <div
                           style={{ borderColor: 'rgb(223,223,223)' }}
                           className="services-image-block"
                         >
-                          <a href="/contact-us" className="services-image-link w-inline-block">
-                            <img
+                          <a href="/contact-us" className="services-image-link site-inline-block">
+                            <ResponsiveImage
                               src="/assets/hitech/new-uniform/gate-security.webp"
                               loading="eager"
                               style={{
@@ -1519,15 +1538,15 @@ export default function HomeHomeServicesSection() {
                         >
                           <div className="services-content-card">
                             <a
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a17"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a17"
                               style={{ opacity: '0' }}
                               href="/contact-us"
-                              className="services-title-link w-inline-block"
+                              className="services-title-link site-inline-block"
                             >
                               <h4 className="services-title">{'Residential Security'}</h4>
                             </a>
                             <div
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a19"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a19"
                               style={{ opacity: '0' }}
                               className="services-except"
                             >
@@ -1536,7 +1555,7 @@ export default function HomeHomeServicesSection() {
                               }
                             </div>
                             <div
-                              data-w-id="0677b108-e6ef-ac32-a40b-8c10fbc29a1a"
+                              data-reveal-id="0677b108-e6ef-ac32-a40b-8c10fbc29a1a"
                               style={{ opacity: '0' }}
                               className="services-button"
                             >
@@ -1547,7 +1566,7 @@ export default function HomeHomeServicesSection() {
                                     backgroundColor: 'rgba(0,0,0,0)',
                                   }}
                                   href="/contact-us"
-                                  className="secondary-button w-inline-block"
+                                  className="secondary-button site-inline-block"
                                 >
                                   <div className="button-block">
                                     <div className="button-text-block secondary">

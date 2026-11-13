@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { ArrowUpRight, Phone } from 'lucide-react';
 import styles from './HomeHeaderHeroSection.module.css';
 
@@ -5,11 +6,12 @@ export default function HomeHeaderHeroSection() {
   return (
     <section className={styles.hero}>
       <div className={styles.photo}>
-        <img
+        <ResponsiveImage
           src="/assets/hitech/new-uniform/corporate-security-briefing.webp"
           alt="Five Hi-Tech security guards receiving a corporate security and fire safety briefing"
           width="1430"
           height="1100"
+          sizes="100vw"
           fetchPriority="high"
           loading="eager"
         />
@@ -22,7 +24,7 @@ export default function HomeHeaderHeroSection() {
         </div>
       </div>
       <div className={styles.caption}>
-        <div className={`container-default w-container ${styles.captionInner}`}>
+        <div className={`container-default site-container ${styles.captionInner}`}>
           <div className={styles.copy}>
             <p className={styles.eyebrow}>HI-TECH PROTECTION SECURITY</p>
             <h1>

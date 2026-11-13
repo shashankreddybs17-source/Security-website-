@@ -4,12 +4,12 @@ export default function AboutStorySection() {
   return (
     <section className="story-section">
       <div className="section-gap">
-        <div className="w-layout-blockcontainer container-default w-container">
+        <div className="site-layout-blockcontainer container-default site-container">
           <div className="story-block">
             <div className="story-content-block">
               <div className="story-title-block">
                 <h3
-                  data-w-id="3d96cfa7-dd2c-cc09-f349-2c90782ac568"
+                  data-reveal-id="3d96cfa7-dd2c-cc09-f349-2c90782ac568"
                   style={{
                     transform:
                       'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
@@ -21,7 +21,7 @@ export default function AboutStorySection() {
               </div>
               <div className="story-except-block">
                 <p
-                  data-w-id="d944b9e5-1fe7-15d5-3d97-4230ee2293d3"
+                  data-reveal-id="d944b9e5-1fe7-15d5-3d97-4230ee2293d3"
                   style={{ opacity: '0' }}
                   className="story-except"
                 >
@@ -34,7 +34,7 @@ export default function AboutStorySection() {
             <div className="story-counter-block">
               <div className="story-number-block">
                 <div
-                  data-w-id="20069d39-0754-4f8b-b5f5-a7535bf45098"
+                  data-reveal-id="20069d39-0754-4f8b-b5f5-a7535bf45098"
                   className="story-number-wrapper"
                 >
                   <div
@@ -79,7 +79,7 @@ export default function AboutStorySection() {
                 </div>
                 <div className="story-counter-wrapper">
                   <div
-                    data-w-id="20069d39-0754-4f8b-b5f5-a7535bf450e1"
+                    data-reveal-id="20069d39-0754-4f8b-b5f5-a7535bf450e1"
                     style={{ opacity: '0' }}
                     className="story-counter-text"
                   >
@@ -89,7 +89,7 @@ export default function AboutStorySection() {
               </div>
               <div className="story-number-block">
                 <div
-                  data-w-id="eee56adf-2a1d-9be7-952f-fa5f9d2b6093"
+                  data-reveal-id="eee56adf-2a1d-9be7-952f-fa5f9d2b6093"
                   className="story-number-wrapper"
                 >
                   <div
@@ -134,7 +134,7 @@ export default function AboutStorySection() {
                 </div>
                 <div className="story-counter-wrapper">
                   <div
-                    data-w-id="eee56adf-2a1d-9be7-952f-fa5f9d2b60c3"
+                    data-reveal-id="eee56adf-2a1d-9be7-952f-fa5f9d2b60c3"
                     style={{ opacity: '0' }}
                     className="story-counter-text"
                   >
@@ -144,7 +144,7 @@ export default function AboutStorySection() {
               </div>
               <div className="story-number-block">
                 <div
-                  data-w-id="cbc5eeb9-13da-7cbc-6b69-8688894d77d9"
+                  data-reveal-id="cbc5eeb9-13da-7cbc-6b69-8688894d77d9"
                   className="story-number-wrapper"
                 >
                   <div
@@ -189,7 +189,7 @@ export default function AboutStorySection() {
                 </div>
                 <div className="story-counter-wrapper">
                   <div
-                    data-w-id="cbc5eeb9-13da-7cbc-6b69-8688894d7809"
+                    data-reveal-id="cbc5eeb9-13da-7cbc-6b69-8688894d7809"
                     style={{ opacity: '0' }}
                     className="story-counter-text"
                   >
@@ -199,7 +199,7 @@ export default function AboutStorySection() {
               </div>
               <div className="story-number-block">
                 <div
-                  data-w-id="cd6df80a-eb83-7845-665a-94754803e7d3"
+                  data-reveal-id="cd6df80a-eb83-7845-665a-94754803e7d3"
                   className="story-number-wrapper"
                 >
                   <div
@@ -244,7 +244,7 @@ export default function AboutStorySection() {
                 </div>
                 <div className="story-counter-wrapper">
                   <div
-                    data-w-id="cd6df80a-eb83-7845-665a-94754803e803"
+                    data-reveal-id="cd6df80a-eb83-7845-665a-94754803e803"
                     style={{ opacity: '0' }}
                     className="story-counter-text"
                   >

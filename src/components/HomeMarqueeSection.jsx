@@ -3,7 +3,7 @@ import { Check } from 'lucide-react';
 export default function HomeMarqueeSection() {
   return (
     <section className="marquee-section">
-      <div data-w-id="bb667f8f-e3d4-214a-1ba8-de3839c5a218" className="marquee-block">
+      <div data-reveal-id="bb667f8f-e3d4-214a-1ba8-de3839c5a218" className="marquee-block">
         <div className="marquee-wrapper">
           <div className="marquee-title">{'Ensuring Safety & Security'}</div>
           <svg

@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
@@ -37,7 +38,7 @@ export default function HomeSecuritySolutions({
     <section id="services" className={styles.section} aria-labelledby="security-solutions-title">
       <div className={styles.runway}>
         <div>
-          <div className="container-default w-container">
+          <div className="container-default site-container">
             <div className={styles.layout}>
               <div className={styles.introduction}>
                 <h2 id="security-solutions-title" className="section-title">
@@ -89,7 +90,7 @@ export default function HomeSecuritySolutions({
                         aria-label={`Enquire about ${service.title.toLowerCase()}`}
                       >
                         {service.image || service.photo ? (
-                          <img
+                          <ResponsiveImage
                             src={service.image || approvedTeamPhoto(service.photo)}
                             alt={
                               service.imageAlt ||
@@ -98,7 +99,7 @@ export default function HomeSecuritySolutions({
                                 : 'Hi-Tech Protection Security personnel and training')
                             }
                             className={service.photo === '24' ? styles.bankPhoto : undefined}
-                            loading="eager"
+                            loading="lazy"
                             decoding="async"
                             width="1440"
                             height="1080"

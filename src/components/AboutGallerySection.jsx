@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { useEffect, useRef } from 'react';
 import { galleryMetrics } from '../lib/galleryScroll';
@@ -123,11 +124,11 @@ export default function AboutGallerySection() {
                 cards.current[index] = element;
               }}
             >
-              <img
+              <ResponsiveImage
                 src={approvedTeamPhoto(photo.file)}
                 alt={photo.detail}
                 style={{ objectPosition: photo.position }}
-                loading="eager"
+                loading="lazy"
               />
               <figcaption>
                 <p>{photo.detail}</p>

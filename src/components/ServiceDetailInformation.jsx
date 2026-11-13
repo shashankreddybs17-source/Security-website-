@@ -30,7 +30,7 @@ export default function ServiceDetailInformation({ service }) {
   if (!detail) return null;
   return (
     <section className={styles.section} aria-label={`${service.title} in detail`}>
-      <div className="container-default w-container">
+      <div className="container-default site-container">
         <InformationRow number="01" title="What This Service Covers">
           <p>{detail.coverage}</p>
           <Points items={detail.responsibilities} />

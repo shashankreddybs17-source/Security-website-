@@ -1,3 +1,4 @@
+import ResponsiveImage from '../components/ResponsiveImage';
 import ContactEnquirySection from '../components/ContactEnquirySection';
 import { Phone, Mail, MapPin, ArrowUpRight, Clock, ShieldCheck, Navigation } from 'lucide-react';
 import AboutHeroSection from '../components/AboutHeroSection';
@@ -26,7 +27,7 @@ export default function Contact() {
         />
         <ContactEnquirySection />
         <section className={styles.section} aria-labelledby="contact-title">
-          <div className="container-default w-container">
+          <div className="container-default site-container">
             <div className={styles.intro}>
               <div>
                 <p className={styles.eyebrow}>LET’S CONNECT</p>
@@ -43,8 +44,8 @@ export default function Contact() {
             </div>
             <div className={styles.detailsLayout}>
               <figure className={styles.companyPhoto}>
-                <img
-                  src="/assets/hitech/new-uniform/converted-old-07.webp"
+                <ResponsiveImage
+                  src="/assets/hitech/new-uniform/security-team-site-instruction.webp"
                   alt="Hi-Tech security personnel attending a team briefing"
                   width="1280"
                   height="960"

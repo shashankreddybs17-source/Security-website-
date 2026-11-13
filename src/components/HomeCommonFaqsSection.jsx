@@ -2,30 +2,30 @@ import { Check } from 'lucide-react';
 
 export default function HomeCommonFaqsSection() {
   return (
-    <section id="faqs" data-wf--common-faqs-section--variant="base" className="common-faqs-section">
+    <section id="faqs" className="common-faqs-section">
       <div className="section-gap bottom-gap">
-        <div className="w-layout-blockcontainer container-default w-container">
+        <div className="site-layout-blockcontainer container-default site-container">
           <div className="faqs-block home-faqs-block">
             <div className="faqs-content home-faqs-content">
               <div className="section-title-block">
-                <h2 data-w-id="de35b106-1cf4-bc30-0cbd-27a7c80f7684" className="section-title">
+                <h2 data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f7684" className="section-title">
                   {'Common Questions'}
                 </h2>
               </div>
               <div className="section-except-block">
-                <p data-w-id="de35b106-1cf4-bc30-0cbd-27a7c80f7687" className="section-except">
+                <p data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f7687" className="section-except">
                   {"Still curious? We're here to help! Reach out to our team for expert guidance."}
                 </p>
               </div>
               <div className="section-button-block">
                 <div
-                  data-w-id="de35b106-1cf4-bc30-0cbd-27a7c80f768a"
+                  data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f768a"
                   className="section-button-wrap"
                 >
                   <a
-                    data-w-id="bd3fa499-147e-79a0-b7ab-9a027d174d20"
+                    data-reveal-id="bd3fa499-147e-79a0-b7ab-9a027d174d20"
                     href="/contact-us"
-                    className="tertiary-button w-inline-block"
+                    className="tertiary-button site-inline-block"
                   >
                     <div className="button-block">
                       <div className="button-text-block tertiary">
@@ -84,10 +84,10 @@ export default function HomeCommonFaqsSection() {
               <div
                 data-hover="false"
                 data-delay="0"
-                data-w-id="de35b106-1cf4-bc30-0cbd-27a7c80f768e"
-                className="faqs-dropdown w-dropdown"
+                data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f768e"
+                className="faqs-dropdown site-dropdown"
               >
-                <div className="faqs-question w-dropdown-toggle">
+                <div className="faqs-question site-dropdown-toggle">
                   <div className="faqs-question-block">
                     <h5 className="faqs-question-text">
                       {'What types of security services do you offer?'}
@@ -114,7 +114,7 @@ export default function HomeCommonFaqsSection() {
                     </svg>
                   </div>
                 </div>
-                <nav className="faqs-answer w-dropdown-list">
+                <nav className="faqs-answer site-dropdown-list">
                   <div className="faqs-answer-text">
                     {
                       'We provide trained security personnel for hotels, banks, corporate offices, industrial units, commercial buildings and residential apartments.'
@@ -125,10 +125,10 @@ export default function HomeCommonFaqsSection() {
               <div
                 data-hover="false"
                 data-delay="0"
-                data-w-id="de35b106-1cf4-bc30-0cbd-27a7c80f7699"
-                className="faqs-dropdown w-dropdown"
+                data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f7699"
+                className="faqs-dropdown site-dropdown"
               >
-                <div className="faqs-question w-dropdown-toggle">
+                <div className="faqs-question site-dropdown-toggle">
                   <div className="faqs-question-block">
                     <h5 className="faqs-question-text">
                       {'How do I determine the right security service for my needs?'}
@@ -155,7 +155,7 @@ export default function HomeCommonFaqsSection() {
                     </svg>
                   </div>
                 </div>
-                <nav className="faqs-answer w-dropdown-list">
+                <nav className="faqs-answer site-dropdown-list">
                   <div className="faqs-answer-text">
                     {
                       'Share your location, premises type and security requirements. Our approach focuses on personnel and practices suited to each location.'
@@ -166,10 +166,10 @@ export default function HomeCommonFaqsSection() {
               <div
                 data-hover="false"
                 data-delay="0"
-                data-w-id="de35b106-1cf4-bc30-0cbd-27a7c80f76a4"
-                className="faqs-dropdown w-dropdown"
+                data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f76a4"
+                className="faqs-dropdown site-dropdown"
               >
-                <div className="faqs-question w-dropdown-toggle">
+                <div className="faqs-question site-dropdown-toggle">
                   <div className="faqs-question-block">
                     <h5 className="faqs-question-text">
                       {'How are your security personnel prepared?'}
@@ -196,7 +196,7 @@ export default function HomeCommonFaqsSection() {
                     </svg>
                   </div>
                 </div>
-                <nav className="faqs-answer w-dropdown-list">
+                <nav className="faqs-answer site-dropdown-list">
                   <div className="faqs-answer-text">
                     {
                       'Our personnel are selected and trained to maintain a safe environment and conduct themselves with professionalism and courtesy.'
@@ -207,10 +207,10 @@ export default function HomeCommonFaqsSection() {
               <div
                 data-hover="false"
                 data-delay="0"
-                data-w-id="de35b106-1cf4-bc30-0cbd-27a7c80f76af"
-                className="faqs-dropdown w-dropdown"
+                data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f76af"
+                className="faqs-dropdown site-dropdown"
               >
-                <div className="faqs-question w-dropdown-toggle">
+                <div className="faqs-question site-dropdown-toggle">
                   <div className="faqs-question-block">
                     <h5 className="faqs-question-text">
                       {'Who manages your security operations?'}
@@ -237,7 +237,7 @@ export default function HomeCommonFaqsSection() {
                     </svg>
                   </div>
                 </div>
-                <nav className="faqs-answer w-dropdown-list">
+                <nav className="faqs-answer site-dropdown-list">
                   <div className="faqs-answer-text">
                     {
                       'Our organisation is managed by experienced and trained Ex-Army personnel, bringing military discipline, alertness, responsibility and leadership.'
@@ -248,10 +248,10 @@ export default function HomeCommonFaqsSection() {
               <div
                 data-hover="false"
                 data-delay="0"
-                data-w-id="de35b106-1cf4-bc30-0cbd-27a7c80f76ba"
-                className="faqs-dropdown w-dropdown"
+                data-reveal-id="de35b106-1cf4-bc30-0cbd-27a7c80f76ba"
+                className="faqs-dropdown site-dropdown"
               >
-                <div className="faqs-question w-dropdown-toggle">
+                <div className="faqs-question site-dropdown-toggle">
                   <div className="faqs-question-block">
                     <h5 className="faqs-question-text">
                       {'How can I discuss security coverage and pricing?'}
@@ -278,7 +278,7 @@ export default function HomeCommonFaqsSection() {
                     </svg>
                   </div>
                 </div>
-                <nav className="faqs-answer w-dropdown-list">
+                <nav className="faqs-answer site-dropdown-list">
                   <div className="faqs-answer-text">
                     {
                       'Call +91 72595 37223 or email hitechprotectionsecurity@gmail.com with your location and requirements to discuss your assignment.'

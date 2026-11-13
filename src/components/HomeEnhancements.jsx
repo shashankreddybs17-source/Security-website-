@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { useEffect, useRef } from 'react';
 import { ArrowUpRight, ShieldCheck, UserCheck, ClipboardCheck, Handshake } from 'lucide-react';
@@ -116,7 +117,7 @@ function LinkButton({ children, href, light = false }) {
 export function HomeServicesShowcase() {
   return (
     <Section className={styles.services} id="service-overview" labelledBy="service-overview-title">
-      <div className="container-default w-container">
+      <div className="container-default site-container">
         <div className={styles.sectionHeading} data-reveal>
           <div>
             <Label>OUR SERVICES</Label>
@@ -143,7 +144,7 @@ export function HomeServicesShowcase() {
             >
               <div className={styles.servicePhoto}>
                 {service.image ? (
-                  <img
+                  <ResponsiveImage
                     src={service.image}
                     alt={service.imageAlt}
                     loading="lazy"
@@ -183,7 +184,7 @@ export function HomeServicesShowcase() {
 export function HomeWhoWeAre() {
   return (
     <Section className={styles.who} id="who-we-are" labelledBy="who-we-are-title">
-      <div className="container-default w-container">
+      <div className="container-default site-container">
         <div className={styles.whoGrid}>
           <div className={styles.whoEditorial}>
             <header className={styles.whoHeading} data-reveal>
@@ -218,7 +219,7 @@ export function HomeWhoWeAre() {
           </div>
           <figure className={styles.whoMedia}>
             <div className={styles.whoPhoto}>
-              <img
+              <ResponsiveImage
                 src={photoUrl('31')}
                 alt="HI-TECH personnel in dark uniforms receiving a security and fire safety briefing"
                 width="1448"
@@ -261,7 +262,7 @@ export function HomeWhoWeAre() {
 export function HomeWhyChooseUs() {
   return (
     <Section className={styles.why} id="why-hi-tech" labelledBy="why-hi-tech-title">
-      <div className="container-default w-container">
+      <div className="container-default site-container">
         <div className={styles.sectionHeading} data-reveal>
           <div>
             <Label>THE HI-TECH DIFFERENCE</Label>

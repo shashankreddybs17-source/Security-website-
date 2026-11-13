@@ -13,7 +13,7 @@
   {
     slug: 'the-role-of-discipline-in-site-security',
     title: 'The Role of Discipline in Site Security',
-    image: '/assets/hitech/new-uniform/converted-old-10.webp',
+    image: '/assets/hitech/new-uniform/security-guards-outdoor-formation.webp',
     paragraphs: [
       'Discipline gives everyday security responsibilities a consistent structure. Clear procedures help personnel understand their duties and the boundaries of their assignment.',
       'Visitor management, gate control and communication depend on attention to routine details. Each site needs instructions that reflect its own working environment.',
@@ -23,7 +23,7 @@
   {
     slug: 'why-regular-safety-training-matters',
     title: 'Why Regular Safety Training Matters',
-    image: '/assets/hitech/new-uniform/converted-old-11.webp',
+    image: '/assets/hitech/new-uniform/security-team-indoor-briefing.webp',
     paragraphs: [
       'Training gives personnel an opportunity to review responsibilities, ask questions and understand site procedures before they need to use them.',
       'Team briefings can support clear communication about access arrangements, reporting responsibilities and changes at a location.',

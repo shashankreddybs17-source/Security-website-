@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { PhoneCall, Mail, MapPin } from 'lucide-react';
 import styles from './SiteFooter.module.css';
 
@@ -17,8 +18,8 @@ export default function SiteFooter() {
       <div className={`${styles.container} ${styles.main}`}>
         <div className={styles.brand}>
           <a href="/" aria-label="Hi-Tech Protection Security home" className={styles.logoLink}>
-            <img
-              src="/assets/hitech/logo-clean.webp"
+            <ResponsiveImage
+              src="/assets/hitech/hi-tech-protection-security-logo.webp"
               width="430"
               height="188"
               loading="lazy"

@@ -1,10 +1,11 @@
+import ResponsiveImage from './ResponsiveImage';
 import { useEffect, useRef, useState } from 'react';
 import { Check, ArrowUpRight, ArrowLeft, ArrowRight } from 'lucide-react';
 import styles from './HomeTeamSection.module.css';
 
 const experts = [
   {
-    src: '/assets/hitech/new-uniform/converted-old-08.webp',
+    src: '/assets/hitech/new-uniform/security-guard-building-entrance.webp',
     alt: 'Hi-Tech Protection Security personnel and training',
     category: 'Leadership Team',
     name: 'Arjun Kumar',
@@ -28,7 +29,7 @@ const experts = [
     position: '50% 50%',
   },
   {
-    src: '/assets/hitech/new-uniform/converted-old-01.webp',
+    src: '/assets/hitech/new-uniform/security-team-outdoor-briefing.webp',
     alt: 'Hi-Tech Protection Security personnel and training',
     category: 'Field Experts',
     name: 'Kiran Sharma',
@@ -44,7 +45,7 @@ const experts = [
     position: '50% 50%',
   },
   {
-    src: '/assets/hitech/new-uniform/converted-old-03.webp',
+    src: '/assets/hitech/new-uniform/security-team-wide-briefing.webp',
     alt: 'Hi-Tech Protection Security personnel and training',
     category: 'Field Experts',
     name: 'Anita Rao',
@@ -142,11 +143,11 @@ export default function HomeTeamSection() {
       <div className="section-gap">
         <div className={`team-block ${styles.layout}`}>
           <div ref={information} className={`team-content-block ${styles.information}`}>
-            <div className="w-layout-blockcontainer container-default w-container">
+            <div className="site-layout-blockcontainer container-default site-container">
               <div className="team-conternt-wrap">
                 <div className="section-title-block space-none">
                   <h2
-                    data-w-id="d06941f4-93e7-ee70-1485-469e46f0f45e"
+                    data-reveal-id="d06941f4-93e7-ee70-1485-469e46f0f45e"
                     id="team-heading"
                     className={`section-title ${styles.heading}`}
                   >
@@ -222,9 +223,9 @@ export default function HomeTeamSection() {
                     >
                       <div className={`team-card ${styles.card}`}>
                         <div className={`team-image-block ${styles.photo}`}>
-                          <img
+                          <ResponsiveImage
                             src={expert.src}
-                            loading="eager"
+                            loading="lazy"
                             alt={expert.alt}
                             className={`team-image ${styles.image}`}
                             style={{ objectPosition: expert.position }}

@@ -213,7 +213,7 @@
   }
 }
 
-/* This flex container does not need Webflow's block-flow clearfix pseudo-elements. */
+/* This flex container does not need legacy's block-flow clearfix pseudo-elements. */
 .captionInner.captionInner::before,
 .captionInner.captionInner::after {
   content: none;

@@ -1,62 +1,62 @@
+import ResponsiveImage from './ResponsiveImage';
 import { Check } from 'lucide-react';
 
 export default function AboutHeaderSection({ activePage = 'about' }) {
   return (
     <div
       data-animation="default"
-      className="header-section w-nav"
+      className="header-section site-nav"
       data-easing2="ease"
       data-easing="ease"
-      data-wf--header-section--variant="base"
       data-collapse="medium"
-      data-w-id="0ed56dd9-7d80-d261-f786-25122067f7eb"
+      data-reveal-id="0ed56dd9-7d80-d261-f786-25122067f7eb"
       role="banner"
       data-duration="300"
     >
-      <div className="container-default w-container">
+      <div className="container-default site-container">
         <div className="header-block">
-          <nav role="navigation" className="header-nav-block w-nav-menu">
+          <nav role="navigation" className="header-nav-block site-nav-menu">
             <div className="header-nav-link-block site-header-links">
-              <a href="/" className="header-nav-link w-nav-link">
+              <a href="/" className="header-nav-link site-nav-link">
                 {'Home'}
               </a>
               <a
                 href="/about-us"
                 aria-current={activePage === 'about' ? 'page' : undefined}
-                className={`header-nav-link w-nav-link${activePage === 'about' ? ' w--current' : ''}`}
+                className={`header-nav-link site-nav-link${activePage === 'about' ? ' site--current' : ''}`}
               >
                 {'About Us'}
               </a>
               <a
                 href="/services"
                 aria-current={activePage === 'services' ? 'page' : undefined}
-                className={`header-nav-link w-nav-link${activePage === 'services' ? ' w--current' : ''}`}
+                className={`header-nav-link site-nav-link${activePage === 'services' ? ' site--current' : ''}`}
               >
                 {'Services'}
               </a>
               <a
                 href="/blog"
                 aria-current={activePage === 'blog' ? 'page' : undefined}
-                className={`header-nav-link w-nav-link${activePage === 'blog' ? ' w--current' : ''}`}
+                className={`header-nav-link site-nav-link${activePage === 'blog' ? ' site--current' : ''}`}
               >
                 {'Blog'}
               </a>
               <a
                 href="/faqs"
                 aria-current={activePage === 'faq' ? 'page' : undefined}
-                className={`header-nav-link w-nav-link${activePage === 'faq' ? ' w--current' : ''}`}
+                className={`header-nav-link site-nav-link${activePage === 'faq' ? ' site--current' : ''}`}
               >
                 {'FAQ'}
               </a>
               <a
                 href="/contact-us"
                 aria-current={activePage === 'contact' ? 'page' : undefined}
-                className={`header-nav-link w-nav-link${activePage === 'contact' ? ' w--current' : ''}`}
+                className={`header-nav-link site-nav-link${activePage === 'contact' ? ' site--current' : ''}`}
               >
                 {'Contact Us'}
               </a>
               <div className="header-cta-wrap">
-                <a href="tel:+917259537223" className="nagivation-cta w-inline-block">
+                <a href="tel:+917259537223" className="nagivation-cta site-inline-block">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="100%"
@@ -88,9 +88,9 @@ export default function AboutHeaderSection({ activePage = 'about' }) {
             </div>
           </nav>
           <div className="header-brand-block">
-            <a href="/" className="header-brand w-nav-brand">
-              <img
-                src="/assets/hitech/logo-clean.webp"
+            <a href="/" className="header-brand site-nav-brand">
+              <ResponsiveImage
+                src="/assets/hitech/hi-tech-protection-security-logo.webp"
                 loading="eager"
                 alt="Hi-Tech Protection Security"
                 className="header-brand-logo site-brand-logo"
@@ -98,7 +98,7 @@ export default function AboutHeaderSection({ activePage = 'about' }) {
             </a>
           </div>
           <div className="header-cta-block">
-            <a href="tel:+917259537223" className="nagivation-cta w-inline-block">
+            <a href="tel:+917259537223" className="nagivation-cta site-inline-block">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="100%"
@@ -127,7 +127,7 @@ export default function AboutHeaderSection({ activePage = 'about' }) {
               </div>
             </a>
           </div>
-          <div className="header-menu-button w-nav-button">
+          <div className="header-menu-button site-nav-button">
             <div className="header-menu-button-block">
               <div className="top"></div>
               <div className="middle"></div>

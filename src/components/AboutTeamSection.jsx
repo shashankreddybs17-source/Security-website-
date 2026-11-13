@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { ArrowUpRight, ShieldCheck } from 'lucide-react';
 import styles from './AboutReplacements.module.css';
@@ -32,7 +33,7 @@ const team = [
 export default function AboutTeamSection() {
   return (
     <section id="team" className={styles.team} aria-labelledby="about-team-heading">
-      <div className="container-default w-container">
+      <div className="container-default site-container">
         <div className={styles.teamHeader}>
           <div>
             <p className={styles.eyebrow}>THE PEOPLE BEHIND YOUR PROTECTION</p>
@@ -49,7 +50,7 @@ export default function AboutTeamSection() {
         <div className={styles.teamGrid}>
           {team.map((person) => (
             <figure className={styles.person} key={person.photo}>
-              <img
+              <ResponsiveImage
                 src={approvedTeamPhoto(person.photo)}
                 alt={person.detail}
                 loading="lazy"

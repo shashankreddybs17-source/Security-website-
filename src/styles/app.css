@@ -3,6 +3,10 @@
 @import 'tailwindcss/utilities.css' layer(utilities) source(none);
 /* Keep production utilities independent of checkout files and build directories. */
 @source '../**/*.{js,jsx}';
+/* One local font for Tailwind utilities and existing component typography. */
+@theme {
+  --font-sans: 'Archivo', Arial, sans-serif;
+}
 /* Preserve the reference reset and typography: Tailwind preflight is omitted. */
 html {
   overflow-x: clip;
@@ -13,9 +17,7 @@ input:focus-visible {
   outline: 3px solid #e8dc00;
   outline-offset: 4px;
 }
-.w-webflow-badge {
-  display: none !important;
-}
+
 .animation-fallback [style*='transform'],
 .animation-fallback [style*='opacity'] {
   transform: none !important;
@@ -29,8 +31,8 @@ input:focus-visible {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
-  [data-w-id][style*='transform'],
-  [data-w-id][style*='opacity'] {
+  [data-reveal-id][style*='transform'],
+  [data-reveal-id][style*='opacity'] {
     transform: none !important;
     opacity: 1 !important;
   }

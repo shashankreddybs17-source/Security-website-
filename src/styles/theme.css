@@ -1,4 +1,6 @@
 :root {
+  --_font-family---body: var(--font-sans);
+  --_font-family---heading: var(--font-sans);
   /* Derived from the existing cream page background, navy Contact panel and yellow CTA. */
   --site-cream: var(--background, #fdf9f1);
   --site-navy: var(--_secondary-color---500, #070616);
@@ -11,6 +13,20 @@
   --_neutral-color---500: var(--site-navy);
 }
 
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
+}
+
 /* The supplied logo screenshot includes a menu icon on its right. Frame only
    its left-hand logo area; keep the original artwork and text untouched. */
 img.site-brand-logo {
@@ -19,7 +35,7 @@ img.site-brand-logo {
   object-position: center !important;
 }
 
-/* Keep legacy CTAs opaque even while Webflow writes inline hover colors.
+/* Keep legacy CTAs opaque even while the interaction layer writes inline hover colors.
    Static arrow rules below also override the legacy hover timeline. */
 a:is(.primary-button, .secondary-button, .tertiary-button) {
   --solid-cta-bg: var(--site-yellow);
@@ -202,4 +218,3 @@ a:is(.primary-button, .secondary-button, .tertiary-button) .button-hover-icon {
     scroll-margin-top: 110px;
   }
 }
-

@@ -1,3 +1,4 @@
+import ResponsiveImage from '../components/ResponsiveImage';
 import AboutFooterSection from '../components/AboutFooterSection';
 import BlogListing from '../components/BlogListing';
 import { blogPosts } from '../data/blogPosts';
@@ -10,7 +11,7 @@ export default function Blog({ slug }) {
     <div className="page-wrapper">
       <main className="main-wrapper">
         <section className={styles.banner}>
-          <div className="container-default w-container">
+          <div className="container-default site-container">
             <p className={styles.breadcrumb}>
               <a href="/">Home</a> / <a href="/blog">Blog</a>
             </p>
@@ -19,7 +20,10 @@ export default function Blog({ slug }) {
           </div>
         </section>
         <article className={styles.article}>
-          <img src={post.image} alt="Hi-Tech Protection Security personnel and training" />
+          <ResponsiveImage
+            src={post.image}
+            alt="Hi-Tech Protection Security personnel and training"
+          />
           <p className={styles.notice}>
             Demo article for preview. This content is awaiting client review.
           </p>
@@ -27,10 +31,10 @@ export default function Blog({ slug }) {
             <p key={paragraph}>{paragraph}</p>
           ))}
           <div className={styles.actions}>
-            <a className="secondary-button w-inline-block" href="/blog">
+            <a className="secondary-button site-inline-block" href="/blog">
               All articles
             </a>
-            <a className="secondary-button w-inline-block" href="/contact-us">
+            <a className="secondary-button site-inline-block" href="/contact-us">
               Discuss your requirements
             </a>
           </div>
