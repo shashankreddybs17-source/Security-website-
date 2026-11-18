@@ -1,0 +1,28 @@
+{
+  "url": "http://192.168.0.120:4173/",
+  "date": "2026-11-13",
+  "lighthouse": "13.6.0",
+  "settings": "Desktop preset and default mobile simulated throttling; not the custom throttling from the user report.",
+  "results": {
+    "desktop": {
+      "scores": [100, 100, 100],
+      "medianPerformance": 100,
+      "FCP": 337.0906,
+      "LCP": 814.0906,
+      "TBT": 0,
+      "CLS": 0,
+      "warnings": [[], [], []],
+      "minificationPassed": true
+    },
+    "mobile": {
+      "scores": [96, 96, 96],
+      "medianPerformance": 96,
+      "FCP": 759.9450999999999,
+      "LCP": 2767.91765,
+      "TBT": 27,
+      "CLS": 0,
+      "warnings": [[], [], []],
+      "minificationPassed": true
+    }
+  }
+}

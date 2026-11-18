@@ -3,9 +3,9 @@ import { Check } from 'lucide-react';
 
 export default function AboutHeroSection({
   title = 'About Us',
-  image = '/assets/hitech/new-uniform/gate-security.webp',
+  image = '/assets/hitech/new-uniform/november-2026/gate-security.webp',
   imageAlt = 'Hi-Tech security personnel in new uniforms at a property entrance',
-  showOverlay = true,
+  imagePosition = 'center 25%',
 }) {
   return (
     <section className="hero-section">
@@ -51,9 +51,8 @@ export default function AboutHeroSection({
           loading="eager"
           alt={imageAlt}
           className="hero-bg-image"
-          style={{ objectPosition: 'center 25%' }}
+          style={{ objectPosition: imagePosition }}
         />
-        {showOverlay && <div className="hero-bg-overlay" />}
       </div>
     </section>
   );

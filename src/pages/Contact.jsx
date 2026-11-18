@@ -21,10 +21,10 @@ export default function Contact() {
     <div className="page-wrapper">
       <main className="main-wrapper">
         <AboutHeroSection
-          showOverlay={false}
           title="Contact Us"
-          image="/assets/hitech/new-uniform/contact-uniform-banner.webp"
-          imageAlt="Hi-Tech security personnel assembled for an outdoor briefing"
+          image="/assets/hitech/new-uniform/november-2026/security-team-outdoor-briefing.webp"
+          imageAlt="A white-shirted instructor briefing Hi-Tech security guards outdoors"
+          imagePosition="center 40%"
         />
         <ContactEnquirySection />
         <section className={styles.section} aria-labelledby="contact-title">
@@ -46,7 +46,7 @@ export default function Contact() {
             <div className={styles.detailsLayout}>
               <figure className={styles.companyPhoto}>
                 <ResponsiveImage
-                  src="/assets/hitech/new-uniform/security-team-site-instruction.webp"
+                  src="/assets/hitech/new-uniform/november-2026/security-guards-outdoor-formation.webp"
                   alt="Hi-Tech security personnel attending a team briefing"
                   width="1280"
                   height="960"

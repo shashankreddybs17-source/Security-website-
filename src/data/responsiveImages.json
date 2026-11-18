@@ -1,52 +1,27 @@
 {
-  "/assets/hitech/bsnl-logo.webp": {
-    "width": 202,
-    "height": 220,
-    "variants": []
-  },
-  "/assets/hitech/damro-logo.webp": {
-    "width": 397,
-    "height": 165,
-    "variants": []
-  },
-  "/assets/hitech/fabindia-logo.webp": {
-    "width": 379,
-    "height": 199,
-    "variants": []
-  },
-  "/assets/hitech/girias-logo.webp": {
-    "width": 389,
-    "height": 161,
-    "variants": []
-  },
-  "/assets/hitech/inox-logo.webp": {
-    "width": 362,
-    "height": 202,
-    "variants": []
-  },
-  "/assets/hitech/mahindra-logo.webp": {
-    "width": 372,
-    "height": 209,
-    "variants": []
-  },
-  "/assets/hitech/volkswagen-logo.webp": {
-    "width": 240,
-    "height": 245,
-    "variants": []
-  },
-  "/assets/hitech/union-bank-logo.webp": {
-    "width": 332,
-    "height": 241,
-    "variants": []
-  },
   "/assets/hitech/aditya-birla-group-logo.webp": {
     "width": 357,
     "height": 243,
-    "variants": []
+    "variants": [
+      {
+        "src": "/assets/hitech/responsive/aditya-birla-group-logo-320-lossless.webp",
+        "width": 320
+      }
+    ]
   },
   "/assets/hitech/big-cinemas-logo.webp": {
     "width": 379,
     "height": 108,
+    "variants": [
+      {
+        "src": "/assets/hitech/responsive/big-cinemas-logo-320-lossless.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/assets/hitech/bsnl-logo.webp": {
+    "width": 202,
+    "height": 220,
     "variants": []
   },
   "/assets/hitech/company-credentials.webp": {
@@ -54,8 +29,42 @@
     "height": 802,
     "variants": [
       {
+        "src": "/assets/hitech/responsive/company-credentials-320.webp",
+        "width": 320
+      },
+      {
         "src": "/assets/hitech/responsive/company-credentials-480.webp",
         "width": 480
+      }
+    ]
+  },
+  "/assets/hitech/damro-logo.webp": {
+    "width": 397,
+    "height": 165,
+    "variants": [
+      {
+        "src": "/assets/hitech/responsive/damro-logo-320-lossless.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/assets/hitech/fabindia-logo.webp": {
+    "width": 379,
+    "height": 199,
+    "variants": [
+      {
+        "src": "/assets/hitech/responsive/fabindia-logo-320-lossless.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/assets/hitech/girias-logo.webp": {
+    "width": 389,
+    "height": 161,
+    "variants": [
+      {
+        "src": "/assets/hitech/responsive/girias-logo-320-lossless.webp",
+        "width": 320
       }
     ]
   },
@@ -64,278 +73,44 @@
     "height": 763,
     "variants": [
       {
+        "src": "/assets/hitech/responsive/hi-tech-protection-security-logo-320.webp",
+        "width": 320
+      },
+      {
         "src": "/assets/hitech/responsive/hi-tech-protection-security-logo-480.webp",
         "width": 480
       },
       {
+        "src": "/assets/hitech/responsive/hi-tech-protection-security-logo-768.webp",
+        "width": 768
+      },
+      {
         "src": "/assets/hitech/responsive/hi-tech-protection-security-logo-960.webp",
         "width": 960
+      },
+      {
+        "src": "/assets/hitech/responsive/hi-tech-protection-security-logo-1280.webp",
+        "width": 1280
       }
     ]
   },
-  "/assets/hitech/new-uniform/bodyguards.webp": {
-    "width": 1320,
-    "height": 1189,
+  "/assets/hitech/inox-logo.webp": {
+    "width": 362,
+    "height": 202,
     "variants": [
       {
-        "src": "/assets/hitech/new-uniform/responsive/bodyguards-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/bodyguards-960.webp",
-        "width": 960
+        "src": "/assets/hitech/responsive/inox-logo-320-lossless.webp",
+        "width": 320
       }
     ]
   },
-  "/assets/hitech/new-uniform/commercial-screening.webp": {
-    "width": 1536,
-    "height": 1024,
+  "/assets/hitech/mahindra-logo.webp": {
+    "width": 372,
+    "height": 209,
     "variants": [
       {
-        "src": "/assets/hitech/new-uniform/responsive/commercial-screening-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/commercial-screening-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/contact-uniform-banner.webp": {
-    "width": 1448,
-    "height": 1086,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/contact-uniform-banner-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/contact-uniform-banner-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/security-team-outdoor-briefing.webp": {
-    "width": 1448,
-    "height": 1086,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-outdoor-briefing-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-outdoor-briefing-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/security-team-formation-briefing.webp": {
-    "width": 1448,
-    "height": 1086,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-formation-briefing-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-formation-briefing-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/security-team-wide-briefing.webp": {
-    "width": 1448,
-    "height": 1086,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-wide-briefing-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-wide-briefing-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/security-team-courtyard-briefing.webp": {
-    "width": 1448,
-    "height": 1086,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-courtyard-briefing-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-courtyard-briefing-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/security-team-field-training.webp": {
-    "width": 1448,
-    "height": 1086,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-field-training-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-field-training-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/security-team-training-ground.webp": {
-    "width": 1672,
-    "height": 941,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-training-ground-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-training-ground-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/security-team-site-instruction.webp": {
-    "width": 1672,
-    "height": 941,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-site-instruction-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-site-instruction-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/security-guard-building-entrance.webp": {
-    "width": 1086,
-    "height": 1448,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-guard-building-entrance-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-guard-building-entrance-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/women-security-personnel.webp": {
-    "width": 1448,
-    "height": 1086,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/women-security-personnel-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/women-security-personnel-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/security-guards-outdoor-formation.webp": {
-    "width": 1448,
-    "height": 1086,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-guards-outdoor-formation-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-guards-outdoor-formation-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/security-team-indoor-briefing.webp": {
-    "width": 1448,
-    "height": 1086,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-indoor-briefing-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/security-team-indoor-briefing-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/corporate-security-briefing.webp": {
-    "width": 1430,
-    "height": 1100,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/corporate-security-briefing-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/corporate-security-briefing-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/faq-uniform-banner.webp": {
-    "width": 1430,
-    "height": 1100,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/faq-uniform-banner-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/faq-uniform-banner-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/fire-demonstration.webp": {
-    "width": 1448,
-    "height": 1086,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/fire-demonstration-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/fire-demonstration-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/fire-response.webp": {
-    "width": 1448,
-    "height": 1086,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/fire-response-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/fire-response-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/gate-security.webp": {
-    "width": 1448,
-    "height": 1086,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/responsive/gate-security-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/responsive/gate-security-960.webp",
-        "width": 960
+        "src": "/assets/hitech/responsive/mahindra-logo-320-lossless.webp",
+        "width": 320
       }
     ]
   },
@@ -344,78 +119,579 @@
     "height": 1086,
     "variants": [
       {
+        "src": "/assets/hitech/new-uniform/responsive/gunman-320.webp",
+        "width": 320
+      },
+      {
         "src": "/assets/hitech/new-uniform/responsive/gunman-480.webp",
         "width": 480
       },
       {
+        "src": "/assets/hitech/new-uniform/responsive/gunman-768.webp",
+        "width": 768
+      },
+      {
         "src": "/assets/hitech/new-uniform/responsive/gunman-960.webp",
         "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/responsive/gunman-1280.webp",
+        "width": 1280
       }
     ]
   },
-  "/assets/hitech/new-uniform/housekeeping-lobby.webp": {
-    "width": 1531,
-    "height": 1027,
+  "/assets/hitech/union-bank-logo.webp": {
+    "width": 332,
+    "height": 241,
     "variants": [
       {
-        "src": "/assets/hitech/new-uniform/responsive/housekeeping-lobby-480.webp",
+        "src": "/assets/hitech/responsive/union-bank-logo-320-lossless.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/assets/hitech/volkswagen-logo.webp": {
+    "width": 240,
+    "height": 245,
+    "variants": []
+  },
+  "/assets/hitech/new-uniform/november-2026/women-security-personnel.webp": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/women-security-personnel-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/women-security-personnel-480.webp",
         "width": 480
       },
       {
-        "src": "/assets/hitech/new-uniform/responsive/housekeeping-lobby-960.webp",
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/women-security-personnel-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/women-security-personnel-960.webp",
         "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/women-security-personnel-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/women-security-personnel-1920.webp",
+        "width": 1920
       }
     ]
   },
-  "/assets/hitech/new-uniform/outdoor-briefing.webp": {
+  "/assets/hitech/new-uniform/november-2026/security-guard-building-entrance.webp": {
+    "width": 2000,
+    "height": 2667,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-building-entrance-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-building-entrance-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-building-entrance-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-building-entrance-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-building-entrance-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-building-entrance-1920.webp",
+        "width": 1920
+      }
+    ],
+    "objectPosition": "50% 10%"
+  },
+  "/assets/hitech/new-uniform/november-2026/security-guards-outdoor-formation.webp": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guards-outdoor-formation-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guards-outdoor-formation-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guards-outdoor-formation-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guards-outdoor-formation-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guards-outdoor-formation-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guards-outdoor-formation-1920.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "/assets/hitech/new-uniform/november-2026/security-team-indoor-briefing.webp": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-indoor-briefing-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-indoor-briefing-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-indoor-briefing-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-indoor-briefing-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-indoor-briefing-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-indoor-briefing-1920.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "/assets/hitech/new-uniform/november-2026/security-team-wide-briefing.webp": {
+    "width": 2000,
+    "height": 667,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-wide-briefing-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-wide-briefing-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-wide-briefing-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-wide-briefing-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-wide-briefing-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-wide-briefing-1920.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "/assets/hitech/new-uniform/november-2026/security-team-outdoor-briefing.webp": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-outdoor-briefing-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-outdoor-briefing-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-outdoor-briefing-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-outdoor-briefing-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-outdoor-briefing-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-team-outdoor-briefing-1920.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "/assets/hitech/new-uniform/november-2026/corporate-security-briefing.webp": {
     "width": 1448,
     "height": 1086,
     "variants": [
       {
-        "src": "/assets/hitech/new-uniform/responsive/outdoor-briefing-480.webp",
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/corporate-security-briefing-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/corporate-security-briefing-480.webp",
         "width": 480
       },
       {
-        "src": "/assets/hitech/new-uniform/responsive/outdoor-briefing-960.webp",
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/corporate-security-briefing-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/corporate-security-briefing-960.webp",
         "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/corporate-security-briefing-1280.webp",
+        "width": 1280
       }
     ]
   },
-  "/assets/hitech/new-uniform/safety-briefing.webp": {
+  "/assets/hitech/new-uniform/november-2026/gate-security.webp": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/gate-security-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/gate-security-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/gate-security-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/gate-security-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/gate-security-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/gate-security-1920.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "/assets/hitech/new-uniform/november-2026/commercial-screening.webp": {
+    "width": 2000,
+    "height": 2757,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/commercial-screening-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/commercial-screening-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/commercial-screening-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/commercial-screening-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/commercial-screening-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/commercial-screening-1920.webp",
+        "width": 1920
+      }
+    ],
+    "objectPosition": "50% 20%"
+  },
+  "/assets/hitech/new-uniform/november-2026/housekeeping-lobby.webp": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/housekeeping-lobby-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/housekeeping-lobby-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/housekeeping-lobby-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/housekeeping-lobby-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/housekeeping-lobby-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/housekeeping-lobby-1920.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "/assets/hitech/new-uniform/november-2026/fire-response.webp": {
     "width": 1448,
     "height": 1086,
     "variants": [
       {
-        "src": "/assets/hitech/new-uniform/responsive/safety-briefing-480.webp",
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/fire-response-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/fire-response-480.webp",
         "width": 480
       },
       {
-        "src": "/assets/hitech/new-uniform/responsive/safety-briefing-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  "/assets/hitech/new-uniform/supervisors.webp": {
-    "width": 847,
-    "height": 1857,
-    "variants": [
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/fire-response-768.webp",
+        "width": 768
+      },
       {
-        "src": "/assets/hitech/new-uniform/responsive/supervisors-480.webp",
-        "width": 480
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/fire-response-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/fire-response-1280.webp",
+        "width": 1280
       }
     ]
   },
-  "/assets/hitech/new-uniform/team-lineup.webp": {
-    "width": 1246,
+  "/assets/hitech/new-uniform/november-2026/fire-demonstration.webp": {
+    "width": 1448,
     "height": 1086,
     "variants": [
       {
-        "src": "/assets/hitech/new-uniform/responsive/team-lineup-480.webp",
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/fire-demonstration-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/fire-demonstration-480.webp",
         "width": 480
       },
       {
-        "src": "/assets/hitech/new-uniform/responsive/team-lineup-960.webp",
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/fire-demonstration-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/fire-demonstration-960.webp",
         "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/fire-demonstration-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/assets/hitech/new-uniform/november-2026/bodyguards.webp": {
+    "width": 1320,
+    "height": 1189,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/bodyguards-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/bodyguards-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/bodyguards-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/bodyguards-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/bodyguards-1280.webp",
+        "width": 1280
+      }
+    ],
+    "objectPosition": "50% 0%"
+  },
+  "/assets/hitech/new-uniform/november-2026/entrance-screening.webp": {
+    "width": 1086,
+    "height": 1448,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/entrance-screening-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/entrance-screening-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/entrance-screening-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/entrance-screening-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "/assets/hitech/new-uniform/november-2026/site-security-portrait.webp": {
+    "width": 4284,
+    "height": 5712,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/site-security-portrait-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/site-security-portrait-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/site-security-portrait-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/site-security-portrait-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/site-security-portrait-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/site-security-portrait-1920.webp",
+        "width": 1920
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/site-security-portrait-2560.webp",
+        "width": 2560
+      }
+    ],
+    "objectPosition": "50% 15%"
+  },
+  "/assets/hitech/new-uniform/november-2026/residential-security.webp": {
+    "width": 4284,
+    "height": 5712,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/residential-security-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/residential-security-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/residential-security-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/residential-security-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/residential-security-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/residential-security-1920.webp",
+        "width": 1920
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/residential-security-2560.webp",
+        "width": 2560
+      }
+    ]
+  },
+  "/assets/hitech/supervisors/vinayak-b-supervisor.webp": {
+    "width": 460,
+    "height": 613,
+    "variants": [
+      {
+        "src": "/assets/hitech/supervisors/responsive/vinayak-b-supervisor-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/assets/hitech/supervisors/gopal-supervisor.webp": {
+    "width": 500,
+    "height": 667,
+    "variants": [
+      {
+        "src": "/assets/hitech/supervisors/responsive/gopal-supervisor-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/supervisors/responsive/gopal-supervisor-480.webp",
+        "width": 480
+      }
+    ]
+  },
+  "/assets/hitech/supervisors/vinayak-b-and-gopal-supervisors.webp": {
+    "width": 1086,
+    "height": 815,
+    "variants": [
+      {
+        "src": "/assets/hitech/supervisors/responsive/vinayak-b-and-gopal-supervisors-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/supervisors/responsive/vinayak-b-and-gopal-supervisors-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/supervisors/responsive/vinayak-b-and-gopal-supervisors-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/supervisors/responsive/vinayak-b-and-gopal-supervisors-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "/assets/hitech/about-security-guard-portrait.webp": {
+    "width": 4284,
+    "height": 5712,
+    "variants": [
+      {
+        "src": "/assets/hitech/responsive/about-security-guard-portrait-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/responsive/about-security-guard-portrait-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/responsive/about-security-guard-portrait-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/responsive/about-security-guard-portrait-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/responsive/about-security-guard-portrait-1280.webp",
+        "width": 1280
       }
     ]
   }

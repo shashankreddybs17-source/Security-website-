@@ -1,4 +1,5 @@
 import { approvedTeamPhoto } from './approvedPhotos.js';
+import { supervisorTeamPhoto } from './supervisors.js';
 
 export const existingServices = [
   {
@@ -58,7 +59,7 @@ export const allServices = [
   },
   {
     id: 'housekeeping-services',
-    image: '/assets/hitech/new-uniform/housekeeping-lobby.webp',
+    image: '/assets/hitech/new-uniform/november-2026/housekeeping-lobby.webp',
     imageAlt: 'Housekeeping team cleaning glass and floors in a lobby',
     fillImage: true,
     title: 'Housekeeping Services',
@@ -66,7 +67,7 @@ export const allServices = [
   },
   {
     id: 'bodyguard-services',
-    image: '/assets/hitech/new-uniform/bodyguards.webp',
+    image: '/assets/hitech/new-uniform/november-2026/bodyguards.webp',
     imageAlt: 'Two bodyguards in black clothing standing outside a gated property',
     fillImage: true,
     title: 'Bodyguard Services',
@@ -74,15 +75,15 @@ export const allServices = [
   },
   {
     id: 'supervisor-services',
-    image: '/assets/hitech/new-uniform/supervisors.webp',
-    imageAlt: 'Hi-Tech supervisors in white shirts and black trousers',
+    image: supervisorTeamPhoto,
+    imageAlt: 'Hi-Tech supervisors Vinayak B on the left and Gopal on the right',
     fillImage: true,
     title: 'Supervisor Services',
     text: 'On-site supervision to coordinate security personnel, monitor duty performance and support consistent day-to-day security operations.',
   },
   {
     id: 'event-management-services',
-    image: '/assets/hitech/new-uniform/gate-security.webp',
+    image: '/assets/hitech/new-uniform/november-2026/gate-security.webp',
     imageAlt: 'Hi-Tech security team standing at a property entrance',
     fillImage: true,
     title: 'Event Management Services',

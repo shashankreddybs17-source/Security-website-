@@ -65,23 +65,15 @@ export default function AboutAboutSection() {
             <div className="about-image-block">
               <div data-reveal="" className="about-image-wrap">
                 <ResponsiveImage
-                  src="/assets/hitech/new-uniform/security-guard-building-entrance.webp"
+                  src="/assets/hitech/new-uniform/november-2026/security-guard-building-entrance.webp"
                   loading="lazy"
                   style={{
                     transform:
                       'translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)',
                   }}
-                  alt="Hi-Tech Protection Security personnel and training"
+                  alt="Hi-Tech security guard in a grey uniform standing at a building entrance"
                   className="about-image"
                 />
-                <div
-                  style={{
-                    transform:
-                      'translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)',
-                    display: 'block',
-                  }}
-                  className="about-overlay"
-                ></div>
               </div>
               <div className="about-name-block">
                 <h4

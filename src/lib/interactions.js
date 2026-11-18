@@ -19,19 +19,6 @@ export function initializeInteractions(root = document) {
         item.closest('button, .site-button, .primary-button, .secondary-button, .tertiary-button')
       )
         continue;
-      if (item.matches('.about-overlay')) {
-        item.style.transform = 'translateY(-100%)';
-        animate(
-          item,
-          [
-            { transform: 'translateY(100%)' },
-            { transform: 'translateY(0)', offset: 0.5 },
-            { transform: 'translateY(-100%)' },
-          ],
-          { duration: 1600, easing: 'ease-in-out' },
-        );
-        continue;
-      }
       if (item.matches('.story-number, .story-number-reverse')) {
         const reverse = item.matches('.story-number-reverse');
         const end = reverse ? 'translateY(-1000%)' : 'translateY(0)';
@@ -75,9 +62,13 @@ export function initializeInteractions(root = document) {
           },
           { threshold: 0.05 },
         );
-  const scan = () => {
+  const query = (scope, selector) => [
+    ...(scope.matches?.(selector) ? [scope] : []),
+    ...scope.querySelectorAll(selector),
+  ];
+  const scan = (scope = root) => {
     if (disposed) return;
-    for (const element of root.querySelectorAll('[data-reveal], .home-about-image-block')) {
+    for (const element of query(scope, '[data-reveal], .home-about-image-block')) {
       if (seen.has(element)) continue;
       seen.add(element);
       if (observer && !reduced.matches) {
@@ -89,7 +80,7 @@ export function initializeInteractions(root = document) {
         observer.observe(frame);
       } else reveal(element);
     }
-    for (const dropdown of root.querySelectorAll('.faqs-dropdown')) {
+    for (const dropdown of query(scope, '.faqs-dropdown')) {
       // Disclosures may also carry reveal markers, so track their toggles separately.
       const toggle = dropdown.querySelector('.faqs-question');
       const panel = dropdown.querySelector('.faqs-answer');
@@ -138,7 +129,7 @@ export function initializeInteractions(root = document) {
         toggle.removeEventListener('keydown', keydown);
       });
     }
-    for (const marquee of root.querySelectorAll('.marquee-block')) {
+    for (const marquee of query(scope, '.marquee-block')) {
       if (marquee.dataset.motionReady) continue;
       marquee.dataset.motionReady = 'true';
       if (!reduced.matches)
@@ -149,7 +140,11 @@ export function initializeInteractions(root = document) {
         });
     }
   };
-  const mutation = new MutationObserver(scan);
+  const mutation = new MutationObserver((records) => {
+    // Counter text updates need no initialization; inspect only newly mounted elements.
+    for (const record of records)
+      for (const node of record.addedNodes) if (node.nodeType === 1) scan(node);
+  });
   mutation.observe(root.documentElement || root, { childList: true, subtree: true });
   const motionChange = () => {
     if (reduced.matches) {

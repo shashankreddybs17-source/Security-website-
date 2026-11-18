@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-13",
+  "url": "http://192.168.0.120:4173/",
+  "mobileRuns": [96, 96, 96],
+  "mobileMedian": 96,
+  "mobileLcpMs": 2772.9402,
+  "desktopVerification": 100,
+  "variants": [
+    {
+      "width": 320,
+      "avifBytes": 15713,
+      "webpBytes": 19498
+    },
+    {
+      "width": 480,
+      "avifBytes": 32121,
+      "webpBytes": 38892
+    },
+    {
+      "width": 768,
+      "avifBytes": 70259,
+      "webpBytes": 85298
+    },
+    {
+      "width": 960,
+      "avifBytes": 100528,
+      "webpBytes": 120282
+    },
+    {
+      "width": 1280,
+      "avifBytes": 153521,
+      "webpBytes": 180834
+    },
+    {
+      "width": 1430,
+      "avifBytes": 188168,
+      "webpBytes": 319032
+    }
+  ],
+  "notes": "Production laboratory checks, standard presets. Mobile median remains 96; fewer image bytes does not guarantee a higher score. Not a deployed Vercel measurement."
+}

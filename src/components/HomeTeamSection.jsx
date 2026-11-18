@@ -2,57 +2,16 @@ import ResponsiveImage from './ResponsiveImage';
 import { useEffect, useRef, useState } from 'react';
 import { Check, ArrowUpRight, ArrowLeft, ArrowRight } from 'lucide-react';
 import styles from './HomeTeamSection.module.css';
+import { supervisors } from '../data/supervisors';
 
-const experts = [
-  {
-    src: '/assets/hitech/new-uniform/security-guard-building-entrance.webp',
-    alt: 'Hi-Tech Protection Security personnel and training',
-    category: 'Leadership Team',
-    name: 'Arjun Kumar',
-    designation: 'Operations Manager',
-    position: '50% 50%',
-  },
-  {
-    src: '/assets/hitech/new-uniform/bodyguards.webp',
-    alt: 'HI-TECH security personnel standing together in black uniforms',
-    category: 'Leadership Team',
-    name: 'Priya Rao',
-    designation: 'Training Coordinator',
-    position: '50% 50%',
-  },
-  {
-    src: '/assets/hitech/new-uniform/bodyguards.webp',
-    alt: 'Hi-Tech Protection Security personnel and training',
-    category: 'Leadership Team',
-    name: 'Vikram Singh',
-    designation: 'Security Supervisor',
-    position: '50% 50%',
-  },
-  {
-    src: '/assets/hitech/new-uniform/security-team-outdoor-briefing.webp',
-    alt: 'Hi-Tech Protection Security personnel and training',
-    category: 'Field Experts',
-    name: 'Kiran Sharma',
-    designation: 'Site Supervisor',
-    position: '35% 50%',
-  },
-  {
-    src: '/assets/hitech/new-uniform/commercial-screening.webp',
-    alt: 'Hi-Tech Protection Security personnel and training',
-    category: 'Field Experts',
-    name: 'Ravi Kumar',
-    designation: 'Field Supervisor',
-    position: '50% 50%',
-  },
-  {
-    src: '/assets/hitech/new-uniform/security-team-wide-briefing.webp',
-    alt: 'Hi-Tech Protection Security personnel and training',
-    category: 'Field Experts',
-    name: 'Anita Rao',
-    designation: 'Client Coordinator',
-    position: '40% 50%',
-  },
-];
+const experts = supervisors.map(({ name, image, imageAlt }) => ({
+  src: image,
+  alt: imageAlt,
+  category: 'Supervisors',
+  name,
+  designation: 'Supervisor',
+  position: '50% 50%',
+}));
 
 export default function HomeTeamSection() {
   const section = useRef(null);
@@ -214,7 +173,7 @@ export default function HomeTeamSection() {
                   {experts.map((expert, item) => (
                     <div
                       className={`team-slide ${styles.slide}`}
-                      key={expert.src}
+                      key={expert.name}
                       role="group"
                       aria-roledescription="slide"
                       aria-label={`${item + 1} of ${experts.length}`}
@@ -225,6 +184,7 @@ export default function HomeTeamSection() {
                         <div className={`team-image-block ${styles.photo}`}>
                           <ResponsiveImage
                             src={expert.src}
+                            sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 991px) 30vw, 380px"
                             loading="lazy"
                             alt={expert.alt}
                             className={`team-image ${styles.image}`}
@@ -242,28 +202,30 @@ export default function HomeTeamSection() {
                   ))}
                 </div>
               </div>
-              <div className={styles.controls}>
-                <button
-                  type="button"
-                  className={`team-arrow ${styles.arrow}`}
-                  disabled={index === 0}
-                  onClick={() => move(-1)}
-                  aria-label="Previous security expert"
-                  aria-controls="team-carousel-viewport"
-                >
-                  <ArrowLeft size={24} aria-hidden="true" />
-                </button>
-                <button
-                  type="button"
-                  className={`team-arrow ${styles.arrow}`}
-                  disabled={index === last}
-                  onClick={() => move(1)}
-                  aria-label="Next security expert"
-                  aria-controls="team-carousel-viewport"
-                >
-                  <ArrowRight size={24} aria-hidden="true" />
-                </button>
-              </div>
+              {last > 0 && (
+                <div className={styles.controls}>
+                  <button
+                    type="button"
+                    className={`team-arrow ${styles.arrow}`}
+                    disabled={index === 0}
+                    onClick={() => move(-1)}
+                    aria-label="Previous security expert"
+                    aria-controls="team-carousel-viewport"
+                  >
+                    <ArrowLeft size={24} aria-hidden="true" />
+                  </button>
+                  <button
+                    type="button"
+                    className={`team-arrow ${styles.arrow}`}
+                    disabled={index === last}
+                    onClick={() => move(1)}
+                    aria-label="Next security expert"
+                    aria-controls="team-carousel-viewport"
+                  >
+                    <ArrowRight size={24} aria-hidden="true" />
+                  </button>
+                </div>
+              )}
               <p className={styles.status} role="status" aria-live="polite" aria-atomic="true">
                 Showing experts {index + 1}
                 {visible > 1 ? ` to ${index + visible}` : ''} of {experts.length}

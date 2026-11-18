@@ -147,6 +147,7 @@ export function HomeServicesShowcase() {
                   <ResponsiveImage
                     src={service.image}
                     alt={service.imageAlt}
+                    sizes="(max-width: 479px) 100vw, (max-width: 991px) 50vw, 33vw"
                     loading="lazy"
                     width="1280"
                     height="960"

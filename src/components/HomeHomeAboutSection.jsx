@@ -10,7 +10,8 @@ export default function HomeHomeAboutSection() {
             <div className="home-about-image-block">
               <div className="home-about-image-wrap-1">
                 <ResponsiveImage
-                  src="/assets/hitech/new-uniform/security-team-courtyard-briefing.webp"
+                  src="/assets/hitech/new-uniform/november-2026/security-team-outdoor-briefing.webp"
+                  sizes="(max-width: 767px) 100vw, 25vw"
                   loading="lazy"
                   style={{
                     transform:
@@ -22,7 +23,8 @@ export default function HomeHomeAboutSection() {
               </div>
               <div className="home-about-image-wrap-2">
                 <ResponsiveImage
-                  src="/assets/hitech/new-uniform/women-security-personnel.webp"
+                  src="/assets/hitech/new-uniform/november-2026/women-security-personnel.webp"
+                  sizes="(max-width: 767px) 100vw, 25vw"
                   loading="lazy"
                   style={{
                     transform:

@@ -1,9 +1,18 @@
 import { ArrowRight } from 'lucide-react';
+import ResponsiveImage from './ResponsiveImage';
 import styles from './HomeCtaSection.module.css';
 
 export default function HomeCtaSection() {
   return (
-    <section className="cta-section">
+    <section className={`cta-section ${styles.section}`}>
+      <ResponsiveImage
+        className={styles.background}
+        src="/assets/hitech/new-uniform/november-2026/commercial-screening.webp"
+        alt=""
+        sizes="100vw"
+        loading="lazy"
+        fetchPriority="low"
+      />
       <div className="section-gap">
         <div className="site-layout-blockcontainer container-default site-container">
           <div className="cta-block">

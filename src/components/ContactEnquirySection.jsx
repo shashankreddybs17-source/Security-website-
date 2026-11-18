@@ -51,11 +51,11 @@ export default function ContactEnquirySection() {
         <div className={styles.panel}>
           <figure className={styles.photo}>
             <ResponsiveImage
-              src="/assets/hitech/new-uniform/security-team-field-training.webp"
-              alt="Hi-Tech security personnel standing in formation at an outdoor briefing"
+              src="/assets/hitech/new-uniform/november-2026/residential-security.webp"
+              alt="Hi-Tech guard on duty outside a residential apartment building"
               loading="eager"
-              width="584"
-              height="1280"
+              width="4284"
+              height="5712"
             />
           </figure>
           <div className={styles.formPanel}>

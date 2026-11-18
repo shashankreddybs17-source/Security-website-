@@ -1,0 +1,211 @@
+{
+  "date": "2026-11-13",
+  "url": "http://127.0.0.1:5174/",
+  "lighthouseVersion": "13.6.0",
+  "runsPerDevicePerPhase": 3,
+  "notes": "Production preview; full-category default Lighthouse runs; desktop preset and default simulated mobile throttling. The baseline already includes the earlier responsive-image pass. Local lab results, not field INP or deployed Vercel measurements.",
+  "results": {
+    "desktop": {
+      "before": {
+        "performanceRuns": [98, 98, 98],
+        "medianScores": {
+          "performance": 98,
+          "accessibility": 95,
+          "best-practices": 100,
+          "seo": 92
+        },
+        "medianMetrics": {
+          "first-contentful-paint": 377.4428,
+          "largest-contentful-paint": 1190.6178,
+          "speed-index": 470.355250078807,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0
+        }
+      },
+      "after": {
+        "performanceRuns": [98, 98, 98],
+        "medianScores": {
+          "performance": 98,
+          "accessibility": 95,
+          "best-practices": 100,
+          "seo": 92
+        },
+        "medianMetrics": {
+          "first-contentful-paint": 254.3718,
+          "largest-contentful-paint": 1054.3718,
+          "speed-index": 418.44997298234364,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0
+        }
+      }
+    },
+    "mobile": {
+      "before": {
+        "performanceRuns": [81, 83, 80],
+        "medianScores": {
+          "performance": 81,
+          "accessibility": 95,
+          "best-practices": 100,
+          "seo": 92
+        },
+        "medianMetrics": {
+          "first-contentful-paint": 913.6352999999999,
+          "largest-contentful-paint": 5188.6353,
+          "speed-index": 1235.356347057131,
+          "total-blocking-time": 26,
+          "cumulative-layout-shift": 0
+        }
+      },
+      "after": {
+        "performanceRuns": [96, 90, 90],
+        "medianScores": {
+          "performance": 90,
+          "accessibility": 95,
+          "best-practices": 100,
+          "seo": 92
+        },
+        "medianMetrics": {
+          "first-contentful-paint": 910.5056,
+          "largest-contentful-paint": 3684.6224,
+          "speed-index": 1456.1041482827882,
+          "total-blocking-time": 45.5,
+          "cumulative-layout-shift": 0
+        }
+      }
+    }
+  },
+  "bundlesbefore": [
+    {
+      "name": "About-Cc0Bs66w.css",
+      "bytes": 14240,
+      "gzip": 3366
+    },
+    {
+      "name": "About-CMGFfj81.js",
+      "bytes": 22180,
+      "gzip": 4846
+    },
+    {
+      "name": "AboutCommonFaqsSection-DNxhvulp.js",
+      "bytes": 10629,
+      "gzip": 1857
+    },
+    {
+      "name": "AboutHeroSection-Dsb7U9rJ.js",
+      "bytes": 1384,
+      "gzip": 561
+    },
+    {
+      "name": "Blog-Dq3051pB.js",
+      "bytes": 1328,
+      "gzip": 617
+    },
+    {
+      "name": "Blog-DwI4M9dN.css",
+      "bytes": 1053,
+      "gzip": 491
+    },
+    {
+      "name": "Contact-BX6WznI9.js",
+      "bytes": 12196,
+      "gzip": 4259
+    },
+    {
+      "name": "Contact-DT64EWeE.css",
+      "bytes": 10630,
+      "gzip": 2401
+    },
+    {
+      "name": "Faq-CCmhopT1.js",
+      "bytes": 504,
+      "gzip": 329
+    },
+    {
+      "name": "index-Br15IisP.css",
+      "bytes": 190403,
+      "gzip": 31937
+    },
+    {
+      "name": "index-DUznj8tD.js",
+      "bytes": 341758,
+      "gzip": 98301
+    },
+    {
+      "name": "Services-BcC7iSzm.css",
+      "bytes": 7595,
+      "gzip": 2013
+    },
+    {
+      "name": "Services-Bg_k4rMD.js",
+      "bytes": 23777,
+      "gzip": 7648
+    }
+  ],
+  "bundlesafter": [
+    {
+      "name": "About-C6rpVwSe.js",
+      "bytes": 22180,
+      "gzip": 4849
+    },
+    {
+      "name": "About-Cc0Bs66w.css",
+      "bytes": 14240,
+      "gzip": 3366
+    },
+    {
+      "name": "AboutCommonFaqsSection-BSoWInWD.js",
+      "bytes": 10629,
+      "gzip": 1856
+    },
+    {
+      "name": "AboutHeroSection-7DHDfiAc.js",
+      "bytes": 1384,
+      "gzip": 563
+    },
+    {
+      "name": "Blog-Bnc0P5Lf.js",
+      "bytes": 1328,
+      "gzip": 617
+    },
+    {
+      "name": "Blog-DwI4M9dN.css",
+      "bytes": 1053,
+      "gzip": 491
+    },
+    {
+      "name": "Contact-Btk7I09U.js",
+      "bytes": 12196,
+      "gzip": 4258
+    },
+    {
+      "name": "Contact-DT64EWeE.css",
+      "bytes": 10630,
+      "gzip": 2401
+    },
+    {
+      "name": "Faq-nPp6oVlV.js",
+      "bytes": 504,
+      "gzip": 331
+    },
+    {
+      "name": "index-DAZYHwpD.css",
+      "bytes": 115776,
+      "gzip": 20859
+    },
+    {
+      "name": "index-Dlk9cSD4.js",
+      "bytes": 341877,
+      "gzip": 98382
+    },
+    {
+      "name": "Services-BcC7iSzm.css",
+      "bytes": 7595,
+      "gzip": 2013
+    },
+    {
+      "name": "Services-CaMXBM4F.js",
+      "bytes": 23777,
+      "gzip": 7648
+    }
+  ]
+}

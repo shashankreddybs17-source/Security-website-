@@ -23,6 +23,11 @@ export default function ResponsiveImage({
   return (
     <img
       {...props}
+      style={
+        image?.objectPosition
+          ? { objectPosition: image.objectPosition, ...props.style }
+          : props.style
+      }
       src={src}
       alt={alt === '' ? '' : descriptions[src] || alt || ''}
       srcSet={srcSet || candidates}

@@ -1,0 +1,191 @@
+{
+  "date": "2026-11-13",
+  "method": "Three full-category Lighthouse 13.6.0 runs per mode, production preview localhost:5174; desktop preset / default simulated mobile. Previous means the completed first audit, not the original development-server screenshot.",
+  "results": {
+    "desktop": {
+      "previous": {
+        "performanceRuns": [98, 98, 98],
+        "scores": {
+          "performance": 98,
+          "accessibility": 95,
+          "best-practices": 100,
+          "seo": 92
+        },
+        "metrics": {
+          "first-contentful-paint": 254.3718,
+          "largest-contentful-paint": 1054.3718,
+          "speed-index": 418.44997298234364,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0
+        }
+      },
+      "final": {
+        "performanceRuns": [98, 98, 98],
+        "scores": {
+          "performance": 98,
+          "accessibility": 95,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "metrics": {
+          "first-contentful-paint": 361.9227,
+          "largest-contentful-paint": 1154.3791,
+          "speed-index": 594.3296768984883,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0.001560265780611911
+        }
+      }
+    },
+    "mobile": {
+      "previous": {
+        "performanceRuns": [96, 90, 90],
+        "scores": {
+          "performance": 90,
+          "accessibility": 95,
+          "best-practices": 100,
+          "seo": 92
+        },
+        "metrics": {
+          "first-contentful-paint": 910.5056,
+          "largest-contentful-paint": 3684.6224,
+          "speed-index": 1456.1041482827882,
+          "total-blocking-time": 45.5,
+          "cumulative-layout-shift": 0
+        }
+      },
+      "final": {
+        "performanceRuns": [91, 93, 93],
+        "scores": {
+          "performance": 93,
+          "accessibility": 95,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "metrics": {
+          "first-contentful-paint": 769.0945999999999,
+          "largest-contentful-paint": 3161.9155500000006,
+          "speed-index": 1958.0980109297711,
+          "total-blocking-time": 96,
+          "cumulative-layout-shift": 0
+        }
+      }
+    }
+  },
+  "finalBundles": [
+    {
+      "name": "About-Cc0Bs66w.css",
+      "bytes": 14240,
+      "gzip": 3366
+    },
+    {
+      "name": "About-D2HaH4qL.js",
+      "bytes": 22265,
+      "gzip": 4884
+    },
+    {
+      "name": "AboutCommonFaqsSection-CilWPiYd.js",
+      "bytes": 10629,
+      "gzip": 1856
+    },
+    {
+      "name": "AboutHeroSection-B4Sl6lFd.js",
+      "bytes": 1384,
+      "gzip": 559
+    },
+    {
+      "name": "Blog-DwI4M9dN.css",
+      "bytes": 1053,
+      "gzip": 491
+    },
+    {
+      "name": "Blog-DXey6FAt.js",
+      "bytes": 1440,
+      "gzip": 679
+    },
+    {
+      "name": "BlogListing-Baf8guf6.css",
+      "bytes": 8012,
+      "gzip": 1983
+    },
+    {
+      "name": "BlogListing-DWVaVdi0.js",
+      "bytes": 5365,
+      "gzip": 1950
+    },
+    {
+      "name": "check-vFTUfsx6.js",
+      "bytes": 288,
+      "gzip": 241
+    },
+    {
+      "name": "Contact-BvaRUFVQ.js",
+      "bytes": 12274,
+      "gzip": 4298
+    },
+    {
+      "name": "Contact-DT64EWeE.css",
+      "bytes": 10630,
+      "gzip": 2401
+    },
+    {
+      "name": "Faq-BFGf7lJc.js",
+      "bytes": 542,
+      "gzip": 347
+    },
+    {
+      "name": "Home-8yWQBsOH.js",
+      "bytes": 60624,
+      "gzip": 15357
+    },
+    {
+      "name": "Home-CLG1fqNJ.css",
+      "bytes": 42643,
+      "gzip": 8065
+    },
+    {
+      "name": "HomeCtaSection-BknSpdFA.css",
+      "bytes": 908,
+      "gzip": 427
+    },
+    {
+      "name": "HomeCtaSection-CEB0wJlq.js",
+      "bytes": 1277,
+      "gzip": 617
+    },
+    {
+      "name": "index-fcxF95kb.css",
+      "bytes": 60795,
+      "gzip": 11860
+    },
+    {
+      "name": "index-ihpTxw3f.js",
+      "bytes": 272643,
+      "gzip": 82179
+    },
+    {
+      "name": "Services-74J4uh5y.js",
+      "bytes": 23885,
+      "gzip": 7703
+    },
+    {
+      "name": "Services-BcC7iSzm.css",
+      "bytes": 7595,
+      "gzip": 2013
+    },
+    {
+      "name": "shield-check-BoaWaUK3.js",
+      "bytes": 488,
+      "gzip": 350
+    },
+    {
+      "name": "SiteFooter-Chw4r88X.js",
+      "bytes": 4051,
+      "gzip": 1550
+    },
+    {
+      "name": "SiteFooter-D5T6AyRG.css",
+      "bytes": 3364,
+      "gzip": 1084
+    }
+  ]
+}

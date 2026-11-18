@@ -3,7 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { X } from 'lucide-react';
 import SiteNavbar from './components/SiteNavbar';
 import FloatingContactButtons from './components/FloatingContactButtons';
-import Home from './pages/Home';
+import HomeHeaderHeroSection from './components/HomeHeaderHeroSection';
+const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Faq = lazy(() => import('./pages/Faq'));
@@ -11,7 +12,7 @@ const Services = lazy(() => import('./pages/Services'));
 import { initializePageScroll } from './lib/pageNavigation';
 import { cleanPageUrl } from './lib/cleanPageUrl';
 const Blog = lazy(() => import('./pages/Blog'));
-import { blogPosts } from './data/blogPosts';
+import { initializeMetadata } from './lib/metadata';
 import { initializeInteractions } from './lib/interactions';
 import './styles/fonts.css';
 import './styles/base.css';
@@ -30,14 +31,26 @@ const isContact = /^\/contact(?:-us)?\/?$/.test(location.pathname);
 const blogMatch = location.pathname.match(/^\/blog(?:\/([^/]+))?\/?$/);
 const isBlog = Boolean(blogMatch);
 const blogSlug = blogMatch?.[1];
-const currentPost = blogPosts.find((post) => post.slug === blogSlug);
 const isFaq = /^\/faqs?\/?$/.test(location.pathname);
-document.title = `${isServices ? 'Services | ' : isFaq ? 'FAQ | ' : isBlog ? `${currentPost ? currentPost.title : 'Blog'} | ` : isContact ? 'Contact Us | ' : isAbout ? 'About Us | ' : ''}Hi-Tech Protection Security`;
+
+function HomePage() {
+  return (
+    <div className="page-wrapper">
+      <HomeHeaderHeroSection />
+      <Suspense
+        fallback={<div aria-busy="true" aria-label="Loading page" style={{ minHeight: '100vh' }} />}
+      >
+        <Home />
+      </Suspense>
+    </div>
+  );
+}
 
 function App() {
   const [notice, setNotice] = useState('');
   useEffect(() => {
     const disposeInteractions = initializeInteractions();
+    const disposeMetadata = initializeMetadata(import.meta.env.VITE_SITE_URL);
     // Only the dedicated enquiry form is connected to the contact flow.
     const submit = (event) => {
       if (!(event.target instanceof HTMLFormElement)) return;
@@ -49,6 +62,7 @@ function App() {
     document.addEventListener('submit', submit, true);
     return () => {
       disposeInteractions();
+      disposeMetadata();
       document.removeEventListener('submit', submit, true);
     };
   }, []);
@@ -69,7 +83,7 @@ function App() {
         ) : isAbout ? (
           <About />
         ) : (
-          <Home />
+          <HomePage />
         )}
       </Suspense>
       <FloatingContactButtons />

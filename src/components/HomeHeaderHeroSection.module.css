@@ -21,6 +21,11 @@
   object-fit: cover;
   object-position: 50% 25%;
 }
+.photo > picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .headlineBlock {
   --headline-inset: clamp(24px, 5vw, 96px);
   position: absolute;

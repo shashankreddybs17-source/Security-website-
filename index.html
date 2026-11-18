@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="preload"
-      href="/assets/fonts/archivo-variable.woff2"
+      href="/assets/fonts/archivo-latin.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -15,9 +15,10 @@
         const preload = document.createElement('link');
         preload.rel = 'preload';
         preload.as = 'image';
-        preload.href = '/assets/hitech/new-uniform/corporate-security-briefing.webp';
+        preload.type = 'image/avif';
+        preload.href = '/assets/hitech/new-uniform/november-2026/corporate-security-briefing.avif';
         preload.imageSrcset =
-          '/assets/hitech/new-uniform/responsive/corporate-security-briefing-480.webp 480w, /assets/hitech/new-uniform/responsive/corporate-security-briefing-960.webp 960w, /assets/hitech/new-uniform/corporate-security-briefing.webp 1430w';
+          '/assets/hitech/new-uniform/november-2026/responsive/corporate-security-briefing-320.avif 320w, /assets/hitech/new-uniform/november-2026/responsive/corporate-security-briefing-480.avif 480w, /assets/hitech/new-uniform/november-2026/responsive/corporate-security-briefing-768.avif 768w, /assets/hitech/new-uniform/november-2026/responsive/corporate-security-briefing-960.avif 960w, /assets/hitech/new-uniform/november-2026/responsive/corporate-security-briefing-1280.avif 1280w, /assets/hitech/new-uniform/november-2026/corporate-security-briefing.avif 1448w';
         preload.imageSizes = '100vw';
         preload.fetchPriority = 'high';
         document.head.appendChild(preload);

@@ -77,7 +77,8 @@
   gap: 12px;
   flex: none;
   padding: 12px 15px;
-  border: 1px solid var(--site-navy, #070616);
+  /* Preserve the existing borderless button reset when this route CSS loads later. */
+  border: 0;
   border-radius: 30px;
   background: var(--site-navy, #070616);
   color: var(--site-cream, #fdf9f1);
@@ -113,7 +114,7 @@
   width: 100%;
   height: 100%;
   padding: 10px;
-  border: 1px solid rgba(7, 6, 22, 0.2);
+  border: 0;
   border-radius: 12px;
   background: #f0eee8;
   color: inherit;
@@ -136,6 +137,10 @@
   object-fit: contain;
   opacity: 1;
   filter: none;
+}
+.photo .filledThumbnail {
+  object-fit: cover;
+  object-position: 55% 50%;
 }
 .caption {
   display: flex;

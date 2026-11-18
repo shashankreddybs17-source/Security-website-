@@ -6,7 +6,6 @@ import {
 } from '../components/HomeEnhancements';
 import HomeCompanyStatistics from '../components/HomeCompanyStatistics';
 import HomeCredentialsSection from '../components/HomeCredentialsSection';
-import HomeHeaderHeroSection from '../components/HomeHeaderHeroSection';
 import HomeMarqueeSection from '../components/HomeMarqueeSection';
 import HomeHomeAboutSection from '../components/HomeHomeAboutSection';
 import HomeSecuritySolutions from '../components/HomeSecuritySolutions';
@@ -20,8 +19,7 @@ import HomeFooterSection from '../components/HomeFooterSection';
 
 export default function Home() {
   return (
-    <div className="page-wrapper">
-      <HomeHeaderHeroSection />
+    <>
       <main className="main-wrapper">
         <HomeMarqueeSection />
         <HomeHomeAboutSection />
@@ -39,6 +37,6 @@ export default function Home() {
         <HomeCtaSection />
       </main>
       <HomeFooterSection />
-    </div>
+    </>
   );
 }

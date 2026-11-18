@@ -4,12 +4,14 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { approvedTeamPhoto, approvedTeamPhotos } from '../src/data/approvedPhotos.js';
 import { allServices, existingServices } from '../src/data/services.js';
+import { supervisorTeamPhoto } from '../src/data/supervisors.js';
 
 test('all service photos come from the approved upload set, consistently across pages', () => {
   for (const service of allServices) {
     if (service.id === 'gunman-services')
       assert.equal(service.image, '/assets/hitech/new-uniform/gunman.webp');
-    assert.ok(service.image.startsWith('/assets/hitech/new-uniform/'), service.id);
+    if (service.id === 'supervisor-services') assert.equal(service.image, supervisorTeamPhoto);
+    else assert.ok(service.image.startsWith('/assets/hitech/new-uniform/'), service.id);
     assert.ok(existsSync('public' + service.image), service.image);
   }
   for (const service of existingServices)

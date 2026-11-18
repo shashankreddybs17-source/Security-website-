@@ -1,0 +1,690 @@
+{
+  "url": "http://127.0.0.1:4273/",
+  "lighthouseVersion": "13.6.0",
+  "date": "2026-11-13",
+  "sourceChanged": false,
+  "devices": {
+    "desktop": {
+      "runs": [100, 100, 100],
+      "medianScore": 100,
+      "metrics": {
+        "first-contentful-paint": 215.98180000000002,
+        "largest-contentful-paint": 735.9818,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 481.3479895958958
+      },
+      "settings": {
+        "output": ["json"],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": ["file_systems", "shader_cache", "service_workers", "cache_storage"],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": null,
+        "skipAudits": null
+      },
+      "warnings": [[], [], []],
+      "weightedLoss": [
+        [
+          {
+            "id": "first-contentful-paint",
+            "weight": 10,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "largest-contentful-paint",
+            "weight": 25,
+            "score": 0.98,
+            "loss": 0.5000000000000004
+          },
+          {
+            "id": "total-blocking-time",
+            "weight": 30,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "cumulative-layout-shift",
+            "weight": 25,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "speed-index",
+            "weight": 10,
+            "score": 1,
+            "loss": 0
+          }
+        ],
+        [
+          {
+            "id": "first-contentful-paint",
+            "weight": 10,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "largest-contentful-paint",
+            "weight": 25,
+            "score": 0.98,
+            "loss": 0.5000000000000004
+          },
+          {
+            "id": "total-blocking-time",
+            "weight": 30,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "cumulative-layout-shift",
+            "weight": 25,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "speed-index",
+            "weight": 10,
+            "score": 1,
+            "loss": 0
+          }
+        ],
+        [
+          {
+            "id": "first-contentful-paint",
+            "weight": 10,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "largest-contentful-paint",
+            "weight": 25,
+            "score": 0.99,
+            "loss": 0.2500000000000002
+          },
+          {
+            "id": "total-blocking-time",
+            "weight": 30,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "cumulative-layout-shift",
+            "weight": 25,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "speed-index",
+            "weight": 10,
+            "score": 1,
+            "loss": 0
+          }
+        ]
+      ],
+      "longTasks": [[], [], []],
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-2-IMG",
+        "path": "1,HTML,1,BODY,0,DIV,2,DIV,0,SECTION,0,DIV,0,PICTURE,1,IMG",
+        "selector": "section._hero_1cc66_5 > div._photo_1cc66_9 > picture > img",
+        "boundingRect": {
+          "top": 0,
+          "bottom": 567,
+          "left": 0,
+          "right": 1335,
+          "width": 1335,
+          "height": 567
+        },
+        "snippet": "<img fetchpriority=\"high\" alt=\"Instructor briefing five security guards beside a fire extinguisher\" sizes=\"100vw\" loading=\"eager\" decoding=\"async\" width=\"1430\" height=\"1100\" srcset=\"/assets/hitech/new-uniform/responsive/corporate-security-briefing-320.webp…\" src=\"http://127.0.0.1:4273/assets/hitech/new-uniform/corporate-security-briefin…\">",
+        "nodeLabel": "Instructor briefing five security guards beside a fire extinguisher"
+      },
+      "lcpBreakdown": [
+        [
+          {
+            "subpart": "timeToFirstByte",
+            "label": "Time to first byte",
+            "duration": 16.542
+          },
+          {
+            "subpart": "resourceLoadDelay",
+            "label": "Resource load delay",
+            "duration": 42.293
+          },
+          {
+            "subpart": "resourceLoadDuration",
+            "label": "Resource load duration",
+            "duration": 19.186
+          },
+          {
+            "subpart": "elementRenderDelay",
+            "label": "Element render delay",
+            "duration": 152.247
+          }
+        ],
+        [
+          {
+            "subpart": "timeToFirstByte",
+            "label": "Time to first byte",
+            "duration": 8.798
+          },
+          {
+            "subpart": "resourceLoadDelay",
+            "label": "Resource load delay",
+            "duration": 67.681
+          },
+          {
+            "subpart": "resourceLoadDuration",
+            "label": "Resource load duration",
+            "duration": 18.601
+          },
+          {
+            "subpart": "elementRenderDelay",
+            "label": "Element render delay",
+            "duration": 123.328
+          }
+        ],
+        [
+          {
+            "subpart": "timeToFirstByte",
+            "label": "Time to first byte",
+            "duration": 5.438
+          },
+          {
+            "subpart": "resourceLoadDelay",
+            "label": "Resource load delay",
+            "duration": 70.165
+          },
+          {
+            "subpart": "resourceLoadDuration",
+            "label": "Resource load duration",
+            "duration": 6.806
+          },
+          {
+            "subpart": "elementRenderDelay",
+            "label": "Element render delay",
+            "duration": 90.106
+          }
+        ]
+      ],
+      "criticalResources": [
+        {
+          "url": "http://127.0.0.1:4273/assets/fonts/archivo-latin.woff2",
+          "transferSize": 58188,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/index-DTCJKI9G.js",
+          "transferSize": 83319,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/index-BQHXIXHD.css",
+          "transferSize": 12866,
+          "priority": "VeryHigh"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/Home-Cnrpc9gl.js",
+          "transferSize": 15262,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/shield-check-BGG7SnbC.js",
+          "transferSize": 809,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/check-DxIOoBk1.js",
+          "transferSize": 609,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/HomeCtaSection-DRQfTCV8.js",
+          "transferSize": 1126,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/HomeCtaSection-DcsQEkWz.css",
+          "transferSize": 912,
+          "priority": "VeryHigh"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/BlogListing-B4cCt9lm.js",
+          "transferSize": 2319,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/SiteFooter-DfaTfrLG.js",
+          "transferSize": 1922,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/SiteFooter-D5T6AyRG.css",
+          "transferSize": 1447,
+          "priority": "VeryHigh"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/BlogListing-Baf8guf6.css",
+          "transferSize": 2346,
+          "priority": "VeryHigh"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/Home-BV0ial-S.css",
+          "transferSize": 7813,
+          "priority": "VeryHigh"
+        }
+      ],
+      "minification": [1, 1, 1],
+      "totalTransferBytes": [850763, 850606, 850606]
+    },
+    "mobile": {
+      "runs": [96, 96, 96],
+      "medianScore": 96,
+      "metrics": {
+        "first-contentful-paint": 764.9131,
+        "largest-contentful-paint": 2774.3696499999996,
+        "total-blocking-time": 46.00000000000023,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1558.4739406858732
+      },
+      "settings": {
+        "output": ["json"],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": ["file_systems", "shader_cache", "service_workers", "cache_storage"],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": null,
+        "skipAudits": null
+      },
+      "warnings": [[], [], []],
+      "weightedLoss": [
+        [
+          {
+            "id": "first-contentful-paint",
+            "weight": 10,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "largest-contentful-paint",
+            "weight": 25,
+            "score": 0.84,
+            "loss": 4.000000000000001
+          },
+          {
+            "id": "total-blocking-time",
+            "weight": 30,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "cumulative-layout-shift",
+            "weight": 25,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "speed-index",
+            "weight": 10,
+            "score": 1,
+            "loss": 0
+          }
+        ],
+        [
+          {
+            "id": "first-contentful-paint",
+            "weight": 10,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "largest-contentful-paint",
+            "weight": 25,
+            "score": 0.85,
+            "loss": 3.7500000000000004
+          },
+          {
+            "id": "total-blocking-time",
+            "weight": 30,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "cumulative-layout-shift",
+            "weight": 25,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "speed-index",
+            "weight": 10,
+            "score": 1,
+            "loss": 0
+          }
+        ],
+        [
+          {
+            "id": "first-contentful-paint",
+            "weight": 10,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "largest-contentful-paint",
+            "weight": 25,
+            "score": 0.83,
+            "loss": 4.250000000000001
+          },
+          {
+            "id": "total-blocking-time",
+            "weight": 30,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "cumulative-layout-shift",
+            "weight": 25,
+            "score": 1,
+            "loss": 0
+          },
+          {
+            "id": "speed-index",
+            "weight": 10,
+            "score": 1,
+            "loss": 0
+          }
+        ]
+      ],
+      "longTasks": [
+        [
+          {
+            "url": "http://127.0.0.1:4273/assets/index-DTCJKI9G.js",
+            "duration": 106,
+            "startTime": 5152.195849999999
+          },
+          {
+            "url": "Unattributable",
+            "duration": 85,
+            "startTime": 607.45655
+          },
+          {
+            "url": "http://127.0.0.1:4273/assets/index-DTCJKI9G.js",
+            "duration": 52,
+            "startTime": 3764.9130999999998
+          }
+        ],
+        [
+          {
+            "url": "http://127.0.0.1:4273/assets/index-DTCJKI9G.js",
+            "duration": 118,
+            "startTime": 5483.124000000002
+          },
+          {
+            "url": "http://127.0.0.1:4273/assets/index-DTCJKI9G.js",
+            "duration": 71.00000000000045,
+            "startTime": 4081.1715
+          },
+          {
+            "url": "http://127.0.0.1:4273/",
+            "duration": 67,
+            "startTime": 653.3905
+          },
+          {
+            "url": "http://127.0.0.1:4273/assets/Home-Cnrpc9gl.js",
+            "duration": 53,
+            "startTime": 5601.124000000002
+          }
+        ],
+        [
+          {
+            "url": "http://127.0.0.1:4273/assets/index-DTCJKI9G.js",
+            "duration": 143,
+            "startTime": 5146.4863000000005
+          },
+          {
+            "url": "http://127.0.0.1:4273/assets/index-DTCJKI9G.js",
+            "duration": 61,
+            "startTime": 3763.2817999999997
+          },
+          {
+            "url": "Unattributable",
+            "duration": 52,
+            "startTime": 606.6409
+          },
+          {
+            "url": "http://127.0.0.1:4273/assets/Home-Cnrpc9gl.js",
+            "duration": 52,
+            "startTime": 5289.4863000000005
+          }
+        ]
+      ],
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-IMG",
+        "path": "1,HTML,1,BODY,0,DIV,2,DIV,0,SECTION,0,DIV,0,PICTURE,1,IMG",
+        "selector": "section._hero_1cc66_5 > div._photo_1cc66_9 > picture > img",
+        "boundingRect": {
+          "top": 0,
+          "bottom": 309,
+          "left": 0,
+          "right": 412,
+          "width": 412,
+          "height": 309
+        },
+        "snippet": "<img fetchpriority=\"high\" alt=\"Instructor briefing five security guards beside a fire extinguisher\" sizes=\"100vw\" loading=\"eager\" decoding=\"async\" width=\"1430\" height=\"1100\" srcset=\"/assets/hitech/new-uniform/responsive/corporate-security-briefing-320.webp…\" src=\"http://127.0.0.1:4273/assets/hitech/new-uniform/responsive/corporate-secur…\">",
+        "nodeLabel": "Instructor briefing five security guards beside a fire extinguisher"
+      },
+      "lcpBreakdown": [
+        [
+          {
+            "subpart": "timeToFirstByte",
+            "label": "Time to first byte",
+            "duration": 5.914000122070313
+          },
+          {
+            "subpart": "resourceLoadDelay",
+            "label": "Resource load delay",
+            "duration": 40.57999987792969
+          },
+          {
+            "subpart": "resourceLoadDuration",
+            "label": "Resource load duration",
+            "duration": 8.071
+          },
+          {
+            "subpart": "elementRenderDelay",
+            "label": "Element render delay",
+            "duration": 88.58
+          }
+        ],
+        [
+          {
+            "subpart": "timeToFirstByte",
+            "label": "Time to first byte",
+            "duration": 6.744
+          },
+          {
+            "subpart": "resourceLoadDelay",
+            "label": "Resource load delay",
+            "duration": 18.866
+          },
+          {
+            "subpart": "resourceLoadDuration",
+            "label": "Resource load duration",
+            "duration": 11.091
+          },
+          {
+            "subpart": "elementRenderDelay",
+            "label": "Element render delay",
+            "duration": 104.015
+          }
+        ],
+        [
+          {
+            "subpart": "timeToFirstByte",
+            "label": "Time to first byte",
+            "duration": 5.275000122070312
+          },
+          {
+            "subpart": "resourceLoadDelay",
+            "label": "Resource load delay",
+            "duration": 26.52299987792969
+          },
+          {
+            "subpart": "resourceLoadDuration",
+            "label": "Resource load duration",
+            "duration": 6.761
+          },
+          {
+            "subpart": "elementRenderDelay",
+            "label": "Element render delay",
+            "duration": 80.342
+          }
+        ]
+      ],
+      "criticalResources": [
+        {
+          "url": "http://127.0.0.1:4273/assets/fonts/archivo-latin.woff2",
+          "transferSize": 58188,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/index-DTCJKI9G.js",
+          "transferSize": 83319,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/index-BQHXIXHD.css",
+          "transferSize": 12866,
+          "priority": "VeryHigh"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/Home-Cnrpc9gl.js",
+          "transferSize": 15262,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/shield-check-BGG7SnbC.js",
+          "transferSize": 809,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/check-DxIOoBk1.js",
+          "transferSize": 609,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/HomeCtaSection-DRQfTCV8.js",
+          "transferSize": 1126,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/HomeCtaSection-DcsQEkWz.css",
+          "transferSize": 912,
+          "priority": "VeryHigh"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/BlogListing-B4cCt9lm.js",
+          "transferSize": 2319,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/SiteFooter-DfaTfrLG.js",
+          "transferSize": 1922,
+          "priority": "High"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/SiteFooter-D5T6AyRG.css",
+          "transferSize": 1447,
+          "priority": "VeryHigh"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/BlogListing-Baf8guf6.css",
+          "transferSize": 2346,
+          "priority": "VeryHigh"
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/Home-BV0ial-S.css",
+          "transferSize": 7813,
+          "priority": "VeryHigh"
+        }
+      ],
+      "minification": [1, 1, 1],
+      "totalTransferBytes": [970141, 970141, 970141]
+    }
+  }
+}

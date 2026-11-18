@@ -229,8 +229,8 @@
   gap: 14px;
   align-items: center;
   padding: 32px 24px 22px;
-  background: linear-gradient(transparent, #070616dd);
   color: white;
+  text-shadow: 0 1px 3px #070616;
   font-size: 12px;
   line-height: 1.6;
 }

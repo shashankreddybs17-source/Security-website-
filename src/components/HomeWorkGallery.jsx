@@ -9,29 +9,30 @@ const gallery = [
     photo: '14',
     title: 'Discipline in formation',
     detail: 'Team briefing and preparation',
-    width: 1280,
-    height: 960,
+    width: 2000,
+    height: 1500,
   },
   {
     photo: '20',
     title: 'Prepared on site',
     detail: 'On-site team briefing',
-    width: 1448,
-    height: 1086,
+    width: 2000,
+    height: 1500,
   },
   {
     photo: '10',
     title: 'Learning through practice',
     detail: 'Fire safety training',
-    width: 1280,
-    height: 960,
+    width: 1448,
+    height: 1086,
   },
   {
     photo: '28',
     title: 'Clear communication',
     detail: 'An outdoor team briefing',
-    width: 1280,
-    height: 960,
+    fillThumbnail: true,
+    width: 2000,
+    height: 667,
   },
   {
     photo: '24',
@@ -45,8 +46,8 @@ const gallery = [
     photo: '31',
     title: 'Working together',
     detail: 'Team instruction and readiness',
-    width: 1280,
-    height: 960,
+    width: 2000,
+    height: 1500,
   },
 ];
 const photoUrl = (photo) => approvedTeamPhoto(photo);
@@ -355,6 +356,8 @@ export default function HomeWorkGallery() {
                   <span className={styles.photo}>
                     <ResponsiveImage
                       src={photoUrl(item.photo)}
+                      className={item.fillThumbnail ? styles.filledThumbnail : undefined}
+                      sizes={item.fillThumbnail ? '(max-width: 767px) 300vw, 1040px' : undefined}
                       alt={item.detail}
                       width={item.width}
                       height={item.height}

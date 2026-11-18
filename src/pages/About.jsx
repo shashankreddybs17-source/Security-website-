@@ -12,7 +12,7 @@ export default function About() {
   return (
     <div className="page-wrapper">
       <main className="main-wrapper">
-        <AboutHeroSection showOverlay={false} />
+        <AboutHeroSection />
         <AboutAboutSection />
         <AboutTrainingSection />
         <AboutApproachSection />
