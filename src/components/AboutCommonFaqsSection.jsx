@@ -1,7 +1,10 @@
 import { useId, useState } from 'react';
 import styles from './AboutCommonFaqsSection.module.css';
 
-export default function AboutCommonFaqsSection({ singleOpen = false }) {
+export default function AboutCommonFaqsSection({
+  singleOpen = false,
+  spacingClassName = 'section-gap bottom-gap site-variant-a36b6055-396e-b87e-f32c-146d9f9c8b9b',
+}) {
   const [openIndex, setOpenIndex] = useState(0);
   const accordionId = useId();
   const Question = singleOpen ? 'button' : 'div';
@@ -37,7 +40,7 @@ export default function AboutCommonFaqsSection({ singleOpen = false }) {
 
   return (
     <section id="faqs" className="common-faqs-section">
-      <div className="section-gap bottom-gap site-variant-a36b6055-396e-b87e-f32c-146d9f9c8b9b">
+      <div className={spacingClassName}>
         <div className="site-layout-blockcontainer container-default site-container">
           <div className="faqs-block home-faqs-block">
             <div className="faqs-content home-faqs-content">

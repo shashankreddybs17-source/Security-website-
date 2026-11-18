@@ -49,7 +49,6 @@ function ClientLogo({ client, decorative = false }) {
 
 export default function HomePartnersSection() {
   const sectionRef = useRef(null);
-  const [isPaused, setIsPaused] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -63,22 +62,12 @@ export default function HomePartnersSection() {
       ref={sectionRef}
       className={styles.section}
       aria-labelledby="hi-tech-client-heading"
-      data-paused={isPaused || !isVisible}
+      data-paused={!isVisible}
     >
       <p className={styles.eyebrow}>OUR CLIENTS</p>
       <h2 id="hi-tech-client-heading" className={styles.heading}>
         Security you can trust.
       </h2>
-      <div className={styles.controls}>
-        <button
-          type="button"
-          className={styles.pauseButton}
-          onClick={() => setIsPaused((paused) => !paused)}
-          aria-controls="hi-tech-client-rows"
-        >
-          {isPaused ? 'Resume scrolling' : 'Pause scrolling'}
-        </button>
-      </div>
       <div className={styles.strip}>
         <div className="container-default site-container">
           <div className={styles.rows} id="hi-tech-client-rows">
