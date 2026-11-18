@@ -1,0 +1,27 @@
+.readableCaption {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.readableCaption :global(.hero-title),
+.readableCaption :global(.hero-subtitle-link),
+.readableCaption :global(.hero-subtitle-text) {
+  color: #fdf9f1;
+  text-shadow:
+    0 1px 3px #070616,
+    0 2px 8px #070616;
+}
+
+.readableCaption :global(.hero-subtitle-link):focus-visible {
+  outline: 2px solid #f3df04;
+  outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+  .readableCaption {
+    gap: 5px;
+  }
+}

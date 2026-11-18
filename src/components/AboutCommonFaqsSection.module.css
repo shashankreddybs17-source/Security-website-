@@ -1,0 +1,70 @@
+.question {
+  background: transparent;
+  border: 0;
+}
+
+.question:focus-visible {
+  outline: 2px solid var(--site-navy);
+  outline-offset: 3px;
+}
+
+.question :global(.faqs-question-text) {
+  font-family: var(--_font-family---heading);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 130.8%;
+}
+
+.question :global(.faqs-arrow-icon) {
+  transition: transform 300ms ease !important;
+}
+
+.question[aria-expanded='true'] :global(.faqs-arrow-icon) {
+  transform: rotate(180deg);
+}
+
+.answer:global(.faqs-answer) {
+  display: grid;
+  grid-template-rows: 0fr;
+  border-bottom-width: 0;
+  visibility: hidden;
+  transition:
+    grid-template-rows 300ms ease,
+    visibility 300ms;
+}
+
+.answer[data-expanded='true'] {
+  grid-template-rows: 1fr;
+  border-bottom-width: 1px;
+  visibility: visible;
+}
+
+.answerInner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 1440px) {
+  .question :global(.faqs-question-text) {
+    font-size: 23px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .question :global(.faqs-question-text) {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .question :global(.faqs-question-text) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .answer:global(.faqs-answer),
+  .question :global(.faqs-arrow-icon) {
+    transition: none !important;
+  }
+}

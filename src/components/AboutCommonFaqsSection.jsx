@@ -1,6 +1,40 @@
-import { Check } from 'lucide-react';
+import { useId, useState } from 'react';
+import styles from './AboutCommonFaqsSection.module.css';
 
-export default function AboutCommonFaqsSection() {
+export default function AboutCommonFaqsSection({ singleOpen = false }) {
+  const [openIndex, setOpenIndex] = useState(0);
+  const accordionId = useId();
+  const Question = singleOpen ? 'button' : 'div';
+  const QuestionBlock = singleOpen ? 'span' : 'div';
+  const QuestionText = singleOpen ? 'span' : 'h5';
+  const questionProps = (index) =>
+    singleOpen
+      ? {
+          type: 'button',
+          id: `${accordionId}-question-${index}`,
+          className: `faqs-question site-dropdown-toggle ${styles.question}`,
+          'aria-expanded': openIndex === index,
+          'aria-controls': `${accordionId}-answer-${index}`,
+          onClick: () => setOpenIndex((current) => (current === index ? null : index)),
+          onKeyDown: (event) => {
+            if (event.key === 'Escape') setOpenIndex(null);
+          },
+        }
+      : {};
+  const answerProps = (index) =>
+    singleOpen
+      ? {
+          id: `${accordionId}-answer-${index}`,
+          role: 'region',
+          'aria-labelledby': `${accordionId}-question-${index}`,
+          'aria-hidden': openIndex !== index,
+          inert: openIndex !== index,
+          'data-expanded': openIndex === index,
+          className: `faqs-answer site-dropdown-list ${styles.answer}`,
+        }
+      : {};
+  const Answer = singleOpen ? 'div' : 'nav';
+
   return (
     <section id="faqs" className="common-faqs-section">
       <div className="section-gap bottom-gap site-variant-a36b6055-396e-b87e-f32c-146d9f9c8b9b">
@@ -77,18 +111,21 @@ export default function AboutCommonFaqsSection() {
                 </div>
               </div>
             </div>
-            <div className="faqs-wrapper home-faqs-wrapper">
+            <div
+              className="faqs-wrapper home-faqs-wrapper"
+              data-react-accordion={singleOpen ? '' : undefined}
+            >
               <div
                 data-hover="false"
                 data-delay="0"
                 data-reveal=""
                 className="faqs-dropdown site-dropdown"
               >
-                <div className="faqs-question site-dropdown-toggle">
-                  <div className="faqs-question-block">
-                    <h5 className="faqs-question-text">
+                <Question className="faqs-question site-dropdown-toggle" {...questionProps(0)}>
+                  <QuestionBlock className="faqs-question-block">
+                    <QuestionText className="faqs-question-text">
                       {'What types of security services do you offer?'}
-                    </h5>
+                    </QuestionText>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="100%"
@@ -109,15 +146,17 @@ export default function AboutCommonFaqsSection() {
                         fill="currentColor"
                       ></path>
                     </svg>
+                  </QuestionBlock>
+                </Question>
+                <Answer className="faqs-answer site-dropdown-list" {...answerProps(0)}>
+                  <div className={singleOpen ? styles.answerInner : undefined}>
+                    <div className="faqs-answer-text">
+                      {
+                        'We provide trained security personnel for hotels, banks, corporate offices, industrial units, commercial buildings and residential apartments.'
+                      }
+                    </div>
                   </div>
-                </div>
-                <nav className="faqs-answer site-dropdown-list">
-                  <div className="faqs-answer-text">
-                    {
-                      'We provide trained security personnel for hotels, banks, corporate offices, industrial units, commercial buildings and residential apartments.'
-                    }
-                  </div>
-                </nav>
+                </Answer>
               </div>
               <div
                 data-hover="false"
@@ -125,11 +164,11 @@ export default function AboutCommonFaqsSection() {
                 data-reveal=""
                 className="faqs-dropdown site-dropdown"
               >
-                <div className="faqs-question site-dropdown-toggle">
-                  <div className="faqs-question-block">
-                    <h5 className="faqs-question-text">
+                <Question className="faqs-question site-dropdown-toggle" {...questionProps(1)}>
+                  <QuestionBlock className="faqs-question-block">
+                    <QuestionText className="faqs-question-text">
                       {'How do I determine the right security service for my needs?'}
-                    </h5>
+                    </QuestionText>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="100%"
@@ -150,15 +189,17 @@ export default function AboutCommonFaqsSection() {
                         fill="currentColor"
                       ></path>
                     </svg>
+                  </QuestionBlock>
+                </Question>
+                <Answer className="faqs-answer site-dropdown-list" {...answerProps(1)}>
+                  <div className={singleOpen ? styles.answerInner : undefined}>
+                    <div className="faqs-answer-text">
+                      {
+                        'Share your location, premises type and security requirements. Our approach focuses on personnel and practices suited to each location.'
+                      }
+                    </div>
                   </div>
-                </div>
-                <nav className="faqs-answer site-dropdown-list">
-                  <div className="faqs-answer-text">
-                    {
-                      'Share your location, premises type and security requirements. Our approach focuses on personnel and practices suited to each location.'
-                    }
-                  </div>
-                </nav>
+                </Answer>
               </div>
               <div
                 data-hover="false"
@@ -166,11 +207,11 @@ export default function AboutCommonFaqsSection() {
                 data-reveal=""
                 className="faqs-dropdown site-dropdown"
               >
-                <div className="faqs-question site-dropdown-toggle">
-                  <div className="faqs-question-block">
-                    <h5 className="faqs-question-text">
+                <Question className="faqs-question site-dropdown-toggle" {...questionProps(2)}>
+                  <QuestionBlock className="faqs-question-block">
+                    <QuestionText className="faqs-question-text">
                       {'How are your security personnel prepared?'}
-                    </h5>
+                    </QuestionText>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="100%"
@@ -191,15 +232,17 @@ export default function AboutCommonFaqsSection() {
                         fill="currentColor"
                       ></path>
                     </svg>
+                  </QuestionBlock>
+                </Question>
+                <Answer className="faqs-answer site-dropdown-list" {...answerProps(2)}>
+                  <div className={singleOpen ? styles.answerInner : undefined}>
+                    <div className="faqs-answer-text">
+                      {
+                        'Our personnel are selected and trained to maintain a safe environment and conduct themselves with professionalism and courtesy.'
+                      }
+                    </div>
                   </div>
-                </div>
-                <nav className="faqs-answer site-dropdown-list">
-                  <div className="faqs-answer-text">
-                    {
-                      'Our personnel are selected and trained to maintain a safe environment and conduct themselves with professionalism and courtesy.'
-                    }
-                  </div>
-                </nav>
+                </Answer>
               </div>
               <div
                 data-hover="false"
@@ -207,11 +250,11 @@ export default function AboutCommonFaqsSection() {
                 data-reveal=""
                 className="faqs-dropdown site-dropdown"
               >
-                <div className="faqs-question site-dropdown-toggle">
-                  <div className="faqs-question-block">
-                    <h5 className="faqs-question-text">
+                <Question className="faqs-question site-dropdown-toggle" {...questionProps(3)}>
+                  <QuestionBlock className="faqs-question-block">
+                    <QuestionText className="faqs-question-text">
                       {'Who manages your security operations?'}
-                    </h5>
+                    </QuestionText>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="100%"
@@ -232,15 +275,17 @@ export default function AboutCommonFaqsSection() {
                         fill="currentColor"
                       ></path>
                     </svg>
+                  </QuestionBlock>
+                </Question>
+                <Answer className="faqs-answer site-dropdown-list" {...answerProps(3)}>
+                  <div className={singleOpen ? styles.answerInner : undefined}>
+                    <div className="faqs-answer-text">
+                      {
+                        'Our organisation is managed by experienced and trained Ex-Army personnel, bringing military discipline, alertness, responsibility and leadership.'
+                      }
+                    </div>
                   </div>
-                </div>
-                <nav className="faqs-answer site-dropdown-list">
-                  <div className="faqs-answer-text">
-                    {
-                      'Our organisation is managed by experienced and trained Ex-Army personnel, bringing military discipline, alertness, responsibility and leadership.'
-                    }
-                  </div>
-                </nav>
+                </Answer>
               </div>
               <div
                 data-hover="false"
@@ -248,11 +293,11 @@ export default function AboutCommonFaqsSection() {
                 data-reveal=""
                 className="faqs-dropdown site-dropdown"
               >
-                <div className="faqs-question site-dropdown-toggle">
-                  <div className="faqs-question-block">
-                    <h5 className="faqs-question-text">
+                <Question className="faqs-question site-dropdown-toggle" {...questionProps(4)}>
+                  <QuestionBlock className="faqs-question-block">
+                    <QuestionText className="faqs-question-text">
                       {'How can I discuss security coverage and pricing?'}
-                    </h5>
+                    </QuestionText>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="100%"
@@ -273,15 +318,17 @@ export default function AboutCommonFaqsSection() {
                         fill="currentColor"
                       ></path>
                     </svg>
+                  </QuestionBlock>
+                </Question>
+                <Answer className="faqs-answer site-dropdown-list" {...answerProps(4)}>
+                  <div className={singleOpen ? styles.answerInner : undefined}>
+                    <div className="faqs-answer-text">
+                      {
+                        'Call +91 72595 37223 or email hitechprotectionsecurity@gmail.com with your location and requirements to discuss your assignment.'
+                      }
+                    </div>
                   </div>
-                </div>
-                <nav className="faqs-answer site-dropdown-list">
-                  <div className="faqs-answer-text">
-                    {
-                      'Call +91 72595 37223 or email hitechprotectionsecurity@gmail.com with your location and requirements to discuss your assignment.'
-                    }
-                  </div>
-                </nav>
+                </Answer>
               </div>
             </div>
           </div>

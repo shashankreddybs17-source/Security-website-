@@ -81,6 +81,7 @@ export function initializeInteractions(root = document) {
       } else reveal(element);
     }
     for (const dropdown of query(scope, '.faqs-dropdown')) {
+      if (dropdown.closest('[data-react-accordion]')) continue;
       // Disclosures may also carry reveal markers, so track their toggles separately.
       const toggle = dropdown.querySelector('.faqs-question');
       const panel = dropdown.querySelector('.faqs-answer');

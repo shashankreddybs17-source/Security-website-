@@ -11,7 +11,7 @@ export default function Faq() {
           image="/assets/hitech/new-uniform/november-2026/security-team-wide-briefing.webp"
           imageAlt="Hi-Tech security guards receiving a corporate safety briefing"
         />
-        <AboutCommonFaqsSection />
+        <AboutCommonFaqsSection singleOpen />
       </main>
       <AboutFooterSection />
     </div>

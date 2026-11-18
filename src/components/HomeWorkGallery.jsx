@@ -27,12 +27,12 @@ const gallery = [
     height: 1086,
   },
   {
-    photo: '28',
+    photo: '06',
     title: 'Clear communication',
-    detail: 'An outdoor team briefing',
+    detail: 'Practical fire safety instruction',
     fillThumbnail: true,
-    width: 2000,
-    height: 667,
+    width: 1448,
+    height: 1086,
   },
   {
     photo: '24',
@@ -357,7 +357,6 @@ export default function HomeWorkGallery() {
                     <ResponsiveImage
                       src={photoUrl(item.photo)}
                       className={item.fillThumbnail ? styles.filledThumbnail : undefined}
-                      sizes={item.fillThumbnail ? '(max-width: 767px) 300vw, 1040px' : undefined}
                       alt={item.detail}
                       width={item.width}
                       height={item.height}
