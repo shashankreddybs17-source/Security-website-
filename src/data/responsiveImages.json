@@ -68,6 +68,20 @@
       }
     ]
   },
+  "/assets/hitech/hi-tech-certified-logo.webp": {
+    "width": 1235,
+    "height": 503,
+    "variants": [
+      {
+        "src": "/assets/hitech/responsive/hi-tech-certified-logo-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/responsive/hi-tech-certified-logo-480.webp",
+        "width": 480
+      }
+    ]
+  },
   "/assets/hitech/hi-tech-protection-security-logo.webp": {
     "width": 2062,
     "height": 763,

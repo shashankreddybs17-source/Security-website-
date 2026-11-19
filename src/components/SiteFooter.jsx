@@ -1,4 +1,4 @@
-import ResponsiveImage from './ResponsiveImage';
+import BrandLogo from './BrandLogo';
 import { PhoneCall, Mail, MapPin } from 'lucide-react';
 import styles from './SiteFooter.module.css';
 
@@ -18,15 +18,7 @@ export default function SiteFooter() {
       <div className={`${styles.container} ${styles.main}`}>
         <div className={styles.brand}>
           <a href="/" aria-label="Hi-Tech Protection Security home" className={styles.logoLink}>
-            <ResponsiveImage
-              src="/assets/hitech/hi-tech-protection-security-logo.webp"
-              width="430"
-              height="188"
-              loading="lazy"
-              alt="Hi-Tech Protection Security"
-              className={`${styles.logo} site-brand-logo`}
-            />
-            <span className={styles.certification}>An ISO 9001:2015 Certified Company</span>
+            <BrandLogo loading="lazy" sizes="216px" className={styles.logo} />
           </a>
           <p>Security You Can Trust. Protection You Can Rely On.</p>
         </div>

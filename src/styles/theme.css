@@ -27,10 +27,9 @@ textarea {
   font-family: var(--font-sans);
 }
 
-/* The supplied logo screenshot includes a menu icon on its right. Frame only
-   its left-hand logo area; keep the original artwork and text untouched. */
+/* Keep the complete supplied logo and embedded certification in proportion. */
 img.site-brand-logo {
-  aspect-ratio: 2062 / 763;
+  aspect-ratio: 1235 / 503;
   object-fit: contain !important;
   object-position: center !important;
 }

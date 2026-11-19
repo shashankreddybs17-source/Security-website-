@@ -1,4 +1,5 @@
 import ResponsiveImage from './ResponsiveImage';
+import BrandLogo from './BrandLogo';
 import { Check } from 'lucide-react';
 import styles from './AboutAboutSection.module.css';
 
@@ -100,18 +101,16 @@ export default function AboutAboutSection() {
                 </h6>
               </div>
               <div className="about-signature-block">
-                <ResponsiveImage
-                  src="/assets/hitech/hi-tech-protection-security-logo.webp"
+                <BrandLogo
                   loading="lazy"
+                  sizes="100px"
                   style={{
                     transform:
                       'translate3d(0, 150%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(10deg) skew(0, 0)',
                   }}
                   data-reveal=""
-                  alt=""
-                  className="about-signature site-brand-logo"
+                  className="about-signature"
                 />
-                <span className={styles.certification}>An ISO 9001:2015 Certified Company</span>
               </div>
             </div>
           </div>

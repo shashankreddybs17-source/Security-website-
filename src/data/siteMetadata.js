@@ -61,7 +61,7 @@ export function pageMetadata(pathname, search = '', origin = defaultSiteOrigin) 
     title: label ? `${label} | ${siteName}` : siteName,
     description,
     canonical: new URL(canonicalPath, siteOrigin(origin)).href,
-    image: new URL('/assets/hitech/hi-tech-protection-security-logo.webp', siteOrigin(origin)).href,
+    image: new URL('/assets/hitech/hi-tech-certified-logo.webp', siteOrigin(origin)).href,
   };
 }
 

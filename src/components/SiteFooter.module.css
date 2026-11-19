@@ -29,20 +29,19 @@
   display: block;
   width: min(216px, 100%);
   line-height: 0;
+  text-decoration: none;
+}
+.logoLink:is(:hover, :focus, :visited) {
+  text-decoration: none;
+}
+.logoLink::before,
+.logoLink::after {
+  content: none;
 }
 .logo {
   display: block;
   width: 100%;
   height: auto;
-}
-.certification {
-  display: block;
-  margin-top: 4px;
-  color: var(--site-cream, #fdf9f1);
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 1.4;
-  text-align: center;
 }
 .brand p {
   max-width: 280px;

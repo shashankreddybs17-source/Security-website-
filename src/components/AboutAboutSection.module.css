@@ -45,16 +45,6 @@
   margin-bottom: 20px;
 }
 
-.certification {
-  display: block;
-  margin-top: 4px;
-  color: var(--site-navy, #070616);
-  font-size: 8px;
-  font-weight: 600;
-  line-height: 1.4;
-  text-align: center;
-}
-
 @media (min-width: 768px) and (max-width: 1199px) {
   .section :global(.about-image-block) {
     max-width: 280px;

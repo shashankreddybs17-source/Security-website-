@@ -49,25 +49,19 @@
   display: block;
   width: 164px;
   line-height: 0;
+  text-decoration: none;
 }
-.certification {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  color: var(--site-cream, #fdf9f1);
-  font-family: var(--font-sans);
-  font-size: 7px;
-  font-weight: 600;
-  line-height: 9px;
-  text-align: center;
-  white-space: nowrap;
+.brand:is(:hover, :focus, :visited) {
+  text-decoration: none;
+}
+.brand::before,
+.brand::after {
+  content: none;
 }
 .brand img {
   display: block;
   width: 100%;
-  height: 60px;
-  max-height: 64px;
+  height: auto;
   object-fit: contain;
 }
 .desktopNav {
@@ -200,8 +194,7 @@
     width: 145px;
   }
   .brand img {
-    height: 52px;
-    max-height: 56px;
+    height: auto;
   }
   .desktopNav,
   .desktopQuote {
