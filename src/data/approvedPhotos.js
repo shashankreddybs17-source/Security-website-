@@ -1,7 +1,8 @@
 // User-supplied November 2026 photos, extracted from the PDF and original uploads.
 // Shared keys keep service cards, detail pages and galleries consistent.
 export const approvedTeamPhotos = {
-  'residential-desk': '/assets/hitech/new-uniform/november-2026/residential-security-desk.webp',
+  'residential-desk':
+    '/assets/hitech/new-uniform/november-2026/residential-security-desk-updated.webp',
   'indoor-briefing-short-sleeves':
     '/assets/hitech/new-uniform/november-2026/security-team-indoor-briefing-short-sleeves.webp',
   '03': '/assets/hitech/new-uniform/november-2026/bodyguards.webp',
@@ -9,7 +10,7 @@ export const approvedTeamPhotos = {
   10: '/assets/hitech/new-uniform/november-2026/fire-demonstration.webp',
   13: '/assets/hitech/new-uniform/november-2026/security-guards-outdoor-formation.webp',
   14: '/assets/hitech/new-uniform/november-2026/security-team-outdoor-briefing.webp',
-  15: '/assets/hitech/new-uniform/november-2026/corporate-security-briefing.webp',
+  15: '/assets/hitech/new-uniform/november-2026/security-guard-lineup-branded.webp',
   23: '/assets/hitech/new-uniform/november-2026/security-guard-building-entrance.webp',
   24: '/assets/hitech/new-uniform/november-2026/bodyguards.webp',
   25: '/assets/hitech/new-uniform/november-2026/gate-security.webp',

@@ -350,32 +350,6 @@
       }
     ]
   },
-  "/assets/hitech/new-uniform/november-2026/corporate-security-briefing.webp": {
-    "width": 1448,
-    "height": 1086,
-    "variants": [
-      {
-        "src": "/assets/hitech/new-uniform/november-2026/responsive/corporate-security-briefing-320.webp",
-        "width": 320
-      },
-      {
-        "src": "/assets/hitech/new-uniform/november-2026/responsive/corporate-security-briefing-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/assets/hitech/new-uniform/november-2026/responsive/corporate-security-briefing-768.webp",
-        "width": 768
-      },
-      {
-        "src": "/assets/hitech/new-uniform/november-2026/responsive/corporate-security-briefing-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/assets/hitech/new-uniform/november-2026/responsive/corporate-security-briefing-1280.webp",
-        "width": 1280
-      }
-    ]
-  },
   "/assets/hitech/new-uniform/november-2026/gate-security.webp": {
     "width": 2000,
     "height": 1500,
@@ -735,6 +709,21 @@
       }
     ]
   },
+  "/assets/hitech/new-uniform/november-2026/residential-security-desk-updated.webp": {
+    "width": 672,
+    "height": 721,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/residential-security-desk-updated-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/residential-security-desk-updated-480.webp",
+        "width": 480
+      }
+    ],
+    "objectPosition": "50% 35%"
+  },
   "/assets/hitech/new-uniform/november-2026/residential-security-desk.webp": {
     "width": 960,
     "height": 1280,
@@ -781,6 +770,32 @@
       {
         "src": "/assets/hitech/new-uniform/november-2026/responsive/faq-briefing-guards-short-sleeves-1920.webp",
         "width": 1920
+      }
+    ]
+  },
+  "/assets/hitech/new-uniform/november-2026/security-guard-lineup-branded.webp": {
+    "width": 1446,
+    "height": 1087,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-branded-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-branded-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-branded-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-branded-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-branded-1280.webp",
+        "width": 1280
       }
     ]
   }

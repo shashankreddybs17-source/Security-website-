@@ -40,8 +40,8 @@ const gallery = [
     detail: 'On-duty guard at a security desk',
     modalPosition: '50% 35%',
     fillThumbnail: true,
-    width: 960,
-    height: 1280,
+    width: 672,
+    height: 721,
   },
   {
     photo: 'indoor-briefing-short-sleeves',

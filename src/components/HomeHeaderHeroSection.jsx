@@ -12,10 +12,10 @@ export default function HomeHeaderHeroSection() {
         <picture>
           <source type="image/avif" srcSet={avifSources} sizes="100vw" />
           <ResponsiveImage
-            src="/assets/hitech/new-uniform/november-2026/corporate-security-briefing.webp"
-            alt="Five Hi-Tech security guards receiving a corporate security and fire safety briefing"
-            width="1448"
-            height="1086"
+            src="/assets/hitech/new-uniform/november-2026/security-guard-lineup-branded.webp"
+            alt="Four Hi-Tech security guards receiving a corporate security and fire safety briefing"
+            width="1446"
+            height="1087"
             sizes="100vw"
             fetchPriority="high"
             loading="eager"
