@@ -1,6 +1,12 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { pageMetadata, sitemapUrls, siteOrigin } from '../src/data/siteMetadata.js';
+import {
+  llmsText,
+  pageMetadata,
+  sitemapUrls,
+  siteOrigin,
+  structuredData,
+} from '../src/data/siteMetadata.js';
 import { allServices } from '../src/data/services.js';
 import { seoBuildPlugin } from '../scripts/seo-build.mjs';
 import { readFileSync } from 'node:fs';
@@ -14,7 +20,7 @@ test('development discovery endpoints bypass HTML fallback and preserve unrelate
       },
     },
   });
-  for (const path of ['/robots.txt', '/sitemap.xml?check=1']) {
+  for (const path of ['/robots.txt', '/sitemap.xml?check=1', '/llms.txt']) {
     for (const method of ['GET', 'HEAD']) {
       let body;
       const headers = {};
@@ -30,7 +36,9 @@ test('development discovery endpoints bypass HTML fallback and preserve unrelate
       assert.equal(response.statusCode, 200);
       assert.ok(!headers['Content-Type'].includes('text/html'));
       if (method === 'HEAD') assert.equal(body, undefined);
-      else assert.ok(body.includes(path.startsWith('/robots') ? 'User-agent:' : '<urlset'));
+      else if (path.startsWith('/robots')) assert.ok(body.includes('User-agent:'));
+      else if (path.startsWith('/sitemap')) assert.ok(body.includes('<urlset'));
+      else assert.ok(body.includes('Hi-Tech Protection Security'));
     }
   }
   let passed = false;
@@ -47,15 +55,15 @@ test('service metadata and canonicals preserve every existing service query URL'
       `?service=${service.id}&tracking=ignored`,
       'https://example.com',
     );
-    assert.equal(meta.title, `${service.title} | Hi-Tech Protection Security`);
-    assert.equal(meta.description, service.text);
+    assert.notEqual(meta.title, `${service.title} | Hi-Tech Protection Security`);
+    assert.notEqual(meta.description, service.text);
     assert.equal(meta.canonical, `https://example.com/services?service=${service.id}`);
   }
   assert.equal(pageMetadata('/faq/').canonical, pageMetadata('/faqs').canonical);
   assert.equal(pageMetadata('/contact').canonical, pageMetadata('/contact-us').canonical);
   assert.equal(
     pageMetadata('/services', '?service=unknown').title,
-    'Services | Hi-Tech Protection Security',
+    'Security & Facility Management Services | Hi-Tech Protection',
   );
   assert.throws(() => siteOrigin('javascript:alert(1)'));
 });
@@ -74,6 +82,20 @@ test('build emits unique sitemap URLs and crawl rules using the configured origi
   const xml = files.find((file) => file.fileName === 'sitemap.xml').source;
   assert.equal((xml.match(/<url>/g) || []).length, 20);
   assert.ok(xml.includes('service=gunman-services'));
+  assert.match(files.find((file) => file.fileName === 'llms.txt').source, /https:\/\/example.com/);
+  assert.match(llmsText(origin), /Business details/);
+});
+
+test('structured data describes the business and only the matching page type', () => {
+  const faqSchema = structuredData('/faqs', '', 'https://example.com');
+  assert.ok(faqSchema.some((item) => item['@type'] === 'ProfessionalService'));
+  assert.ok(faqSchema.some((item) => item['@type'] === 'FAQPage'));
+  const serviceSchema = structuredData(
+    '/services',
+    '?service=hotel-security',
+    'https://example.com',
+  );
+  assert.ok(serviceSchema.some((item) => item['@type'] === 'Service'));
 });
 
 test('immutable cache policy applies only to hashed JS/CSS, while HTML revalidates', () => {

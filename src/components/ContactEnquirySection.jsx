@@ -1,43 +1,86 @@
 import ResponsiveImage from './ResponsiveImage';
 import { useState } from 'react';
-import { Headphones, ArrowUpRight, Download } from 'lucide-react';
+import { Headphones, ArrowUpRight } from 'lucide-react';
 import styles from './ContactEnquirySection.module.css';
 import { allServices } from '../data/services';
+import toast from 'react-hot-toast';
 
 const services = [...allServices.map((service) => service.title), 'Help me choose'];
 const contactEmail = 'hitechprotectionsecurity@gmail.com';
 
 export default function ContactEnquirySection() {
-  const [draft, setDraft] = useState('');
-  function prepareEnquiry(event) {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    service: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const validateForm = () => {
+    const errors = {};
+    if (!formData.firstName.trim()) errors.firstName = 'First name is required';
+    if (!formData.lastName.trim()) errors.lastName = 'Last name is required';
+    if (!formData.email.trim()) errors.email = 'Email is required';
+    if (!formData.service) errors.service = 'Service is required';
+    return errors;
+  };
+
+  const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    event.stopPropagation();
-    const form = event.currentTarget;
-    const data = new FormData(form);
-    const firstName = String(data.get('firstName')).trim();
-    const lastName = String(data.get('lastName')).trim();
-    if (!firstName || !lastName) {
-      const field = form.elements.namedItem(!firstName ? 'firstName' : 'lastName');
-      field.setCustomValidity('Please enter your name.');
-      field.reportValidity();
+    if (isLoading) return;
+
+    const formErrors = validateForm();
+    const firstError = Object.values(formErrors)[0];
+
+    if (firstError) {
+      toast.error(firstError, { id: 'enquiry-validation' });
       return;
     }
-    const email = String(data.get('email')).trim();
-    const service = String(data.get('service'));
-    const body = `Hello Hi-Tech Protection Security,\n\nI would like to discuss ${service.toLowerCase()}.\n\nName: ${firstName} ${lastName}\nEmail: ${email}\nService: ${service}\n\nLocation / premises: \nPreferred coverage hours: \nAnticipated start date: \nAdditional requirements: \n\nThank you,\n${firstName} ${lastName}`;
-    setDraft(body);
-    window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(`Security enquiry — ${service}`)}&body=${encodeURIComponent(body)}`;
-  }
-  function downloadEnquiry() {
-    const url = URL.createObjectURL(new Blob([draft], { type: 'text/plain;charset=utf-8' }));
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'hi-tech-security-enquiry.txt';
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-  }
+
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('https://htpsecurity.in/forms/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          firstName: formData.firstName.trim(),
+          lastName: formData.lastName.trim(),
+          email: formData.email.trim(),
+        }),
+      });
+
+      if (!response.ok) {
+        toast.error('Could not send your enquiry. Please try again.');
+        return;
+      }
+
+      const data = await response.json();
+
+      if (data.status !== 'success') {
+        toast.error(data.message || 'Could not send your enquiry. Please try again.');
+        return;
+      }
+
+      setFormData({ firstName: '', lastName: '', email: '', service: '' });
+      toast.success('Your enquiry was sent successfully.');
+    } catch (error) {
+      console.error('Failed to submit enquiry:', error);
+      toast.error('Could not send your enquiry. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className={styles.section} aria-labelledby="contact-enquiry-title">
       <div className="container-default site-container">
@@ -64,7 +107,7 @@ export default function ContactEnquirySection() {
               Tell us what you’re looking for. Let’s discuss the protection that suits your
               premises.
             </p>
-            <form className={styles.form} data-contact-enquiry="true" onSubmit={prepareEnquiry}>
+            <form className={styles.form} data-contact-enquiry="true" onSubmit={handleSubmit}>
               <div className={styles.names}>
                 <label htmlFor="enquiry-first-name">
                   First name <span>*</span>
@@ -76,6 +119,8 @@ export default function ContactEnquirySection() {
                     required
                     maxLength={100}
                     onInput={(event) => event.currentTarget.setCustomValidity('')}
+                    value={formData.firstName}
+                    onChange={handleInputChange}
                   />
                 </label>
                 <label htmlFor="enquiry-last-name">
@@ -88,6 +133,8 @@ export default function ContactEnquirySection() {
                     required
                     maxLength={100}
                     onInput={(event) => event.currentTarget.setCustomValidity('')}
+                    value={formData.lastName}
+                    onChange={handleInputChange}
                   />
                 </label>
               </div>
@@ -101,11 +148,20 @@ export default function ContactEnquirySection() {
                   placeholder="you@company.com"
                   required
                   maxLength={254}
+                  value={formData.email}
+                  onChange={handleInputChange}
                 />
               </label>
               <label htmlFor="enquiry-service">
                 Service <span>*</span>
-                <select id="enquiry-service" name="service" defaultValue="" required>
+                <select
+                  id="enquiry-service"
+                  name="service"
+                  defaultValue=""
+                  required
+                  value={formData.service}
+                  onChange={handleInputChange}
+                >
                   <option value="" disabled>
                     Select a service
                   </option>
@@ -116,25 +172,10 @@ export default function ContactEnquirySection() {
                   ))}
                 </select>
               </label>
-              <button type="submit" className={styles.submit}>
-                Prepare email enquiry <ArrowUpRight size={19} aria-hidden="true" />
+              <button type="submit" className={styles.submit} disabled={isLoading}>
+                {isLoading ? 'Submitting...' : 'Send enquiry'}{' '}
+                <ArrowUpRight size={19} aria-hidden="true" />
               </button>
-              <p className={styles.note}>
-                Opens your email app with a draft. Review and send it to complete your enquiry.
-              </p>
-              {draft && (
-                <div className={styles.status} role="status">
-                  <p>
-                    Your draft is prepared. It has not been sent. If your email app didn’t open,{' '}
-                    <a href={`mailto:${contactEmail}`}>email us directly</a> or download the enquiry
-                    below.
-                  </p>
-                  <button className={styles.download} type="button" onClick={downloadEnquiry}>
-                    <Download size={15} aria-hidden="true" />
-                    Download enquiry
-                  </button>
-                </div>
-              )}
             </form>
           </div>
         </div>

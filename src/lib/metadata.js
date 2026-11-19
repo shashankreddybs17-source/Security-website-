@@ -1,4 +1,4 @@
-import { pageMetadata, siteName } from '../data/siteMetadata.js';
+import { pageMetadata, siteName, structuredData } from '../data/siteMetadata.js';
 import { serviceSelectionEvent } from './serviceNavigation.js';
 
 export function initializeMetadata(origin) {
@@ -32,6 +32,14 @@ export function initializeMetadata(origin) {
       document.head.appendChild(canonical);
     }
     canonical.href = data.canonical;
+    let schema = document.head.querySelector('#structured-data');
+    if (!schema) {
+      schema = document.createElement('script');
+      schema.id = 'structured-data';
+      schema.type = 'application/ld+json';
+      document.head.appendChild(schema);
+    }
+    schema.textContent = JSON.stringify(structuredData(location.pathname, location.search, origin));
   };
   update();
   window.addEventListener('popstate', update);

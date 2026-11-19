@@ -4,15 +4,15 @@ A responsive security-company website for HI-TECH Protection Security, Bengaluru
 
 ## Technologies
 
-| Technology                     | Purpose                                                                      |
-| ------------------------------ | ---------------------------------------------------------------------------- |
-| React 19 + JavaScript/JSX      | Reusable components, pages and interactive controls                          |
-| Vite 6                         | Local development server and production builds                               |
-| CSS Modules + standard CSS     | Section styling, responsive layouts and theme tokens                         |
-| Tailwind CSS 4                 | Selected utility classes; preflight is disabled to preserve existing styling |
-| Lucide React                   | Icons                                                                        |
+| Technology                               | Purpose                                                                      |
+| ---------------------------------------- | ---------------------------------------------------------------------------- |
+| React 19 + JavaScript/JSX                | Reusable components, pages and interactive controls                          |
+| Vite 6                                   | Local development server and production builds                               |
+| CSS Modules + standard CSS               | Section styling, responsive layouts and theme tokens                         |
+| Tailwind CSS 4                           | Selected utility classes; preflight is disabled to preserve existing styling |
+| Lucide React                             | Icons                                                                        |
 | Local original template runtime + jQuery | Retained template sliders, lightboxes and some animations                    |
-| Google Maps iframe             | Address-based map on the Contact page                                        |
+| Google Maps iframe                       | Address-based map on the Contact page                                        |
 
 There is currently no connected backend, database or CMS. Some interactions use React; others rely on the locally bundled original template runtime.
 

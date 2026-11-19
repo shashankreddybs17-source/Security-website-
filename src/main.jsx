@@ -1,5 +1,6 @@
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
+import toast, { Toaster } from 'react-hot-toast';
 import { X } from 'lucide-react';
 import SiteNavbar from './components/SiteNavbar';
 import FloatingContactButtons from './components/FloatingContactButtons';
@@ -74,6 +75,17 @@ function App() {
   }, []);
   return (
     <>
+      <Toaster
+        position="top-center"
+        containerStyle={{ zIndex: 10000 }}
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: '#080818',
+            color: '#fff',
+          },
+        }}
+      />
       <SiteNavbar />
       <Suspense
         fallback={<div aria-busy="true" aria-label="Loading page" style={{ minHeight: '100vh' }} />}

@@ -81,6 +81,7 @@ assert.match(
   /^User-agent: \*\nAllow: \/\nSitemap: https?:\/\//,
 );
 assert.match(readFileSync('dist/sitemap.xml', 'utf8'), /<urlset/);
+assert.match(readFileSync('dist/llms.txt', 'utf8'), /Hi-Tech Protection Security/);
 
 if (process.argv[2]) {
   const origin = new URL(process.argv[2]).origin;
@@ -98,7 +99,7 @@ if (process.argv[2]) {
     assert.match(response.headers.get('content-type') || '', /text\/html/, path);
     assert.match(await response.text(), /id="root"/, path);
   }
-  const requests = [...assets, '/robots.txt', '/sitemap.xml'];
+  const requests = [...assets, '/robots.txt', '/sitemap.xml', '/llms.txt'];
   for (let start = 0; start < requests.length; start += 8)
     await Promise.all(
       requests.slice(start, start + 8).map(async (path) => {

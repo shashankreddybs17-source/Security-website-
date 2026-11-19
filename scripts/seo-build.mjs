@@ -4,6 +4,7 @@ import {
   siteOrigin,
   sitemapUrls,
   siteName,
+  llmsText,
 } from '../src/data/siteMetadata.js';
 
 const escape = (value) =>
@@ -26,6 +27,10 @@ export function seoBuildPlugin(originValue = defaultSiteOrigin) {
       )
         .map((url) => `  <url><loc>${escape(url)}</loc></url>`)
         .join('\n')}\n</urlset>\n`,
+    },
+    '/llms.txt': {
+      type: 'text/plain; charset=utf-8',
+      source: llmsText(origin),
     },
   };
   return {
