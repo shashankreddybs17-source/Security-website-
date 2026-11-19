@@ -42,6 +42,8 @@ export const existingServices = [
   },
   {
     id: 'residential-security',
+    fillImage: true,
+    imagePosition: '50% 25%',
     title: 'Residential Security',
     photo: 'residential-desk',
     image: approvedTeamPhoto('residential-desk'),

@@ -99,6 +99,11 @@ export default function HomeSecuritySolutions({
                                 : 'Hi-Tech Protection Security personnel and training')
                             }
                             className={service.photo === '24' ? styles.bankPhoto : undefined}
+                            style={
+                              service.imagePosition
+                                ? { objectPosition: service.imagePosition }
+                                : undefined
+                            }
                             loading="lazy"
                             decoding="async"
                             width="1440"
