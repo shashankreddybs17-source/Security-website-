@@ -47,6 +47,10 @@
   letter-spacing: -2px;
   text-transform: uppercase;
 }
+.label > span {
+  /* Archivo has no U+2733 glyph; use the same system fallback directly. */
+  font-family: Arial, sans-serif;
+}
 .watermark {
   position: absolute;
   z-index: 0;

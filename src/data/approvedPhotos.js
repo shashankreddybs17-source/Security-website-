@@ -1,6 +1,7 @@
 // User-supplied November 2026 photos, extracted from the PDF and original uploads.
 // Shared keys keep service cards, detail pages and galleries consistent.
 export const approvedTeamPhotos = {
+  'residential-desk': '/assets/hitech/new-uniform/november-2026/residential-security-desk.webp',
   '03': '/assets/hitech/new-uniform/november-2026/bodyguards.webp',
   '06': '/assets/hitech/new-uniform/november-2026/fire-response.webp',
   10: '/assets/hitech/new-uniform/november-2026/fire-demonstration.webp',

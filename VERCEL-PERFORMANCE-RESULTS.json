@@ -1,0 +1,1963 @@
+{
+  "date": "2026-11-19",
+  "productionUrl": "http://127.0.0.1:4273",
+  "lighthouseVersion": "13.6.0",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+  "method": "Three cold-cache standard-preset tests per primary page and device mode; medians calculated independently for scores and metrics. No request blocking, disabled animations, modified CPU multipliers or warm-cache runs.",
+  "settings": {
+    "desktop": {
+      "rttMs": 40,
+      "throughputKbps": 10240,
+      "cpuSlowdownMultiplier": 1
+    },
+    "mobile": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "cpuSlowdownMultiplier": 4
+    }
+  },
+  "allMeasuredPagesAtLeast90": false,
+  "results": [
+    {
+      "path": "/",
+      "mode": "desktop",
+      "scores": [98, 99, 99],
+      "medianPerformance": 99,
+      "medianMetrics": {
+        "first-contentful-paint": 212.889,
+        "largest-contentful-paint": 1012.889,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 485.614
+      },
+      "medianOtherCategories": {
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-IMG",
+        "path": "1,HTML,1,BODY,0,DIV,2,DIV,0,SECTION,0,DIV,0,PICTURE,1,IMG",
+        "selector": "section._hero_1cc66_5 > div._photo_1cc66_9 > picture > img",
+        "boundingRect": {
+          "top": 0,
+          "bottom": 567,
+          "left": 0,
+          "right": 1335,
+          "width": 1335,
+          "height": 567
+        },
+        "snippet": "<img fetchpriority=\"high\" alt=\"Five Hi-Tech guards receiving instructions beside a fire extinguisher\" sizes=\"100vw\" loading=\"eager\" decoding=\"async\" width=\"1448\" height=\"1086\" srcset=\"/assets/hitech/new-uniform/november-2026/responsive/corporate-security-bri…\" src=\"http://127.0.0.1:4273/assets/hitech/new-uniform/november-2026/corporate-se…\">",
+        "nodeLabel": "Five Hi-Tech guards receiving instructions beside a fire extinguisher"
+      },
+      "observedLcpBreakdown": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 5.513
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 43.37
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 7.65
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 66.557
+        }
+      ],
+      "longTasks": [],
+      "insights": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 31 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 50
+          }
+        }
+      ],
+      "rawReport": "tmp/vercel-2026-11-19/verified-home-desktop-2.json"
+    },
+    {
+      "path": "/",
+      "mode": "mobile",
+      "scores": [97, 81, 81],
+      "medianPerformance": 81,
+      "medianMetrics": {
+        "first-contentful-paint": 764.91,
+        "largest-contentful-paint": 5111.7,
+        "total-blocking-time": 65,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1490.005
+      },
+      "medianOtherCategories": {
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-IMG",
+        "path": "1,HTML,1,BODY,0,DIV,2,DIV,0,SECTION,0,DIV,0,PICTURE,1,IMG",
+        "selector": "section._hero_1cc66_5 > div._photo_1cc66_9 > picture > img",
+        "boundingRect": {
+          "top": 0,
+          "bottom": 309,
+          "left": 0,
+          "right": 412,
+          "width": 412,
+          "height": 309
+        },
+        "snippet": "<img fetchpriority=\"high\" alt=\"Five Hi-Tech guards receiving instructions beside a fire extinguisher\" sizes=\"100vw\" loading=\"eager\" decoding=\"async\" width=\"1448\" height=\"1086\" srcset=\"/assets/hitech/new-uniform/november-2026/responsive/corporate-security-bri…\" src=\"http://127.0.0.1:4273/assets/hitech/new-uniform/november-2026/responsive/c…\">",
+        "nodeLabel": "Five Hi-Tech guards receiving instructions beside a fire extinguisher"
+      },
+      "observedLcpBreakdown": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 5.008
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 12.507
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 7.465
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 79.373
+        }
+      ],
+      "longTasks": [
+        {
+          "url": "http://127.0.0.1:4273/assets/index-Ddf19SQB.js",
+          "duration": 124,
+          "startTime": 5002.183600000001
+        },
+        {
+          "url": "Unattributable",
+          "duration": 113,
+          "startTime": 654.4548
+        }
+      ],
+      "insights": [
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimizes main-thread work",
+          "displayValue": "1.1 s",
+          "estimatedMetricSavings": {
+            "TBT": 50
+          }
+        },
+        {
+          "id": "long-tasks",
+          "title": "Avoid long main-thread tasks",
+          "displayValue": "2 long tasks found",
+          "estimatedMetricSavings": {
+            "TBT": 50
+          }
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 30 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 300
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "displayValue": "Est savings of 150 ms",
+          "estimatedMetricSavings": {
+            "FCP": 150,
+            "LCP": 0
+          }
+        }
+      ],
+      "rawReport": "tmp/vercel-2026-11-19/verified-home-mobile-2.json"
+    },
+    {
+      "path": "/about-us",
+      "mode": "desktop",
+      "scores": [97, 97, 97],
+      "medianPerformance": 97,
+      "medianMetrics": {
+        "first-contentful-paint": 332.403,
+        "largest-contentful-paint": 1250.569,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 393.324
+      },
+      "medianOtherCategories": {
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-IMG",
+        "path": "1,HTML,1,BODY,0,DIV,2,DIV,0,MAIN,0,SECTION,1,DIV,0,IMG",
+        "selector": "main.main-wrapper > section.hero-section > div.hero-bg > img.hero-bg-image",
+        "boundingRect": {
+          "top": 104,
+          "bottom": 404,
+          "left": 0,
+          "right": 1335,
+          "width": 1335,
+          "height": 300
+        },
+        "snippet": "<img fetchpriority=\"high\" class=\"hero-bg-image\" alt=\"Four Hi-Tech guards in grey uniforms standing beside a blue property gate\" sizes=\"100vw\" loading=\"eager\" decoding=\"async\" width=\"2000\" height=\"1500\" srcset=\"/assets/hitech/new-uniform/november-2026/responsive/gate-security-320.webp…\" src=\"http://127.0.0.1:4273/assets/hitech/new-uniform/november-2026/responsive/g…\" style=\"object-position: center 25%;\">",
+        "nodeLabel": "Four Hi-Tech guards in grey uniforms standing beside a blue property gate"
+      },
+      "observedLcpBreakdown": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 3.895
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 78.077
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 8.128
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 283.752
+        }
+      ],
+      "longTasks": [],
+      "insights": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 31 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 50
+          }
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "displayValue": "Est savings of 569 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 150
+          }
+        }
+      ],
+      "rawReport": "tmp/vercel-2026-11-19/verified-about-us-desktop-1.json"
+    },
+    {
+      "path": "/about-us",
+      "mode": "mobile",
+      "scores": [80, 80, 80],
+      "medianPerformance": 80,
+      "medianMetrics": {
+        "first-contentful-paint": 758.835,
+        "largest-contentful-paint": 5558.835,
+        "total-blocking-time": 11,
+        "cumulative-layout-shift": 0,
+        "speed-index": 891.869
+      },
+      "medianOtherCategories": {
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-1-IMG",
+        "path": "1,HTML,1,BODY,0,DIV,2,DIV,0,MAIN,0,SECTION,1,DIV,0,IMG",
+        "selector": "main.main-wrapper > section.hero-section > div.hero-bg > img.hero-bg-image",
+        "boundingRect": {
+          "top": 90,
+          "bottom": 290,
+          "left": 0,
+          "right": 412,
+          "width": 412,
+          "height": 200
+        },
+        "snippet": "<img fetchpriority=\"high\" class=\"hero-bg-image\" alt=\"Four Hi-Tech guards in grey uniforms standing beside a blue property gate\" sizes=\"100vw\" loading=\"eager\" decoding=\"async\" width=\"2000\" height=\"1500\" srcset=\"/assets/hitech/new-uniform/november-2026/responsive/gate-security-320.webp…\" src=\"http://127.0.0.1:4273/assets/hitech/new-uniform/november-2026/responsive/g…\" style=\"object-position: center 25%;\">",
+        "nodeLabel": "Four Hi-Tech guards in grey uniforms standing beside a blue property gate"
+      },
+      "observedLcpBreakdown": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 3.659
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 79.584
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 5.839
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 293.116
+        }
+      ],
+      "longTasks": [
+        {
+          "url": "http://127.0.0.1:4273/about-us",
+          "duration": 86,
+          "startTime": 713.4176
+        },
+        {
+          "url": "Unattributable",
+          "duration": 82,
+          "startTime": 631.4176
+        }
+      ],
+      "insights": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 31 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 150
+          }
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "displayValue": "Est savings of 284 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 150
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "displayValue": "Est savings of 150 ms",
+          "estimatedMetricSavings": {
+            "FCP": 150,
+            "LCP": 0
+          }
+        }
+      ],
+      "rawReport": "tmp/vercel-2026-11-19/verified-about-us-mobile-1.json"
+    },
+    {
+      "path": "/services",
+      "mode": "desktop",
+      "scores": [98, 98, 98],
+      "medianPerformance": 98,
+      "medianMetrics": {
+        "first-contentful-paint": 332.809,
+        "largest-contentful-paint": 1169.809,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 358.446
+      },
+      "medianOtherCategories": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-6-IMG",
+        "path": "1,HTML,1,BODY,0,DIV,2,DIV,0,MAIN,0,SECTION,0,DIV,1,DIV,0,A,0,DIV,0,IMG",
+        "selector": "div._grid_1147x_27 > a._card_1147x_33 > div._imageFrame_1147x_46 > img",
+        "boundingRect": {
+          "top": 298,
+          "bottom": 585,
+          "left": 69,
+          "right": 451,
+          "width": 382,
+          "height": 287
+        },
+        "snippet": "<img fetchpriority=\"high\" alt=\"White-shirted instructor addressing a line of Hi-Tech guards in grey unifo…\" sizes=\"(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw\" loading=\"eager\" decoding=\"async\" width=\"1440\" height=\"1080\" srcset=\"/assets/hitech/new-uniform/november-2026/responsive/security-team-outdoor-…\" src=\"http://127.0.0.1:4273/assets/hitech/new-uniform/november-2026/responsive/s…\">",
+        "nodeLabel": "White-shirted instructor addressing a line of Hi-Tech guards in grey uniforms"
+      },
+      "observedLcpBreakdown": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 4.182999992370606
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 102.27300000762939
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 6.303
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 301.94
+        }
+      ],
+      "longTasks": [],
+      "insights": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 33 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 50
+          }
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "displayValue": "Est savings of 360 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 50
+          }
+        }
+      ],
+      "rawReport": "tmp/vercel-2026-11-19/verified-services-desktop-1.json"
+    },
+    {
+      "path": "/services",
+      "mode": "mobile",
+      "scores": [80, 77, 80],
+      "medianPerformance": 80,
+      "medianMetrics": {
+        "first-contentful-paint": 760.514,
+        "largest-contentful-paint": 5560.514,
+        "total-blocking-time": 36,
+        "cumulative-layout-shift": 0,
+        "speed-index": 760.514
+      },
+      "medianOtherCategories": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-2-IMG",
+        "path": "1,HTML,1,BODY,0,DIV,2,DIV,0,MAIN,0,SECTION,0,DIV,1,DIV,0,A,0,DIV,0,IMG",
+        "selector": "div._grid_1147x_27 > a._card_1147x_33 > div._imageFrame_1147x_46 > img",
+        "boundingRect": {
+          "top": 294,
+          "bottom": 579,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 285
+        },
+        "snippet": "<img fetchpriority=\"high\" alt=\"White-shirted instructor addressing a line of Hi-Tech guards in grey unifo…\" sizes=\"(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw\" loading=\"eager\" decoding=\"async\" width=\"1440\" height=\"1080\" srcset=\"/assets/hitech/new-uniform/november-2026/responsive/security-team-outdoor-…\" src=\"http://127.0.0.1:4273/assets/hitech/new-uniform/november-2026/responsive/s…\">",
+        "nodeLabel": "White-shirted instructor addressing a line of Hi-Tech guards in grey uniforms"
+      },
+      "observedLcpBreakdown": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 3.79
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 73.613
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 5.287
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 302.122
+        }
+      ],
+      "longTasks": [
+        {
+          "url": "Unattributable",
+          "duration": 90,
+          "startTime": 628.47585
+        }
+      ],
+      "insights": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 33 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 300
+          }
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "displayValue": "Est savings of 346 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 300
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "displayValue": "Est savings of 150 ms",
+          "estimatedMetricSavings": {
+            "FCP": 150,
+            "LCP": 0
+          }
+        }
+      ],
+      "rawReport": "tmp/vercel-2026-11-19/verified-services-mobile-1.json"
+    },
+    {
+      "path": "/faqs",
+      "mode": "desktop",
+      "scores": [97, 97, 97],
+      "medianPerformance": 97,
+      "medianMetrics": {
+        "first-contentful-paint": 208.045,
+        "largest-contentful-paint": 1208.045,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 279.314
+      },
+      "medianOtherCategories": {
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-IMG",
+        "path": "1,HTML,1,BODY,0,DIV,2,DIV,0,MAIN,0,SECTION,1,DIV,0,IMG",
+        "selector": "main.main-wrapper > section.hero-section > div.hero-bg > img.hero-bg-image",
+        "boundingRect": {
+          "top": 104,
+          "bottom": 404,
+          "left": 0,
+          "right": 1335,
+          "width": 1335,
+          "height": 300
+        },
+        "snippet": "<img fetchpriority=\"high\" class=\"hero-bg-image\" alt=\"Wide view of a white-shirted instructor briefing Hi-Tech security personne…\" sizes=\"100vw\" loading=\"eager\" decoding=\"async\" width=\"2000\" height=\"667\" srcset=\"/assets/hitech/new-uniform/november-2026/responsive/security-team-wide-bri…\" src=\"http://127.0.0.1:4273/assets/hitech/new-uniform/november-2026/responsive/s…\" style=\"object-position: center 25%;\">",
+        "nodeLabel": "Wide view of a white-shirted instructor briefing Hi-Tech security personnel out…"
+      },
+      "observedLcpBreakdown": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 4.097
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 84.825
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 8.652
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 280.656
+        }
+      ],
+      "longTasks": [],
+      "insights": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 32 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 50
+          }
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "displayValue": "Est savings of 227 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 150
+          }
+        }
+      ],
+      "rawReport": "tmp/vercel-2026-11-19/verified-faqs-desktop-1.json"
+    },
+    {
+      "path": "/faqs",
+      "mode": "mobile",
+      "scores": [80, 80, 80],
+      "medianPerformance": 80,
+      "medianMetrics": {
+        "first-contentful-paint": 757.301,
+        "largest-contentful-paint": 5407.301,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 758.757
+      },
+      "medianOtherCategories": {
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-IMG",
+        "path": "1,HTML,1,BODY,0,DIV,2,DIV,0,MAIN,0,SECTION,1,DIV,0,IMG",
+        "selector": "main.main-wrapper > section.hero-section > div.hero-bg > img.hero-bg-image",
+        "boundingRect": {
+          "top": 90,
+          "bottom": 290,
+          "left": 0,
+          "right": 412,
+          "width": 412,
+          "height": 200
+        },
+        "snippet": "<img fetchpriority=\"high\" class=\"hero-bg-image\" alt=\"Wide view of a white-shirted instructor briefing Hi-Tech security personne…\" sizes=\"100vw\" loading=\"eager\" decoding=\"async\" width=\"2000\" height=\"667\" srcset=\"/assets/hitech/new-uniform/november-2026/responsive/security-team-wide-bri…\" src=\"http://127.0.0.1:4273/assets/hitech/new-uniform/november-2026/responsive/s…\" style=\"object-position: center 25%;\">",
+        "nodeLabel": "Wide view of a white-shirted instructor briefing Hi-Tech security personnel out…"
+      },
+      "observedLcpBreakdown": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 3.573
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 66.913
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 6.359
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 295.583
+        }
+      ],
+      "longTasks": [
+        {
+          "url": "Unattributable",
+          "duration": 82,
+          "startTime": 628.65065
+        }
+      ],
+      "insights": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 32 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 300
+          }
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "displayValue": "Est savings of 69 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 300
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "displayValue": "Est savings of 150 ms",
+          "estimatedMetricSavings": {
+            "FCP": 150,
+            "LCP": 0
+          }
+        }
+      ],
+      "rawReport": "tmp/vercel-2026-11-19/verified-faqs-mobile-1.json"
+    },
+    {
+      "path": "/contact-us",
+      "mode": "desktop",
+      "scores": [97, 97, 97],
+      "medianPerformance": 97,
+      "medianMetrics": {
+        "first-contentful-paint": 210.411,
+        "largest-contentful-paint": 1250.174,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 343.72
+      },
+      "medianOtherCategories": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-IMG",
+        "path": "1,HTML,1,BODY,0,DIV,2,DIV,0,MAIN,0,SECTION,1,DIV,0,IMG",
+        "selector": "main.main-wrapper > section.hero-section > div.hero-bg > img.hero-bg-image",
+        "boundingRect": {
+          "top": 104,
+          "bottom": 404,
+          "left": 0,
+          "right": 1335,
+          "width": 1335,
+          "height": 300
+        },
+        "snippet": "<img fetchpriority=\"high\" class=\"hero-bg-image\" alt=\"White-shirted instructor addressing a line of Hi-Tech guards in grey unifo…\" sizes=\"100vw\" loading=\"eager\" decoding=\"async\" width=\"2000\" height=\"1500\" srcset=\"/assets/hitech/new-uniform/november-2026/responsive/security-team-outdoor-…\" src=\"http://127.0.0.1:4273/assets/hitech/new-uniform/november-2026/responsive/s…\" style=\"object-position: center 40%;\">",
+        "nodeLabel": "White-shirted instructor addressing a line of Hi-Tech guards in grey uniforms"
+      },
+      "observedLcpBreakdown": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 3.4130000076293947
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 69.73599999237061
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 7.111
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 285.115
+        }
+      ],
+      "longTasks": [],
+      "insights": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 31 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 50
+          }
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "displayValue": "Est savings of 457 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 200
+          }
+        }
+      ],
+      "rawReport": "tmp/vercel-2026-11-19/verified-contact-us-desktop-1.json"
+    },
+    {
+      "path": "/contact-us",
+      "mode": "mobile",
+      "scores": [77, 77, 77],
+      "medianPerformance": 77,
+      "medianMetrics": {
+        "first-contentful-paint": 758.856,
+        "largest-contentful-paint": 6832.993,
+        "total-blocking-time": 3,
+        "cumulative-layout-shift": 0,
+        "speed-index": 882.556
+      },
+      "medianOtherCategories": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-IMG",
+        "path": "1,HTML,1,BODY,0,DIV,2,DIV,0,MAIN,1,SECTION,0,DIV,0,DIV,0,FIGURE,0,IMG",
+        "selector": "div.container-default > div._panel_1oryi_13 > figure._photo_1oryi_22 > img",
+        "boundingRect": {
+          "top": 261,
+          "bottom": 561,
+          "left": -22,
+          "right": 434,
+          "width": 456,
+          "height": 300
+        },
+        "snippet": "<img alt=\"Hi-Tech guard in a grey uniform outside a residential apartment building\" sizes=\"(max-width: 767px) 100vw, 50vw\" loading=\"eager\" decoding=\"async\" width=\"4284\" height=\"5712\" srcset=\"/assets/hitech/new-uniform/november-2026/responsive/residential-security-3…\" src=\"http://127.0.0.1:4273/assets/hitech/new-uniform/november-2026/responsive/r…\">",
+        "nodeLabel": "Hi-Tech guard in a grey uniform outside a residential apartment building"
+      },
+      "observedLcpBreakdown": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 3.759
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 414.347
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 5.515
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 47.73
+        }
+      ],
+      "longTasks": [
+        {
+          "url": "Unattributable",
+          "duration": 107,
+          "startTime": 604.83345
+        },
+        {
+          "url": "Unattributable",
+          "duration": 98,
+          "startTime": 741.83345
+        },
+        {
+          "url": "http://127.0.0.1:4273/contact-us",
+          "duration": 70,
+          "startTime": 839.83345
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/index-Ddf19SQB.js",
+          "duration": 56,
+          "startTime": 3760.6767499999996
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/index-Ddf19SQB.js",
+          "duration": 56,
+          "startTime": 3816.6767499999996
+        }
+      ],
+      "insights": [
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimizes main-thread work",
+          "displayValue": "1.0 s",
+          "estimatedMetricSavings": {
+            "TBT": 50
+          }
+        },
+        {
+          "id": "long-tasks",
+          "title": "Avoid long main-thread tasks",
+          "displayValue": "5 long tasks found",
+          "estimatedMetricSavings": {
+            "TBT": 50
+          }
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 31 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 150
+          }
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "displayValue": "Est savings of 269 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 600
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "displayValue": "Est savings of 150 ms",
+          "estimatedMetricSavings": {
+            "FCP": 150,
+            "LCP": 0
+          }
+        }
+      ],
+      "rawReport": "tmp/vercel-2026-11-19/verified-contact-us-mobile-1.json"
+    },
+    {
+      "path": "/blog",
+      "mode": "desktop",
+      "scores": [98, 98, 98],
+      "medianPerformance": 98,
+      "medianMetrics": {
+        "first-contentful-paint": 209.596,
+        "largest-contentful-paint": 1167.815,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 296.81
+      },
+      "medianOtherCategories": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-IMG",
+        "path": "1,HTML,1,BODY,0,DIV,2,DIV,0,MAIN,1,SECTION,0,DIV,0,ARTICLE,0,A,0,IMG",
+        "selector": "div._container_1cgye_18 > article._featured_1cgye_43 > a._featuredPhoto_1cgye_113 > img",
+        "boundingRect": {
+          "top": 399,
+          "bottom": 785,
+          "left": 49,
+          "right": 683,
+          "width": 634,
+          "height": 387
+        },
+        "snippet": "<img alt=\"Participant using a fire extinguisher during supervised practical safety t…\" sizes=\"(max-width: 767px) 100vw, 50vw\" loading=\"eager\" decoding=\"async\" width=\"1280\" height=\"960\" srcset=\"/assets/hitech/new-uniform/november-2026/responsive/fire-response-320.webp…\" src=\"http://127.0.0.1:4273/assets/hitech/new-uniform/november-2026/responsive/f…\">",
+        "nodeLabel": "Participant using a fire extinguisher during supervised practical safety traini…"
+      },
+      "observedLcpBreakdown": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 3.7750000076293944
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 116.05199999237061
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 5.847
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 303.681
+        }
+      ],
+      "longTasks": [],
+      "insights": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 33 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 50
+          }
+        }
+      ],
+      "rawReport": "tmp/vercel-2026-11-19/verified-blog-desktop-1.json"
+    },
+    {
+      "path": "/blog",
+      "mode": "mobile",
+      "scores": [77, 78, 81],
+      "medianPerformance": 78,
+      "medianMetrics": {
+        "first-contentful-paint": 759.796,
+        "largest-contentful-paint": 6308.906,
+        "total-blocking-time": 36.745,
+        "cumulative-layout-shift": 0,
+        "speed-index": 826.303
+      },
+      "medianOtherCategories": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-IMG",
+        "path": "1,HTML,1,BODY,0,DIV,2,DIV,0,MAIN,1,SECTION,0,DIV,0,ARTICLE,0,A,0,IMG",
+        "selector": "div._container_1cgye_18 > article._featured_1cgye_43 > a._featuredPhoto_1cgye_113 > img",
+        "boundingRect": {
+          "top": 380,
+          "bottom": 658,
+          "left": 21,
+          "right": 391,
+          "width": 370,
+          "height": 278
+        },
+        "snippet": "<img alt=\"Participant using a fire extinguisher during supervised practical safety t…\" sizes=\"(max-width: 767px) 100vw, 50vw\" loading=\"eager\" decoding=\"async\" width=\"1280\" height=\"960\" srcset=\"/assets/hitech/new-uniform/november-2026/responsive/fire-response-320.webp…\" src=\"http://127.0.0.1:4273/assets/hitech/new-uniform/november-2026/responsive/f…\">",
+        "nodeLabel": "Participant using a fire extinguisher during supervised practical safety traini…"
+      },
+      "observedLcpBreakdown": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 4.365
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 84.523
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 6.444
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 308.171
+        }
+      ],
+      "longTasks": [
+        {
+          "url": "Unattributable",
+          "duration": 96,
+          "startTime": 632.89775
+        },
+        {
+          "url": "http://127.0.0.1:4273/assets/index-Ddf19SQB.js",
+          "duration": 51,
+          "startTime": 3759.7955
+        }
+      ],
+      "insights": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 33 KiB",
+          "estimatedMetricSavings": {
+            "FCP": 0,
+            "LCP": 150
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "displayValue": "Est savings of 150 ms",
+          "estimatedMetricSavings": {
+            "FCP": 150,
+            "LCP": 0
+          }
+        }
+      ],
+      "rawReport": "tmp/vercel-2026-11-19/verified-blog-mobile-2.json"
+    }
+  ],
+  "runs": [
+    {
+      "name": "verified-home-desktop-1",
+      "path": "/",
+      "mode": "desktop",
+      "run": 1,
+      "scores": {
+        "performance": 98,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 217.2806,
+        "largest-contentful-paint": 1097.2806,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 493.7296665199794
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-home-mobile-1",
+      "path": "/",
+      "mode": "mobile",
+      "run": 1,
+      "scores": {
+        "performance": 97,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 768.2702999999999,
+        "largest-contentful-paint": 2602.40545,
+        "total-blocking-time": 31,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1491.8560718592564
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-home-desktop-2",
+      "path": "/",
+      "mode": "desktop",
+      "run": 2,
+      "scores": {
+        "performance": 99,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 212.8888,
+        "largest-contentful-paint": 1012.8888,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 485.61417890446677
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-home-mobile-2",
+      "path": "/",
+      "mode": "mobile",
+      "run": 2,
+      "scores": {
+        "performance": 81,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 764.9096,
+        "largest-contentful-paint": 5114.9096,
+        "total-blocking-time": 68.36299999999937,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1490.0050217352434
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-home-desktop-3",
+      "path": "/",
+      "mode": "desktop",
+      "run": 3,
+      "scores": {
+        "performance": 99,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 211.6762,
+        "largest-contentful-paint": 1011.6762000000001,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 466.10830934790965
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-home-mobile-3",
+      "path": "/",
+      "mode": "mobile",
+      "run": 3,
+      "scores": {
+        "performance": 81,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 761.7002,
+        "largest-contentful-paint": 5111.7002,
+        "total-blocking-time": 65,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1478.1365690308153
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-about-us-desktop-1",
+      "path": "/about-us",
+      "mode": "desktop",
+      "run": 1,
+      "scores": {
+        "performance": 97,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 332.4031,
+        "largest-contentful-paint": 1249.4031,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 394.6097261272372
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-about-us-mobile-1",
+      "path": "/about-us",
+      "mode": "mobile",
+      "run": 1,
+      "scores": {
+        "performance": 80,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 758.8352,
+        "largest-contentful-paint": 5558.8351999999995,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 898.8798714183106
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-about-us-desktop-2",
+      "path": "/about-us",
+      "mode": "desktop",
+      "run": 2,
+      "scores": {
+        "performance": 97,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 333.5694,
+        "largest-contentful-paint": 1250.5694,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 393.3235879348572
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-about-us-mobile-2",
+      "path": "/about-us",
+      "mode": "mobile",
+      "run": 2,
+      "scores": {
+        "performance": 80,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 758.3467,
+        "largest-contentful-paint": 5558.3467,
+        "total-blocking-time": 11,
+        "cumulative-layout-shift": 0,
+        "speed-index": 878.7913809955546
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-about-us-desktop-3",
+      "path": "/about-us",
+      "mode": "desktop",
+      "run": 3,
+      "scores": {
+        "performance": 97,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 212.14659999999998,
+        "largest-contentful-paint": 1252.1466,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 316.8890983571333
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-about-us-mobile-3",
+      "path": "/about-us",
+      "mode": "mobile",
+      "run": 3,
+      "scores": {
+        "performance": 80,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 759.0196000000001,
+        "largest-contentful-paint": 5559.0196,
+        "total-blocking-time": 20,
+        "cumulative-layout-shift": 0,
+        "speed-index": 891.869233874336
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-services-desktop-1",
+      "path": "/services",
+      "mode": "desktop",
+      "run": 1,
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 210.13799999999998,
+        "largest-contentful-paint": 1170.1379999999997,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 277.93764295764015
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-services-mobile-1",
+      "path": "/services",
+      "mode": "mobile",
+      "run": 1,
+      "scores": {
+        "performance": 80,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 758.9517000000001,
+        "largest-contentful-paint": 5558.9517,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 758.9517000000001
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-services-desktop-2",
+      "path": "/services",
+      "mode": "desktop",
+      "run": 2,
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 332.809,
+        "largest-contentful-paint": 1169.809,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 358.44602386143504
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-services-mobile-2",
+      "path": "/services",
+      "mode": "mobile",
+      "run": 2,
+      "scores": {
+        "performance": 77,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 762.0478,
+        "largest-contentful-paint": 6012.0478,
+        "total-blocking-time": 147.9761000000001,
+        "cumulative-layout-shift": 0,
+        "speed-index": 902.6999062776413
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-services-desktop-3",
+      "path": "/services",
+      "mode": "desktop",
+      "run": 3,
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 332.8272,
+        "largest-contentful-paint": 1109.8272,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 359.82610878666014
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-services-mobile-3",
+      "path": "/services",
+      "mode": "mobile",
+      "run": 3,
+      "scores": {
+        "performance": 80,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 760.5139999999999,
+        "largest-contentful-paint": 5560.514,
+        "total-blocking-time": 36,
+        "cumulative-layout-shift": 0,
+        "speed-index": 760.5139999999999
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-faqs-desktop-1",
+      "path": "/faqs",
+      "mode": "desktop",
+      "run": 1,
+      "scores": {
+        "performance": 97,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 331.3565,
+        "largest-contentful-paint": 1208.3565000000003,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 334.81847779253997
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-faqs-mobile-1",
+      "path": "/faqs",
+      "mode": "mobile",
+      "run": 1,
+      "scores": {
+        "performance": 80,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 757.3013000000001,
+        "largest-contentful-paint": 5407.3013,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 757.3013000000001
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-faqs-desktop-2",
+      "path": "/faqs",
+      "mode": "desktop",
+      "run": 2,
+      "scores": {
+        "performance": 97,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 208.04520000000002,
+        "largest-contentful-paint": 1208.0452,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 254.50397099923464
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-faqs-mobile-2",
+      "path": "/faqs",
+      "mode": "mobile",
+      "run": 2,
+      "scores": {
+        "performance": 80,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 758.7565999999999,
+        "largest-contentful-paint": 5408.756599999999,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 758.7565999999999
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-faqs-desktop-3",
+      "path": "/faqs",
+      "mode": "desktop",
+      "run": 3,
+      "scores": {
+        "performance": 97,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 206.97199999999998,
+        "largest-contentful-paint": 1206.972,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 279.3139354974246
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-faqs-mobile-3",
+      "path": "/faqs",
+      "mode": "mobile",
+      "run": 3,
+      "scores": {
+        "performance": 80,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 756.6071999999999,
+        "largest-contentful-paint": 5406.6072,
+        "total-blocking-time": 41.69640000000004,
+        "cumulative-layout-shift": 0,
+        "speed-index": 763.397473913283
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-contact-us-desktop-1",
+      "path": "/contact-us",
+      "mode": "desktop",
+      "run": 1,
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 331.1275,
+        "largest-contentful-paint": 1248.1274999999998,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 423.48719360973223
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-contact-us-mobile-1",
+      "path": "/contact-us",
+      "mode": "mobile",
+      "run": 1,
+      "scores": {
+        "performance": 77,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 759.61375,
+        "largest-contentful-paint": 6761.73975,
+        "total-blocking-time": 62.21969999999999,
+        "cumulative-layout-shift": 0,
+        "speed-index": 953.1524831125816
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-contact-us-desktop-2",
+      "path": "/contact-us",
+      "mode": "desktop",
+      "run": 2,
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 210.41145,
+        "largest-contentful-paint": 1252.0039499999998,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 336.2741317501751
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-contact-us-mobile-2",
+      "path": "/contact-us",
+      "mode": "mobile",
+      "run": 2,
+      "scores": {
+        "performance": 77,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 758.8559499999999,
+        "largest-contentful-paint": 6835.781724999999,
+        "total-blocking-time": 3,
+        "cumulative-layout-shift": 0,
+        "speed-index": 882.556219362365
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-contact-us-desktop-3",
+      "path": "/contact-us",
+      "mode": "desktop",
+      "run": 3,
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 208.46435,
+        "largest-contentful-paint": 1250.1738500000001,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 343.71968793542567
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-contact-us-mobile-3",
+      "path": "/contact-us",
+      "mode": "mobile",
+      "run": 3,
+      "scores": {
+        "performance": 77,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 757.9931999999999,
+        "largest-contentful-paint": 6832.993200000001,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 856.594223324226
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-blog-desktop-1",
+      "path": "/blog",
+      "mode": "desktop",
+      "run": 1,
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 209.5956,
+        "largest-contentful-paint": 1049.5956,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 296.81023740770127
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-blog-mobile-1",
+      "path": "/blog",
+      "mode": "mobile",
+      "run": 1,
+      "scores": {
+        "performance": 77,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 758.9057,
+        "largest-contentful-paint": 6308.905699999999,
+        "total-blocking-time": 77,
+        "cumulative-layout-shift": 0,
+        "speed-index": 854.1357450913633
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-blog-desktop-2",
+      "path": "/blog",
+      "mode": "desktop",
+      "run": 2,
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 213.81830000000002,
+        "largest-contentful-paint": 1173.8183,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 303.04378377911377
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-blog-mobile-2",
+      "path": "/blog",
+      "mode": "mobile",
+      "run": 2,
+      "scores": {
+        "performance": 78,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 759.7955,
+        "largest-contentful-paint": 6309.7955,
+        "total-blocking-time": 1,
+        "cumulative-layout-shift": 0,
+        "speed-index": 765.8552948396718
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-blog-desktop-3",
+      "path": "/blog",
+      "mode": "desktop",
+      "run": 3,
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 207.8154,
+        "largest-contentful-paint": 1167.8154,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 265.463548251134
+      },
+      "warnings": []
+    },
+    {
+      "name": "verified-blog-mobile-3",
+      "path": "/blog",
+      "mode": "mobile",
+      "run": 3,
+      "scores": {
+        "performance": 81,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 760.5097000000001,
+        "largest-contentful-paint": 5185.5097000000005,
+        "total-blocking-time": 36.74514999999951,
+        "cumulative-layout-shift": 0,
+        "speed-index": 826.302918383311
+      },
+      "warnings": []
+    }
+  ],
+  "bundles": [
+    {
+      "file": "About--duWC-tj.js",
+      "bytes": 22295,
+      "gzipBytes": 4935
+    },
+    {
+      "file": "About-DtBkiYRn.css",
+      "bytes": 14271,
+      "gzipBytes": 3368
+    },
+    {
+      "file": "AboutCommonFaqsSection-DA2sCQAo.css",
+      "bytes": 1149,
+      "gzipBytes": 463
+    },
+    {
+      "file": "AboutCommonFaqsSection-DqSx77XJ.js",
+      "bytes": 11653,
+      "gzipBytes": 2283
+    },
+    {
+      "file": "AboutHeroSection-BwsEjoP6.css",
+      "bytes": 465,
+      "gzipBytes": 256
+    },
+    {
+      "file": "AboutHeroSection-CWha3CK5.js",
+      "bytes": 1520,
+      "gzipBytes": 625
+    },
+    {
+      "file": "Blog-BFOH-uUp.js",
+      "bytes": 1440,
+      "gzipBytes": 680
+    },
+    {
+      "file": "Blog-DwI4M9dN.css",
+      "bytes": 1053,
+      "gzipBytes": 491
+    },
+    {
+      "file": "BlogListing-Baf8guf6.css",
+      "bytes": 8012,
+      "gzipBytes": 1983
+    },
+    {
+      "file": "BlogListing-DWpkDD2X.js",
+      "bytes": 5392,
+      "gzipBytes": 1966
+    },
+    {
+      "file": "check-DfHDaE-h.js",
+      "bytes": 288,
+      "gzipBytes": 242
+    },
+    {
+      "file": "Contact-CTNBocpK.css",
+      "bytes": 10693,
+      "gzipBytes": 2423
+    },
+    {
+      "file": "Contact-DUIIPlVk.js",
+      "bytes": 12374,
+      "gzipBytes": 4381
+    },
+    {
+      "file": "Faq-BlAKmQ9V.js",
+      "bytes": 690,
+      "gzipBytes": 455
+    },
+    {
+      "file": "Home-DKlnRMgj.css",
+      "bytes": 39849,
+      "gzipBytes": 7713
+    },
+    {
+      "file": "Home-SnEnmZh7.js",
+      "bytes": 48882,
+      "gzipBytes": 14232
+    },
+    {
+      "file": "HomeCtaSection-d3_vO5HU.css",
+      "bytes": 1240,
+      "gzipBytes": 568
+    },
+    {
+      "file": "HomeCtaSection-DA3qz9Tv.js",
+      "bytes": 1527,
+      "gzipBytes": 765
+    },
+    {
+      "file": "index-CpNN8XsE.css",
+      "bytes": 64125,
+      "gzipBytes": 12453
+    },
+    {
+      "file": "index-Ddf19SQB.js",
+      "bytes": 279083,
+      "gzipBytes": 83436
+    },
+    {
+      "file": "Services-BcC7iSzm.css",
+      "bytes": 7595,
+      "gzipBytes": 2013
+    },
+    {
+      "file": "Services-Ca4ELw0Z.js",
+      "bytes": 23954,
+      "gzipBytes": 7737
+    },
+    {
+      "file": "shield-check-U8UoIfjH.js",
+      "bytes": 488,
+      "gzipBytes": 351
+    },
+    {
+      "file": "SiteFooter-D5T6AyRG.css",
+      "bytes": 3364,
+      "gzipBytes": 1084
+    },
+    {
+      "file": "SiteFooter-DPoILNOH.js",
+      "bytes": 4051,
+      "gzipBytes": 1551
+    }
+  ],
+  "verifiedImageVariantSavings": {
+    "beforeBytes": 6470126,
+    "afterBytes": 5009596,
+    "savedBytes": 1460530,
+    "percent": 22.57,
+    "fullOriginalsChanged": false
+  },
+  "verification": {
+    "unitTests": 58,
+    "browserReport": "tmp/vercel-2026-11-19/browser-results.json",
+    "httpPageUrls": 22,
+    "httpAssetsAndDiscoveryFiles": 187,
+    "buildCommand": "npm run check:deploy",
+    "browserChecks": 169,
+    "browserFailures": 0,
+    "runtimeExceptions": 0,
+    "localHttpFailures": 0,
+    "viewportWidths": [320, 375, 390, 430, 768, 1024, 1440],
+    "shortViewport": [320, 480],
+    "extrasReport": "tmp/vercel-2026-11-19/browser-extras.json",
+    "freshNpmCiPassed": true,
+    "freshDeploymentCommandPassed": true,
+    "byteIdenticalProductionFiles": 370
+  },
+  "experimentsReverted": [
+    "Early internal-route image and module preloads",
+    "Additional critical AVIF variants",
+    "Full-page static pre-rendering (mobile trial 76, LCP 7.45 s)"
+  ],
+  "limitations": [
+    "Local production preview, not a deployed Vercel build",
+    "Emulation, not physical Safari/iOS/Android devices",
+    "Earlier Edge tests had substantial variation and CPU warnings; raw reports remain in tmp/vercel-2026-11-19",
+    "The mobile 90+ target is not met on every measured route"
+  ]
+}

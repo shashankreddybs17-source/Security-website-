@@ -1,7 +1,7 @@
 import ResponsiveImage from './ResponsiveImage';
 import { approvedTeamPhoto } from '../data/approvedPhotos';
 import { ArrowUpRight } from 'lucide-react';
-import { allServices } from '../data/services';
+import { allServices, serviceCardImageSizes } from '../data/services';
 import { navigateService } from '../lib/serviceNavigation';
 import styles from './ServicesLanding.module.css';
 
@@ -18,7 +18,7 @@ export default function ServicesLanding({ headingRef }) {
           </p>
         </div>
         <div className={styles.grid}>
-          {allServices.map((service) => {
+          {allServices.map((service, index) => {
             const image =
               service.image || (service.photo ? approvedTeamPhoto(service.photo) : null);
             return (
@@ -36,7 +36,9 @@ export default function ServicesLanding({ headingRef }) {
                       alt={service.imageAlt || `${service.title} personnel`}
                       width="1440"
                       height="1080"
-                      loading="lazy"
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                      fetchPriority={index === 0 ? 'high' : undefined}
+                      sizes={serviceCardImageSizes}
                       decoding="async"
                     />
                   ) : (

@@ -1,60 +1,64 @@
-# Vercel readiness audit
+﻿# Vercel readiness — 19 November 2026
 
-Audit date: 3 November 2026. No deployment was published or modified.
+This audit checks the local production artifact. No deployment, push or commit was performed. Live Vercel performance must be measured again after the new commit is deployed.
 
-## Result
-
-Local deployment checks pass. No guarantee about the live Vercel environment is made: browser interaction, console/network checks and device tests on the deployed URL remain necessary. Browser automation was unavailable during the audit.
-
-## Changes made
-
-- `src/styles/app.css`: disable Tailwind automatic scanning and retain the existing explicit application source glob. A fresh install initially emitted extra utilities; this change makes output independent of checkout contents. No palette, typography, component layout or image changes.
-- `scripts/audit-production.mjs`: repeatable checks for exact-case imports and asset paths, public assets copied into dist, local-only URLs, lockfile dependency consistency, production entry point, SPA rewrite and optional HTTP route/asset checks.
-- `package.json`: add `npm run check:deploy` (scroll regression tests, production build, asset/config audit).
-- `vercel.json`: run `npm run check:deploy` during deployment. Existing Vite preset, npm ci install, dist output and SPA rewrite retained.
-
-## Checks actually completed
-
-- Isolated `npm ci --no-audit --no-fund` using the committed lockfile and Node 24, in a separate workspace folder; 80 packages installed.
-- Working and isolated `npm run check:deploy` both passed.
-- All production output files are byte-identical between those builds.
-- 13 deterministic scroll-controller regression tests passed. These simulate input; they are not physical mouse/touchpad browser tests.
-- 70 source files checked for exact import casing for Linux compatibility. Builds themselves ran on Windows, not Linux.
-- 60 existing asset references and the complete public asset tree verified in production output.
-- 22 direct route URLs (including all service queries and blog article URLs) plus 60 assets returned HTTP 200 with appropriate content types from the local Vite production preview. HTTP tests do not execute React or prove Vercel edge routing.
-- Service landing/detail render checks, company-statistics render/count-up checks and About training render/placement checks passed.
-- Changed audit/config/CSS files pass Prettier.
+Deployment checks pass, but the requested **90+ mobile performance target is not met**. Final three-run Chrome medians are 97–99 on desktop and 77–81 on mobile. See [the measured report](VERCEL-PERFORMANCE-REPORT.md) for every score, remaining LCP delays and the next experiment.
 
 ## Deployment settings
 
-Root Directory: the directory containing package.json.
-Framework: Vite.
-Node: 24.x.
-Install: npm ci.
-Build: npm run check:deploy.
-Output: dist.
-No environment variables are required by the current frontend.
+| Setting          | Value                                             |
+| ---------------- | ------------------------------------------------- |
+| Root Directory   | Directory containing package.json and vercel.json |
+| Framework        | Vite                                              |
+| Node.js          | 24.x                                              |
+| Install Command  | npm ci                                            |
+| Build Command    | npm run check:deploy                              |
+| Output Directory | dist                                              |
 
-Vercel project-level overrides should match these settings. Commit all intended modified and untracked source files, service assets, tests and scripts. Do not commit node_modules, tmp or dist. Many new website files are currently untracked and must be included in the user's commit. No staging or commit was performed by this audit.
+These settings are in vercel.json; align conflicting dashboard overrides. No environment variable is required. VITE_SITE_URL is optional when changing the canonical domain; its default is https://security-website-omega.vercel.app.
 
-## Existing functional limits
+The SPA rewrite preserves direct visits and refreshes to About Us, Contact Us, FAQ, all service query URLs and all blog article URLs. Existing output files, including robots.txt, sitemap.xml and assets, must continue to be served as files.
 
-- Contact enquiries use mailto and a downloadable draft. They require the visitor's email application; there is no server-side mail delivery.
-- Newsletter signup is intentionally disconnected and shows a preview notice.
-- Blog articles retain existing draft/demo labels.
-- External map/provider availability depends on the visitor's network.
-- The requested Our Credentials section remains pending the original certificate photograph; this is not a deployment failure.
+HTML revalidates. Content-hashed JavaScript/CSS gets immutable caching; stable photo/font URLs use a one-day cache with revalidation.
 
-## Repeat checks
+## Repeatable checks
 
-```sh
+```powershell
 npm ci
 npm run check:deploy
-npm run preview -- --host 127.0.0.1 --port 4173
-# In a second terminal:
-node scripts/audit-production.mjs http://127.0.0.1:4173
+npm run preview -- --host 127.0.0.1 --port 4273 --strictPort
 ```
 
-After deploying, refresh each main page and a service/blog deep link on the actual Vercel URL. Check desktop/mobile navigation, scrolling both ways, service selection and back/forward history, gallery/lightboxes, FAQs, animations, map and enquiry draft/download. Check the browser console and network panel. Live Vercel behavior has not yet been verified.
+In a second terminal:
 
-References: https://vercel.com/docs/frameworks/frontend/vite ; https://vercel.com/docs/functions/runtimes/node-js/node-js-versions ; https://tailwindcss.com/docs/preflight
+```powershell
+node scripts/audit-production.mjs http://127.0.0.1:4273
+```
+
+The deployment check runs regression tests, builds production, then validates exact import/asset filename casing for Linux, copied public-file contents, package/lockfile consistency, the production entry, SPA configuration and crawl files. Its optional HTTP check verifies 22 page URLs and referenced assets return the expected response type.
+
+The previous ENOTDIR failure is covered by a regression test: the checker reads each parent directory and validates the final file. It never calls readdir on an MP4 or another file.
+
+If preview reports that its port is occupied, reuse the existing preview or choose another port and update the audit URL. Do not stop unrelated processes just to free a port.
+
+## Browser verification
+
+The audit covers Home, About Us, Services, FAQ, Contact Us, Blog, all 11 service details and all three articles at 320, 375, 390, 430, 768, 1024 and 1440 CSS pixels. Checks include horizontal overflow, images, fixed navbar, mobile menu locking/restoration, service submenu, page navigation, FAQ state, service tabs, gallery navigation/frame stability and contact form validation. A separate 320×480 check covers short-screen menu access.
+
+These are emulated Chromium checks, not physical iOS/Android testing. Google Maps depends on its external provider. Phone, WhatsApp and mail links are checked without placing calls or sending enquiries.
+
+Performance results and FCP/LCP/TBT/CLS/Speed Index are in VERCEL-PERFORMANCE-RESULTS.json and VERCEL-PERFORMANCE-REPORT.md. Measure the production preview or new deployment, not the development server on port 5173. Do not compare custom-throttled development results with standard-preset production results.
+
+## Before pushing
+
+Include intended modified source, scripts, tests and all new files under public/assets. The residential-desk photograph and short-sleeve briefing variants from preceding tasks remain required. Do not commit node_modules, tmp, dist, .env or output; the deployment ignore file excludes these artifacts.
+
+After deployment, refresh /about-us, /services?service=residential-security, /faqs, /contact-us and a blog article URL directly. Confirm the deployed commit, check for 404s and rerun PageSpeed Insights for desktop and mobile.
+
+## Existing behavior retained
+
+- Contact enquiries prepare a draft in the visitor's email application and provide a download. There is no server-side mail endpoint.
+- Newsletter submission retains its existing preview-only notice.
+- Content, images, crops, animations and scrolling remain intact. Optimized photo variants come from the same full originals.
+
+References: [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite), [Vercel configuration](https://vercel.com/docs/project-configuration/vercel-json), [Lighthouse scoring](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring).

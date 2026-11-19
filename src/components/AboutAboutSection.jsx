@@ -84,7 +84,7 @@ export default function AboutAboutSection() {
                   }}
                   className="about-name"
                 >
-                  {'Arjun Kumar'}
+                  {'Dileep'}
                 </h4>
               </div>
               <div className="about-designation-block">

@@ -1,6 +1,8 @@
 import { approvedTeamPhoto } from './approvedPhotos.js';
 import { supervisorTeamPhoto } from './supervisors.js';
 
+export const serviceCardImageSizes = '(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw';
+
 export const existingServices = [
   {
     id: 'hotel-security',
@@ -41,8 +43,10 @@ export const existingServices = [
   {
     id: 'residential-security',
     title: 'Residential Security',
-    photo: '29',
-    image: approvedTeamPhoto('29'),
+    photo: 'residential-desk',
+    image: approvedTeamPhoto('residential-desk'),
+    imageAlt:
+      'Hi-Tech security guard holding a radio at a security desk with registers and visitor passes',
     text: 'Entrance monitoring, visitor and vehicle management, and common-area vigilance for residential apartment communities.',
   },
 ];

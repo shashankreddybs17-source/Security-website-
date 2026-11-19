@@ -221,8 +221,8 @@ export function HomeWhoWeAre() {
           <figure className={styles.whoMedia}>
             <div className={styles.whoPhoto}>
               <ResponsiveImage
-                src={photoUrl('31')}
-                alt="HI-TECH personnel in dark uniforms receiving a security and fire safety briefing"
+                src="/assets/hitech/new-uniform/november-2026/security-team-indoor-briefing-short-sleeves.webp"
+                alt="Hi-Tech guards in short-sleeved grey uniforms listening to an instructor in a covered corridor"
                 width="1448"
                 height="1086"
                 loading="lazy"

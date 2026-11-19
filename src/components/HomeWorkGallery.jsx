@@ -35,12 +35,13 @@ const gallery = [
     height: 1086,
   },
   {
-    photo: '24',
-    title: 'A professional presence',
-    detail: 'Hi-Tech security personnel',
-    modalPosition: '50% 0%',
-    width: 1320,
-    height: 1189,
+    photo: 'residential-desk',
+    title: 'Vigilance at every entrance',
+    detail: 'On-duty guard at a security desk',
+    modalPosition: '50% 35%',
+    fillThumbnail: true,
+    width: 960,
+    height: 1280,
   },
   {
     photo: '31',
@@ -351,7 +352,7 @@ export default function HomeWorkGallery() {
                   className={styles.photoButton}
                   type="button"
                   onClick={(event) => openPhoto(index, event)}
-                  aria-label={`View full photograph: ${item.detail}`}
+                  aria-label={`0${index + 1} ${item.title}: view full photograph — ${item.detail}`}
                 >
                   <span className={styles.photo}>
                     <ResponsiveImage

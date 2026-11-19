@@ -2,16 +2,9 @@ import ResponsiveImage from './ResponsiveImage';
 import { useState } from 'react';
 import { Headphones, ArrowUpRight, Download } from 'lucide-react';
 import styles from './ContactEnquirySection.module.css';
+import { allServices } from '../data/services';
 
-const services = [
-  'Hotel Security',
-  'Bank Security',
-  'Corporate Office Security',
-  'Industrial Security',
-  'Commercial Security',
-  'Residential Security',
-  'Help me choose',
-];
+const services = [...allServices.map((service) => service.title), 'Help me choose'];
 const contactEmail = 'hitechprotectionsecurity@gmail.com';
 
 export default function ContactEnquirySection() {

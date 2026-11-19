@@ -38,7 +38,11 @@ export function BlogFeaturedArticle({
   if (!post) return null;
   return (
     <article className={styles.featured} aria-labelledby={headingId}>
-      <a href={articleUrl(post)} className={styles.featuredPhoto} aria-label={`Read ${post.title}`}>
+      <a
+        href={articleUrl(post)}
+        className={styles.featuredPhoto}
+        aria-label={`Featured article: read ${post.title}`}
+      >
         <ResponsiveImage
           src={post.featuredImage || post.image}
           alt="HI-TECH personnel taking part in practical workplace safety training"
@@ -72,7 +76,11 @@ export function BlogFeaturedArticle({
 export function BlogArticleCard({ post }) {
   return (
     <article className={styles.card}>
-      <a href={articleUrl(post)} className={styles.cardPhoto} aria-label={`Read ${post.title}`}>
+      <a
+        href={articleUrl(post)}
+        className={styles.cardPhoto}
+        aria-label={`${categoryFor(post)}: read ${post.title}`}
+      >
         <ResponsiveImage
           src={post.image}
           alt="HI-TECH Protection Security personnel during training and site briefings"

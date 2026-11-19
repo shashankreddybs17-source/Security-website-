@@ -4,6 +4,7 @@ import { X } from 'lucide-react';
 import SiteNavbar from './components/SiteNavbar';
 import FloatingContactButtons from './components/FloatingContactButtons';
 import HomeHeaderHeroSection from './components/HomeHeaderHeroSection';
+import { useAfterFirstPaint } from './hooks/useAfterFirstPaint';
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -34,13 +35,18 @@ const blogSlug = blogMatch?.[1];
 const isFaq = /^\/faqs?\/?$/.test(location.pathname);
 
 function HomePage() {
+  const contentReady = useAfterFirstPaint();
   return (
     <div className="page-wrapper">
       <HomeHeaderHeroSection />
       <Suspense
         fallback={<div aria-busy="true" aria-label="Loading page" style={{ minHeight: '100vh' }} />}
       >
-        <Home />
+        {contentReady ? (
+          <Home />
+        ) : (
+          <div aria-busy="true" aria-label="Loading page" style={{ minHeight: '100vh' }} />
+        )}
       </Suspense>
     </div>
   );
