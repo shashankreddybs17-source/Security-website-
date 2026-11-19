@@ -24,7 +24,7 @@ const photos = [
     position: '50% 35%',
   },
   {
-    file: '31',
+    file: 'indoor-briefing-short-sleeves',
     title: 'Prepared through training',
     detail: 'Team briefing and preparation',
     position: '50% 45%',

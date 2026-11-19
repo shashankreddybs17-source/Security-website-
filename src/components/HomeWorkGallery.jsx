@@ -44,11 +44,11 @@ const gallery = [
     height: 1280,
   },
   {
-    photo: '31',
+    photo: 'indoor-briefing-short-sleeves',
     title: 'Working together',
     detail: 'Team instruction and readiness',
-    width: 2000,
-    height: 1500,
+    width: 1448,
+    height: 1086,
   },
 ];
 const photoUrl = (photo) => approvedTeamPhoto(photo);

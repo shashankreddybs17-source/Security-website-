@@ -10,8 +10,8 @@ export default function Faq() {
       <main className="main-wrapper">
         <AboutHeroSection
           title="Frequently Asked Questions"
-          image="/assets/hitech/new-uniform/november-2026/security-team-wide-briefing.webp"
-          imageAlt="Hi-Tech security guards receiving a corporate safety briefing"
+          image="/assets/hitech/new-uniform/november-2026/faq-briefing-guards-short-sleeves.webp"
+          imageAlt="Hi-Tech guards in short-sleeved grey uniforms attending an outdoor briefing"
         />
         {contentReady ? (
           <AboutCommonFaqsSection singleOpen />

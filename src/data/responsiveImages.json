@@ -739,5 +739,35 @@
       }
     ],
     "objectPosition": "50% 35%"
+  },
+  "/assets/hitech/new-uniform/november-2026/faq-briefing-guards-short-sleeves.webp": {
+    "width": 2000,
+    "height": 667,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/faq-briefing-guards-short-sleeves-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/faq-briefing-guards-short-sleeves-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/faq-briefing-guards-short-sleeves-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/faq-briefing-guards-short-sleeves-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/faq-briefing-guards-short-sleeves-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/faq-briefing-guards-short-sleeves-1920.webp",
+        "width": 1920
+      }
+    ]
   }
 }

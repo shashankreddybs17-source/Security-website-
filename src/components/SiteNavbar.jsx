@@ -235,6 +235,7 @@ export default function SiteNavbar() {
               height="188"
               alt="Hi-Tech Protection Security"
             />
+            <span className={styles.certification}>An ISO 9001:2015 Certified Company</span>
           </a>
           <nav className={styles.desktopNav} aria-label="Main navigation">
             {links(false)}

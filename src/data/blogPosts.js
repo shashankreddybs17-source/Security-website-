@@ -23,7 +23,8 @@
   {
     slug: 'why-regular-safety-training-matters',
     title: 'Why Regular Safety Training Matters',
-    image: '/assets/hitech/new-uniform/november-2026/security-team-indoor-briefing.webp',
+    image:
+      '/assets/hitech/new-uniform/november-2026/security-team-indoor-briefing-short-sleeves.webp',
     paragraphs: [
       'Training gives personnel an opportunity to review responsibilities, ask questions and understand site procedures before they need to use them.',
       'Team briefings can support clear communication about access arrangements, reporting responsibilities and changes at a location.',

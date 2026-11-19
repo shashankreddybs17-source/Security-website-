@@ -111,6 +111,7 @@ export default function AboutAboutSection() {
                   alt=""
                   className="about-signature site-brand-logo"
                 />
+                <span className={styles.certification}>An ISO 9001:2015 Certified Company</span>
               </div>
             </div>
           </div>

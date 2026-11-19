@@ -45,9 +45,23 @@
   box-shadow: 0 8px 24px #07061618;
 }
 .brand {
+  position: relative;
   display: block;
   width: 164px;
   line-height: 0;
+}
+.certification {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  color: var(--site-cream, #fdf9f1);
+  font-family: var(--font-sans);
+  font-size: 7px;
+  font-weight: 600;
+  line-height: 9px;
+  text-align: center;
+  white-space: nowrap;
 }
 .brand img {
   display: block;

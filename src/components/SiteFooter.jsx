@@ -26,6 +26,7 @@ export default function SiteFooter() {
               alt="Hi-Tech Protection Security"
               className={`${styles.logo} site-brand-logo`}
             />
+            <span className={styles.certification}>An ISO 9001:2015 Certified Company</span>
           </a>
           <p>Security You Can Trust. Protection You Can Rely On.</p>
         </div>

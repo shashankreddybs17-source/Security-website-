@@ -35,6 +35,15 @@
   width: 100%;
   height: auto;
 }
+.certification {
+  display: block;
+  margin-top: 4px;
+  color: var(--site-cream, #fdf9f1);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+}
 .brand p {
   max-width: 280px;
   margin: 16px 0 0;
