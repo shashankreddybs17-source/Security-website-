@@ -6,7 +6,6 @@ import { allServices } from '../data/services';
 import toast from 'react-hot-toast';
 
 const services = [...allServices.map((service) => service.title), 'Help me choose'];
-const contactEmail = 'hitechprotectionsecurity@gmail.com';
 const initialFormData = {
   firstName: '',
   lastName: '',
@@ -28,11 +27,11 @@ export default function ContactEnquirySection() {
     if (!formData.firstName.trim()) errors.firstName = 'First name is required';
     if (!formData.lastName.trim()) errors.lastName = 'Last name is required';
     if (!formData.email.trim()) errors.email = 'Email is required';
+    if (!formData.phone.trim()) errors.phone = 'Phone is required';
     if (!formData.service) errors.service = 'Service is required';
     return errors;
   };
 
-  const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (event) => {
@@ -157,13 +156,14 @@ export default function ContactEnquirySection() {
                   />
                 </label>
                 <label htmlFor="enquiry-phone">
-                  Phone number
+                  Phone number <span>*</span>
                   <input
                     id="enquiry-phone"
                     type="tel"
                     name="phone"
                     autoComplete="tel"
                     placeholder="Phone number"
+                    required
                     maxLength={40}
                     value={formData.phone}
                     onChange={handleInputChange}
