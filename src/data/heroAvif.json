@@ -1,28 +1,28 @@
 {
-  "src": "/assets/hitech/new-uniform/november-2026/security-guard-lineup-branded.avif",
+  "src": "/assets/hitech/new-uniform/november-2026/security-guard-lineup-hero.avif",
   "variants": [
     {
-      "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-branded-320.avif",
+      "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-hero-320.avif",
       "width": 320
     },
     {
-      "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-branded-480.avif",
+      "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-hero-480.avif",
       "width": 480
     },
     {
-      "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-branded-768.avif",
+      "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-hero-768.avif",
       "width": 768
     },
     {
-      "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-branded-960.avif",
+      "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-hero-960.avif",
       "width": 960
     },
     {
-      "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-branded-1280.avif",
+      "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-hero-1280.avif",
       "width": 1280
     },
     {
-      "src": "/assets/hitech/new-uniform/november-2026/security-guard-lineup-branded.avif",
+      "src": "/assets/hitech/new-uniform/november-2026/security-guard-lineup-hero.avif",
       "width": 1446
     }
   ]

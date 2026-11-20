@@ -13,7 +13,7 @@ except ImportError:
 
 root = Path(__file__).resolve().parents[1]
 public = root / 'public'
-source = public / 'assets/hitech/new-uniform/november-2026/security-guard-lineup-branded.webp'
+source = public / 'assets/hitech/new-uniform/november-2026/security-guard-lineup-hero.webp'
 image = Image.open(source).convert('RGB')
 variants = []
 for width in [320, 480, 768, 960, 1280, image.width]:

@@ -798,5 +798,31 @@
         "width": 1280
       }
     ]
+  },
+  "/assets/hitech/new-uniform/november-2026/security-guard-lineup-hero.webp": {
+    "width": 1446,
+    "height": 1087,
+    "variants": [
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-hero-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-hero-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-hero-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-hero-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/hitech/new-uniform/november-2026/responsive/security-guard-lineup-hero-1280.webp",
+        "width": 1280
+      }
+    ]
   }
 }
