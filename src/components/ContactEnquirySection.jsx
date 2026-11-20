@@ -7,14 +7,16 @@ import toast from 'react-hot-toast';
 
 const services = [...allServices.map((service) => service.title), 'Help me choose'];
 const contactEmail = 'hitechprotectionsecurity@gmail.com';
+const initialFormData = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
+  service: '',
+};
 
 export default function ContactEnquirySection() {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    service: '',
-  });
+  const [formData, setFormData] = useState(initialFormData);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -56,6 +58,7 @@ export default function ContactEnquirySection() {
           firstName: formData.firstName.trim(),
           lastName: formData.lastName.trim(),
           email: formData.email.trim(),
+          phone: formData.phone.trim(),
         }),
       });
 
@@ -71,7 +74,7 @@ export default function ContactEnquirySection() {
         return;
       }
 
-      setFormData({ firstName: '', lastName: '', email: '', service: '' });
+      setFormData(initialFormData);
       toast.success('Your enquiry was sent successfully.');
     } catch (error) {
       console.error('Failed to submit enquiry:', error);
@@ -108,7 +111,7 @@ export default function ContactEnquirySection() {
               premises.
             </p>
             <form className={styles.form} data-contact-enquiry="true" onSubmit={handleSubmit}>
-              <div className={styles.names}>
+              <div className={styles.fieldRow}>
                 <label htmlFor="enquiry-first-name">
                   First name <span>*</span>
                   <input
@@ -138,20 +141,35 @@ export default function ContactEnquirySection() {
                   />
                 </label>
               </div>
-              <label htmlFor="enquiry-email">
-                Email address <span>*</span>
-                <input
-                  id="enquiry-email"
-                  type="email"
-                  name="email"
-                  autoComplete="email"
-                  placeholder="you@company.com"
-                  required
-                  maxLength={254}
-                  value={formData.email}
-                  onChange={handleInputChange}
-                />
-              </label>
+              <div className={styles.fieldRow}>
+                <label htmlFor="enquiry-email">
+                  Email address <span>*</span>
+                  <input
+                    id="enquiry-email"
+                    type="email"
+                    name="email"
+                    autoComplete="email"
+                    placeholder="you@company.com"
+                    required
+                    maxLength={254}
+                    value={formData.email}
+                    onChange={handleInputChange}
+                  />
+                </label>
+                <label htmlFor="enquiry-phone">
+                  Phone number
+                  <input
+                    id="enquiry-phone"
+                    type="tel"
+                    name="phone"
+                    autoComplete="tel"
+                    placeholder="Phone number"
+                    maxLength={40}
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                  />
+                </label>
+              </div>
               <label htmlFor="enquiry-service">
                 Service <span>*</span>
                 <select

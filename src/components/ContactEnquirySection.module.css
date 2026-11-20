@@ -76,7 +76,7 @@
   flex-direction: column;
   gap: 14px;
 }
-.names {
+.fieldRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
@@ -191,7 +191,7 @@
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     min-height: 0;
   }
-  .names {
+  .fieldRow {
     grid-template-columns: 1fr;
     gap: 14px;
   }
@@ -215,7 +215,7 @@
     transform: scale(1.2);
     transform-origin: 50% 100%;
   }
-  .names {
+  .fieldRow {
     grid-template-columns: 1fr 1fr;
     gap: 14px;
   }
@@ -233,7 +233,7 @@
   .formPanel h2 {
     font-size: 25px;
   }
-  .names {
+  .fieldRow {
     grid-template-columns: 1fr;
     gap: 18px;
   }
