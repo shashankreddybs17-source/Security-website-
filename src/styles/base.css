@@ -1424,16 +1424,6 @@ ul {
   display: flex;
 }
 
-.team-tag {
-  background-color: var(--_primary-color---50);
-  color: var(--_neutral-color---500);
-  padding: 5px 10px;
-  font-size: 12px;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
 .team-designation {
   color: var(--_neutral-color---500);
   font-weight: 300;
@@ -2003,11 +1993,6 @@ ul {
   .team-text-block {
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-  }
-
-  .team-tag {
-    padding: 7px 12px;
-    font-size: 14px;
   }
 
   .faqs-content {

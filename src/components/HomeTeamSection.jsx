@@ -7,7 +7,6 @@ import { supervisors } from '../data/supervisors';
 const experts = supervisors.map(({ name, image, imageAlt }) => ({
   src: image,
   alt: imageAlt,
-  category: 'Supervisors',
   name,
   designation: 'Supervisor',
   position: '50% 50%',
@@ -193,7 +192,6 @@ export default function HomeTeamSection() {
                           />
                         </div>
                         <div className={`team-text-block ${styles.caption}`}>
-                          <div className={`team-tag ${styles.tag}`}>{expert.category}</div>
                           <h5 className="team-name">{expert.name}</h5>
                           <div className="team-designation">{expert.designation}</div>
                         </div>

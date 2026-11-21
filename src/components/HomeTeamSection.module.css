@@ -109,13 +109,6 @@
   min-width: 0;
   padding: 14px;
 }
-.section .carousel .tag {
-  position: static;
-  align-self: flex-start;
-  border-radius: 6px;
-  color: var(--site-navy, #070616);
-  background: var(--site-yellow, #f3df04);
-}
 .section .carousel .controls {
   display: flex;
   justify-content: flex-end;
