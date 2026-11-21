@@ -72,7 +72,15 @@ export default function SiteFooter() {
         <div className={`${styles.container} ${styles.bottom}`}>
           <p>
             Copyright &copy; {new Date().getFullYear()} Hi-Tech Protection Security. All rights
-            reserved.
+            reserved. Designed by{' '}
+            <a
+              className={styles.designCredit}
+              href="https://hirolainfotech.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hirola InfoTech Solutions Pvt Ltd.
+            </a>
           </p>
         </div>
       </div>

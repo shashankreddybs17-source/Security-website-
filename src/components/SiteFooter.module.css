@@ -152,6 +152,9 @@ a.contactItem:hover strong,
   line-height: 1.5;
   text-align: right;
 }
+.designCredit {
+  color: #fff;
+}
 .footer a:focus-visible {
   outline: 2px solid var(--site-yellow, #f3df04);
   outline-offset: 5px;
