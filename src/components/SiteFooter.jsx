@@ -1,5 +1,6 @@
 import BrandLogo from './BrandLogo';
 import { PhoneCall, Mail, MapPin } from 'lucide-react';
+import { googleBusinessProfileUrl } from '../data/siteMetadata';
 import styles from './SiteFooter.module.css';
 
 const quickLinks = [
@@ -51,7 +52,12 @@ export default function SiteFooter() {
               <strong>{email}</strong>
             </span>
           </a>
-          <div className={`${styles.contactItem} ${styles.location}`}>
+          <a
+            href={googleBusinessProfileUrl}
+            className={`${styles.contactItem} ${styles.location}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span className={styles.icon}>
               <MapPin size={20} aria-hidden="true" />
             </span>
@@ -59,7 +65,7 @@ export default function SiteFooter() {
               No. 28, Shop No. 2, 3rd Cross, Vinayaka Nagar, JP Nagar 5th Phase, Bengaluru - 560
               078.
             </p>
-          </div>
+          </a>
         </address>
       </div>
       <div className={styles.bottomBar}>

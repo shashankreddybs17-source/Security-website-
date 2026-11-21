@@ -124,7 +124,8 @@
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
-a.contactItem:hover strong {
+a.contactItem:hover strong,
+.location:hover p {
   text-decoration: underline;
   text-underline-offset: 3px;
 }

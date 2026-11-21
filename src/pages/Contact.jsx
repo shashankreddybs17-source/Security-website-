@@ -3,16 +3,15 @@ import ContactEnquirySection from '../components/ContactEnquirySection';
 import { Phone, Mail, MapPin, ArrowUpRight, Clock, ShieldCheck, Navigation } from 'lucide-react';
 import AboutHeroSection from '../components/AboutHeroSection';
 import AboutFooterSection from '../components/AboutFooterSection';
+import { googleBusinessProfileUrl } from '../data/siteMetadata';
 import styles from './Contact.module.css';
 import { useAfterFirstPaint } from '../hooks/useAfterFirstPaint';
 
 const officeAddress =
   'No. 28, Shop No. 2, 3rd Cross, Vinayaka Nagar, JP Nagar 5th Phase, Bengaluru - 560 078';
-// Verified from the Google Maps embed supplied by the office owner. Use the
-// place ID for both actions so Google does not geocode the written address.
+// Use the place ID supplied by the office owner for turn-by-turn directions.
 const officeQuery = encodeURIComponent('12.9136062,77.5911957');
 const officePlaceId = 'ChIJX2VQMaEVrjsRIoH9kk11Nf4';
-const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${officeQuery}&query_place_id=${officePlaceId}`;
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${officeQuery}&destination_place_id=${officePlaceId}`;
 const mapEmbedUrl =
   'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4501.613969393963!2d77.58862077563006!3d12.913611416145393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15a13150655f%3A0xfe35754d92fd8122!2s3rd%20Cross%20Rd%2C%201489%2C%2017th%20A%20Main%20Road%2C%20Marenahalli%2C%202nd%20Phase%2C%20J.%20P.%20Nagar%2C%20Bengaluru%2C%20Karnataka%20560041!5e1!3m2!1sen!2sin!4v1793769946513!5m2!1sen!2sin';
@@ -136,12 +135,12 @@ export default function Contact() {
                     </div>
                     <a
                       className={styles.mapButton}
-                      href={mapsUrl}
+                      href={googleBusinessProfileUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <Navigation size={17} aria-hidden="true" />
-                      Open in Maps <ArrowUpRight size={17} aria-hidden="true" />
+                      Find us on Google <ArrowUpRight size={17} aria-hidden="true" />
                     </a>
                   </div>
                   <div className={styles.mapFrame}>

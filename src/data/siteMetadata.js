@@ -3,6 +3,7 @@ import { blogPosts } from './blogPosts.js';
 
 export const defaultSiteOrigin = 'https://htpsecurity.in';
 export const siteName = 'Hi-Tech Protection Security';
+export const googleBusinessProfileUrl = 'https://share.google/CYe4cRN5MOV9GqVqz';
 export const defaultDescription =
   'Professional security services in Bengaluru for businesses, institutions and residential communities.';
 
@@ -177,6 +178,7 @@ export function structuredData(pathname, search = '', origin = defaultSiteOrigin
     '@id': `${originUrl}/#organization`,
     name: business.name,
     url: originUrl,
+    sameAs: [googleBusinessProfileUrl],
     logo: new URL('/assets/hitech/hi-tech-certified-logo.webp', originUrl).href,
     image: metadata.image,
     description: defaultDescription,
